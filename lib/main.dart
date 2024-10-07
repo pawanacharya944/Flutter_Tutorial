@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'rating_bar.dart';
 
 void main() {
@@ -15,7 +14,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: "Flutter Project",
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: My_RatingBar(),
+      home: const MyRatingBar(),
     );
   }
 }

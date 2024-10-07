@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
-class My_RatingBar extends StatefulWidget {
-  const My_RatingBar({super.key});
+class MyRatingBar extends StatefulWidget {
+  const MyRatingBar({super.key});
 
   @override
-  State<My_RatingBar> createState() => _My_RatingBarState();
+  State<MyRatingBar> createState() => _MyRatingBarState();
 }
 
-class _My_RatingBarState extends State<My_RatingBar> {
+class _MyRatingBarState extends State<MyRatingBar> {
   double _rating = 3.5; // initial rating set to 3.5
   @override
   Widget build(BuildContext context) {
@@ -31,12 +31,12 @@ class _My_RatingBarState extends State<My_RatingBar> {
             color: Colors.white.withOpacity(
                 0.9), // semi-transparent white background for the card
             child: Padding(
-              padding: EdgeInsets.all(20.0),
+              padding: const EdgeInsets.all(20.0),
               child: Column(
                 mainAxisSize:
                     MainAxisSize.min, // minimize space taken by the column
                 children: <Widget>[
-                  Text(
+                  const Text(
                     'Rate Us', // title text for rating prompt
                     style: TextStyle(
                       fontSize: 28,
@@ -44,7 +44,7 @@ class _My_RatingBarState extends State<My_RatingBar> {
                       color: Colors.black,
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20, // space between title and rating bar
                   ),
 
@@ -60,11 +60,11 @@ class _My_RatingBarState extends State<My_RatingBar> {
                     itemSize: 50.0, // size of each star icon
                     unratedColor: Colors.grey.withOpacity(
                         0.5), // color for unrated stars (subtle grey)
-                    itemPadding: EdgeInsets.symmetric(
+                    itemPadding: const EdgeInsets.symmetric(
                         horizontal: 4), // padding between stars
 
                     // Builder function to specify how each star looks
-                    itemBuilder: (context, index) => Icon(
+                    itemBuilder: (context, index) => const Icon(
                       Icons.star,
                       color: Colors.amber, // color for rated stars
                     ),
@@ -81,22 +81,22 @@ class _My_RatingBarState extends State<My_RatingBar> {
                     },
                   ),
 
-                  SizedBox(
+                  const SizedBox(
                     height: 20, // space between rating bar and rating display
                   ),
 
-                  Text(
+                  const Text(
                     'Your Rating:', // label for displaying current rating
                     style: TextStyle(fontSize: 24, color: Colors.black),
                   ),
 
-                  SizedBox(
+                  const SizedBox(
                     height: 10, // space between label and actual rating display
                   ),
 
                   Text(
                     _rating.toString(), // Display current rating as text
-                    style: TextStyle(
+                    style: const TextStyle(
                         fontSize: 32,
                         fontWeight: FontWeight.bold,
                         color: Colors.black),
