@@ -16,7 +16,10 @@ class _MyRatingBarState extends State<MyRatingBar> {
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [Colors.blue[200]!, Colors.green[200]!],
+            colors: [
+              Colors.blue[200]!,
+              Colors.green[200]!,
+            ],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
@@ -58,15 +61,16 @@ class _MyRatingBarState extends State<MyRatingBar> {
                         true, // allow half star rating like .. 2.5, 3.5
                     itemCount: 5, // total number of stars (5 stars)
                     itemSize: 50.0, // size of each star icon
-                    unratedColor: Colors.grey.withOpacity(
-                        0.5), // color for unrated stars (subtle grey)
+                    unratedColor:
+                        Colors.black12, // color for unrated stars (subtle grey)
                     itemPadding: const EdgeInsets.symmetric(
-                        horizontal: 4), // padding between stars
+                      horizontal: 4,
+                    ), // padding between stars
 
                     // Builder function to specify how each star looks
                     itemBuilder: (context, index) => const Icon(
                       Icons.star,
-                      color: Colors.amber, // color for rated stars
+                      color: Colors.amber,
                     ),
 
                     // Callback function when rating is updated by user interaction
@@ -81,25 +85,22 @@ class _MyRatingBarState extends State<MyRatingBar> {
                     },
                   ),
 
-                  const SizedBox(
-                    height: 20, // space between rating bar and rating display
-                  ),
+                  const SizedBox(height: 20),
 
                   const Text(
-                    'Your Rating:', // label for displaying current rating
+                    'Your Rating:',
                     style: TextStyle(fontSize: 24, color: Colors.black),
                   ),
 
-                  const SizedBox(
-                    height: 10, // space between label and actual rating display
-                  ),
+                  const SizedBox(height: 10),
 
                   Text(
                     _rating.toString(), // Display current rating as text
                     style: const TextStyle(
-                        fontSize: 32,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black),
+                      fontSize: 32,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                    ),
                   ),
                 ],
               ),

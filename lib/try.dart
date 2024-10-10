@@ -1173,10 +1173,10 @@
 //   const MyPage({super.key});
 
 //   @override
-//   _MyHomePageState createState() => _MyHomePageState();
+//   _MyLiquidState createState() => _MyLiquidState();
 // }
 
-// class _MyHomePageState extends State<MyPage> {
+// class _MyLiquidState extends State<MyPage> {
 //   // Create a PageController to control the PageView
 //   final PageController _controller = PageController();
 
@@ -1303,10 +1303,10 @@
 
 // class My_Card extends StatefulWidget {
 //   @override
-//   _HomeScreenState createState() => _HomeScreenState();
+//   _MyShimmerState createState() => _MyShimmerState();
 // }
 
-// class _HomeScreenState extends State<My_Card> {
+// class _MyShimmerState extends State<My_Card> {
 //   // List to hold the items
 //   List<String> items = List.generate(20, (index) => 'Item ${index + 1}');
 
@@ -2647,3 +2647,700 @@
 //     );
 //   }
 // }
+
+// import 'package:flutter/material.dart'; // Import the Material design package for Flutter
+// import 'package:share_plus/share_plus.dart'; // Import the Share Plus package for sharing content
+
+// // SharePage widget that contains the UI for sharing content
+// class SharePage extends StatelessWidget {
+//   // Function to handle sharing content
+//   void _onShare(BuildContext context) async {
+//     // Define the text to share
+//     final String text = "Check out this Cool Flutter app!";
+//     // Define the subject for the share dialog (optional)
+//     final String subject = "Flutter Share";
+
+//     // Use the Share package to share the text and subject
+//     await Share.share(text, subject: subject);
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text(
+//           'Share Button',
+//           style: TextStyle(fontSize: 32),
+//         ), // Title of the AppBar
+//         backgroundColor: Colors.blue[200],
+//       ),
+//       body: Center(
+//         child: Column(
+//           mainAxisAlignment:
+//               MainAxisAlignment.center, // Center the column vertically
+//           children: <Widget>[
+//             // A visually appealing text widget
+//             const Text(
+//               'Tap the button 👇 below to share!', // Instruction text
+//               style: TextStyle(
+//                   fontSize: 22,
+//                   fontWeight: FontWeight.bold), // Style for the text
+//             ),
+//             const SizedBox(height: 20), // Space between the text and button
+//             ElevatedButton(
+//               onPressed: () =>
+//                   _onShare(context), // Call _onShare when button is pressed
+//               child: Text(
+//                 'Share Now',
+//                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+//               ), // Text displayed on the button
+//               style: ElevatedButton.styleFrom(
+//                 elevation: 6,
+//                 foregroundColor: Colors.blueAccent, // Color of the button text
+//                 padding: const EdgeInsets.symmetric(
+//                     horizontal: 20,
+//                     vertical: 15), // Padding around the button text
+//                 textStyle:
+//                     const TextStyle(fontSize: 18), // Style for button text size
+//               ),
+//             ),
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// import 'package:flutter/material.dart';
+// import 'package:liquid_pull_to_refresh/liquid_pull_to_refresh.dart';
+
+// class MyLiquid extends StatefulWidget {
+//   @override
+//   _MyLiquidState createState() => _MyLiquidState();
+// }
+
+// class _MyLiquidState extends State<MyLiquid> {
+//   // Key for the LiquidPullToRefresh widget
+//   final GlobalKey<LiquidPullToRefreshState> _refreshIndicatorKey =
+//       GlobalKey<LiquidPullToRefreshState>();
+
+//   // Sample data list
+//   List<String> items = List.generate(20, (index) => "Item $index");
+
+//   // Method to handle refresh logic
+//   Future<void> _handleRefresh() async {
+//     // Simulate network delay
+//     await Future.delayed(Duration(seconds: 2));
+//     // Update your data here (for example, fetch new data)
+//     setState(() {
+//       items.add(
+//           "New Item ${items.length}"); // Adding a new item for demonstration
+//     });
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text('Liquid Pull to Refresh Example'),
+//       ),
+//       body: LiquidPullToRefresh(
+//         key: _refreshIndicatorKey,
+//         onRefresh: _handleRefresh,
+//         height: 100.0, // Height of the pull-to-refresh indicator
+//         color: Colors.blue[100], // Color of the indicator
+//         backgroundColor: Colors.white, // Background color of the indicator
+//         showChildOpacityTransition: true, // Transition effect for child widgets
+//         child: ListView.builder(
+//           itemCount: items.length,
+//           itemBuilder: (context, index) {
+//             return ListTile(
+//               title: Text(items[index]),
+//             );
+//           },
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// import 'package:flutter/material.dart'; // Import Flutter material design package
+// import 'package:liquid_pull_to_refresh/liquid_pull_to_refresh.dart'; // Import the Liquid Pull to Refresh package
+
+// class LiquidPull extends StatefulWidget {
+//   @override
+//   _LiquidPullState createState() =>
+//       _LiquidPullState(); // Create state for LiquidPull
+// }
+
+// class _LiquidPullState extends State<LiquidPull> {
+//   // Key for managing the Liquid Pull to Refresh widget
+//   final GlobalKey<LiquidPullToRefreshState> _refreshIndicatorKey =
+//       GlobalKey<LiquidPullToRefreshState>();
+
+//   // Sample data list with titles and asset image paths
+//   List<Map<String, String>> items = List.generate(20, (index) {
+//     return {
+//       "title": "Beautiful Place $index", // Title for each item
+//       "image": "images/dev.jpeg", // Path to the asset image
+//     };
+//   });
+
+//   // Method to handle refresh action
+//   Future<void> _handleRefresh() async {
+//     await Future.delayed(
+//         Duration(seconds: 2)); // Simulate a network delay of 2 seconds
+//     setState(() {
+//       items.add({
+//         "title":
+//             "New Beautiful Place ${items.length}", // Add a new item with an updated title
+//         "image": "images/dev.jpeg" // Use the same asset image for new items
+//       });
+//     });
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text('Liquid Pull to Refresh Example'), // Title of the app bar
+//         centerTitle: true, // Center the title in the app bar
+//       ),
+//       body: LiquidPullToRefresh(
+//         key:
+//             _refreshIndicatorKey, // Assign the key to the LiquidPullToRefresh widget
+//         onRefresh:
+//             _handleRefresh, // Call _handleRefresh when pulled down to refresh
+//         height: 100.0, // Height of the refresh indicator when pulled down
+//         color: Colors.blue, // Color of the refresh indicator
+//         backgroundColor:
+//             Colors.white, // Background color of the refresh indicator
+//         showChildOpacityTransition:
+//             true, // Enable opacity transition for child widgets during refresh
+//         child: ListView.builder(
+//           itemCount: items.length, // Number of items in the list
+//           itemBuilder: (context, index) {
+//             return Card(
+//               elevation: 4, // Shadow effect for the card
+//               margin: EdgeInsets.all(8), // Margin around each card
+//               shape: RoundedRectangleBorder(
+//                   borderRadius:
+//                       BorderRadius.circular(15)), // Rounded corners for cards
+//               child: ClipRRect(
+//                 borderRadius: BorderRadius.circular(
+//                     15), // Clip corners of child widgets to match card shape
+//                 child: Column(
+//                   children: [
+//                     Image.asset(
+//                       items[index][
+//                           "image"]!, // Load asset image using path from items list
+//                       fit: BoxFit
+//                           .cover, // Cover entire area of image widget without distortion
+//                       height: 200, // Height of the image widget
+//                       width:
+//                           double.infinity, // Width takes full available width
+//                     ),
+//                     Padding(
+//                       padding: const EdgeInsets.all(
+//                           16.0), // Padding around text inside card
+//                       child: Text(
+//                         items[index]["title"]!, // Display title from items list
+//                         style: TextStyle(
+//                           fontSize: 20, // Font size for title text
+//                           fontWeight: FontWeight.bold, // Make title text bold
+//                         ),
+//                         textAlign:
+//                             TextAlign.center, // Center align text in card
+//                       ),
+//                     ),
+//                   ],
+//                 ),
+//               ),
+//             );
+//           },
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// import 'package:flutter/material.dart';
+// import 'package:shimmer/shimmer.dart';
+
+// class MyShimmer extends StatefulWidget {
+//   @override
+//   _MyShimmerState createState() => _MyShimmerState();
+// }
+
+// class _MyShimmerState extends State<MyShimmer> {
+//   bool _isLoading = true;
+
+//   @override
+//   void initState() {
+//     super.initState();
+//     // Simulate a network call
+//     Future.delayed(Duration(seconds: 3), () {
+//       setState(() {
+//         _isLoading = false; // Stop loading after 3 seconds
+//       });
+//     });
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(title: Text('Shimmer Effect')),
+//       body: _isLoading ? _buildLoadingList() : _buildDataList(),
+//     );
+//   }
+
+//   // Method to build the loading shimmer effect
+//   Widget _buildLoadingList() {
+//     return ListView.builder(
+//       itemCount: 10,
+//       itemBuilder: (context, index) {
+//         return Shimmer.fromColors(
+//           baseColor: Colors.grey[300]!,
+//           highlightColor: Colors.grey[100]!,
+//           child: Container(
+//             height: 100,
+//             margin: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+//             decoration: BoxDecoration(
+//               color: Colors.white,
+//               borderRadius: BorderRadius.circular(12),
+//             ),
+//           ),
+//         );
+//       },
+//     );
+//   }
+
+//   // Method to build the actual data list
+//   Widget _buildDataList() {
+//     return ListView.builder(
+//       itemCount: 10,
+//       itemBuilder: (context, index) {
+//         return Container(
+//           height: 100,
+//           margin: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+//           decoration: BoxDecoration(
+//             color: Colors.blueAccent,
+//             borderRadius: BorderRadius.circular(12),
+//           ),
+//           child: Center(
+//             child: Text(
+//               'Item $index',
+//               style: TextStyle(color: Colors.white, fontSize: 24),
+//             ),
+//           ),
+//         );
+//       },
+//     );
+//   }
+// }
+
+// import 'package:flutter/material.dart';
+
+// class MySemantics extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text('Semantics Widget Demo'),
+//       ),
+//       body: Center(
+//         child: Column(
+//           mainAxisAlignment: MainAxisAlignment.center,
+//           children: [
+//             // A button with semantics for accessibility
+//             Semantics(
+//               label:
+//                   'Increment counter', // Descriptive label for screen readers
+//               button: true, // Indicates this widget is a button
+//               child: FloatingActionButton(
+//                 onPressed: () {
+//                   // Increment action here
+//                 },
+//                 tooltip: 'Increment', // Tooltip for the button
+//                 child: Icon(Icons.add),
+//               ),
+//             ),
+//             SizedBox(height: 20),
+//             // A text field with semantics for accessibility
+//             Semantics(
+//               label: 'Enter your name', // Descriptive label for the text field
+//               hint: 'Type your name here', // Hint for the input field
+//               child: TextField(
+//                 decoration: InputDecoration(
+//                   border: OutlineInputBorder(),
+//                   labelText: 'Name',
+//                 ),
+//               ),
+//             ),
+//             SizedBox(height: 20),
+//             // A switch with semantics for accessibility
+//             Semantics(
+//               label: 'Enable notifications', // Descriptive label for the switch
+//               enabled: true, // Indicates if the switch is enabled
+//               child: Switch(
+//                 value: true, // Current state of the switch
+//                 onChanged: (bool value) {
+//                   // Toggle action here
+//                 },
+//               ),
+//             ),
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// import 'package:flutter/material.dart';
+
+// class MySem extends StatefulWidget {
+//   @override
+//   _MySemState createState() => _MySemState();
+// }
+
+// class _MySemState extends State<MySem> {
+//   double _sliderValue = 0.5; // Slider value
+//   bool _notificationsEnabled = false; // Checkbox state
+
+//   void _incrementCounter() {
+//     // Increment action logic here
+//     ScaffoldMessenger.of(context).showSnackBar(
+//       SnackBar(content: Text('Counter incremented!')),
+//     );
+//   }
+
+//   void _toggleNotifications(bool? value) {
+//     setState(() {
+//       _notificationsEnabled = value ?? false; // Update checkbox state
+//     });
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text('Enhanced Semantics Widget Demo'),
+//       ),
+//       body: Padding(
+//         padding: const EdgeInsets.all(16.0),
+//         child: Center(
+//           child: Column(
+//             mainAxisAlignment: MainAxisAlignment.center,
+//             children: [
+//               // Button with semantics for accessibility
+//               Semantics(
+//                 label:
+//                     'Increment counter', // Descriptive label for screen readers
+//                 button: true, // Indicates this widget is a button
+//                 child: ElevatedButton(
+//                   onPressed: _incrementCounter,
+//                   style: ElevatedButton.styleFrom(
+//                     padding: EdgeInsets.symmetric(horizontal: 32, vertical: 16),
+//                     textStyle: TextStyle(fontSize: 20),
+//                     foregroundColor: Colors.blueAccent, // Button color
+//                   ),
+//                   child: Text('Increment Counter'),
+//                 ),
+//               ),
+//               SizedBox(height: 20),
+
+//               // Slider with semantics for accessibility
+//               Semantics(
+//                 label: 'Adjust volume', // Descriptive label for the slider
+//                 value: _sliderValue.toString(), // Current value of the slider
+//                 child: Column(
+//                   children: [
+//                     Text('Volume Level', style: TextStyle(fontSize: 18)),
+//                     Slider(
+//                       value: _sliderValue,
+//                       min: 0.0,
+//                       max: 1.0,
+//                       divisions: 10,
+//                       label: (_sliderValue * 100).round().toString(),
+//                       activeColor:
+//                           Colors.blueAccent, // Slider color when active
+//                       inactiveColor: Colors.grey, // Slider color when inactive
+//                       onChanged: (double value) {
+//                         setState(() {
+//                           _sliderValue = value;
+//                         });
+//                       },
+//                     ),
+//                   ],
+//                 ),
+//               ),
+//               SizedBox(height: 20),
+
+//               // Checkbox with semantics for accessibility
+//               Semantics(
+//                 label:
+//                     'Enable notifications', // Descriptive label for the checkbox
+//                 checked: _notificationsEnabled, // Current state of the checkbox
+//                 child: Row(
+//                   mainAxisAlignment: MainAxisAlignment.center,
+//                   children: [
+//                     Checkbox(
+//                       value: _notificationsEnabled,
+//                       onChanged: _toggleNotifications,
+//                     ),
+//                     Text('Enable Notifications',
+//                         style: TextStyle(fontSize: 18)),
+//                   ],
+//                 ),
+//               ),
+//             ],
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// import 'package:flutter/material.dart';
+
+// class AnimatedAlignExample extends StatefulWidget {
+//   @override
+//   _AnimatedAlignExampleState createState() => _AnimatedAlignExampleState();
+// }
+
+// class _AnimatedAlignExampleState extends State<AnimatedAlignExample> {
+//   AlignmentGeometry _alignment = Alignment.topLeft;
+
+//   void _toggleAlignment() {
+//     setState(() {
+//       _alignment = _alignment == Alignment.topLeft
+//           ? Alignment.center
+//           : Alignment.topLeft;
+//     });
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text("Animated Align"),
+//       ),
+//       body: Center(
+//         child: GestureDetector(
+//           onTap: _toggleAlignment,
+//           child: AnimatedAlign(
+//             alignment: _alignment,
+//             duration: Duration(seconds: 1),
+//             curve: Curves.fastOutSlowIn,
+//             child: Container(
+//               width: 100,
+//               height: 100,
+//               decoration: BoxDecoration(
+//                 color: Colors.teal,
+//                 borderRadius: BorderRadius.circular(15),
+//                 boxShadow: [
+//                   BoxShadow(
+//                     color: Colors.black26,
+//                     blurRadius: 10.0,
+//                     spreadRadius: 2.0,
+//                   ),
+//                 ],
+//               ),
+//               child: Center(
+//                 child: Text(
+//                   'Tap Me!',
+//                   style: TextStyle(
+//                     color: Colors.white,
+//                     fontWeight: FontWeight.bold,
+//                   ),
+//                 ),
+//               ),
+//             ),
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
+// import 'package:flutter/material.dart';
+
+// class AnimatedAlignExample extends StatefulWidget {
+//   @override
+//   _AnimatedAlignExampleState createState() => _AnimatedAlignExampleState();
+// }
+
+// class _AnimatedAlignExampleState extends State<AnimatedAlignExample> {
+//   AlignmentGeometry _alignment = Alignment.topLeft;
+
+//   void _toggleAlignment() {
+//     setState(() {
+//       _alignment = _alignment == Alignment.topLeft
+//           ? Alignment.center
+//           : Alignment.bottomRight;
+//     });
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text("Animated Align with Image"),
+//       ),
+//       body: Center(
+//         child: GestureDetector(
+//           onTap: _toggleAlignment,
+//           child: AnimatedAlign(
+//             alignment: _alignment,
+//             duration: Duration(seconds: 1),
+//             curve: Curves.fastOutSlowIn,
+//             child: Container(
+//               width: 100,
+//               height: 100,
+//               decoration: BoxDecoration(
+//                 color: Colors.teal,
+//                 borderRadius: BorderRadius.circular(15),
+//                 boxShadow: [
+//                   BoxShadow(
+//                     color: Colors.black26,
+//                     blurRadius: 10.0,
+//                     spreadRadius: 2.0,
+//                   ),
+//                 ],
+//               ),
+//               child: ClipRRect(
+//                 borderRadius: BorderRadius.circular(15),
+//                 child: Image.asset(
+//                   'images/developer.jpg', // Replace with your image path
+//                   fit: BoxFit.cover,
+//                 ),
+//               ),
+//             ),
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
+import 'package:flutter/material.dart';
+
+// Define an enum for the segmented button options
+enum Options { pizza, burger, momo, noodles }
+
+class Choices extends StatefulWidget {
+  const Choices({super.key});
+
+  @override
+  _ChoicesState createState() => _ChoicesState();
+}
+
+class _ChoicesState extends State<Choices> {
+  // Track the selected option
+  Options? selectedOption;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Segmented Button'),
+        backgroundColor: Colors.green[200], // Teal color for the AppBar
+      ),
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              const Text(
+                'Choose Your Fav Food:',
+                style: TextStyle(
+                    fontSize: 28, // Increased font size for the title
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black), // Darker teal for text
+              ),
+              const SizedBox(height: 20),
+              // Create the SegmentedButton with creative options
+              SegmentedButton<Options>(
+                segments: const <ButtonSegment<Options>>[
+                  ButtonSegment<Options>(
+                    value: Options.pizza,
+                    label: Text('🍕 Pizza'),
+                  ),
+                  ButtonSegment<Options>(
+                    value: Options.burger,
+                    label: Text('🍔 Burger'),
+                  ),
+                  ButtonSegment<Options>(
+                    value: Options.momo,
+                    label: Text('🥟 Momo'),
+                  ),
+                  ButtonSegment<Options>(
+                    value: Options.noodles,
+                    label: Text('🍟 French Fries'),
+                  ),
+                ],
+                selected: selectedOption != null ? {selectedOption!} : {},
+                onSelectionChanged: (Set<Options> newSelection) {
+                  setState(() {
+                    // Allow only one selection
+                    selectedOption =
+                        newSelection.isNotEmpty ? newSelection.first : null;
+                  });
+                },
+                multiSelectionEnabled: false, // Only allow single selection
+                emptySelectionAllowed: true,
+                style: ButtonStyle(
+                  backgroundColor: WidgetStateProperty.all(
+                      Colors.teal[100]), // Light teal for button background
+                  foregroundColor: WidgetStateProperty.all(
+                      Colors.black), // Black text color for better contrast
+                  padding: WidgetStateProperty.all(const EdgeInsets.symmetric(
+                      vertical: 20)), // Increased padding for larger buttons
+                  textStyle: WidgetStateProperty.all(
+                      const TextStyle(fontSize: 20)), // Larger text for buttons
+                ),
+                showSelectedIcon: true,
+                selectedIcon: const Icon(Icons.check,
+                    color: Colors.white), // White check icon for selected state
+              ),
+              const SizedBox(height: 20),
+              // Display the selected option as text with improved styling
+              const Text(
+                'Selected Food:',
+                style: TextStyle(
+                    fontSize: 22,
+                    fontWeight: FontWeight
+                        .bold), // Increased font size for selected food label
+              ),
+              const SizedBox(height: 10),
+              Text(
+                selectedOption == null
+                    ? 'None'
+                    : _formatOptionName(
+                        selectedOption!), // Use helper function to format option name
+                style: TextStyle(
+                    fontSize: 18,
+                    color: Colors.red[600],
+                    fontWeight:
+                        FontWeight.bold), // Darker teal for selected text
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  // Helper function to format option names nicely
+  String _formatOptionName(Options option) {
+    switch (option) {
+      case Options.pizza:
+        return 'Pizza';
+      case Options.burger:
+        return 'Burger';
+      case Options.momo:
+        return 'Momo';
+      case Options.noodles:
+        return 'Noodles';
+    }
+  }
+}
