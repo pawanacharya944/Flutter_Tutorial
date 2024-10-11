@@ -3221,126 +3221,275 @@
 //     );
 //   }
 // }
+// import 'package:flutter/material.dart';
+
+// // Define an enum for the segmented button options
+// enum Options { pizza, burger, momo, noodles }
+
+// class Choices extends StatefulWidget {
+//   const Choices({super.key});
+
+//   @override
+//   _ChoicesState createState() => _ChoicesState();
+// }
+
+// class _ChoicesState extends State<Choices> {
+//   // Track the selected option
+//   Options? selectedOption;
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: const Text('Segmented Button'),
+//         backgroundColor: Colors.green[200], // Teal color for the AppBar
+//       ),
+//       body: Center(
+//         child: Padding(
+//           padding: const EdgeInsets.all(16.0),
+//           child: Column(
+//             mainAxisAlignment: MainAxisAlignment.center,
+//             children: <Widget>[
+//               const Text(
+//                 'Choose Your Fav Food:',
+//                 style: TextStyle(
+//                     fontSize: 28, // Increased font size for the title
+//                     fontWeight: FontWeight.bold,
+//                     color: Colors.black), // Darker teal for text
+//               ),
+//               const SizedBox(height: 20),
+//               // Create the SegmentedButton with creative options
+//               SegmentedButton<Options>(
+//                 segments: const <ButtonSegment<Options>>[
+//                   ButtonSegment<Options>(
+//                     value: Options.pizza,
+//                     label: Text('🍕 Pizza'),
+//                   ),
+//                   ButtonSegment<Options>(
+//                     value: Options.burger,
+//                     label: Text('🍔 Burger'),
+//                   ),
+//                   ButtonSegment<Options>(
+//                     value: Options.momo,
+//                     label: Text('🥟 Momo'),
+//                   ),
+//                   ButtonSegment<Options>(
+//                     value: Options.noodles,
+//                     label: Text('🍟 French Fries'),
+//                   ),
+//                 ],
+//                 selected: selectedOption != null ? {selectedOption!} : {},
+//                 onSelectionChanged: (Set<Options> newSelection) {
+//                   setState(() {
+//                     // Allow only one selection
+//                     selectedOption =
+//                         newSelection.isNotEmpty ? newSelection.first : null;
+//                   });
+//                 },
+//                 multiSelectionEnabled: false, // Only allow single selection
+//                 emptySelectionAllowed: true,
+//                 style: ButtonStyle(
+//                   backgroundColor: WidgetStateProperty.all(
+//                       Colors.teal[100]), // Light teal for button background
+//                   foregroundColor: WidgetStateProperty.all(
+//                       Colors.black), // Black text color for better contrast
+//                   padding: WidgetStateProperty.all(const EdgeInsets.symmetric(
+//                       vertical: 20)), // Increased padding for larger buttons
+//                   textStyle: WidgetStateProperty.all(
+//                       const TextStyle(fontSize: 20)), // Larger text for buttons
+//                 ),
+//                 showSelectedIcon: true,
+//                 selectedIcon: const Icon(Icons.check,
+//                     color: Colors.white), // White check icon for selected state
+//               ),
+//               const SizedBox(height: 20),
+//               // Display the selected option as text with improved styling
+//               const Text(
+//                 'Selected Food:',
+//                 style: TextStyle(
+//                     fontSize: 22,
+//                     fontWeight: FontWeight
+//                         .bold), // Increased font size for selected food label
+//               ),
+//               const SizedBox(height: 10),
+//               Text(
+//                 selectedOption == null
+//                     ? 'None'
+//                     : _formatOptionName(
+//                         selectedOption!), // Use helper function to format option name
+//                 style: TextStyle(
+//                     fontSize: 18,
+//                     color: Colors.red[600],
+//                     fontWeight:
+//                         FontWeight.bold), // Darker teal for selected text
+//               ),
+//             ],
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+
+//   // Helper function to format option names nicely
+//   String _formatOptionName(Options option) {
+//     switch (option) {
+//       case Options.pizza:
+//         return 'Pizza';
+//       case Options.burger:
+//         return 'Burger';
+//       case Options.momo:
+//         return 'Momo';
+//       case Options.noodles:
+//         return 'Noodles';
+//     }
+//   }
+// }
+
+// import 'dart:async';
+// import 'package:flutter/material.dart';
+
+// class StreamBuilderPage extends StatefulWidget {
+//   const StreamBuilderPage({super.key});
+
+//   @override
+//   _StreamBuilderPageState createState() => _StreamBuilderPageState();
+// }
+
+// class _StreamBuilderPageState extends State<StreamBuilderPage> {
+//   late StreamController<int> _numberStreamController;
+
+//   @override
+//   void initState() {
+//     super.initState();
+//     _numberStreamController = StreamController<int>();
+//     _startAddingNumbers(); // Start adding numbers to the stream.
+//   }
+
+//   // Function to simulate data being added to the stream every two seconds
+//   void _startAddingNumbers() async {
+//     for (int i = 0; i < 10; i++) {
+//       await Future.delayed(const Duration(seconds: 2)); // Wait for 2 seconds
+//       _numberStreamController.sink.add(i); // Add number to the stream
+//     }
+//     await Future.delayed(const Duration(seconds: 2));
+//     _numberStreamController.sink
+//         .addError("An error occurred!"); // Simulate an error
+//     await Future.delayed(const Duration(seconds: 2));
+//     _numberStreamController.close(); // Close the stream after use
+//   }
+
+//   @override
+//   void dispose() {
+//     _numberStreamController.close(); // Close the stream when disposing
+//     super.dispose();
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: const Text('StreamBuilder Example'),
+//       ),
+//       body: Center(
+//         child: StreamBuilder<int>(
+//           stream: _numberStreamController.stream,
+//           initialData: -1, // Initial data before the first event is emitted
+//           builder: (context, snapshot) {
+//             // Check the connection state of the snapshot
+//             if (snapshot.connectionState == ConnectionState.waiting) {
+//               return const CircularProgressIndicator(); // Show loading indicator while waiting for data
+//             } else if (snapshot.hasError) {
+//               return Text(
+//                 'Error: ${snapshot.error}',
+//                 style: const TextStyle(color: Colors.red, fontSize: 24),
+//               ); // Display error message if an error occurs
+//             } else if (!snapshot.hasData || snapshot.data == -1) {
+//               return const Text(
+//                 'No data available',
+//                 style: TextStyle(fontSize: 24),
+//               ); // Handle case when no data is available
+//             } else {
+//               return Text(
+//                 'Latest Number: ${snapshot.data}',
+//                 style: const TextStyle(fontSize: 24, color: Colors.green),
+//               ); // Display the latest number from the stream
+//             }
+//           },
+//         ),
+//       ),
+//       floatingActionButton: FloatingActionButton(
+//         onPressed: () {
+//           setState(() {}); // Trigger a rebuild of the UI
+//         },
+//         tooltip: 'Refresh',
+//         child: const Icon(Icons.refresh),
+//       ),
+//     );
+//   }
+// }
+
 import 'package:flutter/material.dart';
 
-// Define an enum for the segmented button options
-enum Options { pizza, burger, momo, noodles }
+class CarouselDemo extends StatelessWidget {
+  // List of asset image paths
+  final List<String> imageAssets = [
+    'images/messi.jpg',
+    'images/ronaldo/jpg'
+        'images/neymar.jpg',
+    'images/dev.jpeg',
+  ];
 
-class Choices extends StatefulWidget {
-  const Choices({super.key});
-
-  @override
-  _ChoicesState createState() => _ChoicesState();
-}
-
-class _ChoicesState extends State<Choices> {
-  // Track the selected option
-  Options? selectedOption;
+  CarouselDemo({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Segmented Button'),
-        backgroundColor: Colors.green[200], // Teal color for the AppBar
+        title: const Text('Carousel View with Asset Images'),
       ),
       body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              const Text(
-                'Choose Your Fav Food:',
-                style: TextStyle(
-                    fontSize: 28, // Increased font size for the title
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black), // Darker teal for text
-              ),
-              const SizedBox(height: 20),
-              // Create the SegmentedButton with creative options
-              SegmentedButton<Options>(
-                segments: const <ButtonSegment<Options>>[
-                  ButtonSegment<Options>(
-                    value: Options.pizza,
-                    label: Text('🍕 Pizza'),
-                  ),
-                  ButtonSegment<Options>(
-                    value: Options.burger,
-                    label: Text('🍔 Burger'),
-                  ),
-                  ButtonSegment<Options>(
-                    value: Options.momo,
-                    label: Text('🥟 Momo'),
-                  ),
-                  ButtonSegment<Options>(
-                    value: Options.noodles,
-                    label: Text('🍟 French Fries'),
-                  ),
-                ],
-                selected: selectedOption != null ? {selectedOption!} : {},
-                onSelectionChanged: (Set<Options> newSelection) {
-                  setState(() {
-                    // Allow only one selection
-                    selectedOption =
-                        newSelection.isNotEmpty ? newSelection.first : null;
-                  });
+        child: Column(
+          children: [
+            // Wrap CarouselView in a SizedBox to provide height
+            SizedBox(
+              height: 300, // Set a fixed height for the carousel
+              child: PageView.builder(
+                itemCount: imageAssets.length,
+                itemBuilder: (context, index) {
+                  return Container(
+                    margin: const EdgeInsets.all(10), // Margin around each item
+                    decoration: BoxDecoration(
+                      borderRadius:
+                          BorderRadius.circular(15), // Rounded corners
+                      boxShadow: const [
+                        BoxShadow(
+                          color: Colors.black26,
+                          blurRadius: 10.0,
+                          offset: Offset(0, 5), // Shadow position
+                        ),
+                      ],
+                    ),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(
+                          15), // Ensure image corners are rounded
+                      child: Image.asset(
+                        imageAssets[index],
+                        fit: BoxFit.cover, // Cover the entire container
+                      ),
+                    ),
+                  );
                 },
-                multiSelectionEnabled: false, // Only allow single selection
-                emptySelectionAllowed: true,
-                style: ButtonStyle(
-                  backgroundColor: WidgetStateProperty.all(
-                      Colors.teal[100]), // Light teal for button background
-                  foregroundColor: WidgetStateProperty.all(
-                      Colors.black), // Black text color for better contrast
-                  padding: WidgetStateProperty.all(const EdgeInsets.symmetric(
-                      vertical: 20)), // Increased padding for larger buttons
-                  textStyle: WidgetStateProperty.all(
-                      const TextStyle(fontSize: 20)), // Larger text for buttons
-                ),
-                showSelectedIcon: true,
-                selectedIcon: const Icon(Icons.check,
-                    color: Colors.white), // White check icon for selected state
               ),
-              const SizedBox(height: 20),
-              // Display the selected option as text with improved styling
-              const Text(
-                'Selected Food:',
-                style: TextStyle(
-                    fontSize: 22,
-                    fontWeight: FontWeight
-                        .bold), // Increased font size for selected food label
-              ),
-              const SizedBox(height: 10),
-              Text(
-                selectedOption == null
-                    ? 'None'
-                    : _formatOptionName(
-                        selectedOption!), // Use helper function to format option name
-                style: TextStyle(
-                    fontSize: 18,
-                    color: Colors.red[600],
-                    fontWeight:
-                        FontWeight.bold), // Darker teal for selected text
-              ),
-            ],
-          ),
+            ),
+            const SizedBox(
+                height: 20), // Space between carousel and other content
+            const Text(
+              'Swipe to see more images!',
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
+          ],
         ),
       ),
     );
-  }
-
-  // Helper function to format option names nicely
-  String _formatOptionName(Options option) {
-    switch (option) {
-      case Options.pizza:
-        return 'Pizza';
-      case Options.burger:
-        return 'Burger';
-      case Options.momo:
-        return 'Momo';
-      case Options.noodles:
-        return 'Noodles';
-    }
   }
 }

@@ -76,8 +76,8 @@ class _Animated_AlignState extends State<Animated_Align> {
             child: ClipRRect(
               borderRadius: BorderRadius.circular(
                   15), // rounded corners for the image display area
-              child: Image.network(
-                'https://cdn.pixabay.com/photo/2024/05/15/20/57/developer-8764521_1280.jpg',
+              child: Image.asset(
+                'images/programmer.jpg',
                 fit: BoxFit.cover,
                 width: 200,
                 height: 200,
