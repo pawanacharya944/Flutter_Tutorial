@@ -3345,151 +3345,212 @@
 //   }
 // }
 
-// import 'dart:async';
 // import 'package:flutter/material.dart';
 
-// class StreamBuilderPage extends StatefulWidget {
-//   const StreamBuilderPage({super.key});
+// class MyCarouselView extends StatelessWidget {
+//   // List of asset image paths
+//   final List<String> imageAssets = [
+//     "images/messi.jpg",
+//     "images/ronaldo.jpg",
+//     "images/neymar.jpg",
+//     "images/developer.jpg",
+//   ];
 
-//   @override
-//   _StreamBuilderPageState createState() => _StreamBuilderPageState();
-// }
-
-// class _StreamBuilderPageState extends State<StreamBuilderPage> {
-//   late StreamController<int> _numberStreamController;
-
-//   @override
-//   void initState() {
-//     super.initState();
-//     _numberStreamController = StreamController<int>();
-//     _startAddingNumbers(); // Start adding numbers to the stream.
-//   }
-
-//   // Function to simulate data being added to the stream every two seconds
-//   void _startAddingNumbers() async {
-//     for (int i = 0; i < 10; i++) {
-//       await Future.delayed(const Duration(seconds: 2)); // Wait for 2 seconds
-//       _numberStreamController.sink.add(i); // Add number to the stream
-//     }
-//     await Future.delayed(const Duration(seconds: 2));
-//     _numberStreamController.sink
-//         .addError("An error occurred!"); // Simulate an error
-//     await Future.delayed(const Duration(seconds: 2));
-//     _numberStreamController.close(); // Close the stream after use
-//   }
-
-//   @override
-//   void dispose() {
-//     _numberStreamController.close(); // Close the stream when disposing
-//     super.dispose();
-//   }
+//   MyCarouselView({super.key});
 
 //   @override
 //   Widget build(BuildContext context) {
 //     return Scaffold(
 //       appBar: AppBar(
-//         title: const Text('StreamBuilder Example'),
+//         title: const Text('Carousel View '),
 //       ),
 //       body: Center(
-//         child: StreamBuilder<int>(
-//           stream: _numberStreamController.stream,
-//           initialData: -1, // Initial data before the first event is emitted
-//           builder: (context, snapshot) {
-//             // Check the connection state of the snapshot
-//             if (snapshot.connectionState == ConnectionState.waiting) {
-//               return const CircularProgressIndicator(); // Show loading indicator while waiting for data
-//             } else if (snapshot.hasError) {
-//               return Text(
-//                 'Error: ${snapshot.error}',
-//                 style: const TextStyle(color: Colors.red, fontSize: 24),
-//               ); // Display error message if an error occurs
-//             } else if (!snapshot.hasData || snapshot.data == -1) {
-//               return const Text(
-//                 'No data available',
-//                 style: TextStyle(fontSize: 24),
-//               ); // Handle case when no data is available
-//             } else {
-//               return Text(
-//                 'Latest Number: ${snapshot.data}',
-//                 style: const TextStyle(fontSize: 24, color: Colors.green),
-//               ); // Display the latest number from the stream
-//             }
-//           },
+//         child: Column(
+//           children: [
+//             // Wrap CarouselView in a SizedBox to provide height
+//             SizedBox(
+//               height: 300, // Set a fixed height for the carousel
+//               child: CarouselView.(
+//                 itemCount: imageAssets.length,
+//                 itemBuilder: (context, index) {
+//                   return Container(
+//                     margin: const EdgeInsets.all(10), // Margin around each item
+//                     decoration: BoxDecoration(
+//                       borderRadius:
+//                           BorderRadius.circular(15), // Rounded corners
+//                       boxShadow: const [
+//                         BoxShadow(
+//                           color: Colors.black26,
+//                           blurRadius: 10.0,
+//                           offset: Offset(0, 5), // Shadow position
+//                         ),
+//                       ],
+//                     ),
+//                     child: ClipRRect(
+//                       borderRadius: BorderRadius.circular(
+//                           15), // Ensure image corners are rounded
+//                       child: Image.asset(
+//                         imageAssets[index],
+//                         fit: BoxFit.cover, // Cover the entire container
+//                       ),
+//                     ),
+//                   );
+//                 },
+//               ),
+//             ),
+//             const SizedBox(
+//                 height: 20), // Space between carousel and other content
+//             const Text(
+//               'Swipe to see more images!',
+//               style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+//             ),
+//           ],
 //         ),
-//       ),
-//       floatingActionButton: FloatingActionButton(
-//         onPressed: () {
-//           setState(() {}); // Trigger a rebuild of the UI
-//         },
-//         tooltip: 'Refresh',
-//         child: const Icon(Icons.refresh),
 //       ),
 //     );
 //   }
 // }
 
-import 'package:flutter/material.dart';
+// import 'package:flutter/material.dart';
+// import 'package:carousel_slider/carousel_slider.dart'; // Import the carousel_slider package
 
-class CarouselDemo extends StatelessWidget {
-  // List of asset image paths
-  final List<String> imageAssets = [
-    'images/messi.jpg',
-    'images/ronaldo/jpg'
-        'images/neymar.jpg',
-    'images/dev.jpeg',
-  ];
+// class MyCarouselView extends StatelessWidget {
+//   // List of asset image paths
+//   final List<String> imageAssets = [
+//     "images/messi.jpg",
+//   ];
 
-  CarouselDemo({super.key});
+//   MyCarouselView({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Carousel View with Asset Images'),
-      ),
-      body: Center(
-        child: Column(
-          children: [
-            // Wrap CarouselView in a SizedBox to provide height
-            SizedBox(
-              height: 300, // Set a fixed height for the carousel
-              child: PageView.builder(
-                itemCount: imageAssets.length,
-                itemBuilder: (context, index) {
-                  return Container(
-                    margin: const EdgeInsets.all(10), // Margin around each item
-                    decoration: BoxDecoration(
-                      borderRadius:
-                          BorderRadius.circular(15), // Rounded corners
-                      boxShadow: const [
-                        BoxShadow(
-                          color: Colors.black26,
-                          blurRadius: 10.0,
-                          offset: Offset(0, 5), // Shadow position
-                        ),
-                      ],
-                    ),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(
-                          15), // Ensure image corners are rounded
-                      child: Image.asset(
-                        imageAssets[index],
-                        fit: BoxFit.cover, // Cover the entire container
-                      ),
-                    ),
-                  );
-                },
-              ),
-            ),
-            const SizedBox(
-                height: 20), // Space between carousel and other content
-            const Text(
-              'Swipe to see more images!',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: const Text('Carousel View'),
+//       ),
+//       body: Center(
+//         child: Column(
+//           children: [
+//             // Wrap CarouselSlider in a SizedBox to provide height
+//             SizedBox(
+//               height: 300, // Set a fixed height for the carousel
+//               child: CarouselSlider.builder(
+//                 itemCount: imageAssets.length,
+//                 itemBuilder: (context, index, realIndex) {
+//                   return Container(
+//                     margin: const EdgeInsets.all(10), // Margin around each item
+//                     decoration: BoxDecoration(
+//                       borderRadius:
+//                           BorderRadius.circular(15), // Rounded corners
+//                       boxShadow: const [
+//                         BoxShadow(
+//                           color: Colors.black26,
+//                           blurRadius: 10.0,
+//                           offset: Offset(0, 5), // Shadow position
+//                         ),
+//                       ],
+//                     ),
+//                     child: ClipRRect(
+//                       borderRadius: BorderRadius.circular(
+//                           15), // Ensure image corners are rounded
+//                       child: Image.asset(
+//                         imageAssets[index],
+//                         fit: BoxFit.cover, // Cover the entire container
+//                       ),
+//                     ),
+//                   );
+//                 },
+//                 options: CarouselOptions(
+//                   autoPlay: true, // Enable auto-play
+//                   enlargeCenterPage: true, // Enlarge the center item
+//                   aspectRatio: 2.0, // Aspect ratio of the carousel
+//                   onPageChanged: (index, reason) {
+//                     print(
+//                         'Current index: $index'); // Print current index on change
+//                   },
+//                 ),
+//               ),
+//             ),
+//             const SizedBox(
+//                 height: 20), // Space between carousel and other content
+//             const Text(
+//               'Swipe to see more images!',
+//               style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+//             ),
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// import 'package:flutter/material.dart';
+
+// class MyCarousel extends StatelessWidget {
+//   const MyCarousel({Key? key}) : super(key: key);
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(title: const Text('Image Carousel')),
+//       body: CarouselView(
+//         itemExtent: 200.0, // Set the height of the images
+//         children: [
+//           Image.asset('images/messi.jpg', fit: BoxFit.cover),
+//           Image.asset('images/ronaldo.jpg', fit: BoxFit.cover),
+//           Image.asset('images/neymar.jpg', fit: BoxFit.cover),
+//         ],
+//       ),
+//     );
+//   }
+// }
+
+// import 'package:flutter/material.dart';
+// import 'package:carousel_slider/carousel_slider.dart';
+
+// class MyCarousel extends StatelessWidget {
+//   const MyCarousel({Key? key}) : super(key: key);
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(title: const Text('Image Carousel')),
+//       body: Center(
+//         child: CarouselSlider(
+//           options: CarouselOptions(
+//             height: 400.0,
+//             autoPlay: true,
+//             autoPlayInterval: const Duration(seconds: 3),
+//             enlargeCenterPage: true,
+//             viewportFraction: 0.85,
+//             enableInfiniteScroll: true,
+//           ),
+//           items: [
+//             'images/messi.jpg',
+//             'images/ronaldo.jpg',
+//             'images/neymar.jpg',
+//             'images/developer.jpg',
+//           ].map((imagePath) {
+//             return Container(
+//               margin: const EdgeInsets.symmetric(horizontal: 5.0),
+//               decoration: BoxDecoration(
+//                 borderRadius: BorderRadius.circular(15),
+//                 boxShadow: [
+//                   BoxShadow(
+//                     color: Colors.black26,
+//                     blurRadius: 10.0,
+//                     offset: const Offset(0, 5), // Shadow position
+//                   ),
+//                 ],
+//               ),
+//               child: ClipRRect(
+//                 borderRadius: BorderRadius.circular(15),
+//                 child: Image.asset(imagePath, fit: BoxFit.cover),
+//               ),
+//             );
+//           }).toList(),
+//         ),
+//       ),
+//     );
+//   }
+// }
