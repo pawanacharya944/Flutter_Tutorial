@@ -3554,3 +3554,280 @@
 //     );
 //   }
 // }
+
+// import 'package:flutter/material.dart';
+
+// class BeautifulSwitchExample extends StatefulWidget {
+//   @override
+//   _BeautifulSwitchExampleState createState() => _BeautifulSwitchExampleState();
+// }
+
+// class _BeautifulSwitchExampleState extends State<BeautifulSwitchExample> {
+//   bool isSwitched = false; // Initial state of the switch
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text('Beautiful Switch Widget'),
+//         backgroundColor: Colors.teal,
+//       ),
+//       body: Center(
+//         child: Container(
+//           decoration: BoxDecoration(
+//             gradient: LinearGradient(
+//               colors: [Colors.teal, Colors.lightBlueAccent],
+//               begin: Alignment.topLeft,
+//               end: Alignment.bottomRight,
+//             ),
+//           ),
+//           padding: EdgeInsets.all(30),
+//           child: Column(
+//             mainAxisAlignment: MainAxisAlignment.center,
+//             children: <Widget>[
+//               // Custom Switch with beautiful UI
+//               AnimatedContainer(
+//                 duration: Duration(milliseconds: 300), // Animation duration
+//                 curve: Curves.easeInOut, // Animation curve
+//                 decoration: BoxDecoration(
+//                   color: isSwitched
+//                       ? Colors.green
+//                       : Colors.red, // Background color based on switch state
+//                   borderRadius: BorderRadius.circular(30), // Rounded corners
+//                 ),
+//                 padding: EdgeInsets.all(16),
+//                 child: Row(
+//                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//                   children: [
+//                     Text(
+//                       'Toggle Switch',
+//                       style: TextStyle(
+//                         color: Colors.white,
+//                         fontSize: 20,
+//                       ),
+//                     ),
+//                     Switch(
+//                       value: isSwitched, // Current state of the switch
+//                       onChanged: (value) {
+//                         setState(() {
+//                           isSwitched = value; // Update the state on toggle
+//                         });
+//                       },
+//                       activeColor: Colors.white, // Color when switch is on
+//                       inactiveThumbColor:
+//                           Colors.white, // Color of the thumb when off
+//                       inactiveTrackColor:
+//                           Colors.grey[300], // Track color when switch is off
+//                       activeTrackColor: Colors
+//                           .lightGreenAccent, // Track color when switch is on
+//                     ),
+//                   ],
+//                 ),
+//               ),
+//               SizedBox(height: 20), // Spacing below the switch
+//               Text(
+//                 'Switch is ${isSwitched ? "ON" : "OFF"}', // Display current state
+//                 style: TextStyle(
+//                     fontSize: 24,
+//                     fontWeight: FontWeight.bold,
+//                     color: Colors.white),
+//               ),
+//             ],
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// void main() {
+//   runApp(MaterialApp(
+//     debugShowCheckedModeBanner: false,
+//     home: BeautifulSwitchExample(),
+//   ));
+// }
+
+// import 'package:flutter/material.dart';
+
+// class BeautifulSwitchExample extends StatefulWidget {
+//   const BeautifulSwitchExample({super.key});
+
+//   @override
+//   _BeautifulSwitchExampleState createState() => _BeautifulSwitchExampleState();
+// }
+
+// class _BeautifulSwitchExampleState extends State<BeautifulSwitchExample> {
+//   bool isSwitched = false; // Initial state of the switch
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       debugShowCheckedModeBanner: false,
+//       theme: isSwitched
+//           ? ThemeData.dark()
+//           : ThemeData.light(), // Toggle between light and dark themes
+//       home: Scaffold(
+//         appBar: AppBar(
+//           title: const Text(
+//             'Switch',
+//             style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
+//           ),
+//         ),
+//         body: Center(
+//           child: Padding(
+//             padding: const EdgeInsets.all(20.0),
+//             child: Card(
+//               elevation: 5,
+//               shape: RoundedRectangleBorder(
+//                 borderRadius: BorderRadius.circular(15),
+//               ),
+//               child: Padding(
+//                 padding: const EdgeInsets.all(20.0),
+//                 child: Row(
+//                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//                   children: [
+//                     const Text(
+//                       'Dark Mode',
+//                       style: TextStyle(fontSize: 20),
+//                     ),
+//                     Switch(
+//                       value: isSwitched,
+//                       onChanged: (value) {
+//                         setState(() {
+//                           isSwitched = value; // Update the state on toggle
+//                         });
+//                       },
+//                       activeColor: Colors.green, // Color when switch is on
+//                       inactiveThumbColor:
+//                           Colors.grey, // Color of the thumb when off
+//                     ),
+//                   ],
+//                 ),
+//               ),
+//             ),
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// import 'package:flutter/material.dart';
+
+// // Main widget for the BeautifulSwitchExample
+// class BeautifulSwitchExample extends StatefulWidget {
+//   const BeautifulSwitchExample({super.key});
+
+//   @override
+//   _BeautifulSwitchExampleState createState() => _BeautifulSwitchExampleState();
+// }
+
+// // State class for managing the switch's state
+// class _BeautifulSwitchExampleState extends State<BeautifulSwitchExample> {
+//   bool isSwitched = false; // Initial state of the switch (false = Light Theme)
+
+//   @override
+//   void initState() {
+//     super.initState();
+//     // Print the initial theme based on the switch's state
+//     if (!isSwitched) {
+//       print('App started with Light Theme');
+//     } else {
+//       print('App started with Dark Theme');
+//     }
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       debugShowCheckedModeBanner: false, // Hides the debug banner
+//       theme: isSwitched
+//           ? ThemeData.dark()
+//           : ThemeData.light(), // Set theme based on switch state
+//       home: Scaffold(
+//         appBar: AppBar(
+//           title: Text(
+//             isSwitched
+//                 ? 'Dark Mode'
+//                 : 'Light Mode', // Change title based on theme
+//             style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
+//           ),
+//         ),
+//         body: Center(
+//           child: Padding(
+//             padding: const EdgeInsets.all(20.0), // Padding around the card
+//             child: Card(
+//               elevation: 10, // Shadow effect for the card
+//               shape: RoundedRectangleBorder(
+//                 borderRadius:
+//                     BorderRadius.circular(20), // Rounded corners for the card
+//               ),
+//               child: Padding(
+//                 padding: const EdgeInsets.all(40.0), // Padding inside the card
+//                 child: Column(
+//                   mainAxisSize:
+//                       MainAxisSize.min, // Size of the column based on children
+//                   children: [
+//                     // Display an image based on the current theme
+//                     Image.asset(
+//                       isSwitched ? 'images/boy.jpeg' : 'images/developer.jpg',
+//                       height: 200, // Height of the image
+//                       width: 200, // Width of the image
+//                     ),
+//                     const SizedBox(height: 20), // Space between elements
+
+//                     // Display the current mode (Light/Dark)
+//                     Text(
+//                       isSwitched ? 'Dark Mode' : 'Light Mode',
+//                       style: TextStyle(
+//                           fontSize: 32,
+//                           fontWeight: FontWeight
+//                               .bold), // Increased font size for visibility
+//                     ),
+
+//                     const SizedBox(height: 10), // Space between elements
+
+//                     const Text(
+//                       'Switch between light and dark themes for a better visual experience.',
+//                       textAlign: TextAlign.center,
+//                       style: TextStyle(
+//                           fontSize: 20), // Increased font size for readability
+//                     ),
+
+//                     const SizedBox(height: 20), // Space between elements
+
+//                     Row(
+//                       mainAxisAlignment: MainAxisAlignment
+//                           .spaceEvenly, // Align children evenly in a row
+//                       children: [
+//                         Expanded(
+//                             child: Text(isSwitched ? 'Dark' : 'Light',
+//                                 style: TextStyle(
+//                                     fontSize:
+//                                         20))), // Display current theme label
+
+//                         Switch(
+//                           value: isSwitched, // Current state of the switch
+//                           onChanged: (value) {
+//                             setState(() {
+//                               isSwitched =
+//                                   value; // Update switch state when changed
+//                             });
+//                           },
+//                           activeColor:
+//                               Colors.green, // Color when switch is active (on)
+//                           inactiveThumbColor: Colors
+//                               .grey, // Color when switch is inactive (off)
+//                         ),
+//                       ],
+//                     )
+//                   ],
+//                 ),
+//               ),
+//             ),
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
