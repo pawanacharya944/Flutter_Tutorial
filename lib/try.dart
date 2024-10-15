@@ -920,7 +920,7 @@
 //   int _currentIndex = 0;
 //   // List of pages to display based on the selected item
 //   final List<Widget> _pages = [
-//     HomePage(),
+//     Myslides(),
 //     SearchPage(),
 //     ProfilePage(),
 //     SettingsPage(),
@@ -980,7 +980,7 @@
 // }
 
 // // Home Page Widget
-// class HomePage extends StatelessWidget {
+// class Myslides extends StatelessWidget {
 //   @override
 //   Widget build(BuildContext context) {
 //     return Center(
@@ -3825,6 +3825,257 @@
 //                 ),
 //               ),
 //             ),
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// Import necessary Flutter packages
+// Import necessary Flutter packages
+
+// import 'package:flutter/material.dart';
+// import 'package:slide_to_act/slide_to_act.dart';
+
+// // Main function to run the app
+
+// // SlideToUnlockScreen widget containing the Slide to Action widget
+// class SlideToUnlockScreen extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text('Slide to Unlock'),
+//         centerTitle: true,
+//         elevation: 4,
+//       ),
+//       body: Center(
+//         child: Padding(
+//           padding: const EdgeInsets.all(24.0),
+//           child: Column(
+//             mainAxisAlignment: MainAxisAlignment.center,
+//             children: [
+//               // Adding an icon and a title for context
+//               Icon(
+//                 Icons.lock,
+//                 size: 100,
+//                 color: Colors.blue[200],
+//               ),
+//               SizedBox(height: 20),
+//               Text(
+//                 'Swipe to Unlock',
+//                 style: TextStyle(
+//                   fontSize: 24,
+//                   fontWeight: FontWeight.bold,
+//                   color: Colors.black87,
+//                 ),
+//                 textAlign: TextAlign.center,
+//               ),
+//               SizedBox(height: 40),
+//               SlideAction(
+//                 // Customize the appearance of the slide action
+//                 height: 70, // Custom height for the SlideAction
+//                 outerColor: Colors.green[200], // Outer color
+//                 innerColor: Colors.white, // Inner color
+//                 textColor: Colors.black, // Text color
+//                 text: 'Slide to Unlock', // Text on the slider
+//                 textStyle: TextStyle(
+//                   fontSize: 18,
+//                   fontWeight: FontWeight.bold,
+//                 ),
+//                 sliderButtonIconSize: 30, // Size of the slider button icon
+//                 sliderButtonIconPadding: 16, // Padding around the icon
+//                 sliderButtonYOffset: 0, // Vertical offset of the slider button
+//                 enabled: true, // Enable or disable sliding
+//                 borderRadius: 52, // Rounded corners for the action
+//                 elevation: 6, // Elevation for shadow effect
+//                 animationDuration:
+//                     const Duration(milliseconds: 300), // Animation duration
+//                 onSubmit: () {
+//                   ScaffoldMessenger.of(context).showSnackBar(
+//                     SnackBar(content: Text('Unlocked!')),
+//                   );
+//                 },
+//                 sliderButtonIcon: Icon(Icons.chevron_right,
+//                     color: Colors.white), // Custom icon for slider button
+//               ),
+//             ],
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// import 'package:flutter/material.dart';
+// import 'package:slide_to_act/slide_to_act.dart';
+
+// // Main function to run the app
+
+// // SlideToUnlockScreen widget containing the Slide to Action widget
+// class SlideToUnlockScreen extends StatefulWidget {
+//   const SlideToUnlockScreen({super.key});
+
+//   @override
+//   _SlideToUnlockScreenState createState() => _SlideToUnlockScreenState();
+// }
+
+// class _SlideToUnlockScreenState extends State<SlideToUnlockScreen> {
+//   bool _isUnlocked = false; // State variable to track if unlocked
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: const Text('Slide to Unlock'),
+//         centerTitle: true,
+//       ),
+//       body: Center(
+//         child: Padding(
+//           padding: const EdgeInsets.all(24.0),
+//           child: Column(
+//             mainAxisAlignment: MainAxisAlignment.center,
+//             children: [
+//               // Adding an icon that changes based on unlock state
+//               Icon(
+//                 _isUnlocked ? Icons.lock_open : Icons.lock,
+//                 size: 100,
+//                 // color: Colors.blue[300],
+//                 color: Colors.purple[300],
+//               ),
+//               const SizedBox(height: 20),
+//               Text(
+//                 _isUnlocked ? 'Unlocked!' : 'Locked!',
+//                 style: const TextStyle(
+//                   fontSize: 24,
+//                   fontWeight: FontWeight.bold,
+//                   color: Colors.black87,
+//                 ),
+//                 textAlign: TextAlign.center,
+//               ),
+//               const SizedBox(height: 40),
+//               SlideAction(
+//                 // Customize the appearance of the slide action
+//                 height: 70, // Custom height for the SlideAction
+//                 outerColor: Colors.purple[200], // Outer color
+//                 innerColor: Colors.blueGrey[400], // Inner color
+//                 textColor: Colors.black, // Text color
+//                 text: 'Slide to Unlock', // Text on the slider
+//                 textStyle: const TextStyle(
+//                   fontSize: 18,
+//                   fontWeight: FontWeight.bold,
+//                 ),
+//                 sliderButtonIconSize: 30, // Size of the slider button icon
+//                 sliderButtonIconPadding: 16, // Padding around the icon
+//                 sliderButtonYOffset: 0, // Vertical offset of the slider button
+//                 enabled: !_isUnlocked, // Disable sliding if already unlocked
+//                 borderRadius: 52, // Rounded corners for the action
+//                 elevation: 6, // Elevation for shadow effect
+//                 animationDuration:
+//                     const Duration(milliseconds: 300), // Animation duration
+//                 onSubmit: () {
+//                   setState(() {
+//                     _isUnlocked = true; // Update state to unlocked
+//                   });
+//                   ScaffoldMessenger.of(context).showSnackBar(
+//                     const SnackBar(content: Text('Unlocked!')),
+//                   );
+//                   return null;
+//                 },
+//                 sliderButtonIcon: const Icon(Icons.chevron_right,
+//                     color: Colors.white), // Custom icon for slider button
+//               ),
+//             ],
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// import 'package:flutter/material.dart';
+// import 'package:slide_to_act/slide_to_act.dart';
+
+// // Main function to run the app
+
+// // SlideToUnlockScreen widget containing the Slide to Action widget
+// class SlideToUnlockScreen extends StatefulWidget {
+//   @override
+//   _SlideToUnlockScreenState createState() => _SlideToUnlockScreenState();
+// }
+
+// class _SlideToUnlockScreenState extends State<SlideToUnlockScreen> {
+//   bool _isUnlocked = false; // State variable to track if unlocked
+
+//   void _toggleLock() {
+//     setState(() {
+//       _isUnlocked = !_isUnlocked; // Toggle lock state
+//     });
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text('Slide Action'),
+//         backgroundColor: Colors.purple[200],
+//       ),
+//       body: Center(
+//         child: Padding(
+//           padding: const EdgeInsets.all(24.0),
+//           child: Column(
+//             mainAxisAlignment: MainAxisAlignment.center,
+//             children: [
+//               // Adding an icon that changes based on unlock state
+//               Icon(
+//                 _isUnlocked ? Icons.lock_open : Icons.lock,
+//                 size: 100,
+//                 color: Colors.blue[300],
+//               ),
+//               SizedBox(height: 20),
+//               Text(
+//                 _isUnlocked ? 'Unlocked!' : 'Swipe to Unlock',
+//                 style: TextStyle(
+//                   fontSize: 24,
+//                   fontWeight: FontWeight.bold,
+//                   color: Colors.black87,
+//                 ),
+//                 textAlign: TextAlign.center,
+//               ),
+//               SizedBox(height: 40),
+//               SlideAction(
+//                 // Customize the appearance of the slide action
+//                 height: 70, // Custom height for the SlideAction
+//                 outerColor: Colors.purple[200], // Outer color
+//                 innerColor: Colors.white, // Inner color
+//                 textColor: Colors.black, // Text color
+//                 text: _isUnlocked
+//                     ? 'Slide to Lock'
+//                     : 'Slide to Unlock', // Text on the slider
+//                 textStyle: TextStyle(
+//                   fontSize: 18,
+//                   fontWeight: FontWeight.bold,
+//                 ),
+//                 sliderButtonIconSize: 30, // Size of the slider button icon
+//                 sliderButtonIconPadding: 16, // Padding around the icon
+//                 sliderButtonYOffset: 0, // Vertical offset of the slider button
+//                 enabled: true, // Enable sliding
+//                 borderRadius: 52, // Rounded corners for the action
+//                 elevation: 6, // Elevation for shadow effect
+//                 animationDuration:
+//                     const Duration(milliseconds: 300), // Animation duration
+//                 onSubmit: () {
+//                   _toggleLock(); // Toggle lock state on submit
+//                   ScaffoldMessenger.of(context).showSnackBar(
+//                     SnackBar(
+//                         content: Text(_isUnlocked ? 'Locked!' : 'Unlocked!')),
+//                   );
+//                 },
+//                 sliderButtonIcon: Icon(Icons.chevron_right,
+//                     color: Colors.blueGrey), // Custom icon for slider button
+//               ),
+//             ],
 //           ),
 //         ),
 //       ),

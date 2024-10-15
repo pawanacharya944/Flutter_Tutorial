@@ -22,6 +22,7 @@ class _MySwitchState extends State<MySwitch> {
     }
   }
 
+  @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -32,7 +33,7 @@ class _MySwitchState extends State<MySwitch> {
             isSwitched
                 ? 'Dark Mode'
                 : 'Light Mode', // change title based on theme
-            style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
+            style: const TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
           ),
         ),
         body: Center(
@@ -72,7 +73,7 @@ class _MySwitchState extends State<MySwitch> {
                         Expanded(
                           child: Text(
                             isSwitched ? 'Dark' : 'Light',
-                            style: TextStyle(fontSize: 20),
+                            style: const TextStyle(fontSize: 20),
                           ),
                         ),
                         Switch(
