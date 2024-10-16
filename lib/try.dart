@@ -4082,3 +4082,97 @@
 //     );
 //   }
 // }
+
+// import 'package:flutter/material.dart';
+
+// class MyAnimatedList extends StatefulWidget {
+//   @override
+//   _MyAnimatedListState createState() => _MyAnimatedListState();
+// }
+
+// class _MyAnimatedListState extends State<MyAnimatedList> {
+//   // Key to manage the state of the AnimatedList
+//   final GlobalKey<AnimatedListState> _listKey = GlobalKey<AnimatedListState>();
+
+//   // List to hold items displayed in the AnimatedList
+//   final List<String> _items = ['Item 1', 'Item 2', 'Item 3'];
+
+//   // Method to add a new item to the list
+//   void _addItem() {
+//     final newIndex = _items.length; // Determine the index for the new item
+//     _items.add('Item ${newIndex + 1}'); // Add new item to the list
+//     _listKey.currentState
+//         ?.insertItem(newIndex); // Animate the insertion of the new item
+//   }
+
+//   // Method to remove an item from the list at a given index
+//   void _removeItem(int index) {
+//     // Check if the index is valid before proceeding
+//     if (index < 0 || index >= _items.length) return;
+
+//     final removedItem =
+//         _items[index]; // Store the item to be removed for animation
+
+//     setState(() {
+//       _items.removeAt(index); // Update the list by removing the item
+//     });
+
+//     // Animate removal of the item from the list
+//     _listKey.currentState?.removeItem(
+//       index,
+//       (context, animation) => _buildItem(
+//           removedItem, animation), // Build item for removal animation
+//     );
+//   }
+
+//   // Method to build each item in the list with an animation effect
+//   Widget _buildItem(String item, Animation<double> animation) {
+//     return SizeTransition(
+//       sizeFactor: animation, // Animate size change during insertion/removal
+//       child: Card(
+//         color: Colors.green[200],
+//         margin: EdgeInsets.symmetric(
+//             vertical: 5, horizontal: 10), // Margin around each card
+//         child: ListTile(
+//           title:
+//               Text(item, style: TextStyle(fontSize: 18)), // Display item text
+//           trailing: IconButton(
+//             icon: Icon(Icons.remove_circle), // Icon button to remove item
+//             onPressed: () {
+//               int index =
+//                   _items.indexOf(item); // Find index of the item to remove
+//               if (index != -1) {
+//                 // Ensure index is valid before removing
+//                 _removeItem(index); // Call method to remove item safely
+//               }
+//             },
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text(
+//           'Animated List',
+//           style: TextStyle(fontSize: 26),
+//         ),
+//         // backgroundColor: Colors.green[200],
+//       ), // App bar with title
+
+//       body: AnimatedList(
+//         key: _listKey, // Key for managing state of AnimatedList
+//         initialItemCount: _items.length, // Initial number of items in the list
+//         itemBuilder: (context, index, animation) => _buildItem(
+//             _items[index], animation), // Build items with animation effect
+//       ),
+//       floatingActionButton: FloatingActionButton(
+//         onPressed: _addItem, // Add new item when button is pressed
+//         child: Icon(Icons.add), // Icon for adding items
+//       ),
+//     );
+//   }
+// }
