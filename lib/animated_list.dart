@@ -80,7 +80,7 @@ class _MyAnimatedListState extends State<MyAnimatedList> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'Animated List',
           style: TextStyle(fontSize: 26),
         ),

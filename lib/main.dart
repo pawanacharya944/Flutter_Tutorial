@@ -1,7 +1,7 @@
-import 'package:first_project/slide_action.dart';
+import 'package:first_project/tabbar.dart';
 import 'package:flutter/material.dart';
 
-import 'animated_list.dart';
+import 'try.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: "Flutter Project",
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: MyAnimatedList(),
+      home: MyTabBar(),
     );
   }
 }

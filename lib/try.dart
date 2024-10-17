@@ -4176,3 +4176,328 @@
 //     );
 //   }
 // }
+
+// import 'package:flutter/material.dart';
+
+// class MyTab extends StatefulWidget {
+//   @override
+//   _MyTabState createState() => _MyTabState();
+// }
+
+// class _MyTabState extends State<MyTab> with SingleTickerProviderStateMixin {
+//   late TabController _tabController;
+
+//   // List of tabs with icons
+//   final List<Tab> myTabs = <Tab>[
+//     Tab(icon: Icon(Icons.home), text: 'Home'),
+//     Tab(icon: Icon(Icons.person), text: 'Profile'),
+//     Tab(icon: Icon(Icons.settings), text: 'Settings'),
+//   ];
+
+//   @override
+//   void initState() {
+//     super.initState();
+//     // Initialize the TabController with the number of tabs and vsync
+//     _tabController = TabController(length: myTabs.length, vsync: this);
+//   }
+
+//   @override
+//   void dispose() {
+//     // Dispose of the controller when not needed
+//     _tabController.dispose();
+//     super.dispose();
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text('T A B B A R'),
+//         backgroundColor: Colors.blue[200], // Updated AppBar color
+//         bottom: TabBar(
+//           controller: _tabController,
+//           indicatorColor: Colors.white, // Color of the indicator
+//           indicatorWeight: 4.0, // Thickness of the indicator
+//           labelColor: Colors.black, // Color of the selected tab text
+//           unselectedLabelColor: Colors.blueGrey, // Color of unselected tab text
+//           tabs: myTabs,
+//         ),
+//       ),
+//       body: TabBarView(
+//         controller: _tabController,
+//         children: [
+//           // Content for Home tab
+//           Container(
+//             color: Colors.green[300], // Background color for Home tab
+//             child: Center(
+//               child: Text(
+//                 'Welcome to Home 🏠',
+//                 style: TextStyle(
+//                     fontSize: 32, // Increased font size
+//                     color: Colors.white),
+//               ),
+//             ),
+//           ),
+//           // Content for Profile tab
+//           Container(
+//             color: Colors.green[300], // Background color for Profile tab
+//             child: Center(
+//               child: Text(
+//                 'Your Profile 🧑🏻‍💻',
+//                 style: TextStyle(
+//                     fontSize: 32, // Increased font size
+//                     color: Colors.white),
+//               ),
+//             ),
+//           ),
+//           // Content for Settings tab
+//           Container(
+//             color: Colors.green[300], // Background color for Settings tab
+//             child: Center(
+//               child: Text(
+//                 'Systme Settings ⚙️',
+//                 style: TextStyle(
+//                     fontSize: 32, // Increased font size
+//                     color: Colors.white),
+//               ),
+//             ),
+//           ),
+//         ],
+//       ),
+//     );
+//   }
+// }
+
+// import 'package:flutter/material.dart';
+
+// void main() {
+//   runApp(MyApp());
+// }
+
+// class MyApp extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       title: 'CloseButton Example',
+//       theme: ThemeData(
+//         primarySwatch: Colors.blue,
+//       ),
+//       home: CloseButtonDemo(),
+//     );
+//   }
+// }
+
+// class CloseButtonDemo extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text('CloseButton Demo'),
+//       ),
+//       body: Center(
+//         child: Container(
+//           padding: EdgeInsets.all(20.0),
+//           decoration: BoxDecoration(
+//             color: Colors.white,
+//             borderRadius: BorderRadius.circular(15.0),
+//             boxShadow: [
+//               BoxShadow(
+//                 color: Colors.black26,
+//                 blurRadius: 10.0,
+//                 offset: Offset(0, 4),
+//               ),
+//             ],
+//           ),
+//           child: Column(
+//             mainAxisSize: MainAxisSize.min,
+//             children: [
+//               // Title text
+//               Text(
+//                 'Welcome to Flutter!',
+//                 style: TextStyle(
+//                   fontSize: 24,
+//                   fontWeight: FontWeight.bold,
+//                   color: Colors.blueAccent,
+//                 ),
+//               ),
+//               SizedBox(height: 20),
+
+//               // Description text
+//               Text(
+//                 'This is an example of a CloseButton widget with various properties.',
+//                 textAlign: TextAlign.center,
+//                 style: TextStyle(fontSize: 16, color: Colors.black54),
+//               ),
+//               SizedBox(height: 40),
+
+//               // CloseButton with custom properties
+//               CloseButton(
+//                 color: Colors.red, // Change the color of the button
+//                 onPressed: () {
+//                   // Navigate to the closing message screen
+//                   Navigator.of(context).push(MaterialPageRoute(
+//                     builder: (context) => ClosingMessageScreen(),
+//                   ));
+//                 },
+//               ),
+//             ],
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// class ClosingMessageScreen extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text('Closed'),
+//       ),
+//       body: Center(
+//         child: Column(
+//           mainAxisAlignment: MainAxisAlignment.center,
+//           children: [
+//             // Display an image or icon
+//             Icon(
+//               Icons.check_circle_outline,
+//               size: 100,
+//               color: Colors.green,
+//             ),
+//             SizedBox(height: 20),
+
+//             // Message indicating the page has been closed
+//             Text(
+//               'You have closed this page!',
+//               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+//             ),
+//             SizedBox(height: 20),
+
+//             // Button to go back to the previous screen
+//             ElevatedButton(
+//               onPressed: () {
+//                 Navigator.of(context).pop(); // Go back to the previous screen
+//               },
+//               child: Text('Go Back'),
+//             ),
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// import 'package:flutter/material.dart';
+
+// class CloseButtonDemo extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text(
+//           'CloseButton Demo',
+//           style: TextStyle(fontSize: 26),
+//         ),
+//         backgroundColor: Colors.blue[200],
+//       ),
+//       body: Center(
+//         child: Container(
+//           padding: EdgeInsets.all(20.0),
+//           decoration: BoxDecoration(
+//             gradient: LinearGradient(
+//                 colors: [Colors.lightBlue[300]!, Colors.lightGreen[300]!],
+//                 begin: Alignment.topLeft,
+//                 end: Alignment.bottomLeft),
+//             color: Colors.white,
+//             borderRadius: BorderRadius.circular(15.0),
+//             boxShadow: [
+//               BoxShadow(
+//                 color: Colors.black26,
+//                 blurRadius: 10.0,
+//                 offset: Offset(0, 4),
+//               ),
+//             ],
+//           ),
+//           child: Column(
+//             mainAxisSize: MainAxisSize.min,
+//             children: [
+//               // Title text
+//               Text(
+//                 'Welcome to Code Flicks',
+//                 style: TextStyle(
+//                   fontSize: 26,
+//                   fontWeight: FontWeight.bold,
+//                   color: Colors.black,
+//                 ),
+//               ),
+//               SizedBox(height: 20),
+
+//               // Description text
+//               Text(
+//                 'Thousands of candles can be lighted from a single candle, and the life of the candle will not be shortened. Happiness never decreases by being shared -Buddha',
+//                 textAlign: TextAlign.center,
+//                 style: TextStyle(fontSize: 18, color: Colors.black),
+//               ),
+//               SizedBox(height: 40),
+
+//               // Tooltip wrapping the CloseButton
+//               Tooltip(
+//                 message: 'Close this dialog', // Tooltip message
+//                 child: CloseButton(
+//                   color: Colors.red, // Change the color of the button
+//                   onPressed: () {
+//                     // Navigate to the closing message screen
+//                     Navigator.of(context).push(MaterialPageRoute(
+//                       builder: (context) => ClosingMessageScreen(),
+//                     ));
+//                   },
+//                 ),
+//               ),
+//             ],
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// class ClosingMessageScreen extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text('Closed'),
+//       ),
+//       body: Center(
+//         child: Column(
+//           mainAxisAlignment: MainAxisAlignment.center,
+//           children: [
+//             // Display an image or icon
+//             Icon(
+//               Icons.check_circle_outline,
+//               size: 100,
+//               color: Colors.green,
+//             ),
+//             SizedBox(height: 20),
+
+//             // Message indicating the page has been closed
+//             Text(
+//               'You have closed this page!',
+//               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+//             ),
+//             SizedBox(height: 20),
+
+//             // Button to go back to the previous screen
+//             ElevatedButton(
+//               onPressed: () {
+//                 Navigator.of(context).pop(); // Go back to the previous screen
+//               },
+//               child: Text('Go Back'),
+//             ),
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+// }
