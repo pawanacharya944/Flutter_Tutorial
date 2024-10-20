@@ -1,7 +1,6 @@
-import 'package:first_project/tabbar.dart';
+import 'package:first_project/searchbar.dart';
+import 'package:first_project/try.dart';
 import 'package:flutter/material.dart';
-
-import 'try.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +15,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: "Flutter Project",
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: MyTabBar(),
+      home: MySearchBar(),
     );
   }
 }

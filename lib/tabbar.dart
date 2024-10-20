@@ -14,9 +14,9 @@ class _MyTabBarState extends State<MyTabBar>
   // list of tabs with icon
 
   final List<Tab> myTabs = <Tab>[
-    Tab(icon: Icon(Icons.home), text: 'Home'),
-    Tab(icon: Icon(Icons.person), text: 'Profile'),
-    Tab(icon: Icon(Icons.settings), text: 'Settings'),
+    const Tab(icon: Icon(Icons.home), text: 'Home'),
+    const Tab(icon: Icon(Icons.person), text: 'Profile'),
+    const Tab(icon: Icon(Icons.settings), text: 'Settings'),
   ];
 
   @override
@@ -37,7 +37,7 @@ class _MyTabBarState extends State<MyTabBar>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'T A B B A R',
           style: TextStyle(fontSize: 26),
         ),
@@ -57,7 +57,7 @@ class _MyTabBarState extends State<MyTabBar>
           // content for home tab
           Container(
             color: Colors.green[300],
-            child: Center(
+            child: const Center(
               child: Text(
                 'Welcome to Home 🏠',
                 style: TextStyle(fontSize: 32, color: Colors.white),
@@ -67,7 +67,7 @@ class _MyTabBarState extends State<MyTabBar>
           // content for profile tab
           Container(
             color: Colors.green[300],
-            child: Center(
+            child: const Center(
               child: Text(
                 'Your Profile 🧑🏻‍💻',
                 style: TextStyle(fontSize: 32, color: Colors.white),
@@ -78,7 +78,7 @@ class _MyTabBarState extends State<MyTabBar>
           // content for settings tab
           Container(
             color: Colors.green[300],
-            child: Center(
+            child: const Center(
               child: Text(
                 'System Settings ⚙️',
                 style: TextStyle(fontSize: 32, color: Colors.white),

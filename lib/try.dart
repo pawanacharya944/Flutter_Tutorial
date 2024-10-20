@@ -4501,3 +4501,178 @@
 //     );
 //   }
 // }
+// import 'package:flutter/material.dart';
+// import 'package:pull_to_refresh_flutter3/pull_to_refresh_flutter3.dart';
+
+// class MyLiquidpull extends StatefulWidget {
+//   @override
+//   _MyLiquidpullState createState() => _MyLiquidpullState();
+// }
+
+// class _MyLiquidpullState extends State<MyLiquidpull> {
+//   List<String> items = List.generate(20, (index) => 'Item $index');
+//   RefreshController _refreshController =
+//       RefreshController(initialRefresh: false);
+
+//   // Method to simulate data fetching
+//   Future<void> _onRefresh() async {
+//     // Simulate a network call with a delay
+//     await Future.delayed(Duration(seconds: 2));
+
+//     // Add new items to the list
+//     setState(() {
+//       items.insert(0, 'New Item ${items.length}');
+//     });
+
+//     // Complete the refresh action
+//     _refreshController.refreshCompleted();
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text('Pull to Refresh Demo'),
+//       ),
+//       body: SmartRefresher(
+//         controller: _refreshController,
+//         enablePullDown: true,
+//         header: WaterDropHeader(), // Custom header for pull-to-refresh
+//         onRefresh: _onRefresh, // Trigger refresh on pull down
+//         child: ListView.builder(
+//           itemCount: items.length,
+//           itemBuilder: (context, index) {
+//             return ListTile(
+//               title: Text(items[index]), // Display item text
+//             );
+//           },
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// import 'package:flutter/material.dart';
+// import 'package:liquid_pull_to_refresh/liquid_pull_to_refresh.dart';
+
+// class Liquid extends StatefulWidget {
+//   @override
+//   _LiquidState createState() => _LiquidState();
+// }
+
+// class _LiquidState extends State<Liquid> {
+//   List<String> items = List.generate(20, (index) => 'Item $index');
+
+//   // Method to simulate data fetching
+//   Future<void> _onRefresh() async {
+//     // Simulate a network call with a delay
+//     await Future.delayed(Duration(seconds: 2));
+
+//     // Add new items to the list
+//     setState(() {
+//       items.insert(0, 'New Item ${items.length}');
+//     });
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text('Liquid Pull to Refresh Demo'),
+//       ),
+//       body: LiquidPullToRefresh(
+//         onRefresh: _onRefresh, // Trigger refresh on pull down
+//         color: Colors.blue, // Color of the refresh indicator
+//         backgroundColor: Colors.white, // Background color of the indicator
+//         child: ListView.builder(
+//           itemCount: items.length,
+//           itemBuilder: (context, index) {
+//             return Card(
+//               margin: EdgeInsets.all(8.0), // Margin around each card
+//               child: ListTile(
+//                 title: Text(items[index]), // Display item text
+//               ),
+//             );
+//           },
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+import 'package:flutter/material.dart';
+import 'package:liquid_pull_to_refresh/liquid_pull_to_refresh.dart';
+
+class HomePage extends StatefulWidget {
+  @override
+  _HomePageState createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  List<Map<String, String>> items = List.generate(
+    10,
+    (index) => {
+      'title': 'Exciting Event $index',
+      'description':
+          'Join us for an exciting event filled with fun and activities!',
+    },
+  );
+
+  // Method to simulate data fetching
+  Future<void> _onRefresh() async {
+    await Future.delayed(Duration(seconds: 2));
+    setState(() {
+      items.insert(0, {
+        'title': 'New Event ${items.length}',
+        'description': 'Don\'t miss out on this amazing new event!',
+      });
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: LiquidPullToRefresh(
+        height: 180,
+        onRefresh: _onRefresh,
+        color: Colors.green[300], // Color of the refresh indicator
+        backgroundColor: Colors.blueGrey, // Background color of the indicator
+        child: ListView.builder(
+          itemCount: items.length,
+          itemBuilder: (context, index) {
+            return Card(
+              margin: EdgeInsets.all(8.0),
+              elevation: 6,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(15),
+              ),
+              color: Colors
+                  .green[100 + (index % 3) * 100], // Different shades of green
+              child: Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Icon(Icons.event,
+                        size: 40, color: Colors.green[800]), // Event icon
+                    SizedBox(height: 10),
+                    Text(
+                      items[index]['title']!,
+                      style:
+                          TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+                    ),
+                    SizedBox(height: 8),
+                    Text(
+                      items[index]['description']!,
+                      style: TextStyle(color: Colors.grey[700]),
+                    ),
+                  ],
+                ),
+              ),
+            );
+          },
+        ),
+      ),
+    );
+  }
+}
