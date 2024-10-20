@@ -1,6 +1,6 @@
-import 'package:first_project/searchbar.dart';
-import 'package:first_project/try.dart';
 import 'package:flutter/material.dart';
+
+import 'liquid_pull.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: "Flutter Project",
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: MySearchBar(),
+      home: MyLiquidPull(),
     );
   }
 }
