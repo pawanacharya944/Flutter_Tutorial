@@ -4676,3 +4676,197 @@
 //     );
 //   }
 // }
+
+// import 'package:flutter/material.dart';
+
+// void main() {
+//   runApp(MyApp());
+// }
+
+// class MyApp extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       title: 'Flutter Time Picker',
+//       theme: ThemeData(
+//         primarySwatch: Colors.blue,
+//       ),
+//       home: TimePickerHome(),
+//     );
+//   }
+// }
+
+// class TimePickerHome extends StatefulWidget {
+//   @override
+//   _TimePickerHomeState createState() => _TimePickerHomeState();
+// }
+
+// class _TimePickerHomeState extends State<TimePickerHome> {
+//   TimeOfDay _selectedTime = TimeOfDay.now(); // Holds the selected time
+
+//   // Function to show the time picker dialog
+//   Future<void> _selectTime(BuildContext context) async {
+//     // Show the time picker dialog
+//     final TimeOfDay? picked = await showTimePicker(
+//       context: context,
+//       initialTime: _selectedTime, // Sets the initial time to current time
+//       builder: (BuildContext context, Widget? child) {
+//         return Theme(
+//           data: ThemeData.dark(), // Dark theme for the time picker
+//           child: child!,
+//         );
+//       },
+//     );
+
+//     // If a time is picked, update the state with the new time
+//     if (picked != null && picked != _selectedTime) {
+//       setState(() {
+//         _selectedTime = picked; // Update the selected time
+//       });
+//     }
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text('Beautiful Time Picker UI'),
+//       ),
+//       body: Center(
+//         child: Column(
+//           mainAxisAlignment: MainAxisAlignment.center,
+//           children: <Widget>[
+//             // Display the selected time in a styled container
+//             Container(
+//               padding: EdgeInsets.all(20),
+//               decoration: BoxDecoration(
+//                 color: Colors.blueAccent,
+//                 borderRadius: BorderRadius.circular(15),
+//                 boxShadow: [
+//                   BoxShadow(
+//                     color: Colors.black26,
+//                     blurRadius: 10.0,
+//                     spreadRadius: 2.0,
+//                   ),
+//                 ],
+//               ),
+//               child: Text(
+//                 // Format time in 12-hour format with AM/PM
+//                 "${_selectedTime.hour % 12 == 0 ? 12 : _selectedTime.hour % 12}:${_selectedTime.minute.toString().padLeft(2, '0')} ${_selectedTime.hour >= 12 ? 'PM' : 'AM'}",
+//                 style: TextStyle(fontSize: 40, color: Colors.white),
+//               ),
+//             ),
+//             SizedBox(height: 30), // Space between elements
+//             ElevatedButton(
+//               onPressed: () =>
+//                   _selectTime(context), // Trigger time picker on press
+//               child: Text('Choose Time'),
+//               style: ElevatedButton.styleFrom(
+//                 foregroundColor: Colors.blue, // Button color
+//                 padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+//                 textStyle: TextStyle(fontSize: 20),
+//               ),
+//             ),
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// import 'package:flutter/material.dart';
+
+// class TimePickerHome extends StatefulWidget {
+//   @override
+//   _TimePickerHomeState createState() => _TimePickerHomeState();
+// }
+
+// class _TimePickerHomeState extends State<TimePickerHome> {
+//   TimeOfDay _selectedTime = TimeOfDay.now(); // Holds the selected time
+
+//   // Function to show the time picker dialog
+//   Future<void> _selectTime(BuildContext context) async {
+//     // Show the time picker dialog
+//     final TimeOfDay? picked = await showTimePicker(
+//       context: context,
+//       initialTime: _selectedTime, // Sets the initial time to current time
+//       builder: (BuildContext context, Widget? child) {
+//         return Theme(
+//           data: ThemeData.dark(), // Dark theme for the time picker
+//           child: child!,
+//         );
+//       },
+//     );
+
+//     // If a time is picked, update the state with the new time
+//     if (picked != null && picked != _selectedTime) {
+//       setState(() {
+//         _selectedTime = picked; // Update the selected time
+//       });
+//     }
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       body: Container(
+//         decoration: BoxDecoration(
+//           gradient: LinearGradient(
+//             // Gradient background
+//             colors: [
+//               Colors.green[200]!,
+//               Colors.blue[300]!,
+//             ], // Start and end colors of the gradient
+//             begin: Alignment.topLeft, // Starting point of the gradient
+//             end: Alignment.bottomRight, // Ending point of the gradient
+//           ),
+//         ),
+//         child: Center(
+//           child: Column(
+//             mainAxisAlignment: MainAxisAlignment.center,
+//             children: <Widget>[
+//               // Display the selected time in a styled container
+//               Container(
+//                 padding: EdgeInsets.all(30),
+//                 decoration: BoxDecoration(
+//                   color: Colors.white
+//                       .withOpacity(0.9), // Semi-transparent white background
+//                   borderRadius: BorderRadius.circular(20), // Rounded corners
+//                   boxShadow: [
+//                     BoxShadow(
+//                       color: Colors.black26,
+//                       blurRadius: 15.0,
+//                       spreadRadius: 2.0,
+//                     ),
+//                   ],
+//                 ),
+//                 child: Text(
+//                   // Format time in 12-hour format with AM/PM
+//                   "${_selectedTime.hour % 12 == 0 ? 12 : _selectedTime.hour % 12}:${_selectedTime.minute.toString().padLeft(2, '0')} ${_selectedTime.hour >= 12 ? 'PM' : 'AM'}",
+//                   style: TextStyle(
+//                       fontSize: 48,
+//                       fontWeight: FontWeight.bold,
+//                       color: Colors.black),
+//                 ),
+//               ),
+//               SizedBox(height: 40), // Space between elements
+//               ElevatedButton(
+//                 onPressed: () =>
+//                     _selectTime(context), // Trigger time picker on press
+//                 child: Text('Choose Time'),
+//                 style: ElevatedButton.styleFrom(
+//                   foregroundColor: Colors.deepPurpleAccent, // Button color
+//                   padding: EdgeInsets.symmetric(horizontal: 40, vertical: 15),
+//                   textStyle: TextStyle(fontSize: 24),
+//                   shape: RoundedRectangleBorder(
+//                       borderRadius:
+//                           BorderRadius.circular(30)), // Rounded button shape
+//                 ),
+//               ),
+//             ],
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }

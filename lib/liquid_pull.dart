@@ -19,7 +19,7 @@ class _MyLiquidPullState extends State<MyLiquidPull> {
   );
 
   Future<void> _onRefresh() async {
-    await Future.delayed(Duration(seconds: 2));
+    await Future.delayed(const Duration(seconds: 2));
     setState(() {
       items.insert(0, {
         'title': 'New Event ${items.length}',
@@ -40,14 +40,14 @@ class _MyLiquidPullState extends State<MyLiquidPull> {
             itemCount: items.length,
             itemBuilder: (context, index) {
               return Card(
-                margin: EdgeInsets.all(8.0),
+                margin: const EdgeInsets.all(8.0),
                 elevation: 6,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(15),
                 ),
                 color: Colors.green[100 + (index % 3) * 100],
                 child: Padding(
-                  padding: EdgeInsets.all(16.0),
+                  padding: const EdgeInsets.all(16.0),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -56,13 +56,13 @@ class _MyLiquidPullState extends State<MyLiquidPull> {
                         size: 40,
                         color: Colors.green[800],
                       ),
-                      SizedBox(height: 10),
+                      const SizedBox(height: 10),
                       Text(
                         items[index]['title']!,
-                        style: TextStyle(
+                        style: const TextStyle(
                             fontSize: 22, fontWeight: FontWeight.bold),
                       ),
-                      SizedBox(height: 8),
+                      const SizedBox(height: 8),
                       Text(
                         items[index]['description']!,
                         style: TextStyle(color: Colors.grey[700]),
