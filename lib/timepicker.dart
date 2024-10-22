@@ -50,12 +50,12 @@ class _MyTimePickerState extends State<MyTimePicker> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Container(
-                padding: EdgeInsets.all(30),
+                padding: const EdgeInsets.all(30),
                 decoration: BoxDecoration(
                   color: Colors.white
                       .withOpacity(0.9), // semi-transparent white background
                   borderRadius: BorderRadius.circular(26),
-                  boxShadow: [
+                  boxShadow: const [
                     BoxShadow(
                       color: Colors.black26,
                       blurRadius: 15.0,
@@ -66,25 +66,26 @@ class _MyTimePickerState extends State<MyTimePicker> {
                 child: Text(
                   // format time in 12-hour format with AM/PM
                   '${_selectedTime.hour % 12 == 0 ? 12 : _selectedTime.hour % 12}:${_selectedTime.minute.toString().padLeft(2, '0')} ${_selectedTime.hour >= 12 ? 'PM' : 'AM'}',
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 44,
                     color: Colors.black,
                   ),
                 ),
               ),
-              SizedBox(height: 40),
+              const SizedBox(height: 40),
               ElevatedButton(
                 onPressed: () => _selectTime(context),
-                child: Text('Choose Time'),
                 style: ElevatedButton.styleFrom(
                   foregroundColor: Colors.deepPurpleAccent,
-                  padding: EdgeInsets.symmetric(horizontal: 40, vertical: 15),
-                  textStyle:
-                      TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
+                  textStyle: const TextStyle(
+                      fontSize: 24, fontWeight: FontWeight.bold),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30),
                   ),
                 ),
+                child: const Text('Choose Time'),
               ),
             ],
           ),

@@ -4870,3 +4870,280 @@
 //     );
 //   }
 // }
+
+// stopwatch
+// import 'package:flutter/material.dart';
+// import 'dart:async';
+
+// class StopwatchHome extends StatefulWidget {
+//   @override
+//   _StopwatchHomeState createState() => _StopwatchHomeState();
+// }
+
+// class _StopwatchHomeState extends State<StopwatchHome> {
+//   int _elapsedSeconds = 0; // Variable to store elapsed seconds
+//   bool _isRunning = false; // Flag to check if timer is running
+//   Timer? _timer; // Timer instance
+
+//   // Function to start the timer
+//   void _startTimer() {
+//     if (_isRunning) return; // Prevent starting if already running
+
+//     _isRunning = true;
+//     _timer = Timer.periodic(Duration(seconds: 1), (timer) {
+//       setState(() {
+//         _elapsedSeconds++; // Increment elapsed seconds
+//       });
+//     });
+//   }
+
+//   // Function to stop the timer
+//   void _stopTimer() {
+//     if (!_isRunning) return; // Prevent stopping if not running
+
+//     _isRunning = false;
+//     _timer?.cancel(); // Cancel the timer
+//   }
+
+//   // Function to reset the timer
+//   void _resetTimer() {
+//     _stopTimer(); // Stop the timer before resetting
+//     setState(() {
+//       _elapsedSeconds = 0; // Reset elapsed seconds to zero
+//     });
+//   }
+
+//   // Getter to format elapsed time in MM:ss format
+//   String get formattedTime {
+//     final minutes = (_elapsedSeconds ~/ 60).toString().padLeft(2, '0');
+//     final seconds = (_elapsedSeconds % 60).toString().padLeft(2, '0');
+//     return '$minutes:$seconds';
+//   }
+
+//   @override
+//   void dispose() {
+//     _timer?.cancel(); // Cancel the timer when disposing
+//     super.dispose();
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         // centerTitle: false,
+//         title: const Text(
+//           'Stopwatch',
+//           style: TextStyle(fontSize: 38),
+//         ),
+//         backgroundColor: Colors.green[200],
+//       ),
+//       body: Container(
+//         decoration: BoxDecoration(
+//           gradient: LinearGradient(
+//             colors: [Colors.green[200]!, Colors.green[200]!],
+//             begin: Alignment.topLeft,
+//             end: Alignment.bottomRight,
+//           ),
+//         ),
+//         child: Center(
+//           child: Column(
+//             mainAxisAlignment: MainAxisAlignment.center,
+//             children: [
+//               // Display formatted time with larger font size and shadow effect
+//               Text(
+//                 formattedTime,
+//                 style: TextStyle(
+//                   fontSize: 75,
+//                   // fontWeight: FontWeight.bold,
+//                   color: Colors.black,
+//                   shadows: [
+//                     Shadow(
+//                       blurRadius: 10.0,
+//                       color: Colors.black54,
+//                       offset: Offset(2.0, 2.0),
+//                     ),
+//                   ],
+//                 ),
+//               ),
+//               SizedBox(height: 40), // Space between time display and buttons
+
+//               // Row for control buttons with spacing and styling
+//               Row(
+//                 mainAxisAlignment: MainAxisAlignment.center,
+//                 children: [
+//                   _buildControlButton('Start', Colors.green, _startTimer),
+//                   SizedBox(width: 20), // Space between buttons
+//                   _buildControlButton('Stop', Colors.red, _stopTimer),
+//                   SizedBox(width: 20), // Space between buttons
+//                   _buildControlButton('Reset', Colors.orange, _resetTimer),
+//                 ],
+//               )
+//             ],
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+
+//   // Helper function to build a control button with styling
+//   Widget _buildControlButton(
+//       String label, Color color, VoidCallback onPressed) {
+//     return ElevatedButton(
+//       onPressed: onPressed,
+//       child: Text(label,
+//           style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
+//       style: ElevatedButton.styleFrom(
+//         foregroundColor: color, // Button color based on parameter
+//         padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+//         shape: RoundedRectangleBorder(
+//             borderRadius: BorderRadius.circular(30)), // Rounded corners
+//         elevation: 5, // Add shadow effect to button
+//       ),
+//     );
+//   }
+// }
+
+// Doodle app
+
+// import 'package:flutter/material.dart';
+// // import 'dart:ui' as ui;
+
+// // Main page for doodling
+// class DoodlePage extends StatefulWidget {
+//   @override
+//   _DoodlePageState createState() => _DoodlePageState();
+// }
+
+// class _DoodlePageState extends State<DoodlePage> {
+//   // List to hold the points drawn on the canvas
+//   List<Offset?> points = [];
+//   Color selectedColor = Colors.black; // Default color
+//   double strokeWidth = 5.0; // Default stroke width
+
+//   // Method to clear the canvas
+//   void clearCanvas() {
+//     setState(() {
+//       points.clear();
+//     });
+//   }
+
+//   // Method to change the color of the brush
+//   void changeColor(Color color) {
+//     setState(() {
+//       selectedColor = color;
+//     });
+//   }
+
+//   // Method to change the stroke width
+//   void changeStrokeWidth(double width) {
+//     setState(() {
+//       strokeWidth = width;
+//     });
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text('Doodle App'),
+//         actions: [
+//           IconButton(
+//             icon: Icon(Icons.clear),
+//             onPressed: clearCanvas, // Clear canvas action
+//           ),
+//         ],
+//       ),
+//       body: Column(
+//         children: [
+//           Expanded(
+//             child: GestureDetector(
+//               // Detects user touch and draws on canvas
+//               onPanUpdate: (details) {
+//                 setState(() {
+//                   RenderBox renderBox = context.findRenderObject() as RenderBox;
+//                   points.add(renderBox.globalToLocal(details.globalPosition));
+//                 });
+//               },
+//               onPanEnd: (details) {
+//                 points.add(
+//                     null); // Adds a break in the line when user lifts their finger
+//               },
+//               child: CustomPaint(
+//                 painter: DoodlePainter(points, selectedColor, strokeWidth),
+//                 child: Container(),
+//               ),
+//             ),
+//           ),
+//           // Color selection buttons
+//           Container(
+//             padding: EdgeInsets.all(8.0),
+//             child: Row(
+//               mainAxisAlignment: MainAxisAlignment.center,
+//               children: [
+//                 buildColorButton(Colors.red),
+//                 buildColorButton(Colors.green),
+//                 buildColorButton(Colors.blue),
+//                 buildColorButton(Colors.yellow),
+//                 buildColorButton(Colors.black),
+//               ],
+//             ),
+//           ),
+//           // Stroke width selection slider
+//           Slider(
+//             value: strokeWidth,
+//             min: 1.0,
+//             max: 10.0,
+//             divisions: 9,
+//             label: 'Stroke Width',
+//             onChanged: (value) =>
+//                 changeStrokeWidth(value), // Change stroke width action
+//           ),
+//         ],
+//       ),
+//     );
+//   }
+
+//   // Widget to create color selection buttons
+//   Widget buildColorButton(Color color) {
+//     return GestureDetector(
+//       onTap: () => changeColor(color), // Change color action
+//       child: Container(
+//         margin: EdgeInsets.all(4.0),
+//         width: 40,
+//         height: 40,
+//         decoration: BoxDecoration(
+//           color: color,
+//           shape: BoxShape.circle,
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// // Custom painter for drawing on canvas
+// class DoodlePainter extends CustomPainter {
+//   final List<Offset?> points;
+//   final Color color;
+//   final double strokeWidth;
+
+//   DoodlePainter(this.points, this.color, this.strokeWidth);
+
+//   @override
+//   void paint(Canvas canvas, Size size) {
+//     Paint paint = Paint()
+//       ..color = color // Set brush color
+//       ..strokeCap = StrokeCap.round // Round edges for smooth lines
+//       ..strokeWidth = strokeWidth; // Set brush size
+
+//     for (int i = 0; i < points.length - 1; i++) {
+//       if (points[i] != null && points[i + 1] != null) {
+//         canvas.drawLine(
+//             points[i]!, points[i + 1]!, paint); // Draw line between two points
+//       }
+//     }
+//   }
+
+//   @override
+//   bool shouldRepaint(CustomPainter oldDelegate) => true; // Redraw when needed
+// }
+

@@ -7,7 +7,7 @@ class Future_BuilderWidget extends StatelessWidget {
 
   Future<String> fetchData() async {
     await Future.delayed(
-        const Duration(seconds: 2)); // simulate a 2 second network delay
+        const Duration(seconds: 5)); // simulate a 2 second network delay
 
     return "Data Fetched Sucessfully!"; // return a success message after the delay
   }
