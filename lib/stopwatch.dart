@@ -125,7 +125,7 @@ class _MyStopwatchState extends State<MyStopwatch> {
           elevation: 5),
       child: Text(
         label,
-        style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+        style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
       ),
     );
   }

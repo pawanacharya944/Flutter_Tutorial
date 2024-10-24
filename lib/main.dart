@@ -1,5 +1,7 @@
-import 'package:first_project/stopwatch.dart';
+import 'package:first_project/calendar.dart';
 import 'package:flutter/material.dart';
+
+import 'try.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +16,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: "Flutter Project",
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: MyStopwatch(),
+      home: MyCalendar(),
     );
   }
 }

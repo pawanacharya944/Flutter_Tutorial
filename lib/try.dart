@@ -5147,3 +5147,156 @@
 //   bool shouldRepaint(CustomPainter oldDelegate) => true; // Redraw when needed
 // }
 
+// calender
+
+// import 'package:flutter/material.dart';
+// import 'package:table_calendar/table_calendar.dart';
+
+// class CalendarHome extends StatefulWidget {
+//   @override
+//   _CalendarHomeState createState() => _CalendarHomeState();
+// }
+
+// class _CalendarHomeState extends State<CalendarHome> {
+//   late DateTime _focusedDay;
+//   late DateTime _selectedDay;
+//   late CalendarFormat _calendarFormat;
+
+//   @override
+//   void initState() {
+//     super.initState();
+//     _focusedDay = DateTime.now();
+//     _selectedDay = DateTime.now();
+//     _calendarFormat = CalendarFormat.month; // Default format
+//   }
+
+//   // Function to get events for a specific date
+//   List<String> _getEventsForDay(DateTime day) {
+//     // Replace with your event fetching logic
+//     return [];
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(title: Text('Calendar')),
+//       body: Column(
+//         children: [
+//           TableCalendar(
+//             firstDay: DateTime.utc(2020, 1, 1),
+//             lastDay: DateTime.utc(2030, 12, 31),
+//             focusedDay: _focusedDay,
+//             selectedDayPredicate: (day) => isSameDay(_selectedDay, day),
+//             calendarFormat: _calendarFormat,
+//             onFormatChanged: (format) {
+//               setState(() {
+//                 _calendarFormat = format; // Update format when changed
+//               });
+//             },
+//             onDaySelected: (selectedDay, focusedDay) {
+//               setState(() {
+//                 _selectedDay = selectedDay; // Update selected day
+//                 _focusedDay = focusedDay; // Update focused day
+//               });
+//             },
+//             onPageChanged: (focusedDay) {
+//               setState(() {
+//                 _focusedDay =
+//                     focusedDay; // Update focused day when page changes
+//               });
+//             },
+//             eventLoader: _getEventsForDay,
+//           ),
+//           ..._getEventsForDay(_selectedDay)
+//               .map((event) => ListTile(title: Text(event)))
+//               .toList(),
+//         ],
+//       ),
+//     );
+//   }
+// }
+
+// import 'package:flutter/material.dart';
+// import 'package:table_calendar/table_calendar.dart';
+
+// void main() {
+//   runApp(MyApp());
+// }
+
+// class MyApp extends StatelessWidget {
+//   const MyApp({super.key});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       title: 'Flutter Calendar App',
+//       theme: ThemeData(primarySwatch: Colors.blue),
+//       home: CalendarHome(),
+//     );
+//   }
+// }
+
+// class CalendarHome extends StatefulWidget {
+//   const CalendarHome({super.key});
+
+//   @override
+//   _CalendarHomeState createState() => _CalendarHomeState();
+// }
+
+// class _CalendarHomeState extends State<CalendarHome> {
+//   late DateTime _focusedDay;
+//   late DateTime _selectedDay;
+//   late CalendarFormat _calendarFormat;
+
+//   @override
+//   void initState() {
+//     super.initState();
+//     _focusedDay = DateTime.now();
+//     _selectedDay = DateTime.now();
+//     _calendarFormat = CalendarFormat.month; // Default format
+//   }
+
+//   // Function to get events for a specific date
+//   List<String> _getEventsForDay(DateTime day) {
+//     // Replace with your event fetching logic
+//     return [];
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(title: const Text('Calendar')),
+//       body: Column(
+//         children: [
+//           TableCalendar(
+//             firstDay: DateTime.utc(2020, 1, 1),
+//             lastDay: DateTime.utc(2030, 12, 31),
+//             focusedDay: _focusedDay,
+//             selectedDayPredicate: (day) => isSameDay(_selectedDay, day),
+//             calendarFormat: _calendarFormat,
+//             onFormatChanged: (format) {
+//               setState(() {
+//                 _calendarFormat = format; // Update format when changed
+//               });
+//             },
+//             onDaySelected: (selectedDay, focusedDay) {
+//               setState(() {
+//                 _selectedDay = selectedDay; // Update selected day
+//                 _focusedDay = focusedDay; // Update focused day
+//               });
+//             },
+//             onPageChanged: (focusedDay) {
+//               setState(() {
+//                 _focusedDay =
+//                     focusedDay; // Update focused day when page changes
+//               });
+//             },
+//             eventLoader: _getEventsForDay,
+//           ),
+//           ..._getEventsForDay(_selectedDay)
+//               .map((event) => ListTile(title: Text(event))),
+//         ],
+//       ),
+//     );
+//   }
+// }
