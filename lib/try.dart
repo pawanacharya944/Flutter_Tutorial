@@ -5519,3 +5519,287 @@
 //     );
 //   }
 // }
+
+// import 'package:flutter/material.dart';
+
+// class BMICalculatorPage extends StatefulWidget {
+//   @override
+//   _BMICalculatorPageState createState() => _BMICalculatorPageState();
+// }
+
+// class _BMICalculatorPageState extends State<BMICalculatorPage> {
+//   final TextEditingController _heightController = TextEditingController();
+//   final TextEditingController _weightController = TextEditingController();
+//   double _bmi = 0;
+//   String _resultText = "";
+
+//   // Function to calculate BMI
+//   void _calculateBMI() {
+//     double height = double.tryParse(_heightController.text) ?? 0;
+//     double weight = double.tryParse(_weightController.text) ?? 0;
+
+//     if (height > 0 && weight > 0) {
+//       setState(() {
+//         _bmi = weight / ((height / 100) * (height / 100)); // BMI formula
+//         _resultText = _getResultText(_bmi);
+//       });
+//     } else {
+//       setState(() {
+//         _resultText = "Please enter valid values!";
+//       });
+//     }
+//   }
+
+//   // Function to determine the BMI category
+//   String _getResultText(double bmi) {
+//     if (bmi < 18.5) {
+//       return "Underweight";
+//     } else if (bmi >= 18.5 && bmi < 24.9) {
+//       return "Normal weight";
+//     } else if (bmi >= 25 && bmi < 29.9) {
+//       return "Overweight";
+//     } else {
+//       return "Obese";
+//     }
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text('BMI Calculator'),
+//       ),
+//       body: Padding(
+//         padding: const EdgeInsets.all(16.0),
+//         child: Column(
+//           mainAxisAlignment: MainAxisAlignment.center,
+//           children: [
+//             // Height input field
+//             TextField(
+//               controller: _heightController,
+//               keyboardType: TextInputType.number,
+//               decoration: InputDecoration(
+//                 labelText: 'Height (cm)',
+//                 border: OutlineInputBorder(),
+//                 prefixIcon: Icon(Icons.height),
+//               ),
+//             ),
+//             SizedBox(height: 16),
+
+//             // Weight input field
+//             TextField(
+//               controller: _weightController,
+//               keyboardType: TextInputType.number,
+//               decoration: InputDecoration(
+//                 labelText: 'Weight (kg)',
+//                 border: OutlineInputBorder(),
+//                 prefixIcon: Icon(Icons.fitness_center),
+//               ),
+//             ),
+//             SizedBox(height: 16),
+
+//             // Calculate button
+//             ElevatedButton(
+//               onPressed: _calculateBMI,
+//               child: Text(
+//                 'Calculate BMI',
+//                 style: TextStyle(fontSize: 18),
+//               ),
+//             ),
+//             SizedBox(height: 30),
+
+//             // Displaying the result
+//             Text(
+//               'Your BMI is:',
+//               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+//             ),
+//             SizedBox(height: 8),
+//             Text(
+//               _bmi.toStringAsFixed(2),
+//               style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+//             ),
+//             SizedBox(height: 8),
+//             Text(
+//               _resultText,
+//               style: TextStyle(
+//                   fontSize: 24,
+//                   fontWeight: FontWeight.bold,
+//                   color: Colors.blue),
+//             ),
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// import 'package:flutter/material.dart';
+
+// class BMICalculatorPage extends StatefulWidget {
+//   @override
+//   _BMICalculatorPageState createState() => _BMICalculatorPageState();
+// }
+
+// class _BMICalculatorPageState extends State<BMICalculatorPage> {
+//   final TextEditingController _heightController = TextEditingController();
+//   final TextEditingController _weightController = TextEditingController();
+//   double _bmi = 0;
+//   String _resultText = "";
+
+//   // Function to calculate BMI
+//   void _calculateBMI() {
+//     double height = double.tryParse(_heightController.text) ?? 0;
+//     double weight = double.tryParse(_weightController.text) ?? 0;
+
+//     if (height > 0 && weight > 0) {
+//       setState(() {
+//         _bmi = weight / ((height / 100) * (height / 100)); // BMI formula
+//         _resultText = _getResultText(_bmi);
+//       });
+//     } else {
+//       setState(() {
+//         _resultText = "Please enter valid values!";
+//       });
+//     }
+//   }
+
+//   // Function to determine the BMI category
+//   String _getResultText(double bmi) {
+//     if (bmi < 18.5) {
+//       return "Underweight";
+//     } else if (bmi >= 18.5 && bmi < 24.9) {
+//       return "Normal weight";
+//     } else if (bmi >= 25 && bmi < 29.9) {
+//       return "Overweight";
+//     } else {
+//       return "Obese";
+//     }
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       body: Stack(
+//         children: [
+//           // Background gradient
+//           Container(
+//             decoration: BoxDecoration(
+//               gradient: LinearGradient(
+//                 colors: [Colors.blue[300]!, Colors.green[400]!],
+//                 begin: Alignment.topLeft,
+//                 end: Alignment.bottomRight,
+//               ),
+//             ),
+//           ),
+//           // Main content
+//           Padding(
+//             padding: const EdgeInsets.all(16.0),
+//             child: Column(
+//               mainAxisAlignment: MainAxisAlignment.center,
+//               children: [
+//                 // AppBar with transparent background
+//                 AppBar(
+//                   title: Text(
+//                     'BMI Calculator',
+//                     style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+//                   ),
+//                   centerTitle: true,
+//                   backgroundColor: Colors.transparent,
+//                   elevation: 0,
+//                 ),
+
+//                 // Height input field
+//                 TextField(
+//                   controller: _heightController,
+//                   keyboardType: TextInputType.number,
+//                   style: TextStyle(fontSize: 22), // Increase text size
+//                   decoration: InputDecoration(
+//                     labelText: 'Height (cm)',
+//                     labelStyle: TextStyle(
+//                         fontSize: 20,
+//                         color: Colors.blueGrey), // Increase label text size
+//                     border: OutlineInputBorder(
+//                       borderRadius: BorderRadius.circular(20),
+//                     ),
+//                     prefixIcon: Icon(Icons.height, color: Colors.black),
+//                     filled: true,
+//                     fillColor: Colors.white.withOpacity(0.8),
+//                     contentPadding: EdgeInsets.symmetric(
+//                         vertical: 20, horizontal: 16), // Increase padding
+//                   ),
+//                 ),
+//                 SizedBox(height: 16),
+
+//                 // Weight input field
+//                 TextField(
+//                   controller: _weightController,
+//                   keyboardType: TextInputType.number,
+//                   style: TextStyle(fontSize: 22), // Increase text size
+//                   decoration: InputDecoration(
+//                     labelText: 'Weight (kg)',
+//                     labelStyle: TextStyle(
+//                         fontSize: 20,
+//                         color: Colors.blueGrey), // Increase label text size
+//                     border: OutlineInputBorder(
+//                       borderRadius: BorderRadius.circular(20),
+//                     ),
+//                     prefixIcon: Icon(Icons.fitness_center, color: Colors.black),
+//                     filled: true,
+//                     fillColor: Colors.white.withOpacity(0.8),
+//                     contentPadding: EdgeInsets.symmetric(
+//                         vertical: 20, horizontal: 16), // Increase padding
+//                   ),
+//                 ),
+//                 SizedBox(height: 16),
+
+//                 // Calculate button
+//                 ElevatedButton(
+//                   onPressed: _calculateBMI,
+//                   style: ElevatedButton.styleFrom(
+//                     backgroundColor:
+//                         Colors.white, // Set button background color
+//                     foregroundColor: Colors.red, // Set button text color
+//                     shape: RoundedRectangleBorder(
+//                       borderRadius: BorderRadius.circular(20),
+//                     ),
+//                     padding: EdgeInsets.symmetric(vertical: 15, horizontal: 30),
+//                   ),
+//                   child: Text(
+//                     'Calculate BMI',
+//                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+//                   ),
+//                 ),
+//                 SizedBox(height: 30),
+
+//                 // Displaying the result
+//                 Text(
+//                   'Your BMI is:',
+//                   style: TextStyle(
+//                       fontSize: 20,
+//                       fontWeight: FontWeight.bold,
+//                       color: Colors.white),
+//                 ),
+//                 SizedBox(height: 8),
+//                 Text(
+//                   _bmi.toStringAsFixed(2),
+//                   style: TextStyle(
+//                       fontSize: 32,
+//                       fontWeight: FontWeight.bold,
+//                       color: Colors.white),
+//                 ),
+//                 SizedBox(height: 8),
+//                 Text(
+//                   _resultText,
+//                   style: TextStyle(
+//                       fontSize: 24,
+//                       fontWeight: FontWeight.bold,
+//                       color: Colors.yellowAccent),
+//                 ),
+//               ],
+//             ),
+//           ),
+//         ],
+//       ),
+//     );
+//   }
+// }
