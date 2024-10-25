@@ -5300,3 +5300,222 @@
 //     );
 //   }
 // }
+
+// import 'package:flutter/material.dart';
+// import 'package:anim_search_bar/anim_search_bar.dart';
+
+// class SearchPage extends StatefulWidget {
+//   @override
+//   _SearchPageState createState() => _SearchPageState();
+// }
+
+// class _SearchPageState extends State<SearchPage> {
+//   TextEditingController textController = TextEditingController();
+//   List<String> items = [
+//     "Apple",
+//     "Banana",
+//     "Cherry",
+//     "Date",
+//     "Grape",
+//     "Kiwi",
+//     "Mango",
+//     "Orange",
+//     "Peach",
+//     "Pineapple",
+//     "Strawberry",
+//     "Watermelon"
+//   ];
+//   List<String> filteredItems = [];
+
+//   @override
+//   void initState() {
+//     super.initState();
+//     // Initially, show all items
+//     filteredItems = items;
+//   }
+
+//   void _filterItems(String query) {
+//     if (query.isEmpty) {
+//       setState(() {
+//         filteredItems = items; // Show all items if query is empty
+//       });
+//     } else {
+//       setState(() {
+//         filteredItems = items
+//             .where((item) => item.toLowerCase().contains(query.toLowerCase()))
+//             .toList(); // Filter items based on query
+//       });
+//     }
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text('Animated Search Bar'),
+//         backgroundColor: Colors.blue[300],
+//       ),
+//       body: Padding(
+//         padding: const EdgeInsets.all(16.0),
+//         child: Column(
+//           children: [
+//             AnimSearchBar(
+//               width: 500, // Width of the search bar
+//               textController: textController, // Controller for managing input
+//               onSuffixTap: () {
+//                 setState(() {
+//                   textController.clear(); // Clear the text field
+//                   filteredItems = items; // Reset filter when cleared
+//                 });
+//               },
+//               helpText: "Search here...", // Placeholder text
+//               prefixIcon: Icon(Icons.search), // Icon to show on the left side
+//               suffixIcon: Icon(Icons.clear), // Icon to show on the right side
+//               animationDurationInMilli:
+//                   300, // Animation duration in milliseconds
+//               onSubmitted: (value) {
+//                 _filterItems(value); // Filter items when submitted
+//               },
+//             ),
+//             SizedBox(height: 20),
+//             Expanded(
+//               child: ListView.builder(
+//                 itemCount: filteredItems.length,
+//                 itemBuilder: (context, index) {
+//                   return ClipRRect(
+//                     borderRadius:
+//                         BorderRadius.circular(16), // Circular border radius
+//                     child: Card(
+//                       margin: EdgeInsets.symmetric(vertical: 6),
+//                       child: ListTile(
+//                           title: Text(filteredItems[index]),
+//                           leading: Icon(Icons.food_bank),
+//                           tileColor: Colors.blue[200]),
+//                     ),
+//                   );
+//                 },
+//               ),
+//             ),
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// import 'package:flutter/material.dart';
+
+// class TodoList extends StatefulWidget {
+//   @override
+//   _TodoListState createState() => _TodoListState();
+// }
+
+// class _TodoListState extends State<TodoList> {
+//   // List to hold the to-do items
+//   final List<String> _todos = [];
+//   // TextEditingController to manage the input field
+//   final TextEditingController _controller = TextEditingController();
+
+//   // Method to add a new to-do item
+//   void _addTodo() {
+//     // Check if the input is not empty
+//     if (_controller.text.isNotEmpty) {
+//       setState(() {
+//         // Add the new item to the list
+//         _todos.add(_controller.text);
+//         // Clear the input field after adding
+//         _controller.clear();
+//       });
+//     }
+//   }
+
+//   // Method to remove a to-do item by index
+//   void _removeTodo(int index) {
+//     setState(() {
+//       // Remove the item from the list at the specified index
+//       _todos.removeAt(index);
+//     });
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text(
+//           'To-Do List', // Title of the app bar
+//           style: TextStyle(fontSize: 30), // Set font size for title
+//         ),
+//       ),
+//       body: Column(
+//         children: [
+//           Padding(
+//             padding:
+//                 const EdgeInsets.all(16.0), // Padding around the text field
+//             child: TextField(
+//               controller: _controller, // Controller for managing input
+//               style: TextStyle(
+//                 fontSize: 26, // Set font size for input text
+//               ),
+//               decoration: InputDecoration(
+//                 labelText: 'Enter a new task', // Label for the text field
+//                 border: OutlineInputBorder(
+//                   borderRadius: BorderRadius.circular(
+//                       40.0), // Rounded corners for the border
+//                   borderSide: BorderSide(color: Colors.black), // Border color
+//                 ),
+//                 contentPadding: EdgeInsets.symmetric(
+//                     horizontal: 20.0,
+//                     vertical: 15.0), // Padding inside the text field
+//                 suffixIcon: IconButton(
+//                   icon: Icon(Icons.add, color: Colors.blue), // Add icon button
+//                   onPressed: _addTodo, // Call addTodo method when pressed
+//                 ),
+//               ),
+//             ),
+//           ),
+//           Expanded(
+//             child: ListView.builder(
+//               itemCount: _todos.length, // Number of items in the list
+//               itemBuilder: (context, index) {
+//                 return Card(
+//                   margin: EdgeInsets.symmetric(
+//                       horizontal: 16, vertical: 8), // Margin around each card
+//                   elevation: 4, // Shadow effect for the card
+//                   child: ListTile(
+//                     title: Text(
+//                       _todos[index], // Display the to-do item text
+//                       style: TextStyle(
+//                           fontSize: 18), // Style for the text in the card
+//                     ),
+//                     trailing: IconButton(
+//                       icon: Icon(Icons.delete,
+//                           color: Colors.red), // Delete icon button
+//                       onPressed: () => _removeTodo(
+//                           index), // Call removeTodo method when pressed
+//                     ),
+//                   ),
+//                 );
+//               },
+//             ),
+//           ),
+//         ],
+//       ),
+//       floatingActionButton: FloatingActionButton(
+//         onPressed: () {
+//           if (_controller.text.isNotEmpty) {
+//             // Check if input is not empty before adding
+//             _addTodo(); // Call addTodo method when pressed
+//           }
+//         },
+//         tooltip: 'Add Task', // Tooltip for the floating action button
+//         child: Icon(
+//           Icons.add,
+//           color: Colors.white, // Color of the icon inside the button
+//           size: 40, // Size of the icon inside the button
+//         ),
+//         backgroundColor:
+//             Colors.amber, // Background color of the floating action button
+//       ),
+//     );
+//   }
+// }
