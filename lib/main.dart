@@ -1,5 +1,6 @@
-import 'package:first_project/todo-list.dart';
 import 'package:flutter/material.dart';
+
+import 'bmi.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: "Flutter Project",
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: MyTodoList(),
+      home: const MyBMI_Calculator(),
     );
   }
 }
