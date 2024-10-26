@@ -51,7 +51,7 @@ class _MyVotingAppState extends State<MyVotingApp> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                SizedBox(height: 100),
+                const SizedBox(height: 100),
                 Center(
                   child: Text(
                     'Choose Your Favorite Topping: ',
