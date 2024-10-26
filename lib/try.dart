@@ -5803,3 +5803,527 @@
 //     );
 //   }
 // }
+
+// import 'package:flutter/material.dart';
+
+// // Main function to run the app
+// void main() {
+//   runApp(const VotingApp());
+// }
+
+// // Main Voting App widget
+// class VotingApp extends StatelessWidget {
+//   const VotingApp({Key? key}) : super(key: key);
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       title: 'Voting App',
+//       theme: ThemeData(
+//         primarySwatch: Colors.teal,
+//         visualDensity: VisualDensity.adaptivePlatformDensity,
+//       ),
+//       debugShowCheckedModeBanner: false,
+//       home: const VotingHomePage(),
+//     );
+//   }
+// }
+
+// // Home page of the voting app
+// class VotingHomePage extends StatefulWidget {
+//   const VotingHomePage({Key? key}) : super(key: key);
+
+//   @override
+//   _VotingHomePageState createState() => _VotingHomePageState();
+// }
+
+// class _VotingHomePageState extends State<VotingHomePage> {
+//   int pepperoniVotes = 0; // Votes for Pepperoni
+//   int veggieVotes = 0; // Votes for Veggie
+//   int hawaiianVotes = 0; // Votes for Hawaiian
+
+//   // Function to handle voting
+//   void vote(String option) {
+//     setState(() {
+//       if (option == 'Pepperoni') {
+//         pepperoniVotes++;
+//       } else if (option == 'Veggie') {
+//         veggieVotes++;
+//       } else if (option == 'Hawaiian') {
+//         hawaiianVotes++;
+//       }
+//     });
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: const Text('Vote for Your Favorite Pizza Topping'),
+//         centerTitle: true,
+//       ),
+//       body: Padding(
+//         padding: const EdgeInsets.all(16.0),
+//         child: Column(
+//           mainAxisAlignment: MainAxisAlignment.center,
+//           children: <Widget>[
+//             // Display voting options
+//             Text(
+//               'Choose your favorite topping:',
+//               style: Theme.of(context).textTheme.headlineSmall,
+//               textAlign: TextAlign.center,
+//             ),
+//             const SizedBox(height: 20),
+//             // Option buttons
+//             ElevatedButton(
+//               onPressed: () => vote('Pepperoni'),
+//               style: ElevatedButton.styleFrom(
+//                 padding:
+//                     const EdgeInsets.symmetric(vertical: 20, horizontal: 40),
+//                 backgroundColor: Colors.redAccent, // Button color for Pepperoni
+//               ),
+//               child: Text('Pepperoni ($pepperoniVotes votes)'),
+//             ),
+//             const SizedBox(height: 20),
+//             ElevatedButton(
+//               onPressed: () => vote('Veggie'),
+//               style: ElevatedButton.styleFrom(
+//                 padding:
+//                     const EdgeInsets.symmetric(vertical: 20, horizontal: 40),
+//                 backgroundColor: Colors.green, // Button color for Veggie
+//               ),
+//               child: Text('Veggie ($veggieVotes votes)'),
+//             ),
+//             const SizedBox(height: 20),
+//             ElevatedButton(
+//               onPressed: () => vote('Hawaiian'),
+//               style: ElevatedButton.styleFrom(
+//                 padding:
+//                     const EdgeInsets.symmetric(vertical: 20, horizontal: 40),
+//                 backgroundColor: Colors.orange, // Button color for Hawaiian
+//               ),
+//               child: Text('Hawaiian ($hawaiianVotes votes)'),
+//             ),
+//             const SizedBox(height: 40),
+//             // Display results
+//             Text(
+//               'Current Results:',
+//               style: Theme.of(context).textTheme.titleLarge,
+//             ),
+//             const SizedBox(height: 10),
+//             Text('Pepperoni has $pepperoniVotes votes'),
+//             Text('Veggie has $veggieVotes votes'),
+//             Text('Hawaiian has $hawaiianVotes votes'),
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// import 'package:flutter/material.dart';
+
+// // Main function to run the app
+// void main() {
+//   runApp(const VotingApp());
+// }
+
+// // Main Voting App widget
+// class VotingApp extends StatelessWidget {
+//   const VotingApp({Key? key}) : super(key: key);
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       title: 'Voting App',
+//       theme: ThemeData(
+//         primarySwatch: Colors.teal,
+//         visualDensity: VisualDensity.adaptivePlatformDensity,
+//       ),
+//       debugShowCheckedModeBanner: false,
+//       home: const VotingHomePage(),
+//     );
+//   }
+// }
+
+// // Home page of the voting app
+// class VotingHomePage extends StatefulWidget {
+//   const VotingHomePage({Key? key}) : super(key: key);
+
+//   @override
+//   _VotingHomePageState createState() => _VotingHomePageState();
+// }
+
+// class _VotingHomePageState extends State<VotingHomePage> {
+//   int pepperoniVotes = 0; // Votes for Pepperoni
+//   int veggieVotes = 0; // Votes for Veggie
+//   int hawaiianVotes = 0; // Votes for Hawaiian
+
+//   // Function to handle voting
+//   void vote(String option) {
+//     setState(() {
+//       if (option == 'Pepperoni') {
+//         pepperoniVotes++;
+//       } else if (option == 'Veggie') {
+//         veggieVotes++;
+//       } else if (option == 'Hawaiian') {
+//         hawaiianVotes++;
+//       }
+//     });
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       body: Container(
+//         decoration: const BoxDecoration(
+//           image: DecorationImage(
+//             image: AssetImage('images/pizzza.jpg'), // Background image
+//             fit: BoxFit.cover,
+//           ),
+//         ),
+//         child: Padding(
+//           padding: const EdgeInsets.all(16.0),
+//           child: Column(
+//             mainAxisAlignment: MainAxisAlignment.center,
+//             children: <Widget>[
+//               // Display voting options
+//               Text(
+//                 'Choose your favorite topping:',
+//                 style: Theme.of(context)
+//                     .textTheme
+//                     .headlineMedium
+//                     ?.copyWith(color: Colors.white),
+//                 textAlign: TextAlign.center,
+//               ),
+//               const SizedBox(height: 20),
+//               // Option buttons with enhanced style
+//               ElevatedButton(
+//                 onPressed: () => vote('Pepperoni'),
+//                 style: ElevatedButton.styleFrom(
+//                   padding:
+//                       const EdgeInsets.symmetric(vertical: 20, horizontal: 40),
+//                   backgroundColor:
+//                       Colors.redAccent, // Button color for Pepperoni
+//                   shape: RoundedRectangleBorder(
+//                       borderRadius: BorderRadius.circular(30)),
+//                   elevation: 5,
+//                 ),
+//                 child: Text('Pepperoni ($pepperoniVotes votes)',
+//                     style: const TextStyle(fontSize: 18)),
+//               ),
+//               const SizedBox(height: 20),
+//               ElevatedButton(
+//                 onPressed: () => vote('Veggie'),
+//                 style: ElevatedButton.styleFrom(
+//                   padding:
+//                       const EdgeInsets.symmetric(vertical: 20, horizontal: 40),
+//                   backgroundColor: Colors.green, // Button color for Veggie
+//                   shape: RoundedRectangleBorder(
+//                       borderRadius: BorderRadius.circular(30)),
+//                   elevation: 5,
+//                 ),
+//                 child: Text('Veggie ($veggieVotes votes)',
+//                     style: const TextStyle(fontSize: 18)),
+//               ),
+//               const SizedBox(height: 20),
+//               ElevatedButton(
+//                 onPressed: () => vote('Hawaiian'),
+//                 style: ElevatedButton.styleFrom(
+//                   padding:
+//                       const EdgeInsets.symmetric(vertical: 20, horizontal: 40),
+//                   backgroundColor: Colors.orange, // Button color for Hawaiian
+//                   shape: RoundedRectangleBorder(
+//                       borderRadius: BorderRadius.circular(30)),
+//                   elevation: 5,
+//                 ),
+//                 child: Text('Hawaiian ($hawaiianVotes votes)',
+//                     style: const TextStyle(fontSize: 18)),
+//               ),
+//               const SizedBox(height: 40),
+//               // Display results with larger text
+//               Text(
+//                 'Current Results:',
+//                 style: Theme.of(context)
+//                     .textTheme
+//                     .headlineSmall
+//                     ?.copyWith(color: Colors.white),
+//               ),
+//               const SizedBox(height: 10),
+//               Text('Pepperoni has $pepperoniVotes votes',
+//                   style: const TextStyle(fontSize: 22, color: Colors.white)),
+//               Text('Veggie has $veggieVotes votes',
+//                   style: const TextStyle(fontSize: 22, color: Colors.white)),
+//               Text('Hawaiian has $hawaiianVotes votes',
+//                   style: const TextStyle(fontSize: 22, color: Colors.white)),
+//             ],
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// import 'package:flutter/material.dart';
+
+// // Main function to run the app
+
+// // Home page of the voting app
+// class VotingHomePage extends StatefulWidget {
+//   const VotingHomePage({Key? key}) : super(key: key);
+
+//   @override
+//   _VotingHomePageState createState() => _VotingHomePageState();
+// }
+
+// class _VotingHomePageState extends State<VotingHomePage> {
+//   int pepperoniVotes = 0; // Votes for Pepperoni
+//   int veggieVotes = 0; // Votes for Veggie
+//   int hawaiianVotes = 0; // Votes for Hawaiian
+
+//   // Function to handle voting
+//   void vote(String option) {
+//     setState(() {
+//       if (option == 'Pepperoni') {
+//         pepperoniVotes++;
+//       } else if (option == 'Veggie') {
+//         veggieVotes++;
+//       } else if (option == 'Hawaiian') {
+//         hawaiianVotes++;
+//       }
+//     });
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       body: Stack(
+//         children: [
+//           // Background image
+//           Container(
+//             decoration: const BoxDecoration(
+//               image: DecorationImage(
+//                 image: AssetImage('images/pizzza.jpg'), // Background image
+//                 fit: BoxFit.cover, // Fill the entire screen
+//               ),
+//             ),
+//           ),
+//           // Foreground content
+//           Padding(
+//             padding: const EdgeInsets.all(16.0),
+//             child: Column(
+//               mainAxisAlignment: MainAxisAlignment.center,
+//               children: <Widget>[
+//                 SizedBox(height: 100),
+//                 // Display voting options
+//                 Center(
+//                   child: Text(
+//                     'Choose your favorite topping:',
+//                     style: Theme.of(context).textTheme.headlineMedium?.copyWith(
+//                         color: Colors.lightBlueAccent,
+//                         fontWeight: FontWeight.bold),
+//                     textAlign: TextAlign.center,
+//                   ),
+//                 ),
+//                 const SizedBox(height: 20),
+//                 // Option buttons with enhanced style
+//                 ElevatedButton(
+//                   onPressed: () => vote('Pepperoni'),
+//                   style: ElevatedButton.styleFrom(
+//                     padding: const EdgeInsets.symmetric(
+//                         vertical: 20, horizontal: 20),
+//                     backgroundColor: Colors.white, // Button color for Pepperoni
+//                     shape: RoundedRectangleBorder(
+//                         borderRadius: BorderRadius.circular(30)),
+//                     elevation: 5,
+//                   ),
+//                   child: Text('Pepperoni ($pepperoniVotes votes)',
+//                       style: const TextStyle(
+//                           fontSize: 18,
+//                           fontWeight: FontWeight.bold,
+//                           color: Colors.black)),
+//                 ),
+//                 const SizedBox(height: 20),
+//                 ElevatedButton(
+//                   onPressed: () => vote('Veggie'),
+//                   style: ElevatedButton.styleFrom(
+//                     padding: const EdgeInsets.symmetric(
+//                         vertical: 20, horizontal: 20),
+//                     backgroundColor: Colors.white, // Button color for Veggie
+//                     shape: RoundedRectangleBorder(
+//                         borderRadius: BorderRadius.circular(30)),
+//                     elevation: 5,
+//                   ),
+//                   child: Text('Veggie ($veggieVotes votes)',
+//                       style: const TextStyle(
+//                           fontSize: 18,
+//                           fontWeight: FontWeight.bold,
+//                           color: Colors.black)),
+//                 ),
+//                 const SizedBox(height: 20),
+//                 ElevatedButton(
+//                   onPressed: () => vote('Hawaiian'),
+//                   style: ElevatedButton.styleFrom(
+//                     padding: const EdgeInsets.symmetric(
+//                         vertical: 20, horizontal: 20),
+//                     backgroundColor: Colors.white, // Button color for Hawaiian
+//                     shape: RoundedRectangleBorder(
+//                         borderRadius: BorderRadius.circular(30)),
+//                     elevation: 5,
+//                   ),
+//                   child: Text('Hawaiian ($hawaiianVotes votes)',
+//                       style: const TextStyle(
+//                         fontSize: 18,
+//                         color: Colors.black,
+//                         fontWeight: FontWeight.bold,
+//                       )),
+//                 ),
+//                 const SizedBox(height: 40),
+//                 // Display results with larger text
+//                 Text(
+//                   'Current Results:',
+//                   style: Theme.of(context)
+//                       .textTheme
+//                       .headlineSmall
+//                       ?.copyWith(color: Colors.white),
+//                 ),
+//                 const SizedBox(height: 10),
+//                 Text('Pepperoni has $pepperoniVotes votes',
+//                     style: const TextStyle(
+//                         fontSize: 26,
+//                         color: Colors.white,
+//                         fontWeight: FontWeight.bold)),
+//                 Text('Veggie has $veggieVotes votes',
+//                     style: const TextStyle(
+//                         fontSize: 26,
+//                         color: Colors.white,
+//                         fontWeight: FontWeight.bold)),
+//                 Text('Hawaiian has $hawaiianVotes votes',
+//                     style: const TextStyle(
+//                         fontSize: 26,
+//                         color: Colors.white,
+//                         fontWeight: FontWeight.bold)),
+//               ],
+//             ),
+//           ),
+//         ],
+//       ),
+//     );
+//   }
+// }
+
+
+
+//voting app
+// import 'package:flutter/material.dart';
+// class VotingHomePage extends StatefulWidget {
+//   const VotingHomePage({Key? key}) : super(key: key);
+
+//   @override
+//   _VotingHomePageState createState() => _VotingHomePageState();
+// }
+// class _VotingHomePageState extends State<VotingHomePage> {
+//   int pepperoniVotes = 0; // Votes for Pepperoni
+//   int veggieVotes = 0; // Votes for Veggie
+//   int hawaiianVotes = 0; // Votes for Hawaiian
+
+//   // Function to handle voting
+//   void vote(String option) {
+//     setState(() {
+//       if (option == 'Pepperoni') {
+//         pepperoniVotes++;
+//       } else if (option == 'Veggie') {
+//         veggieVotes++;
+//       } else if (option == 'Hawaiian') {
+//         hawaiianVotes++;
+//       }
+//     });
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       body: Stack(
+//         children: [
+//           // Background image
+//           Container(
+//             decoration: const BoxDecoration(
+//               image: DecorationImage(
+//                 image: AssetImage('images/pizzza.jpg'), // Background image
+//                 fit: BoxFit.cover, // Fill the entire screen
+//               ),
+//             ),
+//           ),
+//           // Foreground content with a semi-transparent overlay for better readability
+//           Container(
+//             color: Colors.black45, // Semi-transparent overlay
+//           ),
+//           Padding(
+//             padding: const EdgeInsets.all(16.0),
+//             child: Column(
+//               mainAxisAlignment: MainAxisAlignment.center,
+//               children: <Widget>[
+//                 SizedBox(height: 100),
+//                 // Display voting options with improved text style
+//                 Center(
+//                   child: Text(
+//                     'Choose Your Favorite Topping:',
+//                     style: Theme.of(context).textTheme.headlineMedium?.copyWith(
+//                         color: Colors.amberAccent,
+//                         fontWeight: FontWeight.bold,
+//                         fontSize: 26),
+//                     textAlign: TextAlign.center,
+//                   ),
+//                 ),
+//                 const SizedBox(height: 20),
+//                 // Option buttons with enhanced style and shadow effects
+//                 buildVoteButton('Pepperoni', pepperoniVotes, Colors.red[400]!),
+//                 const SizedBox(height: 20),
+//                 buildVoteButton('Veggie', veggieVotes, Colors.green[400]!),
+//                 const SizedBox(height: 20),
+//                 buildVoteButton('Hawaiian', hawaiianVotes, Colors.blue[300]!),
+//                 const SizedBox(height: 40),
+//                 // Display results with larger text and improved readability
+//                 Text(
+//                   'Current Results:',
+//                   style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+//                       color: Colors.white,
+//                       fontSize: 28,
+//                       fontWeight: FontWeight.bold),
+//                 ),
+//                 const SizedBox(height: 10),
+//                 buildResultText('Pepperoni has $pepperoniVotes votes'),
+//                 buildResultText('Veggie has $veggieVotes votes'),
+//                 buildResultText('Hawaiian has $hawaiianVotes votes'),
+//               ],
+//             ),
+//           ),
+//         ],
+//       ),
+//     );
+//   }
+
+//   ElevatedButton buildVoteButton(String topping, int votes, Color buttonColor) {
+//     return ElevatedButton(
+//       onPressed: () => vote(topping),
+//       style: ElevatedButton.styleFrom(
+//         padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+//         backgroundColor: buttonColor, // Button color for toppings
+//         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+//         elevation: 10,
+//         shadowColor: Colors.black54,
+//       ),
+//       child: Text('$topping ($votes votes)',
+//           style: const TextStyle(
+//               fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white)),
+//     );
+//   }
+
+//   Text buildResultText(String result) {
+//     return Text(result,
+//         style: const TextStyle(
+//           fontSize: 24,
+//           color: Colors.yellow,
+//         ));
+//   }
+// }
