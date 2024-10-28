@@ -2344,10 +2344,10 @@
 // import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 // void main() {
-//   runApp(MyApp());
+//   runApp(MyLottie());
 // }
 
-// class MyApp extends StatelessWidget {
+// class MyLottie extends StatelessWidget {
 //   @override
 //   Widget build(BuildContext context) {
 //     return MaterialApp(
@@ -4271,10 +4271,10 @@
 // import 'package:flutter/material.dart';
 
 // void main() {
-//   runApp(MyApp());
+//   runApp(MyLottie());
 // }
 
-// class MyApp extends StatelessWidget {
+// class MyLottie extends StatelessWidget {
 //   @override
 //   Widget build(BuildContext context) {
 //     return MaterialApp(
@@ -4680,10 +4680,10 @@
 // import 'package:flutter/material.dart';
 
 // void main() {
-//   runApp(MyApp());
+//   runApp(MyLottie());
 // }
 
-// class MyApp extends StatelessWidget {
+// class MyLottie extends StatelessWidget {
 //   @override
 //   Widget build(BuildContext context) {
 //     return MaterialApp(
@@ -5220,11 +5220,11 @@
 // import 'package:table_calendar/table_calendar.dart';
 
 // void main() {
-//   runApp(MyApp());
+//   runApp(MyLottie());
 // }
 
-// class MyApp extends StatelessWidget {
-//   const MyApp({super.key});
+// class MyLottie extends StatelessWidget {
+//   const MyLottie({super.key});
 
 //   @override
 //   Widget build(BuildContext context) {
@@ -6212,8 +6212,6 @@
 //   }
 // }
 
-
-
 //voting app
 // import 'package:flutter/material.dart';
 // class VotingHomePage extends StatefulWidget {
@@ -6325,5 +6323,329 @@
 //           fontSize: 24,
 //           color: Colors.yellow,
 //         ));
+//   }
+// }
+
+// import 'package:flutter/material.dart';
+// import 'package:lottie/lottie.dart';
+
+// class MyLottie extends StatefulWidget {
+//   const MyLottie({super.key});
+
+//   @override
+//   State<MyLottie> createState() => _MyLottieState();
+// }
+
+// class _MyLottieState extends State<MyLottie> with TickerProviderStateMixin {
+//   late final AnimationController _controller;
+
+//   @override
+//   void initState() {
+//     super.initState();
+//     // Initialize the AnimationController
+//     _controller = AnimationController(vsync: this);
+//   }
+
+//   @override
+//   void dispose() {
+//     // Dispose of the controller to free up resources
+//     _controller.dispose();
+//     super.dispose();
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       body: Container(
+//         decoration: BoxDecoration(
+//           gradient: LinearGradient(
+//             colors: [Colors.blue[400]!, Colors.green[300]!],
+//             begin: Alignment.topLeft,
+//             end: Alignment.bottomRight,
+//           ),
+//         ),
+//         child: Center(
+//           child: Column(
+//             mainAxisAlignment: MainAxisAlignment.center,
+//             children: [
+//               // Lottie Animation
+//               Lottie.asset(
+//                 'images/subs.json', // Load Lottie animation from assets
+//                 controller: _controller,
+//                 onLoaded: (composition) {
+//                   // Configure the AnimationController with the duration of the Lottie file
+//                   _controller
+//                     ..duration = composition
+//                         .duration // Set duration based on composition
+//                     ..forward(); // Start the animation
+//                 },
+//                 // Customize animation properties for a beautiful UI
+//                 width: 600, // Increased width for better visibility
+//                 height: 600, // Increased height for better visibility
+//                 fit: BoxFit.contain, // Contain the animation within its bounds
+//                 repeat: true, // Loop the animation indefinitely
+//                 reverse: true, // Reverse the animation after reaching the end
+//               ),
+//               const SizedBox(height: 20), // Spacing between animation and text
+//               const Text(
+//                 'Subscribe Now!',
+//                 style: TextStyle(
+//                   fontSize: 28, // Increased font size for better visibility
+//                   fontWeight: FontWeight.bold,
+//                   color: Colors.white,
+//                   shadows: [
+//                     Shadow(
+//                       blurRadius: 10.0,
+//                       color: Colors.black54,
+//                       offset: Offset(2.0, 2.0),
+//                     ),
+//                   ],
+//                 ),
+//               ),
+//               const SizedBox(height: 10), // Additional spacing below text
+//               const Text(
+//                 'Tap to Subscribe', // Additional instruction text
+//                 style: TextStyle(
+//                   fontSize: 18,
+//                   color: Colors.white70,
+//                   shadows: [
+//                     Shadow(
+//                       blurRadius: 5.0,
+//                       color: Colors.black38,
+//                       offset: Offset(1.0, 1.0),
+//                     ),
+//                   ],
+//                 ),
+//               ),
+//             ],
+//           ),
+//         ),
+//       ),
+//       floatingActionButton: FloatingActionButton(
+//         onPressed: () {
+//           // Control play/pause of the animation on button press
+//           if (_controller.isAnimating) {
+//             _controller.stop(); // Stop animation if currently playing
+//           } else {
+//             _controller.repeat(); // Repeat animation if stopped
+//           }
+//         },
+//         child: const Icon(Icons.play_arrow), // Play icon for button
+//       ),
+//     );
+//   }
+// }
+
+// import 'package:flutter/material.dart';
+
+// class NeumorphismPage extends StatefulWidget {
+//   const NeumorphismPage({Key? key}) : super(key: key);
+
+//   @override
+//   State<NeumorphismPage> createState() => _NeumorphismPageState();
+// }
+
+// class _NeumorphismPageState extends State<NeumorphismPage> {
+//   bool _isPlayElevated = true;
+//   bool _isPauseElevated = true;
+//   bool _isStopElevated = true;
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       backgroundColor: Colors.grey[300],
+//       body: Center(
+//         child: Column(
+//           mainAxisAlignment: MainAxisAlignment.center,
+//           children: [
+//             // Simple music logo in the center
+//             Icon(Icons.music_note, size: 100, color: Colors.black54),
+//             const SizedBox(height: 50), // Space between logo and buttons
+
+//             // Horizontal button layout with even spacing
+//             Row(
+//               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+//               children: [
+//                 buildNeumorphicButton(Icons.play_arrow, () {
+//                   setState(() {
+//                     _isPlayElevated = !_isPlayElevated;
+//                   });
+//                 }, _isPlayElevated),
+//                 buildNeumorphicButton(Icons.pause, () {
+//                   setState(() {
+//                     _isPauseElevated = !_isPauseElevated;
+//                   });
+//                 }, _isPauseElevated),
+//                 buildNeumorphicButton(Icons.stop, () {
+//                   setState(() {
+//                     _isStopElevated = !_isStopElevated;
+//                   });
+//                 }, _isStopElevated),
+//               ],
+//             ),
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+
+//   // Function to build neumorphic buttons
+//   Widget buildNeumorphicButton(
+//       IconData icon, VoidCallback onTap, bool isElevated) {
+//     return GestureDetector(
+//       onTap: onTap,
+//       child: AnimatedContainer(
+//         duration: const Duration(milliseconds: 200),
+//         height: 80, // Increased button height
+//         width: 80, // Increased button width
+//         decoration: BoxDecoration(
+//           color: Colors.grey[300],
+//           borderRadius: BorderRadius.circular(40), // Circular buttons
+//           boxShadow: isElevated
+//               ? [
+//                   BoxShadow(
+//                     color: Colors.grey.shade400,
+//                     offset: const Offset(4, 4),
+//                     blurRadius: 15,
+//                     spreadRadius: 1,
+//                   ),
+//                   BoxShadow(
+//                     color: Colors.white,
+//                     offset: const Offset(-4, -4),
+//                     blurRadius: 15,
+//                     spreadRadius: 1,
+//                   ),
+//                 ]
+//               : [
+//                   BoxShadow(
+//                     color: Colors.grey.shade600.withOpacity(0.5),
+//                     offset: const Offset(2, 2),
+//                     blurRadius: 15,
+//                     spreadRadius: 1,
+//                   ),
+//                   BoxShadow(
+//                     color: Colors.white.withOpacity(0.5),
+//                     offset: const Offset(-2, -2),
+//                     blurRadius: 15,
+//                     spreadRadius: 1,
+//                   ),
+//                 ],
+//         ),
+//         alignment: Alignment.center,
+//         child: Icon(icon, size: 36, color: Colors.black54), // Larger icon size
+//       ),
+//     );
+//   }
+// }
+
+// import 'package:flutter/material.dart';
+
+// class RadioButtonPage extends StatefulWidget {
+//   @override
+//   _RadioButtonPageState createState() => _RadioButtonPageState();
+// }
+
+// class _RadioButtonPageState extends State<RadioButtonPage> {
+//   // Variable to hold the currently selected value
+//   int? _selectedValue;
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text('Custom Radio Buttons'),
+//       ),
+//       body: Padding(
+//         padding: const EdgeInsets.all(16.0),
+//         child: Column(
+//           children: [
+//             // Radio button for option 1
+//             RadioListTile<int>(
+//               title: Text('Option 1',
+//                   style: TextStyle(fontSize: 26)), // Increased font size
+//               value: 1,
+//               groupValue: _selectedValue,
+//               onChanged: (value) {
+//                 setState(() {
+//                   _selectedValue = value; // Update the selected value
+//                 });
+//               },
+//               activeColor: Colors.green, // Color when selected
+//               fillColor: WidgetStateProperty.all(
+//                   Colors.green), // Fill color when selected
+//               visualDensity: VisualDensity
+//                   .compact, // Compact visual density for larger buttons
+//             ),
+//             // Radio button for option 2
+//             RadioListTile<int>(
+//               title: Text('Option 2',
+//                   style: TextStyle(fontSize: 26)), // Increased font size
+//               value: 2,
+//               groupValue: _selectedValue,
+//               onChanged: (value) {
+//                 setState(() {
+//                   _selectedValue = value; // Update the selected value
+//                 });
+//               },
+//               activeColor: Colors.blue, // Color when selected
+//               fillColor: WidgetStateProperty.all(
+//                   Colors.blue), // Fill color when selected
+//               visualDensity: VisualDensity
+//                   .compact, // Compact visual density for larger buttons
+//             ),
+//             // Radio button for option 3
+//             RadioListTile<int>(
+//               title: Text('Option 3',
+//                   style: TextStyle(fontSize: 26)), // Increased font size
+//               value: 3,
+//               groupValue: _selectedValue,
+//               onChanged: (value) {
+//                 setState(() {
+//                   _selectedValue = value; // Update the selected value
+//                 });
+//               },
+//               activeColor: Colors.red, // Color when selected
+//               fillColor: WidgetStateProperty.all(
+//                   Colors.red), // Fill color when selected
+//               visualDensity: VisualDensity
+//                   .compact, // Compact visual density for larger buttons
+//             ),
+//             SizedBox(height: 50), // Spacer for better UI layout
+
+//             // Elevated button with increased size and padding
+//             ElevatedButton(
+//               onPressed: () {
+//                 // Action to be performed on button press, e.g., submit selection
+//                 showDialog(
+//                   context: context,
+//                   builder: (context) => AlertDialog(
+//                     title: Text(
+//                       'Selected Option',
+//                     ),
+//                     content: Text(
+//                         'You selected Option $_selectedValue'), // Display selected option
+//                     actions: [
+//                       TextButton(
+//                         onPressed: () => Navigator.of(context).pop(),
+//                         child: Text('OK'),
+//                       ),
+//                     ],
+//                   ),
+//                 );
+//               },
+//               style: ElevatedButton.styleFrom(
+//                 padding: EdgeInsets.symmetric(
+//                     vertical: 16.0,
+//                     horizontal:
+//                         32.0), // Increased padding for larger button size
+//                 textStyle: TextStyle(
+//                     fontSize: 18), // Increased font size for button text
+//               ),
+//               child: Text('Submit'), // Button to submit selection
+//             ),
+//           ],
+//         ),
+//       ),
+//     );
 //   }
 // }
