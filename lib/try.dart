@@ -6650,3 +6650,839 @@
 //   }
 // }
 
+// import 'package:flutter/material.dart';
+
+// void main() {
+//   runApp(SchoolDashboard());
+// }
+
+// class SchoolDashboard extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       title: 'School Dashboard',
+//       theme: ThemeData(
+//         primarySwatch: Colors.blue,
+//       ),
+//       home: DashboardScreen(),
+//     );
+//   }
+// }
+
+// class DashboardScreen extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text('School Dashboard'),
+//         centerTitle: true,
+//       ),
+//       body: SingleChildScrollView(
+//         child: Column(
+//           children: [
+//             // Header Section
+//             Container(
+//               padding: EdgeInsets.all(20),
+//               decoration: BoxDecoration(
+//                 color: Colors.blueAccent,
+//                 borderRadius:
+//                     BorderRadius.vertical(bottom: Radius.circular(30)),
+//               ),
+//               child: Column(
+//                 children: [
+//                   Text(
+//                     'Welcome to Our School',
+//                     style: TextStyle(
+//                         fontSize: 24,
+//                         color: Colors.white,
+//                         fontWeight: FontWeight.bold),
+//                   ),
+//                   SizedBox(height: 10),
+//                   Text(
+//                     'Your success is our priority!',
+//                     style: TextStyle(fontSize: 16, color: Colors.white70),
+//                   ),
+//                 ],
+//               ),
+//             ),
+
+//             // Cards Section
+//             Padding(
+//               padding: const EdgeInsets.all(20.0),
+//               child: GridView.count(
+//                 crossAxisCount: 2,
+//                 shrinkWrap: true,
+//                 physics: NeverScrollableScrollPhysics(),
+//                 children: [
+//                   // Card for Attendance
+//                   DashboardCard(
+//                     title: 'Attendance',
+//                     iconData: Icons.check_circle,
+//                     color: Colors.green,
+//                   ),
+//                   // Card for Grades
+//                   DashboardCard(
+//                     title: 'Grades',
+//                     iconData: Icons.grade,
+//                     color: Colors.yellow,
+//                   ),
+//                   // Card for Assignments
+//                   DashboardCard(
+//                     title: 'Assignments',
+//                     iconData: Icons.assignment,
+//                     color: Colors.orange,
+//                   ),
+//                   // Card for Events
+//                   DashboardCard(
+//                     title: 'Events',
+//                     iconData: Icons.event,
+//                     color: Colors.purple,
+//                   ),
+//                 ],
+//               ),
+//             ),
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// // Custom Widget for Dashboard Cards
+// class DashboardCard extends StatelessWidget {
+//   final String title;
+//   final IconData iconData;
+//   final Color color;
+
+//   const DashboardCard({
+//     Key? key,
+//     required this.title,
+//     required this.iconData,
+//     required this.color,
+//   }) : super(key: key);
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Card(
+//       elevation: 5,
+//       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+//       child: Container(
+//         decoration: BoxDecoration(
+//           borderRadius: BorderRadius.circular(15),
+//           color: color.withOpacity(0.1), // Light background for card
+//         ),
+//         child: Padding(
+//           padding: const EdgeInsets.all(20.0),
+//           child: Column(
+//             mainAxisAlignment: MainAxisAlignment.center,
+//             children: [
+//               Icon(iconData, size: 40, color: color),
+//               SizedBox(height: 10),
+//               Text(
+//                 title,
+//                 style: TextStyle(
+//                     fontSize: 20, fontWeight: FontWeight.bold, color: color),
+//               ),
+//             ],
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// import 'package:flutter/material.dart';
+
+// class DashboardScreen extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     String greeting = _getGreeting();
+
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text(
+//           'School App UI',
+//           style: TextStyle(fontSize: 30),
+//         ),
+//         centerTitle: true,
+//         backgroundColor: Colors.blue[100],
+//       ),
+//       body: SingleChildScrollView(
+//         child: Padding(
+//           padding: const EdgeInsets.all(20.0),
+//           child: Column(
+//             crossAxisAlignment: CrossAxisAlignment.center,
+//             children: [
+//               // School Name
+//               Text(
+//                 'Code Flicks School ',
+//                 style: TextStyle(
+//                     fontSize: 28,
+//                     fontWeight: FontWeight.bold,
+//                     color: Colors.blue),
+//               ),
+//               SizedBox(height: 10),
+
+//               // Short Inspirational Quote
+//               Text(
+//                 '"Learn Today, Lead Tomorrow."',
+//                 style: TextStyle(
+//                   fontSize: 16,
+//                   // fontStyle: FontStyle.italic,
+//                   color: Colors.grey[700],
+//                 ),
+//               ),
+//               SizedBox(height: 20),
+
+//               // Greeting Section
+//               Container(
+//                 padding: EdgeInsets.all(20),
+//                 decoration: BoxDecoration(
+//                   gradient: LinearGradient(
+//                     colors: [Colors.deepPurple[300]!, Colors.blueAccent[400]!],
+//                     begin: Alignment.topLeft,
+//                     end: Alignment.bottomRight,
+//                   ),
+//                   borderRadius:
+//                       BorderRadius.vertical(bottom: Radius.circular(30)),
+//                 ),
+//                 child: Column(
+//                   crossAxisAlignment: CrossAxisAlignment.start,
+//                   children: [
+//                     Text(
+//                       greeting, // Only greeting message
+//                       style: TextStyle(
+//                           fontSize: 24,
+//                           color: Colors.white,
+//                           fontWeight: FontWeight.bold),
+//                     ),
+//                     SizedBox(height: 10),
+//                     Text(
+//                       'Have a Good Day!',
+//                       style: TextStyle(fontSize: 18, color: Colors.white70),
+//                     ),
+//                   ],
+//                 ),
+//               ),
+
+//               SizedBox(height: 20), // Gap between sections
+
+//               // Profile Section
+//               Row(
+//                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//                 children: [
+//                   CircleAvatar(
+//                     radius: 40,
+//                     backgroundImage:
+//                         AssetImage('images/dev.jpeg'), // Add your image here
+//                   ),
+//                   Column(
+//                     crossAxisAlignment: CrossAxisAlignment.start,
+//                     children: [
+//                       Text('John',
+//                           style: TextStyle(
+//                               fontSize: 18, fontWeight: FontWeight.bold)),
+//                       Text('Grade 10', style: TextStyle(color: Colors.grey)),
+//                     ],
+//                   ),
+//                   Icon(Icons.notifications, size: 30, color: Colors.deepPurple),
+//                 ],
+//               ),
+
+//               SizedBox(height: 20), // Gap between sections
+
+//               // Cards Section
+//               GridView.builder(
+//                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+//                   crossAxisCount: 2, // Keep it as 3 columns
+//                   childAspectRatio: 1.2, // Adjust aspect ratio for better fit
+//                   crossAxisSpacing: 10, // Space between columns
+//                   mainAxisSpacing: 10, // Space between rows
+//                 ),
+//                 itemCount: 6, // Total number of cards
+//                 shrinkWrap: true, // Allow GridView to take only necessary space
+//                 physics:
+//                     NeverScrollableScrollPhysics(), // Disable scrolling for GridView
+//                 itemBuilder: (BuildContext context, int index) {
+//                   switch (index) {
+//                     case 0:
+//                       return DashboardCard(
+//                         title: 'Attendance',
+//                         iconData: Icons.check_circle,
+//                         color: Colors.green[600]!,
+//                       );
+//                     case 1:
+//                       return DashboardCard(
+//                         title: 'Grades',
+//                         iconData: Icons.grade,
+//                         color: Colors.orange[600]!,
+//                       );
+//                     case 2:
+//                       return DashboardCard(
+//                         title: 'Assignments',
+//                         iconData: Icons.assignment,
+//                         color: Colors.blue[600]!,
+//                       );
+//                     case 3:
+//                       return DashboardCard(
+//                         title: 'Events',
+//                         iconData: Icons.event,
+//                         color: Colors.purple[600]!,
+//                       );
+//                     case 4:
+//                       return DashboardCard(
+//                         title: 'Exams',
+//                         iconData: Icons.school,
+//                         color: Colors.brown[600]!,
+//                       );
+//                     case 5:
+//                       return DashboardCard(
+//                         title: 'Exam Results',
+//                         iconData: Icons.assessment,
+//                         color: Colors.red[600]!,
+//                       );
+//                     default:
+//                       return Container();
+//                   }
+//                 },
+//               ),
+
+//               SizedBox(height: 20), // Gap between sections
+
+//               // Footer Section with Additional Information
+//               Container(
+//                 padding: EdgeInsets.all(20),
+//                 decoration: BoxDecoration(
+//                     color: Colors.grey[200],
+//                     borderRadius: BorderRadius.circular(15)),
+//                 child: Column(
+//                     crossAxisAlignment: CrossAxisAlignment.start,
+//                     children: [
+//                       Text('Upcoming Events',
+//                           style: TextStyle(
+//                               fontSize: 20, fontWeight: FontWeight.bold)),
+//                       SizedBox(height: 10),
+//                       Text('- Science Fair on Nov 10',
+//                           style: TextStyle(color: Colors.black87)),
+//                       Text('- Parent-Teacher Meeting on Nov 15',
+//                           style: TextStyle(color: Colors.black87)),
+//                       Text('- Coding Workshop on Nov 20',
+//                           style: TextStyle(color: Colors.black87)),
+//                     ]),
+//               )
+//             ],
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+
+//   // Function to get greeting based on the time of day
+//   static String _getGreeting() {
+//     final hour = DateTime.now().hour;
+//     if (hour < 12) {
+//       return 'Good Morning 🌄';
+//     } else if (hour < 17) {
+//       return 'Good Afternoon 🌞';
+//     } else {
+//       return 'Good Evening 🌄';
+//     }
+//   }
+// }
+
+// // Custom Widget for Dashboard Cards
+// class DashboardCard extends StatelessWidget {
+//   final String title;
+//   final IconData iconData;
+//   final Color color;
+
+//   const DashboardCard({
+//     Key? key,
+//     required this.title,
+//     required this.iconData,
+//     required this.color,
+//   }) : super(key: key);
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Card(
+//       elevation: 5,
+//       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+//       child: Container(
+//         decoration: BoxDecoration(
+//             borderRadius: BorderRadius.circular(15),
+//             color: color.withOpacity(0.1)),
+//         child: Padding(
+//           padding: const EdgeInsets.all(20.0),
+//           child: Column(
+//             mainAxisAlignment: MainAxisAlignment.center,
+//             children: [
+//               Icon(iconData, size: 40, color: color),
+//               const SizedBox(height: 10),
+//               Text(title,
+//                   style: TextStyle(
+//                       fontSize: 20, fontWeight: FontWeight.bold, color: color))
+//             ],
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// import 'package:flutter/material.dart';
+
+// class DashboardScreen extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     String greeting = _getGreeting();
+
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: const Text(
+//           'School App UI',
+//           style: TextStyle(fontSize: 30),
+//         ),
+//         centerTitle: true,
+//         backgroundColor: Colors.blue[100],
+//       ),
+//       body: SingleChildScrollView(
+//         child: Padding(
+//           padding: const EdgeInsets.all(10.0),
+//           child: Column(
+//             crossAxisAlignment: CrossAxisAlignment.center,
+//             children: [
+//               Stack(
+//                 children: [
+//                   // Background image with transparency
+//                   Container(
+//                     width: double.infinity,
+//                     height: 250, // Adjust height as necessary
+//                     decoration: BoxDecoration(
+//                       image: DecorationImage(
+//                         image: const AssetImage(
+//                             'images/ed.jpg'), // Path to your background image
+//                         fit: BoxFit.cover,
+//                         colorFilter: ColorFilter.mode(
+//                           Colors.black.withOpacity(0.5), // Adjust transparency
+//                           BlendMode.darken,
+//                         ),
+//                       ),
+//                       borderRadius: BorderRadius.circular(15),
+//                     ),
+//                   ),
+//                   // Overlay gradient and content
+//                   Padding(
+//                     padding: const EdgeInsets.all(20.0),
+//                     child: Column(
+//                       crossAxisAlignment: CrossAxisAlignment.start,
+//                       children: [
+//                         const Text(
+//                           'Code Flicks School',
+//                           style: TextStyle(
+//                               fontSize: 28,
+//                               fontWeight: FontWeight.bold,
+//                               color: Colors.white),
+//                         ),
+//                         const SizedBox(height: 10),
+//                         const Text(
+//                           '"Learn Today, Lead Tomorrow."',
+//                           style: TextStyle(
+//                             fontSize: 16,
+//                             color: Colors.white,
+//                           ),
+//                         ),
+//                         SizedBox(height: 20),
+//                         // Greeting section
+//                         Text(
+//                           greeting,
+//                           style: TextStyle(
+//                               fontSize: 24,
+//                               color: Colors.white,
+//                               fontWeight: FontWeight.bold),
+//                         ),
+//                         SizedBox(height: 10),
+//                         Text(
+//                           'Have a Good Day!',
+//                           style: TextStyle(fontSize: 18, color: Colors.white70),
+//                         ),
+//                         const SizedBox(height: 20),
+//                         // Profile Section
+//                         const Row(
+//                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//                           children: [
+//                             CircleAvatar(
+//                               radius: 40,
+//                               backgroundImage: AssetImage(
+//                                   'images/dev.jpeg'), // Path to your profile image
+//                             ),
+//                             Icon(Icons.notifications,
+//                                 size: 30, color: Colors.red),
+//                           ],
+//                         ),
+//                         Column(
+//                           children: [
+//                             Text(
+//                               'John',
+//                               style: TextStyle(
+//                                   fontSize: 18,
+//                                   fontWeight: FontWeight.bold,
+//                                   color: Colors.black),
+//                             ),
+//                             Text(
+//                               'Grade 10',
+//                               style: TextStyle(color: Colors.black),
+//                             ),
+//                           ],
+//                         ),
+//                       ],
+//                     ),
+//                   ),
+//                 ],
+//               ),
+
+//               SizedBox(height: 20), // Gap between sections
+
+//               // Cards Section
+//               GridView.builder(
+//                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+//                   crossAxisCount: 2,
+//                   childAspectRatio: 1.2,
+//                   crossAxisSpacing: 10,
+//                   mainAxisSpacing: 10,
+//                 ),
+//                 itemCount: 6,
+//                 shrinkWrap: true,
+//                 physics: NeverScrollableScrollPhysics(),
+//                 itemBuilder: (BuildContext context, int index) {
+//                   switch (index) {
+//                     case 0:
+//                       return DashboardCard(
+//                         title: 'Attendance',
+//                         iconData: Icons.check_circle,
+//                         color: Colors.green[600]!,
+//                       );
+//                     case 1:
+//                       return DashboardCard(
+//                         title: 'Grades',
+//                         iconData: Icons.grade,
+//                         color: Colors.orange[600]!,
+//                       );
+//                     case 2:
+//                       return DashboardCard(
+//                         title: 'Assignments',
+//                         iconData: Icons.assignment,
+//                         color: Colors.blue[600]!,
+//                       );
+//                     case 3:
+//                       return DashboardCard(
+//                         title: 'Events',
+//                         iconData: Icons.event,
+//                         color: Colors.purple[600]!,
+//                       );
+//                     case 4:
+//                       return DashboardCard(
+//                         title: 'Exams',
+//                         iconData: Icons.school,
+//                         color: Colors.brown[600]!,
+//                       );
+//                     case 5:
+//                       return DashboardCard(
+//                         title: 'Exam Results',
+//                         iconData: Icons.assessment,
+//                         color: Colors.red[600]!,
+//                       );
+//                     default:
+//                       return Container();
+//                   }
+//                 },
+//               ),
+
+//               SizedBox(height: 20), // Gap between sections
+
+//               // Footer Section with Additional Information
+//               Container(
+//                 padding: const EdgeInsets.all(20),
+//                 decoration: BoxDecoration(
+//                     color: Colors.grey[200],
+//                     borderRadius: BorderRadius.circular(15)),
+//                 child: const Column(
+//                     crossAxisAlignment: CrossAxisAlignment.start,
+//                     children: [
+//                       Text('Upcoming Events',
+//                           style: TextStyle(
+//                               fontSize: 20, fontWeight: FontWeight.bold)),
+//                       SizedBox(height: 10),
+//                       Text('- Science Fair on Nov 10',
+//                           style: TextStyle(color: Colors.black87)),
+//                       Text('- Parent-Teacher Meeting on Nov 15',
+//                           style: TextStyle(color: Colors.black87)),
+//                       Text('- Coding Workshop on Nov 20',
+//                           style: TextStyle(color: Colors.black87)),
+//                     ]),
+//               ),
+//             ],
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+
+//   // Function to get greeting based on the time of day
+//   static String _getGreeting() {
+//     final hour = DateTime.now().hour;
+//     if (hour < 12) {
+//       return 'Good Morning 🌄';
+//     } else if (hour < 17) {
+//       return 'Good Afternoon 🌞';
+//     } else {
+//       return 'Good Evening 🌄';
+//     }
+//   }
+// }
+
+// // Custom Widget for Dashboard Cards
+// class DashboardCard extends StatelessWidget {
+//   final String title;
+//   final IconData iconData;
+//   final Color color;
+
+//   const DashboardCard({
+//     Key? key,
+//     required this.title,
+//     required this.iconData,
+//     required this.color,
+//   }) : super(key: key);
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Card(
+//       elevation: 5,
+//       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+//       child: Container(
+//         decoration: BoxDecoration(
+//             borderRadius: BorderRadius.circular(15),
+//             color: color.withOpacity(0.1)),
+//         child: Padding(
+//           padding: const EdgeInsets.all(20.0),
+//           child: Column(
+//             mainAxisAlignment: MainAxisAlignment.center,
+//             children: [
+//               Icon(iconData, size: 40, color: color),
+//               const SizedBox(height: 10),
+//               Text(title,
+//                   style: TextStyle(
+//                       fontSize: 20, fontWeight: FontWeight.bold, color: color))
+//             ],
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// import 'package:flutter/material.dart';
+// import 'package:lottie/lottie.dart';
+
+// void main() => runApp(const MyLottie());
+
+// class MyLottie extends StatefulWidget {
+//   const MyLottie({super.key});
+
+//   @override
+//   State<MyLottie> createState() => _MyLottieState();
+// }
+
+// class _MyLottieState extends State<MyLottie> with TickerProviderStateMixin {
+//   late final AnimationController _controller;
+
+//   @override
+//   void initState() {
+//     super.initState();
+//     // Initialize the AnimationController with a vsync provider
+//     _controller = AnimationController(vsync: this);
+//   }
+
+//   @override
+//   void dispose() {
+//     // Dispose of the controller when the widget is removed from the widget tree
+//     _controller.dispose();
+//     super.dispose();
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       home: Scaffold(
+//         appBar: AppBar(
+//           title: const Text('Lottie Animation Example'),
+//         ),
+//         body: Center(
+//           child: Lottie.asset(
+//             'images/subs.json', // Path to your Lottie JSON file
+//             controller: _controller,
+//             onLoaded: (composition) {
+//               // Configure the AnimationController with the duration of the Lottie file
+//               _controller
+//                 ..duration =
+//                     composition.duration // Set duration from composition
+//                 ..forward(); // Start the animation
+//             },
+//           ),
+//         ),
+//         floatingActionButton: FloatingActionButton(
+//           onPressed: () {
+//             // Control the animation playback with button press
+//             if (_controller.isAnimating) {
+//               _controller
+//                   .stop(); // Stop the animation if it's currently playing
+//             } else {
+//               _controller.repeat(); // Repeat the animation if it's stopped
+//             }
+//           },
+//           child: const Icon(Icons.play_arrow),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// import 'package:flutter/material.dart';
+// import 'package:lottie/lottie.dart';
+
+// class MyLottie extends StatefulWidget {
+//   const MyLottie({super.key});
+
+//   @override
+//   State<MyLottie> createState() => _MyLottieState();
+// }
+
+// class _MyLottieState extends State<MyLottie> with TickerProviderStateMixin {
+//   late final AnimationController _controller;
+
+//   @override
+//   void initState() {
+//     super.initState();
+//     // Initialize the AnimationController with a vsync provider
+//     _controller = AnimationController(vsync: this);
+//   }
+
+//   @override
+//   void dispose() {
+//     // Dispose of the controller when the widget is removed from the widget tree
+//     _controller.dispose();
+//     super.dispose();
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: const Text('Lottie Animation Example'),
+//       ),
+//       body: Container(
+//         decoration: BoxDecoration(
+//             gradient: LinearGradient(
+//                 colors: [Colors.blue[300]!, Colors.green[300]!])),
+//         child: Lottie.network(
+//           'https://lottie.host/6d338f36-d1f2-460e-bde4-1ef35c7e5567/bsHnGKDuNf.json', // URL of the Lottie animation
+//           controller: _controller,
+//           onLoaded: (composition) {
+//             // Configure the AnimationController with the duration of the Lottie file
+//             _controller
+//               ..duration = composition.duration // Set duration from composition
+//               ..forward(); // Start the animation
+//           },
+//         ),
+//       ),
+//       floatingActionButton: FloatingActionButton(
+//         onPressed: () {
+//           // Control the animation playback with button press
+//           if (_controller.isAnimating) {
+//             _controller.stop(); // Stop the animation if it's currently playing
+//           } else {
+//             _controller.repeat(); // Repeat the animation if it's stopped
+//           }
+//         },
+//         child: const Icon(Icons.play_arrow),
+//       ),
+//     );
+//   }
+// }
+
+// import 'package:flutter/material.dart';
+// import 'package:lottie/lottie.dart';
+
+// class MyLottie extends StatefulWidget {
+//   const MyLottie({super.key});
+
+//   @override
+//   State<MyLottie> createState() => _MyLottieState();
+// }
+
+// class _MyLottieState extends State<MyLottie> with TickerProviderStateMixin {
+//   late final AnimationController _controller;
+
+//   @override
+//   void initState() {
+//     super.initState();
+//     // Initialize the AnimationController with a vsync provider
+//     _controller = AnimationController(vsync: this);
+//   }
+
+//   @override
+//   void dispose() {
+//     // Dispose of the controller when the widget is removed from the widget tree
+//     _controller.dispose();
+//     super.dispose();
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       // Set extendBody to true to allow the body to extend behind the app bar
+//       extendBody: true,
+//       appBar: AppBar(
+//         title: const Text('Lottie Animation Example'),
+//         backgroundColor: Colors.blue[100], // Make app bar transparent
+//         elevation: 0, // Remove shadow from app bar
+//       ),
+//       body: Container(
+//         decoration: BoxDecoration(
+//           gradient: LinearGradient(
+//             begin: Alignment.topLeft, // Starting point of the gradient
+//             end: Alignment.bottomRight, // Ending point of the gradient
+//             colors: [
+//               Colors.blue[100]!, // First color of the gradient
+//               Colors.blue[200]!, // Second color of the gradient
+//             ],
+//           ),
+//         ),
+//         child: Center(
+//           child: Lottie.network(
+//             'https://lottie.host/3b1eb924-86e1-4e68-9193-00e81e2aa423/O0XwMV4CCg.json', // URL of the Lottie animation
+//             controller: _controller,
+//             onLoaded: (composition) {
+//               // Configure the AnimationController with the duration of the Lottie file
+//               _controller
+//                 ..duration =
+//                     composition.duration // Set duration from composition
+//                 ..forward(); // Start the animation
+//             },
+//           ),
+//         ),
+//       ),
+//       floatingActionButton: FloatingActionButton(
+//         onPressed: () {
+//           // Control the animation playback with button press
+//           if (_controller.isAnimating) {
+//             _controller.stop(); // Stop the animation if it's currently playing
+//           } else {
+//             _controller.repeat(); // Repeat the animation if it's stopped
+//           }
+//         },
+//         child: const Icon(Icons.play_arrow),
+//       ),
+//     );
+//   }
+// }

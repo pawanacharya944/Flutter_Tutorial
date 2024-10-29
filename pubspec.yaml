@@ -45,7 +45,6 @@ dependencies:
   google_fonts: ^6.2.1
   liquid_pull_to_refresh: ^3.0.1
   table_calendar: ^3.1.2
-  lottie: ^3.1.3
   
   
 
