@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class MyRadioButtons extends StatefulWidget {
+  const MyRadioButtons({super.key});
+
   @override
   _MyRadioButtonsState createState() => _MyRadioButtonsState();
 }
@@ -13,7 +15,7 @@ class _MyRadioButtonsState extends State<MyRadioButtons> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'Radio Buttons',
           style: TextStyle(fontSize: 26),
         ),
@@ -24,7 +26,7 @@ class _MyRadioButtonsState extends State<MyRadioButtons> {
           children: [
             // Radio button for option 1
             RadioListTile<int>(
-              title: Text('Option 1',
+              title: const Text('Option 1',
                   style: TextStyle(fontSize: 26)), // Increased font size
               value: 1,
               groupValue: _selectedValue,
@@ -41,7 +43,7 @@ class _MyRadioButtonsState extends State<MyRadioButtons> {
             ),
             // Radio button for option 2
             RadioListTile<int>(
-              title: Text('Option 2',
+              title: const Text('Option 2',
                   style: TextStyle(fontSize: 26)), // Increased font size
               value: 2,
               groupValue: _selectedValue,
@@ -58,7 +60,7 @@ class _MyRadioButtonsState extends State<MyRadioButtons> {
             ),
             // Radio button for option 3
             RadioListTile<int>(
-              title: Text('Option 3',
+              title: const Text('Option 3',
                   style: TextStyle(fontSize: 26)), // Increased font size
               value: 3,
               groupValue: _selectedValue,
@@ -73,7 +75,7 @@ class _MyRadioButtonsState extends State<MyRadioButtons> {
               visualDensity: VisualDensity
                   .compact, // Compact visual density for larger buttons
             ),
-            SizedBox(height: 50), // Spacer for better UI layout
+            const SizedBox(height: 50), // Spacer for better UI layout
 
             // Elevated button with increased size and padding
             ElevatedButton(
@@ -82,7 +84,7 @@ class _MyRadioButtonsState extends State<MyRadioButtons> {
                 showDialog(
                   context: context,
                   builder: (context) => AlertDialog(
-                    title: Text(
+                    title: const Text(
                       'Selected Option',
                     ),
                     content: Text(
@@ -90,21 +92,21 @@ class _MyRadioButtonsState extends State<MyRadioButtons> {
                     actions: [
                       TextButton(
                         onPressed: () => Navigator.of(context).pop(),
-                        child: Text('OK'),
+                        child: const Text('OK'),
                       ),
                     ],
                   ),
                 );
               },
               style: ElevatedButton.styleFrom(
-                padding: EdgeInsets.symmetric(
+                padding: const EdgeInsets.symmetric(
                     vertical: 16.0,
                     horizontal:
                         32.0), // Increased padding for larger button size
-                textStyle: TextStyle(
+                textStyle: const TextStyle(
                     fontSize: 22), // Increased font size for button text
               ),
-              child: Text('Submit'), // Button to submit selection
+              child: const Text('Submit'), // Button to submit selection
             ),
           ],
         ),
