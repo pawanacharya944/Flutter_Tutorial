@@ -39,10 +39,10 @@
 //           decoration: BoxDecoration(
 //             gradient: LinearGradient(
 //                 colors: [
-//                   Colors.purple[300]!, // end color of the gradient
+//                   Colors.purple[500]!, // end color of the gradient
 
-//                   // Colors.green[300]!, //this is the start color of the gradient
-//                   Colors.blue[300]!, // middle color of the gradient
+//                   // Colors.green[500]!, //this is the start color of the gradient
+//                   Colors.blue[500]!, // middle color of the gradient
 //                 ],
 //                 begin: Alignment.topLeft, // gradient start from top left
 //                 end: Alignment.bottomRight), //gradient ends at bottom right
@@ -56,7 +56,7 @@
 //                 Colors.red[400]!, // end color of the gradient
 //                 Colors.blue[400]!, // middle color of the gradient
 
-//                 // Colors.green[300]!, //this is the start color of the gradient
+//                 // Colors.green[500]!, //this is the start color of the gradient
 //                 Colors.purple[400]!
 //               ],
 //               begin: Alignment.topLeft, // gradient start from top left
@@ -285,7 +285,7 @@
 //               colors: [
 //                 Colors.green[200]!, // middle color of the gradient
 
-//                 Colors.blue[300]!,
+//                 Colors.blue[500]!,
 //                 Colors.blue[200]!, // end color of the gradient
 //                 //this is the start color of the gradient
 //               ],
@@ -403,7 +403,7 @@
 //           gradient: LinearGradient(
 //               colors: [
 //                 Colors.green[200]!, // Start color of the gradient
-//                 Colors.blue[300]!, // Middle color of the gradient
+//                 Colors.blue[500]!, // Middle color of the gradient
 //                 Colors.blue[200]!, // End color of the gradient
 //               ],
 //               begin:
@@ -530,7 +530,7 @@
 //           gradient: LinearGradient(
 //             colors: [
 //               Colors.blue[200]!,
-//               Colors.purple[300]!,
+//               Colors.purple[500]!,
 //             ],
 //             begin: Alignment.topLeft,
 //             end: Alignment.bottomRight,
@@ -620,7 +620,7 @@
 //           gradient: LinearGradient(
 //             colors: [
 //               Colors.blue[200]!,
-//               Colors.purple[300]!,
+//               Colors.purple[500]!,
 //             ],
 //             begin: Alignment.topLeft,
 //             end: Alignment.bottomRight,
@@ -724,7 +724,7 @@
 //                   ),
 //                 );
 //               },
-//               backgroundColor: Colors.blue[300], // Background color of FAB
+//               backgroundColor: Colors.blue[500], // Background color of FAB
 //               child: const Icon(
 //                 Icons.person,
 //                 size: 50,
@@ -751,7 +751,7 @@
 //           style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
 //         ),
 //         centerTitle: true,
-//         backgroundColor: Colors.green[300], // Darker app bar color
+//         backgroundColor: Colors.green[500], // Darker app bar color
 //       ),
 //       body: Center(
 //         child: Column(
@@ -802,7 +802,7 @@
 //               padding: const EdgeInsets.all(10),
 //               margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
 //               decoration: BoxDecoration(
-//                 color: Colors.red[300],
+//                 color: Colors.red[500],
 //                 borderRadius: BorderRadius.circular(8),
 //                 boxShadow: const [
 //                   BoxShadow(
@@ -2900,7 +2900,7 @@
 //       itemCount: 10,
 //       itemBuilder: (context, index) {
 //         return Shimmer.fromColors(
-//           baseColor: Colors.grey[300]!,
+//           baseColor: Colors.grey[500]!,
 //           highlightColor: Colors.grey[100]!,
 //           child: Container(
 //             height: 100,
@@ -3369,7 +3369,7 @@
 //           children: [
 //             // Wrap CarouselView in a SizedBox to provide height
 //             SizedBox(
-//               height: 300, // Set a fixed height for the carousel
+//               height: 500, // Set a fixed height for the carousel
 //               child: CarouselView.(
 //                 itemCount: imageAssets.length,
 //                 itemBuilder: (context, index) {
@@ -3433,7 +3433,7 @@
 //           children: [
 //             // Wrap CarouselSlider in a SizedBox to provide height
 //             SizedBox(
-//               height: 300, // Set a fixed height for the carousel
+//               height: 500, // Set a fixed height for the carousel
 //               child: CarouselSlider.builder(
 //                 itemCount: imageAssets.length,
 //                 itemBuilder: (context, index, realIndex) {
@@ -3587,7 +3587,7 @@
 //             children: <Widget>[
 //               // Custom Switch with beautiful UI
 //               AnimatedContainer(
-//                 duration: Duration(milliseconds: 300), // Animation duration
+//                 duration: Duration(milliseconds: 500), // Animation duration
 //                 curve: Curves.easeInOut, // Animation curve
 //                 decoration: BoxDecoration(
 //                   color: isSwitched
@@ -3617,7 +3617,7 @@
 //                       inactiveThumbColor:
 //                           Colors.white, // Color of the thumb when off
 //                       inactiveTrackColor:
-//                           Colors.grey[300], // Track color when switch is off
+//                           Colors.grey[500], // Track color when switch is off
 //                       activeTrackColor: Colors
 //                           .lightGreenAccent, // Track color when switch is on
 //                     ),
@@ -3891,7 +3891,7 @@
 //                 borderRadius: 52, // Rounded corners for the action
 //                 elevation: 6, // Elevation for shadow effect
 //                 animationDuration:
-//                     const Duration(milliseconds: 300), // Animation duration
+//                     const Duration(milliseconds: 500), // Animation duration
 //                 onSubmit: () {
 //                   ScaffoldMessenger.of(context).showSnackBar(
 //                     SnackBar(content: Text('Unlocked!')),
@@ -3941,8 +3941,8 @@
 //               Icon(
 //                 _isUnlocked ? Icons.lock_open : Icons.lock,
 //                 size: 100,
-//                 // color: Colors.blue[300],
-//                 color: Colors.purple[300],
+//                 // color: Colors.blue[500],
+//                 color: Colors.purple[500],
 //               ),
 //               const SizedBox(height: 20),
 //               Text(
@@ -3973,7 +3973,7 @@
 //                 borderRadius: 52, // Rounded corners for the action
 //                 elevation: 6, // Elevation for shadow effect
 //                 animationDuration:
-//                     const Duration(milliseconds: 300), // Animation duration
+//                     const Duration(milliseconds: 500), // Animation duration
 //                 onSubmit: () {
 //                   setState(() {
 //                     _isUnlocked = true; // Update state to unlocked
@@ -4031,7 +4031,7 @@
 //               Icon(
 //                 _isUnlocked ? Icons.lock_open : Icons.lock,
 //                 size: 100,
-//                 color: Colors.blue[300],
+//                 color: Colors.blue[500],
 //               ),
 //               SizedBox(height: 20),
 //               Text(
@@ -4064,7 +4064,7 @@
 //                 borderRadius: 52, // Rounded corners for the action
 //                 elevation: 6, // Elevation for shadow effect
 //                 animationDuration:
-//                     const Duration(milliseconds: 300), // Animation duration
+//                     const Duration(milliseconds: 500), // Animation duration
 //                 onSubmit: () {
 //                   _toggleLock(); // Toggle lock state on submit
 //                   ScaffoldMessenger.of(context).showSnackBar(
@@ -4228,7 +4228,7 @@
 //         children: [
 //           // Content for Home tab
 //           Container(
-//             color: Colors.green[300], // Background color for Home tab
+//             color: Colors.green[500], // Background color for Home tab
 //             child: Center(
 //               child: Text(
 //                 'Welcome to Home 🏠',
@@ -4240,7 +4240,7 @@
 //           ),
 //           // Content for Profile tab
 //           Container(
-//             color: Colors.green[300], // Background color for Profile tab
+//             color: Colors.green[500], // Background color for Profile tab
 //             child: Center(
 //               child: Text(
 //                 'Your Profile 🧑🏻‍💻',
@@ -4252,7 +4252,7 @@
 //           ),
 //           // Content for Settings tab
 //           Container(
-//             color: Colors.green[300], // Background color for Settings tab
+//             color: Colors.green[500], // Background color for Settings tab
 //             child: Center(
 //               child: Text(
 //                 'Systme Settings ⚙️',
@@ -4406,7 +4406,7 @@
 //           padding: EdgeInsets.all(20.0),
 //           decoration: BoxDecoration(
 //             gradient: LinearGradient(
-//                 colors: [Colors.lightBlue[300]!, Colors.lightGreen[300]!],
+//                 colors: [Colors.lightBlue[500]!, Colors.lightGreen[500]!],
 //                 begin: Alignment.topLeft,
 //                 end: Alignment.bottomLeft),
 //             color: Colors.white,
@@ -4635,7 +4635,7 @@
 //       body: LiquidPullToRefresh(
 //         height: 180,
 //         onRefresh: _onRefresh,
-//         color: Colors.green[300], // Color of the refresh indicator
+//         color: Colors.green[500], // Color of the refresh indicator
 //         backgroundColor: Colors.blueGrey, // Background color of the indicator
 //         child: ListView.builder(
 //           itemCount: items.length,
@@ -4815,7 +4815,7 @@
 //             // Gradient background
 //             colors: [
 //               Colors.green[200]!,
-//               Colors.blue[300]!,
+//               Colors.blue[500]!,
 //             ], // Start and end colors of the gradient
 //             begin: Alignment.topLeft, // Starting point of the gradient
 //             end: Alignment.bottomRight, // Ending point of the gradient
@@ -5353,7 +5353,7 @@
 //     return Scaffold(
 //       appBar: AppBar(
 //         title: Text('Animated Search Bar'),
-//         backgroundColor: Colors.blue[300],
+//         backgroundColor: Colors.blue[500],
 //       ),
 //       body: Padding(
 //         padding: const EdgeInsets.all(16.0),
@@ -5372,7 +5372,7 @@
 //               prefixIcon: Icon(Icons.search), // Icon to show on the left side
 //               suffixIcon: Icon(Icons.clear), // Icon to show on the right side
 //               animationDurationInMilli:
-//                   300, // Animation duration in milliseconds
+//                   500, // Animation duration in milliseconds
 //               onSubmitted: (value) {
 //                 _filterItems(value); // Filter items when submitted
 //               },
@@ -5685,7 +5685,7 @@
 //           Container(
 //             decoration: BoxDecoration(
 //               gradient: LinearGradient(
-//                 colors: [Colors.blue[300]!, Colors.green[400]!],
+//                 colors: [Colors.blue[500]!, Colors.green[400]!],
 //                 begin: Alignment.topLeft,
 //                 end: Alignment.bottomRight,
 //               ),
@@ -6279,7 +6279,7 @@
 //                 const SizedBox(height: 20),
 //                 buildVoteButton('Veggie', veggieVotes, Colors.green[400]!),
 //                 const SizedBox(height: 20),
-//                 buildVoteButton('Hawaiian', hawaiianVotes, Colors.blue[300]!),
+//                 buildVoteButton('Hawaiian', hawaiianVotes, Colors.blue[500]!),
 //                 const SizedBox(height: 40),
 //                 // Display results with larger text and improved readability
 //                 Text(
@@ -6359,7 +6359,7 @@
 //       body: Container(
 //         decoration: BoxDecoration(
 //           gradient: LinearGradient(
-//             colors: [Colors.blue[400]!, Colors.green[300]!],
+//             colors: [Colors.blue[400]!, Colors.green[500]!],
 //             begin: Alignment.topLeft,
 //             end: Alignment.bottomRight,
 //           ),
@@ -6453,7 +6453,7 @@
 //   @override
 //   Widget build(BuildContext context) {
 //     return Scaffold(
-//       backgroundColor: Colors.grey[300],
+//       backgroundColor: Colors.grey[500],
 //       body: Center(
 //         child: Column(
 //           mainAxisAlignment: MainAxisAlignment.center,
@@ -6499,7 +6499,7 @@
 //         height: 80, // Increased button height
 //         width: 80, // Increased button width
 //         decoration: BoxDecoration(
-//           color: Colors.grey[300],
+//           color: Colors.grey[500],
 //           borderRadius: BorderRadius.circular(40), // Circular buttons
 //           boxShadow: isElevated
 //               ? [
@@ -6839,7 +6839,7 @@
 //                 padding: EdgeInsets.all(20),
 //                 decoration: BoxDecoration(
 //                   gradient: LinearGradient(
-//                     colors: [Colors.deepPurple[300]!, Colors.blueAccent[400]!],
+//                     colors: [Colors.deepPurple[500]!, Colors.blueAccent[400]!],
 //                     begin: Alignment.topLeft,
 //                     end: Alignment.bottomRight,
 //                   ),
@@ -7383,7 +7383,7 @@
 //       body: Container(
 //         decoration: BoxDecoration(
 //             gradient: LinearGradient(
-//                 colors: [Colors.blue[300]!, Colors.green[300]!])),
+//                 colors: [Colors.blue[500]!, Colors.green[500]!])),
 //         child: Lottie.network(
 //           'https://lottie.host/6d338f36-d1f2-460e-bde4-1ef35c7e5567/bsHnGKDuNf.json', // URL of the Lottie animation
 //           controller: _controller,
@@ -7482,6 +7482,200 @@
 //           }
 //         },
 //         child: const Icon(Icons.play_arrow),
+//       ),
+//     );
+//   }
+// }
+
+// import 'package:flutter/material.dart';
+// import 'package:pie_chart/pie_chart.dart';
+
+// class PieChartScreen extends StatelessWidget {
+//   // Sample data for the pie chart
+//   final Map<String, double> dataMap = {
+//     "Android": 40,
+//     "iOS": 30,
+//     "Web": 20,
+//     "Others": 10,
+//   };
+
+//   // Define a color list for the pie chart sections
+//   final List<Color> colorList = [
+//     Colors.green[400]!,
+//     Colors.blue[400]!,
+//     Colors.red[400]!,
+//     Colors.purple[400]!,
+//   ];
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text('Enhanced Animated Pie Chart'),
+//         centerTitle: true,
+//         elevation: 4, // Shadow effect for the AppBar
+//       ),
+//       body: Center(
+//         child: Container(
+//           padding: EdgeInsets.all(20), // Add padding around the chart
+//           decoration: BoxDecoration(
+//             color: Colors.white, // Background color for the container
+//             borderRadius: BorderRadius.circular(20), // Rounded corners
+//             boxShadow: [
+//               BoxShadow(
+//                 color: Colors.grey.withOpacity(0.5),
+//                 spreadRadius: 5,
+//                 blurRadius: 10,
+//                 offset: Offset(0, 5), // Changes position of shadow
+//               ),
+//             ],
+//           ),
+//           child: Column(
+//             mainAxisAlignment: MainAxisAlignment.center,
+//             children: [
+//               // Pie Chart with increased size
+//               Container(
+//                 height: MediaQuery.of(context).size.width *
+//                     0.6, // Large size for the pie chart
+//                 child: PieChart(
+//                   dataMap: dataMap, // Data for the pie chart
+//                   animationDuration:
+//                       Duration(milliseconds: 1200), // Animation duration
+//                   chartLegendSpacing: 32, // Spacing for the legend
+//                   chartRadius: MediaQuery.of(context).size.width /
+//                       2, // Increased chart radius
+//                   colorList: colorList, // Color list for the sections
+//                   initialAngleInDegree: 0, // Initial angle of the pie chart
+//                   chartType:
+//                       ChartType.ring, // Type of pie chart (ring or normal)
+//                   ringStrokeWidth: 32, // Width of the ring stroke
+//                   centerText: "", // No center text to avoid clutter
+//                   legendOptions: LegendOptions(
+//                     showLegendsInRow:
+//                         false, // Display legends in a column (vertical)
+//                     legendPosition: LegendPosition.right, // Position of legends
+//                     showLegends: true, // Show legends
+//                     legendShape: BoxShape.circle, // Shape of legend items
+//                     legendTextStyle: TextStyle(
+//                       fontWeight: FontWeight.bold, // Style for legend text
+//                       fontSize: 16, // Increased font size for legend text
+//                     ),
+//                   ),
+//                   chartValuesOptions: ChartValuesOptions(
+//                     showChartValueBackground:
+//                         false, // Hide background for values
+//                     showChartValues: true, // Show values on the chart
+//                     showChartValuesInPercentage:
+//                         true, // Show values as percentages inside slices
+//                     showChartValuesOutside:
+//                         false, // Show values inside the pie chart or not
+//                     decimalPlaces: 1, // Decimal places for values
+//                   ),
+//                 ),
+//               ),
+//             ],
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// import 'package:flutter/material.dart';
+// import 'package:pie_chart/pie_chart.dart';
+
+// class MyPieChart extends StatelessWidget {
+//   // Sample data for the pie chart (Operating System Market Share)
+//   final Map<String, double> dataMap = {
+//     "Windows": 30,
+//     "macOS": 25,
+//     "iOS": 15,
+//     "Android": 10,
+//   };
+
+//   // Define a soft color list for the pie chart sections
+//   final List<Color> colorList = [
+//     Colors.blue[400]!, // Soft Blue for Windows
+//     Colors.purple[300]!, // Soft Gray for macOS
+//     Colors.green[400]!, // Soft Light Blue for iOS
+//     Colors.amber[300]!, // Soft Amber for Android
+//   ];
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text(
+//           'Operating System Pie Chart',
+//           style: TextStyle(fontSize: 26),
+//         ),
+//         centerTitle: true,
+//         backgroundColor: Colors.blue[200],
+//       ),
+//       body: Center(
+//         child: Container(
+//           padding: EdgeInsets.all(20), // Add padding around the chart
+//           decoration: BoxDecoration(
+//             gradient: LinearGradient(
+//               colors: [Colors.blue[200]!, Colors.green[200]!],
+//               begin: Alignment.topRight,
+//               end: Alignment.bottomLeft,
+//             ), // Background color for the container
+//             boxShadow: [
+//               BoxShadow(
+//                 color: Colors.grey.withOpacity(0.5),
+//                 spreadRadius: 5,
+//                 blurRadius: 10,
+//                 offset: Offset(0, 5), // Changes position of shadow
+//               ),
+//             ],
+//           ),
+//           child: Column(
+//             mainAxisAlignment: MainAxisAlignment.center,
+//             children: [
+//               // Pie Chart with increased size
+//               Container(
+//                 height: MediaQuery.of(context).size.width *
+//                     0.7, // Large size for the pie chart
+//                 child: PieChart(
+//                   dataMap: dataMap, // Data for the pie chart
+//                   animationDuration:
+//                       Duration(milliseconds: 1200), // Animation duration
+//                   chartLegendSpacing: 32, // Spacing for the legend
+//                   chartRadius: MediaQuery.of(context).size.width /
+//                       1.2, // Increased chart radius for better visibility
+//                   colorList: colorList, // Color list for the sections
+//                   initialAngleInDegree: 0, // Initial angle of the pie chart
+//                   chartType:
+//                       ChartType.ring, // Type of pie chart (ring or normal)
+//                   ringStrokeWidth: 32, // Width of the ring stroke
+//                   centerText:
+//                       "Operating System", // No center text to avoid clutter
+//                   legendOptions: LegendOptions(
+//                     showLegendsInRow:
+//                         false, // Display legends in a column (vertical)
+//                     legendPosition: LegendPosition.right, // Position of legends
+//                     showLegends: true, // Show legends
+//                     legendShape: BoxShape.circle, // Shape of legend items
+//                     legendTextStyle: TextStyle(
+//                       fontWeight: FontWeight.bold, // Style for legend text
+//                       fontSize: 16, // Increased font size for legend text
+//                     ),
+//                   ),
+//                   chartValuesOptions: ChartValuesOptions(
+//                     showChartValueBackground:
+//                         false, // Hide background for values
+//                     showChartValues:
+//                         true, // Show values on the chart as percentages inside slices
+//                     showChartValuesInPercentage: true,
+//                     showChartValuesOutside: false,
+//                     decimalPlaces: 1,
+//                   ),
+//                 ),
+//               ),
+//             ],
+//           ),
+//         ),
 //       ),
 //     );
 //   }
