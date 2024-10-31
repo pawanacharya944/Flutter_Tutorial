@@ -1,6 +1,5 @@
+import 'package:first_project/pie_chart.dart';
 import 'package:flutter/material.dart';
-
-import 'pie_chart.dart';
 
 void main() {
   runApp(const MyApp());

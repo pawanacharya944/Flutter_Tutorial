@@ -7680,3 +7680,259 @@
 //     );
 //   }
 // }
+
+// import 'package:flutter/material.dart';
+
+// void main() {
+//   runApp(MyApp());
+// }
+
+// class MyApp extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       title: 'My Profile',
+//       theme: ThemeData(
+//         primarySwatch: Colors.blue,
+//         visualDensity: VisualDensity.adaptivePlatformDensity,
+//       ),
+//       home: ProfilePage(),
+//     );
+//   }
+// }
+
+// class ProfilePage extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       backgroundColor: Colors.white,
+//       body: SingleChildScrollView(
+//         child: Column(
+//           children: [
+//             // Profile Header
+//             Container(
+//               height: 250,
+//               decoration: BoxDecoration(
+//                 gradient: LinearGradient(
+//                   colors: [Colors.blueAccent, Colors.lightBlue],
+//                   begin: Alignment.topLeft,
+//                   end: Alignment.bottomRight,
+//                 ),
+//                 borderRadius:
+//                     BorderRadius.vertical(bottom: Radius.circular(30)),
+//               ),
+//               child: Column(
+//                 mainAxisAlignment: MainAxisAlignment.center,
+//                 children: [
+//                   CircleAvatar(
+//                     radius: 60,
+//                     backgroundImage:
+//                         NetworkImage('https://via.placeholder.com/150'),
+//                   ),
+//                   SizedBox(height: 10),
+//                   Text(
+//                     'John Doe',
+//                     style: TextStyle(
+//                         fontSize: 24,
+//                         fontWeight: FontWeight.bold,
+//                         color: Colors.white),
+//                   ),
+//                   SizedBox(height: 5),
+//                   Text(
+//                     'Flutter Developer',
+//                     style: TextStyle(fontSize: 16, color: Colors.white70),
+//                   ),
+//                 ],
+//               ),
+//             ),
+//             SizedBox(height: 20),
+
+//             // Bio Section
+//             Padding(
+//               padding: const EdgeInsets.all(16.0),
+//               child: Text(
+//                 'A passionate Flutter developer with experience in building beautiful and responsive applications.',
+//                 style: TextStyle(fontSize: 16),
+//                 textAlign: TextAlign.center,
+//               ),
+//             ),
+
+//             // Interests Section
+//             Padding(
+//               padding: const EdgeInsets.symmetric(horizontal: 16.0),
+//               child: Column(
+//                 crossAxisAlignment: CrossAxisAlignment.start,
+//                 children: [
+//                   Text('Interests',
+//                       style:
+//                           TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+//                   SizedBox(height: 10),
+//                   InterestCard(interestName: 'Coding'),
+//                   InterestCard(interestName: 'Design'),
+//                   InterestCard(interestName: 'Music'),
+//                   InterestCard(interestName: 'Traveling'),
+//                 ],
+//               ),
+//             ),
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// class InterestCard extends StatelessWidget {
+//   final String interestName;
+
+//   const InterestCard({Key? key, required this.interestName}) : super(key: key);
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Card(
+//       elevation: 4,
+//       margin: EdgeInsets.symmetric(vertical: 5),
+//       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+//       child: Padding(
+//         padding: const EdgeInsets.all(16.0),
+//         child: Text(
+//           interestName,
+//           style: TextStyle(fontSize: 18),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// import 'package:flutter/material.dart';
+
+// class AnimatedTextScreen extends StatefulWidget {
+//   @override
+//   _AnimatedTextScreenState createState() => _AnimatedTextScreenState();
+// }
+
+// class _AnimatedTextScreenState extends State<AnimatedTextScreen>
+//     with SingleTickerProviderStateMixin {
+//   late AnimationController _controller;
+//   late Animation<Offset> _offsetAnimation;
+
+//   @override
+//   void initState() {
+//     super.initState();
+//     _controller = AnimationController(
+//       duration: const Duration(seconds: 3),
+//       vsync: this,
+//     )..repeat(reverse: true);
+
+//     _offsetAnimation = Tween<Offset>(
+//       begin: Offset(-1.0, 0.0), // Start off-screen to the left
+//       end: Offset(0.0, 0.0), // End at the original position
+//     ).animate(CurvedAnimation(
+//       parent: _controller,
+//       curve: Curves.easeInCubic,
+//     ));
+//   }
+
+//   @override
+//   void dispose() {
+//     _controller.dispose();
+//     super.dispose();
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       body: Stack(
+//         fit: StackFit.expand,
+//         children: [
+//           // Background Image
+//           Container(
+//             decoration: BoxDecoration(
+//               image: DecorationImage(
+//                 image: AssetImage(
+//                     'images/developer.jpg'), // Replace with your image path
+//                 fit: BoxFit.cover,
+//               ),
+//             ),
+//           ),
+//           // Animated Text
+//           SlideTransition(
+//             position: _offsetAnimation,
+//             child: Center(
+//               child: Text(
+//                 'Code is Poetry - Embrace the Developer Spirit!',
+//                 style: TextStyle(
+//                   fontSize: 24,
+//                   fontWeight: FontWeight.bold,
+//                   color: Colors.white,
+//                   shadows: [
+//                     Shadow(
+//                       blurRadius: 10.0,
+//                       color: Colors.black.withOpacity(0.5),
+//                       offset: Offset(2.0, 2.0),
+//                     ),
+//                   ],
+//                 ),
+//                 textAlign: TextAlign.center,
+//               ),
+//             ),
+//           ),
+//         ],
+//       ),
+//     );
+//   }
+// }
+
+// import 'package:flutter/material.dart';
+// import 'package:marquee/marquee.dart';
+
+// class DeveloperMarqueeScreen extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       body: Stack(
+//         fit: StackFit.expand,
+//         children: [
+//           // Background Image
+//           Container(
+//             decoration: const BoxDecoration(
+//               image: DecorationImage(
+//                 image: AssetImage(
+//                     'images/dev.jpeg'), // Replace with your image path
+//                 fit: BoxFit.cover,
+//               ),
+//             ),
+//           ),
+//           // Marquee Text
+//           Center(
+//             child: Container(
+//               height: 100, // Height of the marquee container
+//               child: Marquee(
+//                 text:
+//                     ' 🚀⚡️ Subscribe to 🧑🏻‍💻 Code Flicks for 🔥 Awesome 🧑🏻‍💻Flutter Tutorials! 🚀 Join the Journey! 💻✨',
+//                 style: TextStyle(
+//                   fontSize: 24,
+//                   fontWeight: FontWeight.bold,
+//                   color: Colors.white,
+//                   shadows: [
+//                     Shadow(
+//                       blurRadius: 10.0,
+//                       color: Colors.black.withOpacity(0.7),
+//                       offset: const Offset(2.0, 2.0),
+//                     ),
+//                   ],
+//                 ),
+//                 scrollAxis: Axis.horizontal,
+//                 crossAxisAlignment: CrossAxisAlignment.center,
+//                 blankSpace: 20.0,
+//                 velocity: 50.0, // Speed of the scrolling text
+//                 pauseAfterRound:
+//                     const Duration(seconds: 1), // Pause after each round
+//                 startPadding: 10.0, // Padding at the start of the marquee
+//               ),
+//             ),
+//           ),
+//         ],
+//       ),
+//     );
+//   }
+// }
