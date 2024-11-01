@@ -18,11 +18,13 @@ class MyPieChart extends StatelessWidget {
     Colors.amber[400]!, // Soft Amber for Android
   ];
 
+  MyPieChart({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'Operating System PieChart',
           style: TextStyle(fontSize: 26),
         ),
@@ -32,7 +34,7 @@ class MyPieChart extends StatelessWidget {
       ),
       body: Center(
         child: Container(
-          padding: EdgeInsets.all(20), // Add padding around the chart
+          padding: const EdgeInsets.all(20), // Add padding around the chart
           decoration: BoxDecoration(
             gradient: LinearGradient(
                 colors: [Colors.blue[100]!, Colors.green[100]!],
@@ -44,7 +46,7 @@ class MyPieChart extends StatelessWidget {
                 color: Colors.grey.withOpacity(0.5),
                 spreadRadius: 5,
                 blurRadius: 10,
-                offset: Offset(0, 5), // Changes position of shadow
+                offset: const Offset(0, 5), // Changes position of shadow
               ),
             ],
           ),
@@ -52,13 +54,13 @@ class MyPieChart extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               // Pie Chart with increased size
-              Container(
+              SizedBox(
                 height: MediaQuery.of(context).size.width *
                     0.7, // Large size for the pie chart
                 child: PieChart(
                   dataMap: dataMap, // Data for the pie chart
                   animationDuration:
-                      Duration(milliseconds: 1200), // Animation duration
+                      const Duration(milliseconds: 1200), // Animation duration
                   chartLegendSpacing: 32, // Spacing for the legend
                   chartRadius: MediaQuery.of(context).size.width /
                       1.2, // Increased chart radius for better visibility
@@ -68,7 +70,7 @@ class MyPieChart extends StatelessWidget {
                       ChartType.ring, // Type of pie chart (ring or normal)
                   ringStrokeWidth: 32, // Width of the ring stroke
                   centerText: "OS PieChart", // No center text to avoid clutter
-                  legendOptions: LegendOptions(
+                  legendOptions: const LegendOptions(
                     showLegendsInRow:
                         false, // Display legends in a column (vertical)
                     legendPosition: LegendPosition.right, // Position of legends
@@ -79,7 +81,7 @@ class MyPieChart extends StatelessWidget {
                       fontSize: 16, // Increased font size for legend text
                     ),
                   ),
-                  chartValuesOptions: ChartValuesOptions(
+                  chartValuesOptions: const ChartValuesOptions(
                     showChartValueBackground:
                         false, // Hide background for values
                     showChartValues:
