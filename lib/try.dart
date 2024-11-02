@@ -7936,3 +7936,246 @@
 //     );
 //   }
 // }
+
+// import 'package:flutter/material.dart';
+
+// class Wheel extends StatelessWidget {
+//   const Wheel({Key? key}) : super(key: key);
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: const Text("Stylish Wheel of Wonders"),
+//         centerTitle: true,
+//       ),
+//       body: Center(
+//         child: ListWheelScrollView(
+//           itemExtent: 100,
+//           diameterRatio: 2.0,
+//           offAxisFraction: -0.5,
+//           useMagnifier: true,
+//           magnification: 1.2,
+//           children: List.generate(20, (index) {
+//             return Container(
+//               margin: const EdgeInsets.symmetric(vertical: 10),
+//               decoration: BoxDecoration(
+//                 color: Colors.primaries[index % Colors.primaries.length],
+//                 borderRadius: BorderRadius.circular(15),
+//                 boxShadow: [
+//                   BoxShadow(
+//                     color: Colors.black26,
+//                     offset: const Offset(0, 4),
+//                     blurRadius: 8,
+//                   ),
+//                 ],
+//               ),
+//               child: Center(
+//                 child: Text(
+//                   'Mystical Item ${index + 1}',
+//                   style: const TextStyle(
+//                       fontSize: 18,
+//                       fontWeight: FontWeight.bold,
+//                       color: Colors.white),
+//                 ),
+//               ),
+//             );
+//           }),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// import 'package:flutter/material.dart';
+
+// class Wheel extends StatelessWidget {
+//   const Wheel({Key? key}) : super(key: key);
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: const Text("Stylish Wheel of Wonders"),
+//         centerTitle: true,
+//         backgroundColor: Colors.blue[200],
+//       ),
+//       body: Stack(
+//         children: [
+//           // Background Gradient
+//           Container(
+//             decoration: BoxDecoration(
+//               gradient: LinearGradient(
+//                 colors: [Colors.blue[200]!, Colors.green[200]!],
+//                 begin: Alignment.topLeft,
+//                 end: Alignment.bottomRight,
+//               ),
+//             ),
+//           ),
+//           Center(
+//             child: ListWheelScrollView(
+//               itemExtent: 100,
+//               diameterRatio: 2.0,
+//               offAxisFraction: -0.5,
+//               useMagnifier: true,
+//               magnification: 1.2,
+//               children: List.generate(20, (index) {
+//                 return Container(
+//                   margin: const EdgeInsets.symmetric(vertical: 10),
+//                   decoration: BoxDecoration(
+//                     color: Colors.primaries[index % Colors.primaries.length],
+//                     borderRadius: BorderRadius.circular(20),
+//                     boxShadow: [
+//                       BoxShadow(
+//                         color: Colors.black54,
+//                         offset: const Offset(0, 6),
+//                         blurRadius: 12,
+//                       ),
+//                     ],
+//                   ),
+//                   child: Center(
+//                     child: Text(
+//                       'Mystical Item ${index + 1}',
+//                       style: const TextStyle(
+//                         fontSize: 20,
+//                         fontWeight: FontWeight.bold,
+//                         color: Colors.white,
+//                       ),
+//                     ),
+//                   ),
+//                 );
+//               }),
+//             ),
+//           ),
+//         ],
+//       ),
+//     );
+//   }
+// }
+
+// import 'package:flutter/material.dart';
+
+// class Wheel extends StatelessWidget {
+//   const Wheel({Key? key}) : super(key: key);
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: const Text("Flutter Tools & Widgets"),
+//         centerTitle: true,
+//         backgroundColor: Colors.blue[200],
+//       ),
+//       body: Stack(
+//         children: [
+//           // Background Gradient Container
+//           Container(
+//             decoration: BoxDecoration(
+//               gradient: LinearGradient(
+//                 colors: [
+//                   Colors.blue[200]!,
+//                   Colors.green[200]!
+//                 ], // Gradient colors
+//                 begin: Alignment.topLeft,
+//                 end: Alignment.bottomRight,
+//               ),
+//             ),
+//           ),
+//           Center(
+//             child: ListWheelScrollView(
+//               itemExtent: 120, // Height of each item in the wheel
+//               diameterRatio: 2.0, // Controls the diameter of the wheel
+//               offAxisFraction:
+//                   -0.5, // Adjusts the vertical position of the wheel
+//               useMagnifier:
+//                   true, // Enables magnification effect on selected item
+//               magnification: 1.2, // Magnification factor for selected item
+//               children: List.generate(20, (index) {
+//                 // Generate a list of items for the wheel
+//                 return Container(
+//                   margin: const EdgeInsets.symmetric(
+//                       vertical: 10), // Vertical margin for each item
+//                   decoration: BoxDecoration(
+//                     color: Colors.primaries[index %
+//                         Colors.primaries
+//                             .length], // Color for each item based on index
+//                     borderRadius:
+//                         BorderRadius.circular(20), // Rounded corners for items
+//                     boxShadow: [
+//                       BoxShadow(
+//                         color: Colors.black54, // Shadow color
+//                         offset: const Offset(0, 6), // Shadow offset
+//                         blurRadius: 12, // Blur radius for shadow effect
+//                       ),
+//                     ],
+//                   ),
+//                   child: Center(
+//                     child: Column(
+//                       mainAxisAlignment: MainAxisAlignment.center,
+//                       children: [
+//                         Text(
+//                           _getItemName(index), // Get item name based on index
+//                           style: const TextStyle(
+//                             fontSize: 22, // Font size for item name
+//                             fontWeight: FontWeight.bold, // Bold text style
+//                             color: Colors.white, // Text color for item name
+//                           ),
+//                         ),
+//                         const SizedBox(
+//                             height: 5), // Space between name and description
+//                         Text(
+//                           _getItemDescription(
+//                               index), // Get item description based on index
+//                           style: const TextStyle(
+//                             fontSize: 16, // Font size for item description
+//                             color: Colors
+//                                 .white70, // Text color for description (lighter shade)
+//                           ),
+//                           textAlign:
+//                               TextAlign.center, // Center align text description
+//                         ),
+//                       ],
+//                     ),
+//                   ),
+//                 );
+//               }),
+//             ),
+//           ),
+//         ],
+//       ),
+//     );
+//   }
+
+//   String _getItemName(int index) {
+//     // Provide a short list of popular Flutter tools and widgets
+//     const itemNames = [
+//       "Flutter SDK", // Name of Flutter framework
+//       "Dart", // Programming language used in Flutter apps
+//       "Widget", // Basic building block of Flutter UI
+//       "Package", // Reusable piece of code that adds functionality
+//       "Provider", // State management solution for Flutter
+//       "Hive", // Lightweight key-value database
+//       "Riverpod", // Modern state management library for Dart
+//       "FlutterFire", // Plugins to integrate with Firebase
+//     ];
+//     return itemNames[index %
+//         itemNames.length]; // Return name based on index (looping through list)
+//   }
+
+//   String _getItemDescription(int index) {
+//     // Provide descriptions for the Flutter tools and widgets
+//     const itemDescriptions = [
+//       "The framework for building natively compiled apps.",
+//       "The programming language used for Flutter apps.",
+//       "A basic building block of Flutter UI.",
+//       "A reusable piece of code that adds functionality.",
+//       "A state management solution for Flutter.",
+//       "A lightweight and fast key-value database.",
+//       "A modern state management library for Dart.",
+//       "A set of Flutter plugins to integrate with Firebase.",
+//     ];
+//     return itemDescriptions[index %
+//         itemDescriptions
+//             .length]; // Return description based on index (looping through list)
+//   }
+// }

@@ -12,8 +12,8 @@ class My_Buttons extends StatelessWidget {
 
         decoration: BoxDecoration(
           gradient: LinearGradient(colors: [
-            Colors.blue[300]!,
-            Colors.green[400]!,
+            Colors.blue[200]!,
+            Colors.green[300]!,
           ], begin: Alignment.topLeft, end: Alignment.bottomRight),
         ),
 
