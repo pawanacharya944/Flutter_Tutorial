@@ -4603,12 +4603,12 @@
 // import 'package:flutter/material.dart';
 // import 'package:liquid_pull_to_refresh/liquid_pull_to_refresh.dart';
 
-// class HomePage extends StatefulWidget {
+// class MyScrollbar extends StatefulWidget {
 //   @override
-//   _HomePageState createState() => _HomePageState();
+//   _MyScrollbarState createState() => _MyScrollbarState();
 // }
 
-// class _HomePageState extends State<HomePage> {
+// class _MyScrollbarState extends State<MyScrollbar> {
 //   List<Map<String, String>> items = List.generate(
 //     10,
 //     (index) => {
@@ -5824,20 +5824,20 @@
 //         visualDensity: VisualDensity.adaptivePlatformDensity,
 //       ),
 //       debugShowCheckedModeBanner: false,
-//       home: const VotingHomePage(),
+//       home: const VotingMyScrollbar(),
 //     );
 //   }
 // }
 
 // // Home page of the voting app
-// class VotingHomePage extends StatefulWidget {
-//   const VotingHomePage({Key? key}) : super(key: key);
+// class VotingMyScrollbar extends StatefulWidget {
+//   const VotingMyScrollbar({Key? key}) : super(key: key);
 
 //   @override
-//   _VotingHomePageState createState() => _VotingHomePageState();
+//   _VotingMyScrollbarState createState() => _VotingMyScrollbarState();
 // }
 
-// class _VotingHomePageState extends State<VotingHomePage> {
+// class _VotingMyScrollbarState extends State<VotingMyScrollbar> {
 //   int pepperoniVotes = 0; // Votes for Pepperoni
 //   int veggieVotes = 0; // Votes for Veggie
 //   int hawaiianVotes = 0; // Votes for Hawaiian
@@ -5941,20 +5941,20 @@
 //         visualDensity: VisualDensity.adaptivePlatformDensity,
 //       ),
 //       debugShowCheckedModeBanner: false,
-//       home: const VotingHomePage(),
+//       home: const VotingMyScrollbar(),
 //     );
 //   }
 // }
 
 // // Home page of the voting app
-// class VotingHomePage extends StatefulWidget {
-//   const VotingHomePage({Key? key}) : super(key: key);
+// class VotingMyScrollbar extends StatefulWidget {
+//   const VotingMyScrollbar({Key? key}) : super(key: key);
 
 //   @override
-//   _VotingHomePageState createState() => _VotingHomePageState();
+//   _VotingMyScrollbarState createState() => _VotingMyScrollbarState();
 // }
 
-// class _VotingHomePageState extends State<VotingHomePage> {
+// class _VotingMyScrollbarState extends State<VotingMyScrollbar> {
 //   int pepperoniVotes = 0; // Votes for Pepperoni
 //   int veggieVotes = 0; // Votes for Veggie
 //   int hawaiianVotes = 0; // Votes for Hawaiian
@@ -6069,14 +6069,14 @@
 // // Main function to run the app
 
 // // Home page of the voting app
-// class VotingHomePage extends StatefulWidget {
-//   const VotingHomePage({Key? key}) : super(key: key);
+// class VotingMyScrollbar extends StatefulWidget {
+//   const VotingMyScrollbar({Key? key}) : super(key: key);
 
 //   @override
-//   _VotingHomePageState createState() => _VotingHomePageState();
+//   _VotingMyScrollbarState createState() => _VotingMyScrollbarState();
 // }
 
-// class _VotingHomePageState extends State<VotingHomePage> {
+// class _VotingMyScrollbarState extends State<VotingMyScrollbar> {
 //   int pepperoniVotes = 0; // Votes for Pepperoni
 //   int veggieVotes = 0; // Votes for Veggie
 //   int hawaiianVotes = 0; // Votes for Hawaiian
@@ -6214,13 +6214,13 @@
 
 //voting app
 // import 'package:flutter/material.dart';
-// class VotingHomePage extends StatefulWidget {
-//   const VotingHomePage({Key? key}) : super(key: key);
+// class VotingMyScrollbar extends StatefulWidget {
+//   const VotingMyScrollbar({Key? key}) : super(key: key);
 
 //   @override
-//   _VotingHomePageState createState() => _VotingHomePageState();
+//   _VotingMyScrollbarState createState() => _VotingMyScrollbarState();
 // }
-// class _VotingHomePageState extends State<VotingHomePage> {
+// class _VotingMyScrollbarState extends State<VotingMyScrollbar> {
 //   int pepperoniVotes = 0; // Votes for Pepperoni
 //   int veggieVotes = 0; // Votes for Veggie
 //   int hawaiianVotes = 0; // Votes for Hawaiian
@@ -7596,9 +7596,9 @@
 //   // Define a soft color list for the pie chart sections
 //   final List<Color> colorList = [
 //     Colors.blue[400]!, // Soft Blue for Windows
-//     Colors.purple[300]!, // Soft Gray for macOS
+//     Colors.purple[400]!, // Soft Gray for macOS
 //     Colors.green[400]!, // Soft Light Blue for iOS
-//     Colors.amber[300]!, // Soft Amber for Android
+//     Colors.amber[400]!, // Soft Amber for Android
 //   ];
 
 //   @override
@@ -8179,3 +8179,253 @@
 //             .length]; // Return description based on index (looping through list)
 //   }
 // }
+
+// import 'package:flutter/material.dart';
+// import 'dart:math';
+
+// class AnimatedContainerPage extends StatefulWidget {
+//   @override
+//   _AnimatedContainerPageState createState() => _AnimatedContainerPageState();
+// }
+
+// class _AnimatedContainerPageState extends State<AnimatedContainerPage> {
+//   // Properties for the animated container
+//   Color _color = Colors.blue[200]!;
+//   double _width = 200.0;
+//   double _height = 200.0;
+//   BorderRadiusGeometry _borderRadius = BorderRadius.circular(15);
+
+//   // Function to generate random size within screen limits
+//   double _randomSize(double maxWidth) {
+//     return Random().nextDouble() * (maxWidth - 50) +
+//         50; // Size between 50 and maxWidth
+//   }
+
+//   // Function to change properties based on icon tapped
+//   void _changeProperties(String shapeType) {
+//     final maxWidth = MediaQuery.of(context).size.width; // Get screen width
+
+//     setState(() {
+//       switch (shapeType) {
+//         case 'circle':
+//           // Randomize width and height for circle and oval
+//           if (Random().nextBool()) {
+//             // Randomly choose between circle and oval
+//             _width = _randomSize(maxWidth);
+//             _height = _width; // Keep it circular
+//             _borderRadius = BorderRadius.circular(_width / 2); // Circle
+//           } else {
+//             _width = _randomSize(maxWidth);
+//             _height = _randomSize(maxWidth / 2); // Oval shape
+//             _borderRadius = BorderRadius.circular(_height / 2); // Oval
+//           }
+//           _color =
+//               Colors.primaries[Random().nextInt(Colors.primaries.length)][200]!;
+//           break;
+//         case 'square':
+//           // Randomize width and height for square and cube-like shape
+//           if (Random().nextBool()) {
+//             // Randomly choose between square and cube-like shape
+//             _width = _randomSize(maxWidth);
+//             _height = _width; // Keep it square
+//             _borderRadius = BorderRadius.circular(0); // Square
+//           } else {
+//             _width = _randomSize(maxWidth);
+//             _height = _width * 1.5; // Cube-like shape (taller)
+//             _borderRadius =
+//                 BorderRadius.circular(10); // Slightly rounded corners
+//           }
+//           _color =
+//               Colors.primaries[Random().nextInt(Colors.primaries.length)][400]!;
+//           break;
+//         case 'rectangle':
+//           // Randomize width and height for rectangle and cylinder-like shape
+//           if (Random().nextBool()) {
+//             // Randomly choose between rectangle and cylinder-like shape
+//             _width = _randomSize(maxWidth);
+//             _height = _randomSize(maxWidth / 2); // Rectangle (width > height)
+//             _borderRadius = BorderRadius.circular(20); // Rounded rectangle
+//           } else {
+//             _width = _randomSize(maxWidth);
+//             _height = 100; // Fixed height for cylinder effect
+//             _borderRadius =
+//                 BorderRadius.circular(50); // Rounded edges for cylinder effect
+//           }
+//           _color =
+//               Colors.primaries[Random().nextInt(Colors.primaries.length)][400]!;
+//           break;
+//         default:
+//           break;
+//       }
+//     });
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text(
+//           'Animated Container',
+//           style: TextStyle(fontSize: 26),
+//         ),
+//       ),
+//       body: Center(
+//         child: AnimatedContainer(
+//           duration: Duration(seconds: 1),
+//           curve: Curves.easeInOut,
+//           width: min(_width,
+//               MediaQuery.of(context).size.width), // Ensure width fits screen
+//           height: min(_height,
+//               MediaQuery.of(context).size.height), // Ensure height fits screen
+//           decoration: BoxDecoration(
+//             color: _color,
+//             borderRadius: _borderRadius,
+//             boxShadow: [
+//               BoxShadow(
+//                 color: Colors.black26,
+//                 blurRadius: 10,
+//                 offset: Offset(0, 5),
+//               ),
+//             ],
+//           ),
+//           child: Center(
+//             child: Text(
+//               'Tap an icon!',
+//               style: TextStyle(
+//                 fontSize: 24,
+//                 fontWeight: FontWeight.bold,
+//                 color: Colors.black,
+//               ),
+//             ),
+//           ),
+//         ),
+//       ),
+//       bottomNavigationBar: BottomAppBar(
+//         child: Row(
+//           mainAxisAlignment: MainAxisAlignment.spaceAround,
+//           children: [
+//             IconButton(
+//               icon: Icon(Icons.circle_outlined,
+//                   size: 40, color: Colors.blue[400]),
+//               onPressed: () => _changeProperties('circle'),
+//             ),
+//             IconButton(
+//               icon: Icon(Icons.square_outlined,
+//                   size: 40, color: Colors.green[400]),
+//               onPressed: () => _changeProperties('square'),
+//             ),
+//             IconButton(
+//               icon: Icon(Icons.rectangle_outlined,
+//                   size: 40, color: Colors.orange[400]),
+//               onPressed: () => _changeProperties('rectangle'),
+//             ),
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+import 'package:flutter/material.dart';
+
+class MyScrollbar extends StatefulWidget {
+  @override
+  _MyScrollbarState createState() => _MyScrollbarState();
+}
+
+class _MyScrollbarState extends State<MyScrollbar> {
+  // Boolean to control scrollbar visibility
+  bool _isAlwaysShown = true; // If true, scrollbar is always visible
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Nature-Inspired Color Palette'), // Title of the app bar
+        backgroundColor: Colors.green[200], // App bar color
+      ),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Expanded(
+            child: Scrollbar(
+              thumbVisibility:
+                  _isAlwaysShown, // Control visibility (deprecated)
+              child: NotificationListener<ScrollNotification>(
+                onNotification: (ScrollNotification notification) {
+                  setState(() {
+                    // Update scrollbar visibility based on scroll position
+                    _isAlwaysShown = notification.metrics.pixels > 0;
+                  });
+                  return true;
+                },
+                child: ListView.builder(
+                  padding: EdgeInsets.all(16.0), // Padding around the list
+                  itemCount: 50, // Number of items in the list
+                  itemBuilder: (context, index) =>
+                      MyItem(index), // Build each item
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+// Custom widget to represent each item in the list
+class MyItem extends StatelessWidget {
+  final int index;
+
+  const MyItem(this.index); // Constructor to receive index
+
+  @override
+  Widget build(BuildContext context) {
+    final color = Colors
+        .primaries[index % Colors.primaries.length]; // Color based on index
+
+    // Define a list of nature-inspired names
+    final List<String> names = [
+      'Ocean Breeze',
+      'Sunset Glow',
+      'Forest Green',
+      'Mountain Mist',
+      'Desert Sand',
+      'Lavender Fields',
+      'Cherry Blossom',
+      'Autumn Leaves',
+      'Midnight Sky',
+      'Golden Sunrise',
+    ];
+
+    // Use modulo to cycle through names based on index
+    String name = names[index % names.length];
+
+    return Card(
+      elevation: 4, // Shadow effect for elevation
+      margin:
+          EdgeInsets.symmetric(vertical: 8.0), // Vertical spacing between items
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(12), // Rounded corners for card
+      ),
+      child: ListTile(
+        contentPadding: EdgeInsets.all(16.0), // Padding for the tile
+        leading: CircleAvatar(
+          backgroundColor: color, // Background color for leading widget
+          child: Text('${index + 1}',
+              style: TextStyle(color: Colors.white)), // Number in circle avatar
+        ),
+        title: Text(
+          name,
+          style: TextStyle(fontWeight: FontWeight.bold), // Bold title text
+        ),
+        subtitle: Text(
+          'A soothing shade reminiscent of $name.',
+          style: TextStyle(
+              color: Colors.grey[600]), // Subtitle showing color description
+        ),
+      ),
+    );
+  }
+}
