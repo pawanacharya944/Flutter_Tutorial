@@ -87,14 +87,14 @@ class _MyAnimatedContainerState extends State<MyAnimatedContainer> {
         ),
         child: Center(
           child: AnimatedContainer(
-            duration: Duration(seconds: 1),
+            duration: const Duration(seconds: 1),
             curve: Curves.easeInOut,
             width: min(_width, MediaQuery.of(context).size.width),
             height: min(_height, MediaQuery.of(context).size.height),
             decoration: BoxDecoration(
               color: _color, // Solid blue color for the container
               borderRadius: _borderRadius,
-              boxShadow: [
+              boxShadow: const [
                 BoxShadow(
                   color: Colors.black26,
                   blurRadius: 10,

@@ -8326,106 +8326,276 @@
 //   }
 // }
 
-import 'package:flutter/material.dart';
+// import 'package:flutter/material.dart';
 
-class MyScrollbar extends StatefulWidget {
-  @override
-  _MyScrollbarState createState() => _MyScrollbarState();
-}
+// class MyScrollbar extends StatefulWidget {
+//   @override
+//   _MyScrollbarState createState() => _MyScrollbarState();
+// }
 
-class _MyScrollbarState extends State<MyScrollbar> {
-  // Boolean to control scrollbar visibility
-  bool _isAlwaysShown = true; // If true, scrollbar is always visible
+// class _MyScrollbarState extends State<MyScrollbar> {
+//   // Boolean to control scrollbar visibility
+//   bool _isAlwaysShown = true; // If true, scrollbar is always visible
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Nature-Inspired Color Palette'), // Title of the app bar
-        backgroundColor: Colors.green[200], // App bar color
-      ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Expanded(
-            child: Scrollbar(
-              thumbVisibility:
-                  _isAlwaysShown, // Control visibility (deprecated)
-              child: NotificationListener<ScrollNotification>(
-                onNotification: (ScrollNotification notification) {
-                  setState(() {
-                    // Update scrollbar visibility based on scroll position
-                    _isAlwaysShown = notification.metrics.pixels > 0;
-                  });
-                  return true;
-                },
-                child: ListView.builder(
-                  padding: EdgeInsets.all(16.0), // Padding around the list
-                  itemCount: 50, // Number of items in the list
-                  itemBuilder: (context, index) =>
-                      MyItem(index), // Build each item
-                ),
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text('Nature-Inspired Color Palette'), // Title of the app bar
+//         backgroundColor: Colors.green[200], // App bar color
+//       ),
+//       body: Column(
+//         crossAxisAlignment: CrossAxisAlignment.start,
+//         children: [
+//           Expanded(
+//             child: Scrollbar(
+//               thumbVisibility:
+//                   _isAlwaysShown, // Control visibility (deprecated)
+//               child: NotificationListener<ScrollNotification>(
+//                 onNotification: (ScrollNotification notification) {
+//                   setState(() {
+//                     // Update scrollbar visibility based on scroll position
+//                     _isAlwaysShown = notification.metrics.pixels > 0;
+//                   });
+//                   return true;
+//                 },
+//                 child: ListView.builder(
+//                   padding: EdgeInsets.all(16.0), // Padding around the list
+//                   itemCount: 50, // Number of items in the list
+//                   itemBuilder: (context, index) =>
+//                       MyItem(index), // Build each item
+//                 ),
+//               ),
+//             ),
+//           ),
+//         ],
+//       ),
+//     );
+//   }
+// }
 
-// Custom widget to represent each item in the list
-class MyItem extends StatelessWidget {
-  final int index;
+// // Custom widget to represent each item in the list
+// class MyItem extends StatelessWidget {
+//   final int index;
 
-  const MyItem(this.index); // Constructor to receive index
+//   const MyItem(this.index); // Constructor to receive index
 
-  @override
-  Widget build(BuildContext context) {
-    final color = Colors
-        .primaries[index % Colors.primaries.length]; // Color based on index
+//   @override
+//   Widget build(BuildContext context) {
+//     final color = Colors
+//         .primaries[index % Colors.primaries.length]; // Color based on index
 
-    // Define a list of nature-inspired names
-    final List<String> names = [
-      'Ocean Breeze',
-      'Sunset Glow',
-      'Forest Green',
-      'Mountain Mist',
-      'Desert Sand',
-      'Lavender Fields',
-      'Cherry Blossom',
-      'Autumn Leaves',
-      'Midnight Sky',
-      'Golden Sunrise',
-    ];
+//     // Define a list of nature-inspired names
+//     final List<String> names = [
+//       'Ocean Breeze',
+//       'Sunset Glow',
+//       'Forest Green',
+//       'Mountain Mist',
+//       'Desert Sand',
+//       'Lavender Fields',
+//       'Cherry Blossom',
+//       'Autumn Leaves',
+//       'Midnight Sky',
+//       'Golden Sunrise',
+//     ];
 
-    // Use modulo to cycle through names based on index
-    String name = names[index % names.length];
+//     // Use modulo to cycle through names based on index
+//     String name = names[index % names.length];
 
-    return Card(
-      elevation: 4, // Shadow effect for elevation
-      margin:
-          EdgeInsets.symmetric(vertical: 8.0), // Vertical spacing between items
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(12), // Rounded corners for card
-      ),
-      child: ListTile(
-        contentPadding: EdgeInsets.all(16.0), // Padding for the tile
-        leading: CircleAvatar(
-          backgroundColor: color, // Background color for leading widget
-          child: Text('${index + 1}',
-              style: TextStyle(color: Colors.white)), // Number in circle avatar
-        ),
-        title: Text(
-          name,
-          style: TextStyle(fontWeight: FontWeight.bold), // Bold title text
-        ),
-        subtitle: Text(
-          'A soothing shade reminiscent of $name.',
-          style: TextStyle(
-              color: Colors.grey[600]), // Subtitle showing color description
-        ),
-      ),
-    );
-  }
-}
+//     return Card(
+//       elevation: 4, // Shadow effect for elevation
+//       margin:
+//           EdgeInsets.symmetric(vertical: 8.0), // Vertical spacing between items
+//       shape: RoundedRectangleBorder(
+//         borderRadius: BorderRadius.circular(12), // Rounded corners for card
+//       ),
+//       child: ListTile(
+//         contentPadding: EdgeInsets.all(16.0), // Padding for the tile
+//         leading: CircleAvatar(
+//           backgroundColor: color, // Background color for leading widget
+//           child: Text('${index + 1}',
+//               style: TextStyle(color: Colors.white)), // Number in circle avatar
+//         ),
+//         title: Text(
+//           name,
+//           style: TextStyle(fontWeight: FontWeight.bold), // Bold title text
+//         ),
+//         subtitle: Text(
+//           'A soothing shade reminiscent of $name.',
+//           style: TextStyle(
+//               color: Colors.grey[600]), // Subtitle showing color description
+//         ),
+//       ),
+//     );
+//   }
+// }
+// import 'package:flutter/material.dart';
+// import 'dart:math'; // Importing dart:math for random number generation
+
+// class MyAnimatedList extends StatefulWidget {
+//   const MyAnimatedList({Key? key}) : super(key: key);
+
+//   @override
+//   State<MyAnimatedList> createState() => _MyAnimatedListState();
+// }
+
+// class _MyAnimatedListState extends State<MyAnimatedList> {
+//   final GlobalKey<AnimatedListState> _listKey = GlobalKey();
+
+//   // Initial list of programming languages to display in the AnimatedList
+//   final List<String> _data = [
+//     'Dart',
+//     'Python',
+//     'Java',
+//     'C++',
+//     'JavaScript',
+//     'C'
+//   ];
+
+//   // Expanded list of programming languages for random addition
+//   final List<String> programmingLanguages = [
+//     'Swift',
+//     'Kotlin',
+//     'Ruby',
+//     'Rust',
+//     'PHP',
+//     'Go',
+//     'TypeScript',
+//     'Scala',
+//     'Haskell',
+//     'Perl',
+//     'C#',
+//     'Lua',
+//   ];
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: const Text(
+//           'AnimatedList',
+//           style: TextStyle(fontSize: 26),
+//         ),
+//         centerTitle: true,
+//         backgroundColor: Colors.teal[200], // AppBar color
+//       ),
+//       body: Column(
+//         children: <Widget>[
+//           Expanded(
+//             child: AnimatedList(
+//               key: _listKey,
+//               initialItemCount: _data.length,
+//               itemBuilder: (context, index, animation) {
+//                 return _buildItem(_data[index], animation);
+//               },
+//             ),
+//           ),
+//           // Button Row for Adding and Removing Items
+//           Padding(
+//             padding: const EdgeInsets.all(16.0),
+//             child: Row(
+//               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+//               children: <Widget>[
+//                 ElevatedButton(
+//                   onPressed: _addItem,
+//                   style: ElevatedButton.styleFrom(
+//                     backgroundColor: Colors.green[400], // Button color
+//                     padding: const EdgeInsets.symmetric(
+//                         horizontal: 20, vertical: 10),
+//                     shape: RoundedRectangleBorder(
+//                         borderRadius: BorderRadius.circular(30)),
+//                   ),
+//                   child: const Text(
+//                     'Add Language',
+//                     style: TextStyle(
+//                         color: Colors.black,
+//                         fontWeight: FontWeight.bold,
+//                         fontSize: 15),
+//                   ),
+//                 ),
+//                 ElevatedButton(
+//                   onPressed: _removeItem,
+//                   style: ElevatedButton.styleFrom(
+//                     backgroundColor: Colors.red[400], // Button color
+//                     padding: const EdgeInsets.symmetric(
+//                         horizontal: 20, vertical: 10),
+//                     shape: RoundedRectangleBorder(
+//                         borderRadius: BorderRadius.circular(30)),
+//                   ),
+//                   child: const Text(
+//                     'Remove Language',
+//                     style: TextStyle(
+//                         color: Colors.black,
+//                         fontWeight: FontWeight.bold,
+//                         fontSize: 15),
+//                   ),
+//                 ),
+//               ],
+//             ),
+//           ),
+//         ],
+//       ),
+//     );
+//   }
+
+//   // Builds each item in the AnimatedList with a fade and size transition
+//   Widget _buildItem(String item, Animation<double> animation) {
+//     return FadeTransition(
+//       opacity: animation,
+//       child: SizeTransition(
+//         sizeFactor: animation,
+//         child: Card(
+//           margin: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+//           elevation: 6.0, // Adds shadow for depth
+//           shape: RoundedRectangleBorder(
+//               borderRadius: BorderRadius.circular(15)), // Rounded corners
+//           child: Padding(
+//             padding: const EdgeInsets.all(16.0),
+//             child: Row(
+//               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//               children: [
+//                 Text(
+//                   item,
+//                   style: const TextStyle(
+//                       fontSize: 18, fontWeight: FontWeight.bold),
+//                 ),
+//                 Icon(Icons.code,
+//                     color: Colors.teal), // Icon representing coding
+//               ],
+//             ),
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+
+//   // Adds a new random programming language to the list and animates its addition
+//   void _addItem() {
+//     if (programmingLanguages.isNotEmpty) {
+//       final randomIndex = Random()
+//           .nextInt(programmingLanguages.length); // Generate a random index
+//       String newLanguage = programmingLanguages[randomIndex];
+//       _data.add(newLanguage);
+//       _listKey.currentState
+//           ?.insertItem(_data.length - 1); // Insert at the end of the list
+
+//       // Remove the added language from the options to prevent duplicates until reset
+//       programmingLanguages.removeAt(randomIndex);
+//     }
+//   }
+
+//   // Removes the last programming language from the list and animates its removal
+//   void _removeItem() {
+//     if (_data.isNotEmpty) {
+//       final removedIndex = _data.length - 1; // Get the index of the last item
+//       final removedItem = _data.removeLast(); // Remove the last item
+//       _listKey.currentState?.removeItem(
+//         removedIndex,
+//         (context, animation) => _buildItem(removedItem, animation),
+//       );
+
+//       // Optionally add back removed language to allow re-adding later
+//       programmingLanguages.add(removedItem);
+//     }
+//   }
+// }

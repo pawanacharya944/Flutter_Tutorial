@@ -39,10 +39,10 @@ class MyListWheelScrollView extends StatelessWidget {
                             Colors.primaries
                                 .length], // color for each item based on index
                         borderRadius: BorderRadius.circular(20),
-                        boxShadow: [
+                        boxShadow: const [
                           BoxShadow(
                             color: Colors.black54,
-                            offset: const Offset(0, 6),
+                            offset: Offset(0, 6),
                             blurRadius: 12,
                           ),
                         ]),
