@@ -8599,3 +8599,605 @@
 //     }
 //   }
 // }
+
+// import 'package:flutter/material.dart';
+// import 'dart:math'; // Importing dart:math for random number generation
+
+// class MyAnimatedGrid extends StatefulWidget {
+//   const MyAnimatedGrid({Key? key}) : super(key: key);
+
+//   @override
+//   State<MyAnimatedGrid> createState() => _MyAnimatedGridState();
+// }
+
+// class _MyAnimatedGridState extends State<MyAnimatedGrid> {
+//   final List<String> _data = [
+//     'Dart',
+//     'Python',
+//     'Java',
+//     'C++',
+//     'JavaScript',
+//     'C'
+//   ];
+
+//   // Expanded list of programming languages for random addition
+//   final List<String> programmingLanguages = [
+//     'Swift',
+//     'Kotlin',
+//     'Ruby',
+//     'Rust',
+//     'PHP',
+//     'Go',
+//     'TypeScript',
+//     'Scala',
+//     'Haskell',
+//     'Perl',
+//     'C#',
+//     'Lua',
+//   ];
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: const Text(
+//           'Animated Grid',
+//           style: TextStyle(fontSize: 26),
+//         ),
+//         centerTitle: true,
+//         backgroundColor: Colors.teal[200], // AppBar color
+//       ),
+//       body: Column(
+//         children: <Widget>[
+//           Expanded(
+//             child: GridView.builder(
+//               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+//                 crossAxisCount: 3, // Number of columns in the grid
+//                 mainAxisSpacing: 10, // Space between rows
+//                 crossAxisSpacing: 10, // Space between columns
+//               ),
+//               itemCount: _data.length,
+//               itemBuilder: (context, index) {
+//                 return _buildItem(_data[index]);
+//               },
+//             ),
+//           ),
+//           // Button Row for Adding and Removing Items
+//           Padding(
+//             padding: const EdgeInsets.all(16.0),
+//             child: Row(
+//               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+//               children: <Widget>[
+//                 ElevatedButton(
+//                   onPressed: _addItem,
+//                   style: ElevatedButton.styleFrom(
+//                     backgroundColor: Colors.green[400], // Button color
+//                     padding: const EdgeInsets.symmetric(
+//                         horizontal: 20, vertical: 10),
+//                     shape: RoundedRectangleBorder(
+//                         borderRadius: BorderRadius.circular(30)),
+//                   ),
+//                   child: const Text(
+//                     'Add Language',
+//                     style: TextStyle(
+//                         color: Colors.black,
+//                         fontWeight: FontWeight.bold,
+//                         fontSize: 15),
+//                   ),
+//                 ),
+//                 ElevatedButton(
+//                   onPressed: _removeItem,
+//                   style: ElevatedButton.styleFrom(
+//                     backgroundColor: Colors.red[400], // Button color
+//                     padding: const EdgeInsets.symmetric(
+//                         horizontal: 20, vertical: 10),
+//                     shape: RoundedRectangleBorder(
+//                         borderRadius: BorderRadius.circular(30)),
+//                   ),
+//                   child: const Text(
+//                     'Remove Language',
+//                     style: TextStyle(
+//                         color: Colors.black,
+//                         fontWeight: FontWeight.bold,
+//                         fontSize: 15),
+//                   ),
+//                 ),
+//               ],
+//             ),
+//           ),
+//         ],
+//       ),
+//     );
+//   }
+
+//   // Builds each item in the AnimatedGrid with a fade and scale transition
+//   Widget _buildItem(String item) {
+//     return Card(
+//       margin: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+//       elevation: 6.0, // Adds shadow for depth
+//       shape: RoundedRectangleBorder(
+//           borderRadius: BorderRadius.circular(15)), // Rounded corners
+//       child: Padding(
+//         padding: const EdgeInsets.all(16.0),
+//         child: Center(
+//           child: Text(
+//             item,
+//             style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+
+//   // Adds a new random programming language to the list and animates its addition
+//   void _addItem() {
+//     if (programmingLanguages.isNotEmpty) {
+//       final randomIndex = Random()
+//           .nextInt(programmingLanguages.length); // Generate a random index
+//       String newLanguage = programmingLanguages[randomIndex];
+//       setState(() {
+//         _data.add(newLanguage);
+//       });
+
+//       // Remove the added language from the options to prevent duplicates until reset
+//       programmingLanguages.removeAt(randomIndex);
+//     }
+//   }
+
+//   // Removes the last programming language from the list and animates its removal
+//   void _removeItem() {
+//     if (_data.isNotEmpty) {
+//       setState(() {
+//         final removedItem = _data.removeLast(); // Remove the last item
+
+//         // Optionally add back removed language to allow re-adding later
+//         programmingLanguages.add(removedItem);
+//       });
+//     }
+//   }
+// }
+
+// import 'package:flutter/material.dart';
+// import 'dart:math'; // Importing dart:math for random number generation
+
+// class MyAnimatedGrid extends StatefulWidget {
+//   const MyAnimatedGrid({super.key});
+
+//   @override
+//   State<MyAnimatedGrid> createState() => _MyAnimatedGridState();
+// }
+
+// class _MyAnimatedGridState extends State<MyAnimatedGrid> {
+//   final List<String> _data = [
+//     'Dart',
+//     'Python',
+//     'Java',
+//     'C++',
+//     'JavaScript',
+//     'C'
+//   ];
+
+//   // Expanded list of programming languages for random addition
+//   final List<String> programmingLanguages = [
+//     'Swift',
+//     'Kotlin',
+//     'Ruby',
+//     'Rust',
+//     'PHP',
+//     'Go',
+//     'TypeScript',
+//     'Scala',
+//     'Haskell',
+//     'Perl',
+//     'C#',
+//     'Lua',
+//   ];
+
+//   // Function to generate a random light color
+//   // Color _getRandomLightColor() {
+//   //   Random random = Random();
+//   //   return Color.fromARGB(
+//   //           255,
+//   //           random.nextInt(250), // Random Red value
+//   //           random.nextInt(250), // Random Green value
+//   //           random.nextInt(250) // Random Blue value
+//   //           )
+//   //       .withOpacity(0.3); // Set opacity for a lighter color
+//   // }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: const Text(
+//           'Animated Grid',
+//           style: TextStyle(fontSize: 26),
+//         ),
+//         centerTitle: true,
+//         backgroundColor: Colors.blue[100], // AppBar color
+//       ),
+//       body: Column(
+//         children: <Widget>[
+//           Expanded(
+//             child: GridView.builder(
+//               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+//                 crossAxisCount: 3, // Number of columns in the grid
+//                 mainAxisSpacing: 10, // Space between rows
+//                 crossAxisSpacing: 10, // Space between columns
+//               ),
+//               itemCount: _data.length,
+//               itemBuilder: (context, index) {
+//                 return _buildItem(_data[index]);
+//               },
+//             ),
+//           ),
+//           // Button Row for Adding and Removing Items
+//           Padding(
+//             padding: const EdgeInsets.all(16.0),
+//             child: Row(
+//               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+//               children: <Widget>[
+//                 ElevatedButton(
+//                   onPressed: _addItem,
+//                   style: ElevatedButton.styleFrom(
+//                     backgroundColor: Colors.green[400], // Button color
+//                     padding: const EdgeInsets.symmetric(
+//                         horizontal: 20, vertical: 10),
+//                     shape: RoundedRectangleBorder(
+//                         borderRadius: BorderRadius.circular(30)),
+//                   ),
+//                   child: const Text(
+//                     'Add Language',
+//                     style: TextStyle(
+//                         color: Colors.black,
+//                         fontWeight: FontWeight.bold,
+//                         fontSize: 15),
+//                   ),
+//                 ),
+//                 ElevatedButton(
+//                   onPressed: _removeItem,
+//                   style: ElevatedButton.styleFrom(
+//                     backgroundColor: Colors.red[400], // Button color
+//                     padding: const EdgeInsets.symmetric(
+//                         horizontal: 20, vertical: 10),
+//                     shape: RoundedRectangleBorder(
+//                         borderRadius: BorderRadius.circular(30)),
+//                   ),
+//                   child: const Text(
+//                     'Remove Language',
+//                     style: TextStyle(
+//                         color: Colors.black,
+//                         fontWeight: FontWeight.bold,
+//                         fontSize: 15),
+//                   ),
+//                 ),
+//               ],
+//             ),
+//           ),
+//         ],
+//       ),
+//     );
+//   }
+
+//   // Builds each item in the AnimatedGrid with a fade and scale transition
+//   Widget _buildItem(String item) {
+//     return Card(
+//       margin: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+//       elevation: 6.0, // Adds shadow for depth
+//       shape: RoundedRectangleBorder(
+//           borderRadius: BorderRadius.circular(15)), // Rounded corners
+//       child: Padding(
+//         padding: const EdgeInsets.all(16.0),
+//         child: Center(
+//           child: Text(
+//             item,
+//             style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+
+//   // Adds a new random programming language to the list and animates its addition
+//   void _addItem() {
+//     if (programmingLanguages.isNotEmpty) {
+//       final randomIndex = Random()
+//           .nextInt(programmingLanguages.length); // Generate a random index
+//       String newLanguage = programmingLanguages[randomIndex];
+//       setState(() {
+//         _data.add(newLanguage);
+//       });
+
+//       // Remove the added language from the options to prevent duplicates until reset
+//       programmingLanguages.removeAt(randomIndex);
+//     }
+//   }
+
+//   // Removes the last programming language from the list and animates its removal
+//   void _removeItem() {
+//     if (_data.isNotEmpty) {
+//       setState(() {
+//         final removedItem = _data.removeLast(); // Remove the last item
+
+//         // Optionally add back removed language to allow re-adding later
+//         programmingLanguages.add(removedItem);
+//       });
+//     }
+//   }
+// }
+
+// import 'package:flutter/material.dart';
+// import 'dart:math'; // Importing dart:math for random number generation
+
+// class MyAnimatedGrid extends StatefulWidget {
+//   const MyAnimatedGrid({super.key});
+
+//   @override
+//   State<MyAnimatedGrid> createState() => _MyAnimatedGridState();
+// }
+
+// class _MyAnimatedGridState extends State<MyAnimatedGrid> {
+//   final List<String> _data = [
+//     'Dart',
+//     'Python',
+//     'Java',
+//     'C++',
+//     'JavaScript',
+//     'C'
+//   ];
+
+//   // Expanded list of programming languages for random addition
+//   final List<String> programmingLanguages = [
+//     'Swift',
+//     'Kotlin',
+//     'Ruby',
+//     'Rust',
+//     'PHP',
+//     'Go',
+//     'TypeScript',
+//     'Scala',
+//     'Haskell',
+//     'Perl',
+//     'C#',
+//     'Lua',
+//   ];
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: const Text(
+//           'Animated Grid',
+//           style: TextStyle(fontSize: 26),
+//         ),
+//         centerTitle: true,
+//         backgroundColor: Colors.blue[100], // AppBar color
+//       ),
+//       body: Column(
+//         children: <Widget>[
+//           Expanded(
+//             child: GridView.builder(
+//               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+//                 crossAxisCount: 3, // Number of columns in the grid
+//                 mainAxisSpacing: 10, // Space between rows
+//                 crossAxisSpacing: 10, // Space between columns
+//               ),
+//               itemCount: _data.length,
+//               itemBuilder: (context, index) {
+//                 return _buildItem(_data[index]);
+//               },
+//             ),
+//           ),
+//           // Button Row for Adding and Removing Items
+//           Padding(
+//             padding: const EdgeInsets.all(16.0),
+//             child: Row(
+//               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+//               children: <Widget>[
+//                 ElevatedButton(
+//                   onPressed: _addItem,
+//                   style: ElevatedButton.styleFrom(
+//                     backgroundColor: Colors.green[400], // Button color
+//                     padding: const EdgeInsets.symmetric(
+//                         horizontal: 20, vertical: 10),
+//                     shape: RoundedRectangleBorder(
+//                         borderRadius: BorderRadius.circular(30)),
+//                   ),
+//                   child: const Text(
+//                     'Add Language',
+//                     style: TextStyle(
+//                         color: Colors.black,
+//                         fontWeight: FontWeight.bold,
+//                         fontSize: 15),
+//                   ),
+//                 ),
+//                 ElevatedButton(
+//                   onPressed: _removeItem,
+//                   style: ElevatedButton.styleFrom(
+//                     backgroundColor: Colors.red[400], // Button color
+//                     padding: const EdgeInsets.symmetric(
+//                         horizontal: 20, vertical: 10),
+//                     shape: RoundedRectangleBorder(
+//                         borderRadius: BorderRadius.circular(30)),
+//                   ),
+//                   child: const Text(
+//                     'Remove Language',
+//                     style: TextStyle(
+//                         color: Colors.black,
+//                         fontWeight: FontWeight.bold,
+//                         fontSize: 15),
+//                   ),
+//                 ),
+//               ],
+//             ),
+//           ),
+//         ],
+//       ),
+//     );
+//   }
+
+//   // Builds each item in the AnimatedGrid with a fade and scale transition
+//   Widget _buildItem(String item) {
+//     return Card(
+//       margin: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+//       elevation: 6.0, // Adds shadow for depth
+//       shape: RoundedRectangleBorder(
+//           borderRadius: BorderRadius.circular(15)), // Rounded corners
+//       child: Padding(
+//         padding: const EdgeInsets.all(16.0),
+//         child: Center(
+//           child: Text(
+//             item,
+//             style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+
+//   // Adds a new random programming language to the list and animates its addition
+//   void _addItem() {
+//     if (programmingLanguages.isNotEmpty) {
+//       final randomIndex = Random()
+//           .nextInt(programmingLanguages.length); // Generate a random index
+//       String newLanguage = programmingLanguages[randomIndex];
+//       setState(() {
+//         _data.add(newLanguage);
+//       });
+
+//       // Remove the added language from the options to prevent duplicates until reset
+//       programmingLanguages.removeAt(randomIndex);
+//     }
+//   }
+
+//   // Removes the last programming language from the list and animates its removal
+//   void _removeItem() {
+//     if (_data.isNotEmpty) {
+//       setState(() {
+//         final removedItem = _data.removeLast(); // Remove the last item
+
+//         // Optionally add back removed language to allow re-adding later
+//         programmingLanguages.add(removedItem);
+//       });
+//     }
+//   }
+// }
+
+import 'package:flutter/material.dart';
+
+class HomeScreen extends StatefulWidget {
+  @override
+  _HomeScreenState createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  String selectedOption = "Select an option";
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          "PopupMenuButton",
+          style: TextStyle(fontSize: 26),
+        ),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            // Centered PopupMenuButton
+            PopupMenuButton<String>(
+              icon: Icon(
+                Icons.more_vert,
+                size: 40,
+              ),
+              onSelected: (String value) {
+                setState(() {
+                  selectedOption = value; // Update the selected option
+                });
+                // Show a Snackbar with the selected option
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                      content: Text(
+                    "Selected: $value",
+                    style: TextStyle(color: Colors.white, fontSize: 18),
+                  )),
+                );
+              },
+              itemBuilder: (BuildContext context) {
+                return [
+                  // Define enhanced menu items with custom styling
+                  PopupMenuItem<String>(
+                    value: "Profile 🧑🏻‍💻",
+                    child: _buildMenuItem(Icons.person, "Profile"),
+                  ),
+                  PopupMenuItem<String>(
+                    value: "Settings ⚙️",
+                    child: _buildMenuItem(Icons.settings, "Settings"),
+                  ),
+                  PopupMenuItem<String>(
+                    value: "Logout [→",
+                    child: _buildMenuItem(Icons.logout, "Logout"),
+                  ),
+                ];
+              },
+            ),
+            SizedBox(height: 120), // Increased space between button and text
+            // Display selected option text with improved styling
+            Container(
+              padding: EdgeInsets.symmetric(
+                  horizontal: 20,
+                  vertical: 15), // Increased vertical padding for more space
+              decoration: BoxDecoration(
+                color: Colors.green[300], // Light background for contrast
+                borderRadius: BorderRadius.circular(10),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.3),
+                    spreadRadius: 2,
+                    blurRadius: 5,
+                    offset: Offset(0, 3), // changes position of shadow
+                  ),
+                ],
+              ),
+              child: Text(
+                selectedOption,
+                style: TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  // Helper method to build a styled menu item
+  Widget _buildMenuItem(IconData icon, String title) {
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(8),
+        color: Colors.white,
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.shade400,
+            spreadRadius: 2,
+            blurRadius: 8,
+            offset: Offset(0, 3), // changes position of shadow
+          ),
+        ],
+      ),
+      padding: EdgeInsets.all(10),
+      child: Row(
+        children: [
+          Icon(icon, color: Colors.blueGrey),
+          SizedBox(width: 10),
+          Text(title, style: TextStyle(fontSize: 16)),
+        ],
+      ),
+    );
+  }
+}
