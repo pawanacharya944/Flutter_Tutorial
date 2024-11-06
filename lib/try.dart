@@ -1420,7 +1420,7 @@
 //                       ClipRRect(
 //                         borderRadius: BorderRadius.circular(10),
 //                         child: Image.network(
-//                           'https://media.istockphoto.com/id/1290079537/photo/view-of-world-famous-iguasu-waterfalls-in-brazil.jpg?s=612x612&w=0&k=20&c=ofh2JmjM_KMHMf3SOHPQ8vdq_hRqMXvAuyCm9x354vw=',
+//                           'https://media.istockphoto.com/id/1290079537/photo/view-of-world-famous-iguasu-waterfalls-in-brazil.png?s=612x612&w=0&k=20&c=ofh2JmjM_KMHMf3SOHPQ8vdq_hRqMXvAuyCm9x354vw=',
 //                           fit: BoxFit.cover,
 //                         ),
 //                       ),
@@ -2005,7 +2005,7 @@
 //                     ClipRRect(
 //                       borderRadius: BorderRadius.circular(10),
 //                       child: Image.network(
-//                         'https://cdn.pixabay.com/photo/2024/05/15/20/57/developer-8764524_1280.jpg',
+//                         'https://cdn.pixabay.com/photo/2024/05/15/20/57/developer-8764524_1280.png',
 //                         fit: BoxFit.cover,
 //                       ),
 //                     ),
@@ -3210,7 +3210,7 @@
 //               child: ClipRRect(
 //                 borderRadius: BorderRadius.circular(15),
 //                 child: Image.asset(
-//                   'images/developer.jpg', // Replace with your image path
+//                   'images/developer.png', // Replace with your image path
 //                   fit: BoxFit.cover,
 //                 ),
 //               ),
@@ -3349,11 +3349,11 @@
 
 // class MyCarouselView extends StatelessWidget {
 //   // List of asset image paths
-//   final List<String> imageAssets = [
-//     "images/messi.jpg",
-//     "images/ronaldo.jpg",
-//     "images/neymar.jpg",
-//     "images/developer.jpg",
+//   final List<String> imageimages = [
+//     "images/messi.png",
+//     "images/ronaldo.png",
+//     "images/neymar.png",
+//     "images/developer.png",
 //   ];
 
 //   MyCarouselView({super.key});
@@ -3371,7 +3371,7 @@
 //             SizedBox(
 //               height: 500, // Set a fixed height for the carousel
 //               child: CarouselView.(
-//                 itemCount: imageAssets.length,
+//                 itemCount: imageimages.length,
 //                 itemBuilder: (context, index) {
 //                   return Container(
 //                     margin: const EdgeInsets.all(10), // Margin around each item
@@ -3390,7 +3390,7 @@
 //                       borderRadius: BorderRadius.circular(
 //                           15), // Ensure image corners are rounded
 //                       child: Image.asset(
-//                         imageAssets[index],
+//                         imageimages[index],
 //                         fit: BoxFit.cover, // Cover the entire container
 //                       ),
 //                     ),
@@ -3416,8 +3416,8 @@
 
 // class MyCarouselView extends StatelessWidget {
 //   // List of asset image paths
-//   final List<String> imageAssets = [
-//     "images/messi.jpg",
+//   final List<String> imageimages = [
+//     "images/messi.png",
 //   ];
 
 //   MyCarouselView({super.key});
@@ -3435,7 +3435,7 @@
 //             SizedBox(
 //               height: 500, // Set a fixed height for the carousel
 //               child: CarouselSlider.builder(
-//                 itemCount: imageAssets.length,
+//                 itemCount: imageimages.length,
 //                 itemBuilder: (context, index, realIndex) {
 //                   return Container(
 //                     margin: const EdgeInsets.all(10), // Margin around each item
@@ -3454,7 +3454,7 @@
 //                       borderRadius: BorderRadius.circular(
 //                           15), // Ensure image corners are rounded
 //                       child: Image.asset(
-//                         imageAssets[index],
+//                         imageimages[index],
 //                         fit: BoxFit.cover, // Cover the entire container
 //                       ),
 //                     ),
@@ -3496,9 +3496,9 @@
 //       body: CarouselView(
 //         itemExtent: 200.0, // Set the height of the images
 //         children: [
-//           Image.asset('images/messi.jpg', fit: BoxFit.cover),
-//           Image.asset('images/ronaldo.jpg', fit: BoxFit.cover),
-//           Image.asset('images/neymar.jpg', fit: BoxFit.cover),
+//           Image.asset('images/messi.png', fit: BoxFit.cover),
+//           Image.asset('images/ronaldo.png', fit: BoxFit.cover),
+//           Image.asset('images/neymar.png', fit: BoxFit.cover),
 //         ],
 //       ),
 //     );
@@ -3526,10 +3526,10 @@
 //             enableInfiniteScroll: true,
 //           ),
 //           items: [
-//             'images/messi.jpg',
-//             'images/ronaldo.jpg',
-//             'images/neymar.jpg',
-//             'images/developer.jpg',
+//             'images/messi.png',
+//             'images/ronaldo.png',
+//             'images/neymar.png',
+//             'images/developer.png',
 //           ].map((imagePath) {
 //             return Container(
 //               margin: const EdgeInsets.symmetric(horizontal: 5.0),
@@ -3770,7 +3770,7 @@
 //                   children: [
 //                     // Display an image based on the current theme
 //                     Image.asset(
-//                       isSwitched ? 'images/boy.jpeg' : 'images/developer.jpg',
+//                       isSwitched ? 'images/boy.jpeg' : 'images/developer.png',
 //                       height: 200, // Height of the image
 //                       width: 200, // Width of the image
 //                     ),
@@ -5978,7 +5978,7 @@
 //       body: Container(
 //         decoration: const BoxDecoration(
 //           image: DecorationImage(
-//             image: AssetImage('images/pizzza.jpg'), // Background image
+//             image: AssetImage('images/pizzza.png'), // Background image
 //             fit: BoxFit.cover,
 //           ),
 //         ),
@@ -6103,7 +6103,7 @@
 //           Container(
 //             decoration: const BoxDecoration(
 //               image: DecorationImage(
-//                 image: AssetImage('images/pizzza.jpg'), // Background image
+//                 image: AssetImage('images/pizzza.png'), // Background image
 //                 fit: BoxFit.cover, // Fill the entire screen
 //               ),
 //             ),
@@ -6247,7 +6247,7 @@
 //           Container(
 //             decoration: const BoxDecoration(
 //               image: DecorationImage(
-//                 image: AssetImage('images/pizzza.jpg'), // Background image
+//                 image: AssetImage('images/pizzza.png'), // Background image
 //                 fit: BoxFit.cover, // Fill the entire screen
 //               ),
 //             ),
@@ -6370,7 +6370,7 @@
 //             children: [
 //               // Lottie Animation
 //               Lottie.asset(
-//                 'images/subs.json', // Load Lottie animation from assets
+//                 'images/subs.json', // Load Lottie animation from images
 //                 controller: _controller,
 //                 onLoaded: (composition) {
 //                   // Configure the AnimationController with the duration of the Lottie file
@@ -7061,7 +7061,7 @@
 //                     decoration: BoxDecoration(
 //                       image: DecorationImage(
 //                         image: const AssetImage(
-//                             'images/ed.jpg'), // Path to your background image
+//                             'images/ed.png'), // Path to your background image
 //                         fit: BoxFit.cover,
 //                         colorFilter: ColorFilter.mode(
 //                           Colors.black.withOpacity(0.5), // Adjust transparency
@@ -7849,7 +7849,7 @@
 //             decoration: BoxDecoration(
 //               image: DecorationImage(
 //                 image: AssetImage(
-//                     'images/developer.jpg'), // Replace with your image path
+//                     'images/developer.png'), // Replace with your image path
 //                 fit: BoxFit.cover,
 //               ),
 //             ),
@@ -9083,120 +9083,219 @@
 //   }
 // }
 
+// import 'package:flutter/material.dart';
+
+// class MySmooth extends StatefulWidget {
+//   const MySmooth({super.key});
+
+//   @override
+//   _MySmoothState createState() => _MySmoothState();
+// }
+
+// class _MySmoothState extends State<MySmooth> {
+//   String selectedOption = "Select an option";
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: const Text(
+//           "PopupMenuButton",
+//           style: TextStyle(fontSize: 26),
+//         ),
+//       ),
+//       body: Center(
+//         child: Column(
+//           mainAxisAlignment: MainAxisAlignment.center,
+//           children: [
+//             // Centered PopupMenuButton
+//             PopupMenuButton<String>(
+//               icon: const Icon(
+//                 Icons.more_vert,
+//                 size: 40,
+//               ),
+//               onSelected: (String value) {
+//                 setState(() {
+//                   selectedOption = value; // Update the selected option
+//                 });
+//                 // Show a Snackbar with the selected option
+//                 ScaffoldMessenger.of(context).showSnackBar(
+//                   SnackBar(
+//                       content: Text(
+//                     "Selected: $value",
+//                     style: const TextStyle(color: Colors.white, fontSize: 18),
+//                   )),
+//                 );
+//               },
+//               itemBuilder: (BuildContext context) {
+//                 return [
+//                   // Define enhanced menu items with custom styling
+//                   PopupMenuItem<String>(
+//                     value: "Profile 🧑🏻‍💻",
+//                     child: _buildMenuItem(Icons.person, "Profile"),
+//                   ),
+//                   PopupMenuItem<String>(
+//                     value: "Settings ⚙️",
+//                     child: _buildMenuItem(Icons.settings, "Settings"),
+//                   ),
+//                   PopupMenuItem<String>(
+//                     value: "Logout [→",
+//                     child: _buildMenuItem(Icons.logout, "Logout"),
+//                   ),
+//                 ];
+//               },
+//             ),
+//             const SizedBox(
+//                 height: 120), // Increased space between button and text
+//             // Display selected option text with improved styling
+//             Container(
+//               padding: const EdgeInsets.symmetric(
+//                   horizontal: 20,
+//                   vertical: 15), // Increased vertical padding for more space
+//               decoration: BoxDecoration(
+//                 color: Colors.green[300], // Light background for contrast
+//                 borderRadius: BorderRadius.circular(10),
+//                 boxShadow: [
+//                   BoxShadow(
+//                     color: Colors.grey.withOpacity(0.3),
+//                     spreadRadius: 2,
+//                     blurRadius: 5,
+//                     offset: const Offset(0, 3), // changes position of shadow
+//                   ),
+//                 ],
+//               ),
+//               child: Text(
+//                 selectedOption,
+//                 style: const TextStyle(
+//                     fontSize: 24,
+//                     fontWeight: FontWeight.bold,
+//                     color: Colors.black),
+//               ),
+//             ),
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+
+//   // Helper method to build a styled menu item
+//   Widget _buildMenuItem(IconData icon, String title) {
+//     return Container(
+//       decoration: BoxDecoration(
+//         borderRadius: BorderRadius.circular(8),
+//         color: Colors.white,
+//         boxShadow: [
+//           BoxShadow(
+//             color: Colors.grey.shade400,
+//             spreadRadius: 2,
+//             blurRadius: 8,
+//             offset: const Offset(0, 3), // changes position of shadow
+//           ),
+//         ],
+//       ),
+//       padding: const EdgeInsets.all(10),
+//       child: Row(
+//         children: [
+//           Icon(icon, color: Colors.blueGrey),
+//           const SizedBox(width: 10),
+//           Text(title, style: const TextStyle(fontSize: 16)),
+//         ],
+//       ),
+//     );
+//   }
+// }
+
 import 'package:flutter/material.dart';
 
-class HomeScreen extends StatefulWidget {
-  @override
-  _HomeScreenState createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
-  String selectedOption = "Select an option";
-
+class MainScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          "PopupMenuButton",
-          style: TextStyle(fontSize: 26),
-        ),
+        title: Text("Main Screen"),
+        backgroundColor: Colors.blue[200],
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            // Centered PopupMenuButton
-            PopupMenuButton<String>(
-              icon: Icon(
-                Icons.more_vert,
-                size: 40,
-              ),
-              onSelected: (String value) {
-                setState(() {
-                  selectedOption = value; // Update the selected option
-                });
-                // Show a Snackbar with the selected option
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(
-                      content: Text(
-                    "Selected: $value",
-                    style: TextStyle(color: Colors.white, fontSize: 18),
-                  )),
-                );
-              },
-              itemBuilder: (BuildContext context) {
-                return [
-                  // Define enhanced menu items with custom styling
-                  PopupMenuItem<String>(
-                    value: "Profile 🧑🏻‍💻",
-                    child: _buildMenuItem(Icons.person, "Profile"),
-                  ),
-                  PopupMenuItem<String>(
-                    value: "Settings ⚙️",
-                    child: _buildMenuItem(Icons.settings, "Settings"),
-                  ),
-                  PopupMenuItem<String>(
-                    value: "Logout [→",
-                    child: _buildMenuItem(Icons.logout, "Logout"),
-                  ),
-                ];
-              },
-            ),
-            SizedBox(height: 120), // Increased space between button and text
-            // Display selected option text with improved styling
-            Container(
-              padding: EdgeInsets.symmetric(
-                  horizontal: 20,
-                  vertical: 15), // Increased vertical padding for more space
-              decoration: BoxDecoration(
-                color: Colors.green[300], // Light background for contrast
-                borderRadius: BorderRadius.circular(10),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.withOpacity(0.3),
-                    spreadRadius: 2,
-                    blurRadius: 5,
-                    offset: Offset(0, 3), // changes position of shadow
-                  ),
-                ],
-              ),
-              child: Text(
-                selectedOption,
-                style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black),
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            // Background gradient
+            colors: [Colors.blue[200]!, Colors.green[200]!],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
+        ),
+        child: Center(
+          child: GestureDetector(
+            onTap: () {
+              // Navigate to DetailScreen on tap
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => DetailScreen()),
+              );
+            },
+            child: Hero(
+              tag: 'imageHero', // Unique tag for the hero animation
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(15.0), // Rounded corners
+                child: Image.asset(
+                  'images/coffee.jpg', // Placeholder image
+                  width: 280, // Increased width for the main image
+                  height: 280, // Increased height for the main image
+                  fit: BoxFit.cover, // Cover the entire area
+                ),
               ),
             ),
-          ],
+          ),
         ),
       ),
     );
   }
+}
 
-  // Helper method to build a styled menu item
-  Widget _buildMenuItem(IconData icon, String title) {
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(8),
-        color: Colors.white,
-        boxShadow: [
-          BoxShadow(
-            color: Colors.grey.shade400,
-            spreadRadius: 2,
-            blurRadius: 8,
-            offset: Offset(0, 3), // changes position of shadow
-          ),
-        ],
+class DetailScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Detail Screen"),
+        backgroundColor: Colors.blue[200],
+        centerTitle: true,
       ),
-      padding: EdgeInsets.all(10),
-      child: Row(
-        children: [
-          Icon(icon, color: Colors.blueGrey),
-          SizedBox(width: 10),
-          Text(title, style: TextStyle(fontSize: 16)),
-        ],
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            // Background gradient
+            colors: [Colors.blue[200]!, Colors.green[200]!],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
+        ),
+        child: Column(
+          // Use Column to stack elements vertically
+          children: [
+            GestureDetector(
+              onTap: () {
+                // Navigate back to MainScreen on tap
+                Navigator.pop(context);
+              },
+              child: Center(
+                child: Hero(
+                  tag: 'imageHero', // Same tag as in MainScreen for animation
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(
+                        30.0), // More rounded corners for detail view
+                    child: Image.asset(
+                      'images/cofffee.jpg', // Larger placeholder image
+                      width: 400, // Full width of the screen
+                      height: 400, // Increased height for the detail view image
+                      fit: BoxFit.cover, // Cover the entire area
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
