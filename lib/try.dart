@@ -9205,98 +9205,238 @@
 //   }
 // }
 
-import 'package:flutter/material.dart';
+// import 'package:flutter/material.dart';
 
-class MainScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Main Screen"),
-        backgroundColor: Colors.blue[200],
-      ),
-      body: Container(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            // Background gradient
-            colors: [Colors.blue[200]!, Colors.green[200]!],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-          ),
-        ),
-        child: Center(
-          child: GestureDetector(
-            onTap: () {
-              // Navigate to DetailScreen on tap
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (_) => DetailScreen()),
-              );
-            },
-            child: Hero(
-              tag: 'imageHero', // Unique tag for the hero animation
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(15.0), // Rounded corners
-                child: Image.asset(
-                  'images/coffee.jpg', // Placeholder image
-                  width: 280, // Increased width for the main image
-                  height: 280, // Increased height for the main image
-                  fit: BoxFit.cover, // Cover the entire area
-                ),
-              ),
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-}
+// class MainScreen extends StatelessWidget {
+//   const MainScreen({super.key});
 
-class DetailScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Detail Screen"),
-        backgroundColor: Colors.blue[200],
-        centerTitle: true,
-      ),
-      body: Container(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            // Background gradient
-            colors: [Colors.blue[200]!, Colors.green[200]!],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-          ),
-        ),
-        child: Column(
-          // Use Column to stack elements vertically
-          children: [
-            GestureDetector(
-              onTap: () {
-                // Navigate back to MainScreen on tap
-                Navigator.pop(context);
-              },
-              child: Center(
-                child: Hero(
-                  tag: 'imageHero', // Same tag as in MainScreen for animation
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(
-                        30.0), // More rounded corners for detail view
-                    child: Image.asset(
-                      'images/cofffee.jpg', // Larger placeholder image
-                      width: 400, // Full width of the screen
-                      height: 400, // Increased height for the detail view image
-                      fit: BoxFit.cover, // Cover the entire area
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: const Text("Main Screen"),
+//         backgroundColor: Colors.blue[200],
+//       ),
+//       body: Container(
+//         decoration: BoxDecoration(
+//           gradient: LinearGradient(
+//             // Background gradient
+//             colors: [Colors.blue[200]!, Colors.green[200]!],
+//             begin: Alignment.topLeft,
+//             end: Alignment.bottomRight,
+//           ),
+//         ),
+//         child: Center(
+//           child: GestureDetector(
+//             onTap: () {
+//               // Navigate to DetailScreen on tap
+//               Navigator.push(
+//                 context,
+//                 MaterialPageRoute(builder: (_) => DetailScreen()),
+//               );
+//             },
+//             child: Hero(
+//               tag: 'imageHero', // Unique tag for the hero animation
+//               child: ClipRRect(
+//                 borderRadius: BorderRadius.circular(15.0), // Rounded corners
+//                 child: Image.asset(
+//                   'images/coffee.jpg', // Placeholder image
+//                   width: 280, // Increased width for the main image
+//                   height: 280, // Increased height for the main image
+//                   fit: BoxFit.cover, // Cover the entire area
+//                 ),
+//               ),
+//             ),
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// class DetailScreen extends StatelessWidget {
+//   const DetailScreen({super.key});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: const Text("Detail Screen"),
+//         backgroundColor: Colors.blue[200],
+//         centerTitle: true,
+//       ),
+//       body: Container(
+//         decoration: BoxDecoration(
+//           gradient: LinearGradient(
+//             // Background gradient
+//             colors: [Colors.blue[200]!, Colors.green[200]!],
+//             begin: Alignment.topLeft,
+//             end: Alignment.bottomRight,
+//           ),
+//         ),
+//         child: Column(
+//           // Use Column to stack elements vertically
+//           children: [
+//             GestureDetector(
+//               onTap: () {
+//                 // Navigate back to MainScreen on tap
+//                 Navigator.pop(context);
+//               },
+//               child: Center(
+//                 child: Hero(
+//                   tag: 'imageHero', // Same tag as in MainScreen for animation
+//                   child: ClipRRect(
+//                     borderRadius: BorderRadius.circular(
+//                         30.0), // More rounded corners for detail view
+//                     child: Image.asset(
+//                       'images/cofffee.jpg', // Larger placeholder image
+//                       width: 400, // Full width of the screen
+//                       height: 400, // Increased height for the detail view image
+//                       fit: BoxFit.cover, // Cover the entire area
+//                     ),
+//                   ),
+//                 ),
+//               ),
+//             ),
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// import 'package:flutter/material.dart';
+
+// class CrossFadeAnimationDemo extends StatefulWidget {
+//   @override
+//   _CrossFadeAnimationDemoState createState() => _CrossFadeAnimationDemoState();
+// }
+
+// class _CrossFadeAnimationDemoState extends State<CrossFadeAnimationDemo> {
+//   // Boolean variable to toggle between the two children
+//   bool _showFirstChild = true;
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       backgroundColor: Colors.grey[200], // Set a background color
+//       appBar: AppBar(
+//         title: Text('Animated Cross Fade Example'),
+//         centerTitle: true,
+//       ),
+//       body: Center(
+//         child: Padding(
+//           padding:
+//               const EdgeInsets.all(20.0), // Add padding around the container
+//           child: AnimatedCrossFade(
+//             // First child widget (visible when _showFirstChild is true)
+//             firstChild: _buildFirstChild(),
+//             // Second child widget (visible when _showFirstChild is false)
+//             secondChild: _buildSecondChild(),
+//             // Control which child is shown based on the boolean variable
+//             crossFadeState: _showFirstChild
+//                 ? CrossFadeState.showFirst
+//                 : CrossFadeState.showSecond,
+//             // Duration for the crossfade animation
+//             duration: Duration(seconds: 1),
+//             // Reverse duration for the animation when switching back
+//             reverseDuration: Duration(seconds: 1),
+//             // Curves for the animations
+//             firstCurve: Curves.easeIn,
+//             secondCurve: Curves.easeOut,
+//             // Layout builder to customize positioning during transition
+//             layoutBuilder: (Widget topChild, Key topChildKey,
+//                 Widget bottomChild, Key bottomChildKey) {
+//               return Stack(
+//                 alignment: Alignment.center,
+//                 children: [
+//                   Positioned(
+//                       key: bottomChildKey, child: bottomChild), // Bottom child
+//                   Positioned(key: topChildKey, child: topChild), // Top child
+//                 ],
+//               );
+//             },
+//           ),
+//         ),
+//       ),
+//       floatingActionButton: FloatingActionButton(
+//         onPressed: () {
+//           setState(() {
+//             _showFirstChild = !_showFirstChild; // Toggle the boolean variable
+//           });
+//         },
+//         tooltip: 'Toggle',
+//         backgroundColor: Colors.blueAccent,
+//         child: Icon(Icons.swap_horiz), // Icon to indicate toggle action
+//       ),
+//     );
+//   }
+
+//   Widget _buildFirstChild() {
+//     return Container(
+//       width: 400,
+//       height: 400,
+//       decoration: BoxDecoration(
+//         borderRadius: BorderRadius.circular(20),
+//         boxShadow: [
+//           BoxShadow(
+//             color: Colors.black26,
+//             blurRadius: 15.0,
+//             offset: Offset(0, 5),
+//           ),
+//         ],
+//         image: DecorationImage(
+//           image: AssetImage('images/boy.jpeg'), // Replace with your image path
+//           fit: BoxFit.cover,
+//         ),
+//       ),
+//       alignment: Alignment.bottomCenter,
+//       child: Container(
+//         padding: EdgeInsets.all(20),
+//         decoration: BoxDecoration(
+//           color: Colors.black54, // Semi-transparent overlay for text visibility
+//           borderRadius: BorderRadius.vertical(bottom: Radius.circular(20)),
+//         ),
+//         child: Text(
+//           'Exhausted Developer',
+//           style: TextStyle(
+//               color: Colors.white, fontSize: 24, fontWeight: FontWeight.bold),
+//         ),
+//       ),
+//     );
+//   }
+
+//   Widget _buildSecondChild() {
+//     return Container(
+//       width: 400,
+//       height: 400,
+//       decoration: BoxDecoration(
+//         borderRadius: BorderRadius.circular(20),
+//         boxShadow: [
+//           BoxShadow(
+//             color: Colors.black26,
+//             blurRadius: 15.0,
+//             offset: Offset(0, 5),
+//           ),
+//         ],
+//         image: DecorationImage(
+//           image: AssetImage(
+//               'images/developer.jpg'), // Replace with your image path
+//           fit: BoxFit.cover,
+//         ),
+//       ),
+//       alignment: Alignment.bottomCenter,
+//       child: Container(
+//         padding: EdgeInsets.all(20),
+//         decoration: BoxDecoration(
+//             color: Colors.black54,
+//             borderRadius: BorderRadius.vertical(bottom: Radius.circular(20))),
+//         child: Text('Intent Developer',
+//             style: TextStyle(
+//                 color: Colors.white,
+//                 fontSize: 24,
+//                 fontWeight: FontWeight.bold)),
+//       ),
+//     );
+//   }
+// }
