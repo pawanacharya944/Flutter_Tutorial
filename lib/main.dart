@@ -1,6 +1,5 @@
+import 'package:first_project/nav_bar.dart';
 import 'package:flutter/material.dart';
-
-import 'page_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +14,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: "Flutter Project",
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: MyPageView(),
+      home: const MyModernBottomNavBar(),
     );
   }
 }

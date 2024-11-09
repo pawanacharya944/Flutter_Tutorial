@@ -188,7 +188,7 @@
 //    Widget build(BuildContext context) {
 //      return Scaffold(
 //        appBar: AppBar(
-//          title: Text('FutureBuilder Example'),
+//          title: Text('FutureBuilder MyBottomNav'),
 //        ),
 //        body: Center(
 //          child: FutureBuilder<String>(
@@ -237,7 +237,7 @@
 //    Widget build(BuildContext context) {
 //      return Scaffold(
 //        appBar: AppBar(
-//          title: Text('FutureBuilder Example'),
+//          title: Text('FutureBuilder MyBottomNav'),
 //        ),
 //        body: Center(
 //          child: FutureBuilder<String>(
@@ -739,8 +739,8 @@
 
 //  import 'package:fluttermaterial.dart';
 
-//  class TooltipExample extends StatelessWidget {
-//    const TooltipExample({super.key});
+//  class TooltipMyBottomNav extends StatelessWidget {
+//    const TooltipMyBottomNav({super.key});
 
 //    @override
 //    Widget build(BuildContext context) {
@@ -937,7 +937,7 @@
 //    Widget build(BuildContext context) {
 //      return Scaffold(
 //        appBar: AppBar(
-//          title: Text('Bottom Navigation Bar Example'),
+//          title: Text('Bottom Navigation Bar MyBottomNav'),
 //          backgroundColor: Colors.teal[100],
 //        ),
 //        body: _pages[_currentIndex],  Display the selected page
@@ -1021,14 +1021,14 @@
 
 //  import 'package:fluttermaterial.dart';
 
-//  class DismissibleExample extends StatefulWidget {
-//    const DismissibleExample({Key? key}) : super(key: key);
+//  class DismissibleMyBottomNav extends StatefulWidget {
+//    const DismissibleMyBottomNav({Key? key}) : super(key: key);
 
 //    @override
-//    State<DismissibleExample> createState() => _DismissibleExampleState();
+//    State<DismissibleMyBottomNav> createState() => _DismissibleMyBottomNavState();
 //  }
 
-//  class _DismissibleExampleState extends State<DismissibleExample> {
+//  class _DismissibleMyBottomNavState extends State<DismissibleMyBottomNav> {
 //     List of items to display
 //    final List<String> items = [
 //      "Apple",
@@ -1042,7 +1042,7 @@
 //    Widget build(BuildContext context) {
 //      return Scaffold(
 //        appBar: AppBar(
-//          title: const Text('Dismissible Widget Example'),
+//          title: const Text('Dismissible Widget MyBottomNav'),
 //        ),
 //        body: ListView.builder(
 //          itemCount: items.length,
@@ -1093,14 +1093,14 @@
 
 //  import 'package:fluttermaterial.dart';
 
-//  class DismissibleExample extends StatefulWidget {
-//    const DismissibleExample({Key? key}) : super(key: key);
+//  class DismissibleMyBottomNav extends StatefulWidget {
+//    const DismissibleMyBottomNav({Key? key}) : super(key: key);
 
 //    @override
-//    State<DismissibleExample> createState() => _DismissibleExampleState();
+//    State<DismissibleMyBottomNav> createState() => _DismissibleMyBottomNavState();
 //  }
 
-//  class _DismissibleExampleState extends State<DismissibleExample> {
+//  class _DismissibleMyBottomNavState extends State<DismissibleMyBottomNav> {
 //     List of items to display
 //    final List<String> items = [
 //      "Apple",
@@ -1114,7 +1114,7 @@
 //    Widget build(BuildContext context) {
 //      return Scaffold(
 //        appBar: AppBar(
-//          title: const Text('Dismissible Widget Example'),
+//          title: const Text('Dismissible Widget MyBottomNav'),
 //        ),
 //        body: ListView.builder(
 //          itemCount: items.length,
@@ -1209,7 +1209,7 @@
 //    Widget build(BuildContext context) {
 //      return Scaffold(
 //        appBar: AppBar(
-//          title: const Text('PageView Example'),
+//          title: const Text('PageView MyBottomNav'),
 //        ),
 //        body: PageView(
 //           Set the scroll direction to horizontal
@@ -1248,10 +1248,10 @@
 
 //  class My_SwitchListTile extends StatefulWidget {
 //    @override
-//    _SwitchListTileExampleState createState() => _SwitchListTileExampleState();
+//    _SwitchListTileMyBottomNavState createState() => _SwitchListTileMyBottomNavState();
 //  }
 
-//  class _SwitchListTileExampleState extends State<My_SwitchListTile> {
+//  class _SwitchListTileMyBottomNavState extends State<My_SwitchListTile> {
 //     Variable to hold the state of the switch
 //    final bool _isSwitched = false;
 
@@ -1260,7 +1260,7 @@
 //      return Scaffold(
 //        appBar: AppBar(
 //          title: Text(
-//            'SwitchListTile Example',
+//            'SwitchListTile MyBottomNav',
 //          ),
 //          backgroundColor: Colors.green[200],
 //        ),
@@ -1325,7 +1325,7 @@
 //    Widget build(BuildContext context) {
 //      return Scaffold(
 //        appBar: AppBar(
-//          title: Text('RefreshIndicator Example'),
+//          title: Text('RefreshIndicator MyBottomNav'),
 //        ),
 //        body: RefreshIndicator(
 //           Trigger the refresh action when pulled down
@@ -1369,7 +1369,7 @@
 //    @override
 //    Widget build(BuildContext context) {
 //      return MaterialApp(
-//        title: 'Flutter Card Widget Example',
+//        title: 'Flutter Card Widget MyBottomNav',
 //        theme: ThemeData(
 //          primarySwatch: Colors.blue,
 //        ),
@@ -1383,7 +1383,7 @@
 //    Widget build(BuildContext context) {
 //      return Scaffold(
 //        appBar: AppBar(
-//          title: Text('Card Widget Example'),
+//          title: Text('Card Widget MyBottomNav'),
 //        ),
 //        body: Center(
 //          child: SingleChildScrollView(
@@ -1799,7 +1799,7 @@
 
 //  import 'package:fluttermaterial.dart';
 
-//  class DraggableSheetExample extends StatelessWidget {
+//  class DraggableSheetMyBottomNav extends StatelessWidget {
 //    @override
 //    Widget build(BuildContext context) {
 //      return Scaffold(
@@ -1851,12 +1851,12 @@
 
 //  import 'package:fluttermaterial.dart';
 
-//  class SearchExample extends StatelessWidget {
+//  class SearchMyBottomNav extends StatelessWidget {
 //    @override
 //    Widget build(BuildContext context) {
 //      return Scaffold(
 //        appBar: AppBar(
-//          title: Text("Search Example"),  Title of the app bar
+//          title: Text("Search MyBottomNav"),  Title of the app bar
 //          actions: [
 //            IconButton(
 //              icon: Icon(Icons.search),  Search icon in the app bar
@@ -2171,7 +2171,7 @@
 //    Widget build(BuildContext context) {
 //      return Scaffold(
 //        appBar: AppBar(
-//          title: Text('Badges Example'),
+//          title: Text('Badges MyBottomNav'),
 //          backgroundColor: Colors.green[100],
 //          actions: [
 //             Badge on shopping cart icon
@@ -2725,7 +2725,7 @@
 //    Future<void> _handleRefresh() async {
 //       Simulate network delay
 //      await Future.delayed(const Duration(seconds: 2));
-//       Update your data here (,for example, fetch new data)
+//       Update your data here (,for MyBottomNav, fetch new data)
 //      setState(() {
 //        items.add(
 //            "New Item ${items.length}");  Adding a item for demonstration
@@ -2736,7 +2736,7 @@
 //    Widget build(BuildContext context) {
 //      return Scaffold(
 //        appBar: AppBar(
-//          title: Text('Liquid Pull to Refresh Example'),
+//          title: Text('Liquid Pull to Refresh MyBottomNav'),
 //        ),
 //        body: LiquidPullToRefresh(
 //          key: _refreshIndicatorKey,
@@ -2797,7 +2797,7 @@
 //    Widget build(BuildContext context) {
 //      return Scaffold(
 //        appBar: AppBar(
-//          title: Text('Liquid Pull to Refresh Example'),  Title of the app bar
+//          title: Text('Liquid Pull to Refresh MyBottomNav'),  Title of the app bar
 //          centerTitle: true,  Center the title in the app bar
 //        ),
 //        body: LiquidPullToRefresh(
@@ -3097,12 +3097,12 @@
 
 //  import 'package:fluttermaterial.dart';
 
-//  class AnimatedAlignExample extends StatefulWidget {
+//  class AnimatedAlignMyBottomNav extends StatefulWidget {
 //    @override
-//    _AnimatedAlignExampleState createState() => _AnimatedAlignExampleState();
+//    _AnimatedAlignMyBottomNavState createState() => _AnimatedAlignMyBottomNavState();
 //  }
 
-//  class _AnimatedAlignExampleState extends State<AnimatedAlignExample> {
+//  class _AnimatedAlignMyBottomNavState extends State<AnimatedAlignMyBottomNav> {
 //    AlignmentGeometry _alignment = Alignment.topLeft;
 
 //    void _toggleAlignment() {
@@ -3158,12 +3158,12 @@
 //  }
 //  import 'package:fluttermaterial.dart';
 
-//  class AnimatedAlignExample extends StatefulWidget {
+//  class AnimatedAlignMyBottomNav extends StatefulWidget {
 //    @override
-//    _AnimatedAlignExampleState createState() => _AnimatedAlignExampleState();
+//    _AnimatedAlignMyBottomNavState createState() => _AnimatedAlignMyBottomNavState();
 //  }
 
-//  class _AnimatedAlignExampleState extends State<AnimatedAlignExample> {
+//  class _AnimatedAlignMyBottomNavState extends State<AnimatedAlignMyBottomNav> {
 //    AlignmentGeometry _alignment = Alignment.topLeft;
 
 //    void _toggleAlignment() {
@@ -3551,12 +3551,12 @@
 
 //  import 'package:fluttermaterial.dart';
 
-//  class BeautifulSwitchExample extends StatefulWidget {
+//  class BeautifulSwitchMyBottomNav extends StatefulWidget {
 //    @override
-//    _BeautifulSwitchExampleState createState() => _BeautifulSwitchExampleState();
+//    _BeautifulSwitchMyBottomNavState createState() => _BeautifulSwitchMyBottomNavState();
 //  }
 
-//  class _BeautifulSwitchExampleState extends State<BeautifulSwitchExample> {
+//  class _BeautifulSwitchMyBottomNavState extends State<BeautifulSwitchMyBottomNav> {
 //    bool isSwitched = false;  Initial state of the switch
 
 //    @override
@@ -3637,20 +3637,20 @@
 //  void main() {
 //    runApp(MaterialApp(
 //      debugShowCheckedModeBanner: false,
-//      home: BeautifulSwitchExample(),
+//      home: BeautifulSwitchMyBottomNav(),
 //    ));
 //  }
 
 //  import 'package:fluttermaterial.dart';
 
-//  class BeautifulSwitchExample extends StatefulWidget {
-//    const BeautifulSwitchExample({super.key});
+//  class BeautifulSwitchMyBottomNav extends StatefulWidget {
+//    const BeautifulSwitchMyBottomNav({super.key});
 
 //    @override
-//    _BeautifulSwitchExampleState createState() => _BeautifulSwitchExampleState();
+//    _BeautifulSwitchMyBottomNavState createState() => _BeautifulSwitchMyBottomNavState();
 //  }
 
-//  class _BeautifulSwitchExampleState extends State<BeautifulSwitchExample> {
+//  class _BeautifulSwitchMyBottomNavState extends State<BeautifulSwitchMyBottomNav> {
 //    bool isSwitched = false;  Initial state of the switch
 
 //    @override
@@ -3708,16 +3708,16 @@
 
 //  import 'package:fluttermaterial.dart';
 
-//   Main widget for the BeautifulSwitchExample
-//  class BeautifulSwitchExample extends StatefulWidget {
-//    const BeautifulSwitchExample({super.key});
+//   Main widget for the BeautifulSwitchMyBottomNav
+//  class BeautifulSwitchMyBottomNav extends StatefulWidget {
+//    const BeautifulSwitchMyBottomNav({super.key});
 
 //    @override
-//    _BeautifulSwitchExampleState createState() => _BeautifulSwitchExampleState();
+//    _BeautifulSwitchMyBottomNavState createState() => _BeautifulSwitchMyBottomNavState();
 //  }
 
 //   State class for managing the switch's state
-//  class _BeautifulSwitchExampleState extends State<BeautifulSwitchExample> {
+//  class _BeautifulSwitchMyBottomNavState extends State<BeautifulSwitchMyBottomNav> {
 //    bool isSwitched = false;  Initial state of the switch (false = Light Theme)
 
 //    @override
@@ -4272,7 +4272,7 @@
 //    @override
 //    Widget build(BuildContext context) {
 //      return MaterialApp(
-//        title: 'CloseButton Example',
+//        title: 'CloseButton MyBottomNav',
 //        theme: ThemeData(
 //          primarySwatch: Colors.blue,
 //        ),
@@ -4318,7 +4318,7 @@
 
 //                 Description text
 //                Text(
-//                  'This is an example of a CloseButton widget with various properties.',
+//                  'This is an MyBottomNav of a CloseButton widget with various properties.',
 //                  textAlign: TextAlign.center,
 //                  style: TextStyle(fontSize: 16, color: Colors.black54),
 //                ),
@@ -7309,7 +7309,7 @@
 // //     return MaterialApp(
 // //       home: Scaffold(
 // //         appBar: AppBar(
-// //           title: const Text('Lottie Animation Example'),
+// //           title: const Text('Lottie Animation MyBottomNav'),
 // //         ),
 // //         body: Center(
 // //           child: Lottie.asset(
@@ -7372,7 +7372,7 @@
 // //   Widget build(BuildContext context) {
 // //     return Scaffold(
 // //       appBar: AppBar(
-// //         title: const Text('Lottie Animation Example'),
+// //         title: const Text('Lottie Animation MyBottomNav'),
 // //       ),
 // //       body: Container(
 // //         decoration: BoxDecoration(
@@ -7437,7 +7437,7 @@
 // //       // Set extendBody to true to allow the body to extend behind the app bar
 // //       extendBody: true,
 // //       appBar: AppBar(
-// //         title: const Text('Lottie Animation Example'),
+// //         title: const Text('Lottie Animation MyBottomNav'),
 // //         backgroundColor: Colors.blue[100], // Make app bar transparent
 // //         elevation: 0, // Remove shadow from app bar
 // //       ),
@@ -9315,7 +9315,7 @@
 // //     return Scaffold(
 // //       backgroundColor: Colors.grey[200], // Set a background color
 // //       appBar: AppBar(
-// //         title: Text('Animated Cross Fade Example'),
+// //         title: Text('Animated Cross Fade MyBottomNav'),
 // //         centerTitle: true,
 // //       ),
 // //       body: Center(
@@ -9474,6 +9474,212 @@
 //             ),
 //           );
 //         },
+//       ),
+//     );
+//   }
+// }
+
+// import 'package:flutter/material.dart';
+// import 'package:google_nav_bar/google_nav_bar.dart';
+
+// class MyBottomNav extends StatefulWidget {
+//   const MyBottomNav({Key? key}) : super(key: key);
+
+//   @override
+//   _MyBottomNavState createState() => _MyBottomNavState();
+// }
+
+// class _MyBottomNavState extends State<MyBottomNav> {
+//   int _selectedIndex = 0;
+
+//   static const TextStyle optionStyle =
+//       TextStyle(fontSize: 30, fontWeight: FontWeight.w600);
+
+//   static const List<Widget> _widgetOptions = <Widget>[
+//     Center(child: Text('Home', style: optionStyle)),
+//     Center(child: Text('Likes', style: optionStyle)),
+//     Center(child: Text('Search', style: optionStyle)),
+//     Center(child: Text('Profile', style: optionStyle)),
+//   ];
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         elevation: 10,
+//         title: const Text('GoogleNavBar'),
+//         backgroundColor: Colors.brown[300],
+//       ),
+//       body: AnimatedSwitcher(
+//         duration: const Duration(milliseconds: 300),
+//         child: _widgetOptions.elementAt(_selectedIndex),
+//       ),
+//       bottomNavigationBar: Container(
+//         decoration: BoxDecoration(
+//           color: Colors.white,
+//           boxShadow: [
+//             BoxShadow(
+//               blurRadius: 20,
+//               color: Colors.black.withOpacity(.1),
+//             ),
+//           ],
+//         ),
+//         child: SafeArea(
+//           child: Padding(
+//             padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 8),
+//             child: GNav(
+//               rippleColor: Colors.grey[300]!,
+//               hoverColor: Colors.grey[100]!,
+//               gap: 8,
+//               activeColor: Colors.white,
+//               iconSize: 24,
+//               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+//               duration: const Duration(milliseconds: 400),
+//               tabBackgroundColor: Colors.brown[300]!,
+//               color: Colors.black,
+//               tabs: [
+//                 GButton(
+//                   icon: Icons.home,
+//                   text: 'Home',
+//                 ),
+//                 GButton(
+//                   icon: Icons.favorite,
+//                   text: 'Likes',
+//                 ),
+//                 GButton(
+//                   icon: Icons.search,
+//                   text: 'Search',
+//                 ),
+//                 GButton(
+//                   icon: Icons.person,
+//                   text: 'Profile',
+//                 ),
+//               ],
+//               selectedIndex: _selectedIndex,
+//               onTabChange: (index) {
+//                 setState(() {
+//                   _selectedIndex = index;
+//                 });
+//               },
+//             ),
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// import 'package:flutter/material.dart';
+// import 'package:google_nav_bar/google_nav_bar.dart';
+
+// class MyBottomNav extends StatefulWidget {
+//   const MyBottomNav({super.key});
+
+//   @override
+//   _MyBottomNavState createState() => _MyBottomNavState();
+// }
+
+// class _MyBottomNavState extends State<MyBottomNav> {
+//   int _selectedIndex = 0;
+
+//   static const TextStyle optionStyle =
+//       TextStyle(fontSize: 30, fontWeight: FontWeight.w600);
+
+//   static const List<Widget> _widgetOptions = <Widget>[
+//     Center(child: Text('Home', style: optionStyle)),
+//     Center(child: Text('Likes', style: optionStyle)),
+//     Center(child: Text('Search', style: optionStyle)),
+//     Center(child: Text('Profile', style: optionStyle)),
+//   ];
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: AnimatedSwitcher(
+//           duration: const Duration(milliseconds: 300),
+//           child: _widgetOptions.elementAt(_selectedIndex),
+//         ),
+//       ),
+//       body: Padding(
+//         padding: const EdgeInsets.all(48.0),
+//         child: Column(
+//           mainAxisAlignment: MainAxisAlignment.center,
+//           mainAxisSize: MainAxisSize.max,
+//           children: [
+//             Expanded(
+//               child: ClipRRect(
+//                 borderRadius: BorderRadius.circular(48),
+//                 child: Image.asset(
+//                   'images/dev.jpeg',
+//                   height: double.infinity,
+//                   width: double.infinity,
+//                   fit: BoxFit.cover,
+//                 ),
+//               ),
+//             ),
+//           ],
+//         ),
+//       ),
+//       bottomNavigationBar: Container(
+//         decoration: BoxDecoration(
+//           color: Colors.white,
+//           boxShadow: [
+//             BoxShadow(
+//               blurRadius: 20,
+//               color: Colors.black.withOpacity(.1),
+//             ),
+//           ],
+//         ),
+//         child: SafeArea(
+//           child: Padding(
+//             padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 8),
+//             child: GNav(
+//               rippleColor: Colors.grey[100]!,
+//               hoverColor: Colors.grey[100]!,
+//               gap: 8,
+//               activeColor: Colors.white,
+//               iconSize: 24,
+//               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+//               duration: const Duration(milliseconds: 500), // Custom duration
+//               // tabBackgroundColor: Colors.cyan,
+//               tabBackgroundColor: Colors.brown.shade400,
+
+//               backgroundColor: Colors.white, // Background color
+//               tabBorderRadius: 30.0, // Rounded corners for tabs
+
+//               color: Colors.black, // Inactive tab color
+//               tabs: const [
+//                 GButton(
+//                   icon: Icons.home,
+//                   text: 'Home',
+//                   textSize: 16, // Custom text size
+//                 ),
+//                 GButton(
+//                   icon: Icons.favorite,
+//                   text: 'Likes',
+//                   textSize: 16, // Custom text size
+//                 ),
+//                 GButton(
+//                   icon: Icons.search,
+//                   text: 'Search',
+//                   textSize: 16, // Custom text size
+//                 ),
+//                 GButton(
+//                   icon: Icons.person,
+//                   text: 'Profile',
+//                   textSize: 16, // Custom text size
+//                 ),
+//               ],
+//               selectedIndex: _selectedIndex,
+//               onTabChange: (index) {
+//                 setState(() {
+//                   _selectedIndex = index;
+//                 });
+//               },
+//             ),
+//           ),
+//         ),
 //       ),
 //     );
 //   }
