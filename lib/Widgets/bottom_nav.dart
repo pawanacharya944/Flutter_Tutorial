@@ -33,7 +33,7 @@ class _My_BottomNavBarState extends State<My_BottomNavBar> {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Bottom Navigation Bar"),
-        backgroundColor: Colors.teal[100],
+        backgroundColor: Colors.teal[200],
       ),
       body: _pages[_currentIndex], // display the selected page
       bottomNavigationBar: BottomNavigationBar(
@@ -41,22 +41,22 @@ class _My_BottomNavBarState extends State<My_BottomNavBar> {
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Home',
-            backgroundColor: Color.fromARGB(255, 148, 198, 240),
+            backgroundColor: Color.fromARGB(255, 106, 163, 210),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.search),
             label: 'Search',
-            backgroundColor: Color.fromARGB(255, 135, 232, 138),
+            backgroundColor: Color.fromARGB(255, 106, 198, 109),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
             label: 'Profile',
-            backgroundColor: Color.fromARGB(255, 232, 219, 100),
+            backgroundColor: Color.fromARGB(255, 237, 110, 131),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.settings),
             label: 'Settings',
-            backgroundColor: Color.fromARGB(255, 225, 153, 238),
+            backgroundColor: Color.fromARGB(255, 99, 189, 189),
           ),
         ],
 

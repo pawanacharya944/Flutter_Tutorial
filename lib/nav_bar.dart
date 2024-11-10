@@ -51,7 +51,7 @@ class _MyModernBottomNavBarState extends State<MyModernBottomNavBar> {
                 height: double.infinity,
                 fit: BoxFit.cover,
               ),
-            ))
+            )),
           ],
         ),
       ),
