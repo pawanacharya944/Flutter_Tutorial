@@ -49,6 +49,7 @@ dependencies:
   pie_chart: ^5.4.0
   marquee: ^2.3.0
   google_nav_bar: ^5.0.7
+  animated_text_kit: ^4.2.2
   
   
 
