@@ -50,7 +50,6 @@ dependencies:
   marquee: ^2.3.0
   google_nav_bar: ^5.0.7
   animated_text_kit: ^4.2.2
-  liquid_swipe: ^3.1.0
   
   
 
