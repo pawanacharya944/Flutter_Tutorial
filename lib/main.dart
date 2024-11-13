@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'Widgets/text_kit.dart';
+import 'liquid_swipe.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: "Flutter Project",
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: const MyAnimatedTexKit(),
+      home: const MyLiquidSwipe(),
     );
   }
 }

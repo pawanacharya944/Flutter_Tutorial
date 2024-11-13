@@ -20,7 +20,8 @@ class _MyAnimatedTexKitState extends State<MyAnimatedTexKit> {
         animatedTexts: [
           ColorizeAnimatedText(
             "Welcome to the Code Flicks",
-            textStyle: TextStyle(fontSize: 34, fontWeight: FontWeight.bold),
+            textStyle:
+                const TextStyle(fontSize: 34, fontWeight: FontWeight.bold),
             colors: [
               Colors.purple,
               Colors.blue,
@@ -29,7 +30,7 @@ class _MyAnimatedTexKitState extends State<MyAnimatedTexKit> {
               Colors.black,
               Colors.red,
             ],
-            speed: Duration(milliseconds: 500),
+            speed: const Duration(milliseconds: 500),
           ),
         ],
         isRepeatingAnimation: true,
@@ -38,16 +39,16 @@ class _MyAnimatedTexKitState extends State<MyAnimatedTexKit> {
     SizedBox(
       width: 300,
       child: DefaultTextStyle(
-          style: TextStyle(fontSize: 20),
+          style: const TextStyle(fontSize: 20),
           child: AnimatedTextKit(animatedTexts: [
             WavyAnimatedText(
               "Let's Build an App with Flutter ",
-              textStyle: TextStyle(
+              textStyle: const TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
                 color: Colors.redAccent,
               ),
-              speed: Duration(milliseconds: 180),
+              speed: const Duration(milliseconds: 180),
             ),
           ])),
     ),
@@ -56,9 +57,9 @@ class _MyAnimatedTexKitState extends State<MyAnimatedTexKit> {
       child: TextLiquidFill(
         text: "Subscribe to Code Flicks!",
         waveColor: Colors.blue[300]!,
-        waveDuration: Duration(seconds: 1),
+        waveDuration: const Duration(seconds: 1),
         boxBackgroundColor: Colors.purple[400]!,
-        textStyle: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+        textStyle: const TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
         boxHeight: 100,
       ),
     ),
@@ -74,7 +75,7 @@ class _MyAnimatedTexKitState extends State<MyAnimatedTexKit> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'Animated Text Kit',
           style: TextStyle(fontSize: 26),
         ),
@@ -90,7 +91,7 @@ class _MyAnimatedTexKitState extends State<MyAnimatedTexKit> {
       floatingActionButton: FloatingActionButton(
         onPressed: _nextAnimation,
         tooltip: 'Next Animation',
-        child: Icon(
+        child: const Icon(
           Icons.play_arrow,
           size: 34,
         ),
