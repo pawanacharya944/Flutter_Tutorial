@@ -319,3 +319,240 @@
 //   }
 // }
 
+// import 'package:flutter/material.dart';
+// import 'package:fl_chart/fl_chart.dart';
+
+// class LineChartSample extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text('Beautiful Line Chart'),
+//       ),
+//       body: Padding(
+//         padding: const EdgeInsets.all(16.0),
+//         child: LineChart(
+//           LineChartData(
+//             gridData: FlGridData(show: true), // Show grid lines
+//             titlesData: FlTitlesData(
+//               leftTitles: AxisTitles(
+//                 sideTitles: SideTitles(
+//                   showTitles: true,
+//                   reservedSize: 40,
+//                   getTitlesWidget: (value, meta) {
+//                     return Text(
+//                       value.toString(), // Customize as needed
+//                       style: TextStyle(color: Colors.black, fontSize: 12),
+//                     );
+//                   },
+//                 ),
+//               ),
+//               bottomTitles: AxisTitles(
+//                 sideTitles: SideTitles(
+//                   showTitles: true,
+//                   reservedSize: 30,
+//                   getTitlesWidget: (value, meta) {
+//                     return Text(
+//                       value.toString(), // Customize as needed
+//                       style: TextStyle(color: Colors.black, fontSize: 12),
+//                     );
+//                   },
+//                 ),
+//               ),
+//               topTitles: AxisTitles(
+//                   sideTitles: SideTitles(showTitles: false)), // Hide top titles
+//               rightTitles: AxisTitles(
+//                   sideTitles:
+//                       SideTitles(showTitles: false)), // Hide right titles
+//             ),
+//             borderData: FlBorderData(
+//               show: true,
+//               border: Border.all(color: Colors.black, width: 1), // Chart border
+//             ),
+//             lineBarsData: [
+//               LineChartBarData(
+//                 spots: [
+//                   FlSpot(0, 1),
+//                   FlSpot(1, 3),
+//                   FlSpot(2, 2),
+//                   FlSpot(3, 5),
+//                   FlSpot(4, 4),
+//                 ],
+//                 isCurved: true, // Smooth curve for the line
+//                 color: Colors.red, // Line color
+//                 dotData: FlDotData(show: true), // Show dots on data points
+//                 belowBarData:
+//                     BarAreaData(show: false), // No area below the line
+//               ),
+//             ],
+//             minX: 0,
+//             maxX: 4,
+//             minY: 0,
+//             maxY: 6,
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// void main() {
+//   runApp(MaterialApp(
+//     home: LineChartSample(),
+//   ));
+// }
+
+// import 'package:flutter/material.dart';
+// import 'package:fl_chart/fl_chart.dart';
+// import 'dart:math';
+
+// class EnhancedLineChartSample extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text('Enhanced Line Chart'),
+//       ),
+//       body: Padding(
+//         padding: const EdgeInsets.all(16.0),
+//         child: LineChart(
+//           LineChartData(
+//             gridData: FlGridData(show: true), // Show grid lines
+//             titlesData: FlTitlesData(
+//               leftTitles: AxisTitles(
+//                 sideTitles: SideTitles(
+//                   showTitles: true,
+//                   reservedSize: 40,
+//                   getTitlesWidget: (value, meta) {
+//                     return Text(
+//                       value.toString(), // Customize as needed
+//                       style: TextStyle(color: Colors.black, fontSize: 12),
+//                     );
+//                   },
+//                 ),
+//               ),
+//               bottomTitles: AxisTitles(
+//                 sideTitles: SideTitles(
+//                   showTitles: true,
+//                   reservedSize: 30,
+//                   getTitlesWidget: (value, meta) {
+//                     return Text(
+//                       'Day ${value.toInt()}', // Customize as needed
+//                       style: TextStyle(color: Colors.black, fontSize: 12),
+//                     );
+//                   },
+//                 ),
+//               ),
+//               topTitles: AxisTitles(
+//                   sideTitles: SideTitles(showTitles: false)), // Hide top titles
+//               rightTitles: AxisTitles(
+//                   sideTitles:
+//                       SideTitles(showTitles: false)), // Hide right titles
+//             ),
+//             borderData: FlBorderData(
+//               show: true,
+//               border: Border.all(color: Colors.black, width: 1), // Chart border
+//             ),
+//             lineBarsData: [
+//               LineChartBarData(
+//                 spots: generateRandomSpots(), // Generate random data points
+//                 isCurved: true, // Smooth curve for the line
+//                 color: Colors.red, // Line color
+//                 belowBarData: BarAreaData(
+//                   show: true,
+//                   color: Colors.blue.withOpacity(0.3),
+//                 ), // Area below the line with opacity
+//                 dotData: FlDotData(show: true), // Show dots on data points
+//                 barWidth: 4, // Width of the line
+//               ),
+//             ],
+//             minX: 0,
+//             maxX: 6,
+//             minY: 0,
+//             maxY: 6,
+//           ),
+//           duration: Duration(
+//               milliseconds: 250), // Correctly set duration for animations
+//         ),
+//       ),
+//     );
+//   }
+
+//   List<FlSpot> generateRandomSpots() {
+//     Random random = Random();
+//     return List.generate(
+//         7, (index) => FlSpot(index.toDouble(), random.nextDouble() * 6));
+//   }
+// }
+
+// void main() {
+//   runApp(MaterialApp(
+//     home: EnhancedLineChartSample(),
+//   ));
+// }
+
+// import 'package:flutter/material.dart';
+
+// class MyTextField extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text(
+//           'T e x t F i e l d',
+//           style: TextStyle(fontSize: 26),
+//         ),
+//         backgroundColor: Colors.green.shade200,
+//       ),
+//       body: Padding(
+//         padding: const EdgeInsets.all(16.0),
+//         child: SingleChildScrollView(
+//           child: Column(
+//             crossAxisAlignment: CrossAxisAlignment.start,
+//             children: [
+//               Text(
+//                 'Enter Your Details',
+//                 style: TextStyle(
+//                   fontSize: 24,
+//                   fontWeight: FontWeight.bold,
+//                   color: Colors.black87,
+//                 ),
+//               ),
+//               SizedBox(height: 20),
+//               _buildTextField('First Name', Icons.person),
+//               SizedBox(height: 15),
+//               _buildTextField('Last Name', Icons.person_outline),
+//               SizedBox(height: 15),
+//               _buildTextField('Address', Icons.home, maxLines: 3),
+//               SizedBox(height: 15),
+//               _buildTextField('Email', Icons.email),
+//               SizedBox(height: 15),
+//               _buildTextField('Phone No.', Icons.phone),
+//             ],
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+
+//   Widget _buildTextField(String label, IconData icon, {int maxLines = 1}) {
+//     return TextField(
+//       decoration: InputDecoration(
+//         labelText: label,
+//         prefixIcon: Icon(icon, color: Colors.blueGrey),
+//         focusedBorder: OutlineInputBorder(
+//           borderSide: BorderSide(color: Colors.green, width: 2),
+//         ),
+//         enabledBorder: OutlineInputBorder(
+//           borderSide: BorderSide(color: Colors.blueGrey, width: 1.5),
+//         ),
+//         border: OutlineInputBorder(
+//           borderRadius: BorderRadius.circular(15),
+//         ),
+//         filled: true,
+//         fillColor: Colors.white,
+//       ),
+//       maxLines: maxLines,
+//     );
+//   }
+// }
