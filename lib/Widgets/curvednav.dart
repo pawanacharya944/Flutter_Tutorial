@@ -19,10 +19,10 @@ class _MyCurvedNavBarState extends State<MyCurvedNavBar> {
   ];
 
   final List<Widget> _screens = [
-    DashboardScreen(),
-    SearchScreen(),
-    NotificationScreen(),
-    ProfileScreen(),
+    const DashboardScreen(),
+    const SearchScreen(),
+    const NotificationScreen(),
+    const ProfileScreen(),
   ];
 
   final List<Color> _containerColors = [
@@ -38,7 +38,7 @@ class _MyCurvedNavBarState extends State<MyCurvedNavBar> {
       appBar: AppBar(
         title: Text(
           _titles[_currentIndex],
-          style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
+          style: const TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
         ),
         backgroundColor: Colors.transparent,
       ),
@@ -55,7 +55,7 @@ class _MyCurvedNavBarState extends State<MyCurvedNavBar> {
         backgroundColor: _containerColors[
             _currentIndex], // same color as container in nav bar
         animationCurve: Curves.easeInOut,
-        animationDuration: Duration(milliseconds: 500),
+        animationDuration: const Duration(milliseconds: 500),
         onTap: (index) {
           setState(() {
             _currentIndex = index;

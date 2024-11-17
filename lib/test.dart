@@ -556,3 +556,106 @@
 //     );
 //   }
 // }
+// import 'package:flutter/material.dart';
+
+// class RangeSliderExample extends StatefulWidget {
+//   @override
+//   _RangeSliderExampleState createState() => _RangeSliderExampleState();
+// }
+
+// class _RangeSliderExampleState extends State<RangeSliderExample> {
+//   // Initial range values
+//   RangeValues _currentRangeValues = const RangeValues(20, 80);
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       extendBodyBehindAppBar: true,
+//       appBar: AppBar(
+//         title: const Text("R a n g e  S l i d e r"),
+//         backgroundColor: Colors.transparent,
+//       ),
+//       body: Container(
+//         padding: const EdgeInsets.all(16.0),
+//         decoration: BoxDecoration(
+//           gradient: LinearGradient(
+//             colors: [Colors.teal.shade200, Colors.blue.shade300],
+//             begin: Alignment.topCenter,
+//             end: Alignment.bottomCenter,
+//           ),
+//         ),
+//         child: Column(
+//           mainAxisAlignment: MainAxisAlignment.center,
+//           children: [
+//             const Text(
+//               "Select a range:",
+//               style: TextStyle(
+//                 fontSize: 20,
+//                 fontWeight: FontWeight.bold,
+//                 color: Colors.white,
+//               ),
+//             ),
+//             const SizedBox(height: 20),
+//             Row(
+//               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//               children: const [
+//                 Text(
+//                   "Start",
+//                   style: TextStyle(fontSize: 16, color: Colors.white),
+//                 ),
+//                 Text(
+//                   "End",
+//                   style: TextStyle(fontSize: 16, color: Colors.white),
+//                 ),
+//               ],
+//             ),
+//             RangeSlider(
+//               values: _currentRangeValues,
+//               min: 0, // Minimum value
+//               max: 100, // Maximum value
+//               divisions: 10, // Number of divisions
+//               labels: RangeLabels(
+//                 _currentRangeValues.start.round().toString(),
+//                 _currentRangeValues.end.round().toString(),
+//               ),
+//               activeColor: Colors.white, // Active range color
+//               inactiveColor: Colors.blueGrey.shade400, // Inactive range color
+//               onChanged: (RangeValues values) {
+//                 setState(() {
+//                   _currentRangeValues = values;
+//                 });
+//               },
+//             ),
+//             const SizedBox(height: 20),
+//             ElevatedButton(
+//               onPressed: () {
+//                 ScaffoldMessenger.of(context).showSnackBar(
+//                   SnackBar(
+//                     backgroundColor: Colors.white10,
+//                     content: Text(
+//                       "The selected range is: ${_currentRangeValues.start.round()} to ${_currentRangeValues.end.round()}",
+//                       style: const TextStyle(color: Colors.black, fontSize: 18),
+//                     ),
+//                   ),
+//                 );
+//               },
+//               style: ElevatedButton.styleFrom(
+//                 backgroundColor: Colors.white,
+//                 foregroundColor: Colors.teal,
+//                 padding:
+//                     const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+//                 shape: RoundedRectangleBorder(
+//                   borderRadius: BorderRadius.circular(20),
+//                 ),
+//               ),
+//               child: const Text(
+//                 "Confirm Selected",
+//                 style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+//               ),
+//             ),
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+// }
