@@ -2,16 +2,16 @@
 // import 'package:flutter/material.dart';
 // import 'package:syncfusion_flutter_gauges/gauges.dart';
 
-// /// Represents MyHomePage class
-// class MyHomePage extends StatefulWidget {
-//   /// Creates the instance of MyHomePage
-//   MyHomePage({Key? key}) : super(key: key);
+// /// Represents MyMyCpi class
+// class MyMyCpi extends StatefulWidget {
+//   /// Creates the instance of MyMyCpi
+//   MyMyCpi({Key? key}) : super(key: key);
 
 //   @override
-//   _MyHomePageState createState() => _MyHomePageState();
+//   _MyMyCpiState createState() => _MyMyCpiState();
 // }
 
-// class _MyHomePageState extends State<MyHomePage> {
+// class _MyMyCpiState extends State<MyMyCpi> {
 //   bool isTurnedOn = false;
 //   Widget _getGauge({bool isRadialGauge = true}) {
 //     if (isRadialGauge) {
@@ -659,3 +659,4 @@
 //     );
 //   }
 // }
+
