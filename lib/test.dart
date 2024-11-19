@@ -660,3 +660,200 @@
 //   }
 // }
 
+// import 'package:flutter/material.dart';
+
+// class DatePickerScreen extends StatefulWidget {
+//   @override
+//   _DatePickerScreenState createState() => _DatePickerScreenState();
+// }
+
+// class _DatePickerScreenState extends State<DatePickerScreen> {
+//   // Variable to store selected date
+//   DateTime selectedDate = DateTime.now();
+
+//   // Function to pick date
+//   Future<void> _selectDate(BuildContext context) async {
+//     // Show Date Picker and await for selected date
+//     final DateTime picked = await showDatePicker(
+//           context: context,
+//           initialDate: selectedDate, // Set the current date as initial date
+//           firstDate: DateTime(2000), // Set the minimum selectable date
+//           lastDate: DateTime(2101), // Set the maximum selectable date
+//         ) ??
+//         selectedDate;
+
+//     if (picked != null && picked != selectedDate) {
+//       setState(() {
+//         selectedDate = picked; // Update the selected date
+//       });
+//     }
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text("Flutter Date Picker"),
+//         centerTitle: true, // Center the title
+//         backgroundColor: Colors.blueAccent, // App bar background color
+//       ),
+//       body: Center(
+//         child: Padding(
+//           padding: const EdgeInsets.all(16.0),
+//           child: Card(
+//             elevation: 5, // Add elevation for shadow effect
+//             shape: RoundedRectangleBorder(
+//               borderRadius: BorderRadius.circular(15), // Rounded corners
+//             ),
+//             child: Padding(
+//               padding: const EdgeInsets.all(20.0),
+//               child: Column(
+//                 mainAxisSize: MainAxisSize.min,
+//                 children: [
+//                   Text(
+//                     "Select a Date",
+//                     style: Theme.of(context)
+//                         .textTheme
+//                         .titleLarge, // Custom text style
+//                   ),
+//                   SizedBox(height: 20),
+//                   // Date Display
+//                   Text(
+//                     "${selectedDate.toLocal()}"
+//                         .split(' ')[0], // Display only the date part
+//                     style: TextStyle(
+//                       fontSize: 28,
+//                       fontWeight: FontWeight.bold,
+//                       color: Colors.blueAccent,
+//                     ),
+//                   ),
+//                   SizedBox(height: 20),
+//                   // Date Picker Button
+//                   ElevatedButton(
+//                     onPressed: () =>
+//                         _selectDate(context), // Trigger date picker
+//                     style: ElevatedButton.styleFrom(
+//                       backgroundColor: Colors.blueAccent, // Button color
+//                       foregroundColor: Colors.white, // Button text color
+//                       shape: RoundedRectangleBorder(
+//                         borderRadius:
+//                             BorderRadius.circular(15), // Rounded button corners
+//                       ),
+//                       padding: EdgeInsets.symmetric(
+//                           horizontal: 40, vertical: 12), // Button padding
+//                     ),
+//                     child: Text("Pick Date"),
+//                   ),
+//                 ],
+//               ),
+//             ),
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// import 'package:flutter/material.dart';
+
+// class DatePickerScreen extends StatefulWidget {
+//   @override
+//   _DatePickerScreenState createState() => _DatePickerScreenState();
+// }
+
+// class _DatePickerScreenState extends State<DatePickerScreen> {
+//   DateTime selectedDate = DateTime.now();
+
+//   // Function to pick date
+//   Future<void> _selectDate(BuildContext context) async {
+//     final DateTime picked = await showDatePicker(
+//           context: context,
+//           initialDate: selectedDate,
+//           firstDate: DateTime(2000),
+//           lastDate: DateTime(2101),
+//         ) ??
+//         selectedDate;
+
+//     if (picked != null && picked != selectedDate) {
+//       setState(() {
+//         selectedDate = picked;
+//       });
+//     }
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       // Background gradient
+//       body: Container(
+//         decoration: BoxDecoration(
+//           gradient: LinearGradient(
+//             colors: [Colors.teal.shade200, Colors.blue.shade200],
+//             begin: Alignment.topLeft,
+//             end: Alignment.bottomRight,
+//           ),
+//         ),
+//         child: Center(
+//           child: Padding(
+//             padding: const EdgeInsets.all(16.0),
+//             child: Card(
+//               elevation: 10, // Added a higher elevation for a prominent look
+//               shape: RoundedRectangleBorder(
+//                 borderRadius: BorderRadius.circular(20),
+//               ),
+//               child: Padding(
+//                 padding: const EdgeInsets.all(30.0),
+//                 child: Column(
+//                   mainAxisSize: MainAxisSize.min,
+//                   children: [
+//                     // Heading with some extra spacing and custom font
+//                     const Text(
+//                       "Select a Date",
+//                       style: TextStyle(
+//                         fontSize: 28,
+//                         fontWeight: FontWeight.bold,
+//                         color: Colors.black,
+//                       ),
+//                     ),
+//                     const SizedBox(height: 20),
+//                     // Date display with modern styling
+//                     Text(
+//                       "${selectedDate.toLocal()}".split(' ')[0],
+//                       style: const TextStyle(
+//                         fontSize: 32,
+//                         fontWeight: FontWeight.w600,
+//                         color: Colors.lightBlue,
+//                       ),
+//                     ),
+//                     const SizedBox(height: 30),
+//                     // Button with a custom design
+//                     ElevatedButton.icon(
+//                       onPressed: () => _selectDate(context),
+//                       icon: const Icon(
+//                         Icons.calendar_today,
+//                         color: Colors.black,
+//                       ), // Calendar icon
+//                       label: const Text(
+//                         "Pick Date",
+//                         style: TextStyle(fontSize: 18),
+//                       ),
+//                       style: ElevatedButton.styleFrom(
+//                         backgroundColor: Colors.green.shade300,
+//                         foregroundColor: Colors.black,
+//                         shape: RoundedRectangleBorder(
+//                           borderRadius: BorderRadius.circular(15),
+//                         ),
+//                         padding: const EdgeInsets.symmetric(
+//                             horizontal: 30, vertical: 15),
+//                       ),
+//                     ),
+//                   ],
+//                 ),
+//               ),
+//             ),
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }

@@ -1,5 +1,7 @@
-import 'package:first_project/range.dart';
+import 'package:first_project/percent_indicator.dart';
 import 'package:flutter/material.dart';
+
+import 'test.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +16,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: "Flutter Project",
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: MyRangeSlider(),
+      home: MyCircularPercentIndicator(),
     );
   }
 }

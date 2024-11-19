@@ -16,7 +16,7 @@ class _MyRangeSliderState extends State<MyRangeSlider> {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'R a n g e  S l i d e r',
           style: TextStyle(fontSize: 26),
         ),
@@ -43,9 +43,9 @@ class _MyRangeSliderState extends State<MyRangeSlider> {
               ),
             ),
             const SizedBox(height: 20),
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: const [
+              children: [
                 Text(
                   'Start',
                   style: TextStyle(fontSize: 16, color: Colors.white),
