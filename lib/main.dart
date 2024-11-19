@@ -1,4 +1,4 @@
-import 'package:first_project/percent_indicator.dart';
+import 'package:first_project/Widgets/percent_indicator.dart';
 import 'package:flutter/material.dart';
 
 void main() {
