@@ -1,8 +1,6 @@
 import 'package:first_project/percent_indicator.dart';
 import 'package:flutter/material.dart';
 
-import 'test.dart';
-
 void main() {
   runApp(const MyApp());
 }
