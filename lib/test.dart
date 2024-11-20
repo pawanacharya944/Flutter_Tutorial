@@ -857,3 +857,126 @@
 //     );
 //   }
 // }
+
+// import 'package:flutter/material.dart';
+
+// class MyLetterCounter extends StatefulWidget {
+//   @override
+//   _MyLetterCounterState createState() => _MyLetterCounterState();
+// }
+
+// class _MyLetterCounterState extends State<MyLetterCounter> {
+//   // Controller to handle text input
+//   TextEditingController _controller = TextEditingController();
+
+//   // Function to count characters in the input text
+//   int _countLetters(String input) {
+//     return input.length;
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     // Using Scaffold to structure the page
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: const Text(
+//           'Letter Counter',
+//           style: TextStyle(fontSize: 26),
+//         ),
+//         centerTitle: true,
+//       ),
+//       body: Padding(
+//         padding: const EdgeInsets.all(16.0),
+//         child: Column(
+//           mainAxisAlignment: MainAxisAlignment.center,
+//           crossAxisAlignment: CrossAxisAlignment.center,
+//           children: [
+//             // Animated text display for input
+//             AnimatedContainer(
+//               duration: const Duration(milliseconds: 300),
+//               padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+//               decoration: BoxDecoration(
+//                 color: Colors.blue.shade100,
+//                 borderRadius: BorderRadius.circular(12),
+//                 boxShadow: const [
+//                   BoxShadow(
+//                     color: Colors.black26,
+//                     offset: Offset(0, 4),
+//                     blurRadius: 8,
+//                   ),
+//                 ],
+//               ),
+//               child: TextField(
+//                 controller: _controller,
+//                 maxLines: 5,
+//                 decoration: const InputDecoration(
+//                   border: InputBorder.none,
+//                   hintText: 'Type something...',
+//                   hintStyle: TextStyle(color: Colors.blueGrey),
+//                 ),
+//                 style: const TextStyle(fontSize: 18, color: Colors.black),
+//                 onChanged: (text) {
+//                   setState(() {});
+//                 },
+//               ),
+//             ),
+//             const SizedBox(height: 20),
+
+//             // Display the number of characters with style
+//             const Text(
+//               'Character Count:',
+//               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+//             ),
+//             const SizedBox(height: 20),
+//             Container(
+//               padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+//               decoration: BoxDecoration(
+//                 color: Colors.green.shade50,
+//                 borderRadius: BorderRadius.circular(12),
+//                 boxShadow: const [
+//                   BoxShadow(
+//                     color: Colors.black26,
+//                     offset: Offset(0, 4),
+//                     blurRadius: 8,
+//                   ),
+//                 ],
+//               ),
+//               child: Text(
+//                 '${_countLetters(_controller.text)}', // Show the character count
+//                 style: TextStyle(
+//                   fontSize: 48,
+//                   fontWeight: FontWeight.w600,
+//                   color: Colors.green.shade700,
+//                 ),
+//               ),
+//             ),
+//             const SizedBox(height: 30),
+
+//             // Reset button with animation and styling
+//             ElevatedButton(
+//               onPressed: () {
+//                 _controller.clear(); // Clear the text input
+//                 setState(() {});
+//               },
+//               child: Text(
+//                 'Clear Text',
+//                 style: TextStyle(
+//                     fontSize: 18,
+//                     fontWeight: FontWeight.bold,
+//                     color: Colors.white),
+//               ),
+//               style: ElevatedButton.styleFrom(
+//                 backgroundColor: Colors.red.shade500, // Button color
+//                 padding:
+//                     const EdgeInsets.symmetric(horizontal: 40, vertical: 14),
+//                 shape: RoundedRectangleBorder(
+//                   borderRadius: BorderRadius.circular(12),
+//                 ),
+//               ),
+//             ),
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+// }
