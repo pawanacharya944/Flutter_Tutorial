@@ -21,6 +21,7 @@ class _MyDatePickerState extends State<MyDatePicker> {
         ) ??
         selectedDate;
 
+    // ignore: unnecessary_null_comparison
     if (picked != null && picked != selectedDate) {
       setState(() {
         selectedDate = picked;
@@ -93,7 +94,7 @@ class _MyDatePickerState extends State<MyDatePicker> {
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(16),
                           ),
-                          padding: EdgeInsets.symmetric(
+                          padding: const EdgeInsets.symmetric(
                               horizontal: 30, vertical: 15)),
                     ),
                   ],
