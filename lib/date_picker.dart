@@ -34,7 +34,7 @@ class _MyDatePickerState extends State<MyDatePicker> {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'D a t e  P i c k e r',
           style: TextStyle(fontSize: 26),
         ),
@@ -61,7 +61,7 @@ class _MyDatePickerState extends State<MyDatePicker> {
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Text(
+                    const Text(
                       'Select a Date',
                       style: TextStyle(
                         fontSize: 28,
@@ -69,22 +69,22 @@ class _MyDatePickerState extends State<MyDatePicker> {
                         color: Colors.black,
                       ),
                     ),
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
                     Text(
                       "${selectedDate.toLocal()}".split(' ')[0],
-                      style: TextStyle(
+                      style: const TextStyle(
                           fontSize: 32,
                           fontWeight: FontWeight.w600,
                           color: Colors.lightBlue),
                     ),
-                    SizedBox(height: 30),
+                    const SizedBox(height: 30),
                     ElevatedButton.icon(
                       onPressed: () => _selectDate(context),
-                      icon: Icon(
+                      icon: const Icon(
                         Icons.calendar_today,
                         color: Colors.black,
                       ),
-                      label: Text(
+                      label: const Text(
                         'Pick Date',
                         style: TextStyle(fontSize: 18),
                       ),
