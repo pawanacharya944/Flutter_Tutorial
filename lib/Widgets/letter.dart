@@ -112,7 +112,7 @@ class _MyLetterCounterState extends State<MyLetterCounter> {
                   borderRadius: BorderRadius.circular(12),
                 ),
               ),
-              child: Text(
+              child: const Text(
                 'Clear Text',
                 style: TextStyle(
                     fontSize: 18,

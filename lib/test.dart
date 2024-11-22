@@ -981,3 +981,103 @@
 //   }
 // }
 
+// import 'package:flutter/material.dart';
+
+// class SliverListExample extends StatelessWidget {
+//   // Sample data for the SliverList
+//   final List<String> items = List.generate(20, (index) => "Item #$index");
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       // Using CustomScrollView to combine different types of slivers
+//       body: CustomScrollView(
+//         slivers: [
+//           // SliverAppBar that expands and collapses
+//           SliverAppBar(
+//             expandedHeight: 200.0,
+//             pinned: true, // Keeps the app bar visible after scrolling
+//             backgroundColor: Colors.indigo.shade200,
+//             flexibleSpace: FlexibleSpaceBar(
+//               title: const Text(
+//                 'Sliver List Example',
+//                 style: TextStyle(color: Colors.white),
+//               ),
+//               background: Image.asset(
+//                 'images/snow.jpg', // Add your asset image here
+//                 fit: BoxFit.cover,
+//               ),
+//             ),
+//           ),
+
+//           // SliverToBoxAdapter for custom widgets like Headers
+//           const SliverToBoxAdapter(
+//             child: Padding(
+//               padding: EdgeInsets.all(10.0),
+//               child: Text(
+//                 'Sliver List of Items:',
+//                 style: TextStyle(
+//                   fontSize: 22,
+//                   fontWeight: FontWeight.bold,
+//                   color: Colors.deepPurpleAccent,
+//                 ),
+//               ),
+//             ),
+//           ),
+
+//           // SliverList widget
+//           SliverList(
+//             delegate: SliverChildBuilderDelegate(
+//               (BuildContext context, int index) {
+//                 // Build a beautiful item with dynamic background
+//                 return Container(
+//                   margin: EdgeInsets.symmetric(vertical: 8.0, horizontal: 12.0),
+//                   decoration: BoxDecoration(
+//                     color: Colors
+//                         .primaries[index % Colors.primaries.length].shade200,
+//                     borderRadius: BorderRadius.circular(10.0),
+//                     boxShadow: const [
+//                       BoxShadow(
+//                         color: Colors.black26,
+//                         offset: Offset(0, 4),
+//                         blurRadius: 4.0,
+//                       ),
+//                     ],
+//                   ),
+//                   child: ListTile(
+//                     contentPadding: EdgeInsets.all(16.0),
+//                     title: Text(
+//                       items[index],
+//                       style: const TextStyle(
+//                         fontSize: 18,
+//                         fontWeight: FontWeight.w600,
+//                         color: Colors.black87,
+//                       ),
+//                     ),
+//                     subtitle: const Text(
+//                       'There is something inside the list',
+//                       style: TextStyle(color: Colors.black54),
+//                     ),
+//                     leading: const Icon(
+//                       Icons.list,
+//                       color: Colors.indigo,
+//                     ),
+//                     trailing: const Icon(
+//                       Icons.arrow_forward_ios,
+//                       color: Colors.indigo,
+//                     ),
+//                     onTap: () {
+//                       // Handle item tap (optional)
+//                       print('Tapped on ${items[index]}');
+//                     },
+//                   ),
+//                 );
+//               },
+//               childCount: items.length, // Total number of items
+//             ),
+//           ),
+//         ],
+//       ),
+//     );
+//   }
+// }
