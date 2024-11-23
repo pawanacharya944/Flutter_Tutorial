@@ -49,7 +49,7 @@ class MyToast extends StatelessWidget {
               ),
               padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 40),
             ),
-            child: Text(
+            child: const Text(
               'Subscribe Code Flicks',
               style: TextStyle(fontSize: 20),
             ),

@@ -1081,3 +1081,70 @@
 //     );
 //   }
 // }
+// import 'package:flutter/material.dart';
+// import 'package:convex_bottom_bar/convex_bottom_bar.dart';
+
+// class MyConvex extends StatefulWidget {
+//   @override
+//   _MyConvexState createState() => _MyConvexState();
+// }
+
+// class _MyConvexState extends State<MyConvex> {
+//   int _currentIndex = 0;
+
+//   // Screens with icons and text
+//   final List<Map<String, dynamic>> _screens = [
+//     {'icon': Icons.home, 'text': 'Welcome to the Code Flicks '},
+//     {'icon': Icons.search, 'text': 'Search here...'},
+//     {'icon': Icons.favorite, 'text': 'Favorites'},
+//     {'icon': Icons.notifications, 'text': 'Notifications'},
+//     {'icon': Icons.person, 'text': 'Your Profile'},
+//   ];
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: const Text('Convex Bottom Bar'),
+//         backgroundColor: Colors.indigo[200],
+//       ),
+//       body: SafeArea(
+//         child: Center(
+//           child: Column(
+//             mainAxisSize: MainAxisSize.min,
+//             children: [
+//               Icon(_screens[_currentIndex]['icon'],
+//                   size: 80, color: Colors.indigo[600]),
+//               const SizedBox(height: 20),
+//               Text(
+//                 _screens[_currentIndex]['text'],
+//                 style:
+//                     const TextStyle(fontSize: 24, fontWeight: FontWeight.w500),
+//               ),
+//             ],
+//           ),
+//         ),
+//       ),
+//       bottomNavigationBar: ConvexAppBar(
+//         backgroundColor: Colors.indigo[200],
+//         color: Colors.white,
+//         activeColor: Colors.indigo[800],
+//         style: TabStyle.react,
+//         curveSize: 70,
+//         items: const [
+//           TabItem(icon: Icons.home, title: 'Home'),
+//           TabItem(icon: Icons.search, title: 'Search'),
+//           TabItem(icon: Icons.favorite, title: 'Add'),
+//           TabItem(icon: Icons.notifications, title: 'Notify'),
+//           TabItem(icon: Icons.person, title: 'Profile'),
+//         ],
+//         initialActiveIndex: 0,
+//         onTap: (int index) {
+//           setState(() {
+//             _currentIndex = index;
+//           });
+//         },
+//       ),
+//     );
+//   }
+// }
