@@ -896,7 +896,7 @@
 //               duration: const Duration(milliseconds: 300),
 //               padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
 //               decoration: BoxDecoration(
-//                 color: Colors.blue.shade100,
+//                 color: Colors.blue.shade200,
 //                 borderRadius: BorderRadius.circular(12),
 //                 boxShadow: const [
 //                   BoxShadow(
@@ -1144,6 +1144,111 @@
 //             _currentIndex = index;
 //           });
 //         },
+//       ),
+//     );
+//   }
+// }
+// import 'package:flutter/material.dart';
+
+// class SliverGridDemo extends StatelessWidget {
+//   // Sample data for grid items with simple colors
+//   final List<Map<String, dynamic>> items = List.generate(
+//     22,
+//     (index) => {
+//       'title': 'Grid ${index + 1}',
+//       'color': (index % 6 == 0)
+//           ? Colors.blue.shade200 // Light Blue
+//           : (index % 6 == 1)
+//               ? Colors.orange.shade200 // Light Orange
+//               : (index % 6 == 2)
+//                   ? Colors.green.shade200 // Light Green
+//                   : (index % 6 == 3)
+//                       ? Colors.purple.shade200 // Light Purple
+//                       : (index % 6 == 4)
+//                           ? Colors.indigo.shade200 // Light Yellow
+//                           : Colors.red.shade200, // Light Red
+//     },
+//   );
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       body: CustomScrollView(
+//         slivers: [
+//           // Collapsible app bar with a simple background color
+//           SliverAppBar(
+//             expandedHeight: 200.0, // Height when fully expanded
+//             pinned: true, // Stays visible when scrolling
+//             flexibleSpace: FlexibleSpaceBar(
+//               title: const Text(
+//                 'S l i v e r G r i d',
+//                 style: TextStyle(
+//                   color: Colors.white,
+//                   // fontWeight: FontWeight.bold,
+//                 ),
+//               ),
+//               background: Image.asset(
+//                 'images/m.jpg',
+//                 fit: BoxFit.cover,
+//               ),
+//             ),
+//             backgroundColor: Colors.indigo.shade200, // App bar background color
+//           ),
+
+//           // SliverGrid displaying grid items with simple colors
+//           SliverGrid(
+//             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+//               crossAxisCount: 2, // Number of columns
+//               mainAxisSpacing: 10.0, // Vertical spacing between items
+//               crossAxisSpacing: 10.0, // Horizontal spacing between items
+//               childAspectRatio: 3 / 4, // Width-to-height ratio of items
+//             ),
+//             delegate: SliverChildBuilderDelegate(
+//               (context, index) {
+//                 final item = items[index];
+//                 return Card(
+//                   elevation: 5, // Adds shadow to the card
+//                   shape: RoundedRectangleBorder(
+//                     borderRadius:
+//                         BorderRadius.circular(15.0), // Rounded corners
+//                   ),
+//                   child: Container(
+//                     decoration: BoxDecoration(
+//                       color: item['color'], // Simple color background
+//                       borderRadius: BorderRadius.circular(15.0),
+//                     ),
+//                     child: Center(
+//                       // Center the title text inside the grid item
+//                       child: Text(
+//                         item['title']!,
+//                         style: const TextStyle(
+//                           color: Colors.white,
+//                           fontWeight: FontWeight.bold,
+//                           fontSize: 16,
+//                         ),
+//                         textAlign: TextAlign.center,
+//                       ),
+//                     ),
+//                   ),
+//                 );
+//               },
+//               childCount: items.length, // Number of grid items
+//             ),
+//           ),
+
+//           // Optional: Add more slivers for additional content
+//           const SliverToBoxAdapter(
+//             child: Padding(
+//               padding: EdgeInsets.all(16.0),
+//               child: Center(
+//                 child: Text(
+//                   'End of Grid',
+//                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+//                 ),
+//               ),
+//             ),
+//           ),
+//         ],
 //       ),
 //     );
 //   }
