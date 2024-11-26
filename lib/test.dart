@@ -1254,81 +1254,101 @@
 //   }
 // }
 
-import 'package:flutter/material.dart';
+// import 'package:flutter/material.dart';
 
-class BeautifulScrollPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: CustomScrollView(
-        slivers: [
-          // App bar with a stunning image
-          SliverAppBar(
-            expandedHeight: 250.0,
-            floating: false,
-            pinned: true,
-            flexibleSpace: FlexibleSpaceBar(
-              title: const Text(
-                'S l i v e r O p a c i t y',
-                style: TextStyle(color: Colors.white, fontSize: 24),
-              ),
-              background: Image.asset(
-                'images/mt.jpg',
-                fit: BoxFit.cover,
-              ),
-            ),
-            backgroundColor: Colors.teal.shade100,
-          ),
+// class GradientHomePage extends StatelessWidget {
+//   GradientHomePage({Key? key}) : super(key: key);
 
-          // Fading effect using SliverOpacity
-          SliverOpacity(
-            opacity: 0.9, // Adjust the opacity of the sliver
-            sliver: SliverList(
-              delegate: SliverChildBuilderDelegate(
-                (BuildContext context, int index) {
-                  // Dynamic list items with styling
-                  return Container(
-                    margin: const EdgeInsets.symmetric(
-                        vertical: 8.0, horizontal: 16.0),
-                    padding: const EdgeInsets.all(16.0),
-                    decoration: BoxDecoration(
-                      color:
-                          Colors.blueAccent.withOpacity(0.1 * (index % 10 + 1)),
-                      borderRadius: BorderRadius.circular(12.0),
-                      border: Border.all(color: Colors.blueAccent, width: 1),
-                      boxShadow: const [
-                        BoxShadow(
-                          color: Colors.black12,
-                          blurRadius: 4,
-                          offset: Offset(2, 2),
-                        ),
-                      ],
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          'Item ${index + 1}',
-                          style: const TextStyle(
-                              fontSize: 18, fontWeight: FontWeight.w600),
-                        ),
-                        const Icon(Icons.arrow_forward_ios,
-                            color: Colors.blueAccent),
-                      ],
-                    ),
-                  );
-                },
-                childCount: 20, // Number of items in the list
-              ),
-            ),
-          ),
+//   // Define the gradient
+//   final Gradient gradient = const LinearGradient(
+//     colors: [Colors.purple, Colors.blue, Colors.teal, Colors.green],
+//     begin: Alignment.topLeft,
+//     end: Alignment.bottomRight,
+//   );
 
-          // Add extra space to ensure smooth scrolling
-          const SliverToBoxAdapter(
-            child: SizedBox(height: 50.0),
-          ),
-        ],
-      ),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       extendBody: true,
+//       backgroundColor: Colors.grey.shade900,
+//       appBar: AppBar(
+//         title: const Text(
+//           'S h a d e r   M a s k',
+//           style: TextStyle(color: Colors.white, fontSize: 24),
+//         ),
+//         backgroundColor: Colors.transparent,
+//         elevation: 0,
+//       ),
+//       body: Padding(
+//         padding: const EdgeInsets.all(16.0),
+//         child: Column(
+//           mainAxisAlignment: MainAxisAlignment.center,
+//           crossAxisAlignment: CrossAxisAlignment.stretch,
+//           children: [
+//             // Gradient Text using ShaderMask
+//             ShaderMask(
+//               shaderCallback: (Rect bounds) {
+//                 return gradient.createShader(bounds);
+//               },
+//               blendMode:
+//                   BlendMode.srcIn, // Ensures only the text gets the gradient
+//               child: const Text(
+//                 'Believe in Yourself',
+//                 textAlign: TextAlign.center,
+//                 style: TextStyle(
+//                   fontSize: 36,
+//                   fontWeight: FontWeight.bold,
+//                 ),
+//               ),
+//             ),
+//             const SizedBox(height: 40),
+
+//             // Gradient Icon using ShaderMask
+//             ShaderMask(
+//               shaderCallback: (Rect bounds) {
+//                 return gradient.createShader(bounds);
+//               },
+//               blendMode: BlendMode.srcIn,
+//               child: const Icon(
+//                 Icons.lightbulb_outline,
+//                 size: 100,
+//               ),
+//             ),
+//             const SizedBox(height: 40),
+
+//             // Gradient-filled Button using ShaderMask
+//             ShaderMask(
+//               shaderCallback: (Rect bounds) {
+//                 return gradient.createShader(bounds);
+//               },
+//               blendMode: BlendMode.srcIn,
+//               child: ElevatedButton(
+//                 style: ElevatedButton.styleFrom(
+//                   backgroundColor:
+//                       Colors.transparent, // Important for ShaderMask
+//                   padding: const EdgeInsets.symmetric(vertical: 16),
+//                   shape: RoundedRectangleBorder(
+//                     borderRadius: BorderRadius.circular(12),
+//                   ),
+//                 ),
+//                 onPressed: () {
+//                   // Action: Display a motivational message
+//                   ScaffoldMessenger.of(context).showSnackBar(
+//                     const SnackBar(
+//                       backgroundColor: Colors.white10,
+//                       content: Text("You're doing great!"),
+//                     ),
+//                   );
+//                 },
+//                 child: const Text(
+//                   'Get Inspired',
+//                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+//                 ),
+//               ),
+//             ),
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+// }
