@@ -1019,7 +1019,7 @@
 //                 style: TextStyle(
 //                   fontSize: 22,
 //                   fontWeight: FontWeight.bold,
-//                   color: Colors.deepPurpleAccent,
+//                   color: Colors.indigoAccent,
 //                 ),
 //               ),
 //             ),
@@ -1081,270 +1081,271 @@
 //     );
 //   }
 // }
+
 // import 'package:flutter/material.dart';
-// import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 
-// class MyConvex extends StatefulWidget {
-//   @override
-//   _MyConvexState createState() => _MyConvexState();
-// }
-
-// class _MyConvexState extends State<MyConvex> {
-//   int _currentIndex = 0;
-
-//   // Screens with icons and text
-//   final List<Map<String, dynamic>> _screens = [
-//     {'icon': Icons.home, 'text': 'Welcome to the Code Flicks '},
-//     {'icon': Icons.search, 'text': 'Search here...'},
-//     {'icon': Icons.favorite, 'text': 'Favorites'},
-//     {'icon': Icons.notifications, 'text': 'Notifications'},
-//     {'icon': Icons.person, 'text': 'Your Profile'},
-//   ];
+// class DividerExampleScreen extends StatelessWidget {
+//   const DividerExampleScreen({Key? key}) : super(key: key);
 
 //   @override
 //   Widget build(BuildContext context) {
 //     return Scaffold(
 //       appBar: AppBar(
-//         title: const Text('Convex Bottom Bar'),
-//         backgroundColor: Colors.indigo[200],
-//       ),
-//       body: SafeArea(
-//         child: Center(
-//           child: Column(
-//             mainAxisSize: MainAxisSize.min,
-//             children: [
-//               Icon(_screens[_currentIndex]['icon'],
-//                   size: 80, color: Colors.indigo[600]),
-//               const SizedBox(height: 20),
-//               Text(
-//                 _screens[_currentIndex]['text'],
-//                 style:
-//                     const TextStyle(fontSize: 24, fontWeight: FontWeight.w500),
-//               ),
-//             ],
-//           ),
-//         ),
-//       ),
-//       bottomNavigationBar: ConvexAppBar(
-//         backgroundColor: Colors.indigo[200],
-//         color: Colors.white,
-//         activeColor: Colors.indigo[800],
-//         style: TabStyle.react,
-//         curveSize: 70,
-//         items: const [
-//           TabItem(icon: Icons.home, title: 'Home'),
-//           TabItem(icon: Icons.search, title: 'Search'),
-//           TabItem(icon: Icons.favorite, title: 'Add'),
-//           TabItem(icon: Icons.notifications, title: 'Notify'),
-//           TabItem(icon: Icons.person, title: 'Profile'),
-//         ],
-//         initialActiveIndex: 0,
-//         onTap: (int index) {
-//           setState(() {
-//             _currentIndex = index;
-//           });
-//         },
-//       ),
-//     );
-//   }
-// }
-// import 'package:flutter/material.dart';
-
-// class SliverGridDemo extends StatelessWidget {
-//   // Sample data for grid items with simple colors
-//   final List<Map<String, dynamic>> items = List.generate(
-//     22,
-//     (index) => {
-//       'title': 'Grid ${index + 1}',
-//       'color': (index % 6 == 0)
-//           ? Colors.blue.shade200 // Light Blue
-//           : (index % 6 == 1)
-//               ? Colors.orange.shade200 // Light Orange
-//               : (index % 6 == 2)
-//                   ? Colors.green.shade200 // Light Green
-//                   : (index % 6 == 3)
-//                       ? Colors.purple.shade200 // Light Purple
-//                       : (index % 6 == 4)
-//                           ? Colors.indigo.shade200 // Light Yellow
-//                           : Colors.red.shade200, // Light Red
-//     },
-//   );
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       body: CustomScrollView(
-//         slivers: [
-//           // Collapsible app bar with a simple background color
-//           SliverAppBar(
-//             expandedHeight: 200.0, // Height when fully expanded
-//             pinned: true, // Stays visible when scrolling
-//             flexibleSpace: FlexibleSpaceBar(
-//               title: const Text(
-//                 'S l i v e r G r i d',
-//                 style: TextStyle(
-//                   color: Colors.white,
-//                   // fontWeight: FontWeight.bold,
-//                 ),
-//               ),
-//               background: Image.asset(
-//                 'images/m.jpg',
-//                 fit: BoxFit.cover,
-//               ),
-//             ),
-//             backgroundColor: Colors.indigo.shade200, // App bar background color
-//           ),
-
-//           // SliverGrid displaying grid items with simple colors
-//           SliverGrid(
-//             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-//               crossAxisCount: 2, // Number of columns
-//               mainAxisSpacing: 10.0, // Vertical spacing between items
-//               crossAxisSpacing: 10.0, // Horizontal spacing between items
-//               childAspectRatio: 3 / 4, // Width-to-height ratio of items
-//             ),
-//             delegate: SliverChildBuilderDelegate(
-//               (context, index) {
-//                 final item = items[index];
-//                 return Card(
-//                   elevation: 5, // Adds shadow to the card
-//                   shape: RoundedRectangleBorder(
-//                     borderRadius:
-//                         BorderRadius.circular(15.0), // Rounded corners
-//                   ),
-//                   child: Container(
-//                     decoration: BoxDecoration(
-//                       color: item['color'], // Simple color background
-//                       borderRadius: BorderRadius.circular(15.0),
-//                     ),
-//                     child: Center(
-//                       // Center the title text inside the grid item
-//                       child: Text(
-//                         item['title']!,
-//                         style: const TextStyle(
-//                           color: Colors.white,
-//                           fontWeight: FontWeight.bold,
-//                           fontSize: 16,
-//                         ),
-//                         textAlign: TextAlign.center,
-//                       ),
-//                     ),
-//                   ),
-//                 );
-//               },
-//               childCount: items.length, // Number of grid items
-//             ),
-//           ),
-
-//           // Optional: Add more slivers for additional content
-//           const SliverToBoxAdapter(
-//             child: Padding(
-//               padding: EdgeInsets.all(16.0),
-//               child: Center(
-//                 child: Text(
-//                   'End of Grid',
-//                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-//                 ),
-//               ),
-//             ),
-//           ),
-//         ],
-//       ),
-//     );
-//   }
-// }
-
-// import 'package:flutter/material.dart';
-
-// class GradientHomePage extends StatelessWidget {
-//   GradientHomePage({Key? key}) : super(key: key);
-
-//   // Define the gradient
-//   final Gradient gradient = const LinearGradient(
-//     colors: [Colors.purple, Colors.blue, Colors.teal, Colors.green],
-//     begin: Alignment.topLeft,
-//     end: Alignment.bottomRight,
-//   );
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       extendBody: true,
-//       backgroundColor: Colors.grey.shade900,
-//       appBar: AppBar(
-//         title: const Text(
-//           'S h a d e r   M a s k',
-//           style: TextStyle(color: Colors.white, fontSize: 24),
-//         ),
-//         backgroundColor: Colors.transparent,
-//         elevation: 0,
+//         title: const Text('Flutter Divider'),
+//         backgroundColor: Colors.indigo.shade200,
 //       ),
 //       body: Padding(
 //         padding: const EdgeInsets.all(16.0),
 //         child: Column(
-//           mainAxisAlignment: MainAxisAlignment.center,
 //           crossAxisAlignment: CrossAxisAlignment.stretch,
 //           children: [
-//             // Gradient Text using ShaderMask
-//             ShaderMask(
-//               shaderCallback: (Rect bounds) {
-//                 return gradient.createShader(bounds);
-//               },
-//               blendMode:
-//                   BlendMode.srcIn, // Ensures only the text gets the gradient
-//               child: const Text(
-//                 'Believe in Yourself',
-//                 textAlign: TextAlign.center,
-//                 style: TextStyle(
-//                   fontSize: 36,
-//                   fontWeight: FontWeight.bold,
-//                 ),
+//             // Title Section
+//             const Text(
+//               'My Day Overview',
+//               style: TextStyle(
+//                 fontSize: 28,
+//                 fontWeight: FontWeight.bold,
+//                 color: Colors.indigo,
+//               ),
+//               textAlign: TextAlign.center,
+//             ),
+//             const SizedBox(height: 10),
+
+//             // First Divider - Thin and subtle
+//             Divider(
+//               color: Colors.indigo.shade100, // Subtle color
+//               thickness: 1,
+//               endIndent: 20, // Right-side spacing
+//               indent: 20, // Left-side spacing
+//             ),
+//             const SizedBox(height: 10),
+
+//             // Morning Section
+//             const SectionTitle(title: 'Morning'),
+//             Divider(
+//               color: Colors.orange, // Bright color for morning
+//               thickness: 2,
+//               indent: 40, // Left-side padding for emphasis
+//               endIndent: 40, // Right-side padding for symmetry
+//             ),
+//             const ActivityTile(
+//               icon: Icons.wb_sunny,
+//               title: 'Morning Walk',
+//               subtitle: 'Enjoyed a peaceful 30-minute walk.',
+//             ),
+//             const ActivityTile(
+//               icon: Icons.coffee,
+//               title: 'Coffee Time',
+//               subtitle: 'Started the day with a strong espresso.',
+//             ),
+
+//             const SizedBox(height: 20),
+
+//             // Afternoon Section
+//             const SectionTitle(title: 'Afternoon'),
+//             Divider(
+//               color: Colors.blue, // Cool color for afternoon
+//               thickness: 3,
+//               indent: 20,
+//               endIndent: 20,
+//               height: 20, // Extra space around the divider
+//             ),
+//             const ActivityTile(
+//               icon: Icons.lunch_dining,
+//               title: 'Lunch Break',
+//               subtitle: 'Had a healthy salad with friends.',
+//             ),
+//             const ActivityTile(
+//               icon: Icons.book,
+//               title: 'Learning Time',
+//               subtitle: 'Read a few chapters of a Flutter book.',
+//             ),
+
+//             const SizedBox(height: 20),
+
+//             // Evening Section
+//             const SectionTitle(title: 'Evening'),
+//             Divider(
+//               color: Colors.purple, // Deep color for evening
+//               thickness: 2,
+//               indent: 60, // Extra padding for a sleek effect
+//               endIndent: 60,
+//             ),
+//             const ActivityTile(
+//               icon: Icons.movie,
+//               title: 'Movie Night',
+//               subtitle: 'Watched a thrilling mystery movie.',
+//             ),
+//             const ActivityTile(
+//               icon: Icons.bed,
+//               title: 'Relaxation',
+//               subtitle: "Prepared for a restful night's sleep.",
+//             ),
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// // A reusable widget for section titles
+// class SectionTitle extends StatelessWidget {
+//   final String title;
+
+//   const SectionTitle({Key? key, required this.title}) : super(key: key);
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Text(
+//       title,
+//       style: const TextStyle(
+//         fontSize: 22,
+//         fontWeight: FontWeight.w600,
+//         color: Colors.indigo,
+//       ),
+//     );
+//   }
+// }
+
+// // A reusable widget for activity tiles
+// class ActivityTile extends StatelessWidget {
+//   final IconData icon;
+//   final String title;
+//   final String subtitle;
+
+//   const ActivityTile({
+//     Key? key,
+//     required this.icon,
+//     required this.title,
+//     required this.subtitle,
+//   }) : super(key: key);
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return ListTile(
+//       leading: Icon(icon, size: 32),
+//       title: Text(
+//         title,
+//         style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+//       ),
+//       subtitle: Text(subtitle),
+//     );
+//   }
+// }
+
+// import 'package:flutter/material.dart';
+
+// class MyDivider extends StatelessWidget {
+//   const MyDivider({Key? key}) : super(key: key);
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: const Text(
+//           'D i v i d e r',
+//           style: TextStyle(fontSize: 28),
+//         ),
+//         backgroundColor: Colors.teal.shade100,
+//       ),
+//       body: const Padding(
+//         padding: EdgeInsets.all(16.0),
+//         child: Column(
+//           crossAxisAlignment: CrossAxisAlignment.start,
+//           children: [
+//             // Title Section
+//             Text(
+//               'Daily Activities',
+//               style: TextStyle(
+//                 fontSize: 28,
+//                 fontWeight: FontWeight.bold,
+//                 color: Colors.green,
 //               ),
 //             ),
-//             const SizedBox(height: 40),
+//             SizedBox(height: 20),
 
-//             // Gradient Icon using ShaderMask
-//             ShaderMask(
-//               shaderCallback: (Rect bounds) {
-//                 return gradient.createShader(bounds);
-//               },
-//               blendMode: BlendMode.srcIn,
-//               child: const Icon(
-//                 Icons.lightbulb_outline,
-//                 size: 100,
+//             // Morning Section
+//             Text(
+//               'Morning',
+//               style: TextStyle(
+//                 fontSize: 24,
+//                 fontWeight: FontWeight.w600,
+//                 color: Colors.deepOrange,
 //               ),
 //             ),
-//             const SizedBox(height: 40),
-
-//             // Gradient-filled Button using ShaderMask
-//             ShaderMask(
-//               shaderCallback: (Rect bounds) {
-//                 return gradient.createShader(bounds);
-//               },
-//               blendMode: BlendMode.srcIn,
-//               child: ElevatedButton(
-//                 style: ElevatedButton.styleFrom(
-//                   backgroundColor:
-//                       Colors.transparent, // Important for ShaderMask
-//                   padding: const EdgeInsets.symmetric(vertical: 16),
-//                   shape: RoundedRectangleBorder(
-//                     borderRadius: BorderRadius.circular(12),
-//                   ),
-//                 ),
-//                 onPressed: () {
-//                   // Action: Display a motivational message
-//                   ScaffoldMessenger.of(context).showSnackBar(
-//                     const SnackBar(
-//                       backgroundColor: Colors.white10,
-//                       content: Text("You're doing great!"),
-//                     ),
-//                   );
-//                 },
-//                 child: const Text(
-//                   'Get Inspired',
-//                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-//                 ),
+//             ListTile(
+//               leading: Icon(
+//                 Icons.wb_sunny,
+//                 color: Colors.deepOrange,
+//                 size: 28,
 //               ),
+//               title: Text(
+//                 'Morning Walk',
+//                 style: TextStyle(fontSize: 18),
+//               ),
+//               subtitle: Text('30-minute peaceful walk.'),
+//             ),
+//             Divider(
+//               color: Colors.deepOrange,
+//               thickness: 2,
+//               indent: 40,
+//               endIndent: 40,
+//             ),
+
+//             // Afternoon Section
+//             Text(
+//               'Afternoon',
+//               style: TextStyle(
+//                 fontSize: 24,
+//                 fontWeight: FontWeight.w600,
+//                 color: Colors.brown,
+//               ),
+//             ),
+//             ListTile(
+//               leading: Icon(
+//                 Icons.book,
+//                 color: Colors.brown,
+//                 size: 28,
+//               ),
+//               title: Text(
+//                 'Learning Flutter',
+//                 style: TextStyle(fontSize: 18),
+//               ),
+//               subtitle: Text('Studied Flutter for 2 hours.'),
+//             ),
+//             Divider(
+//               color: Colors.brown,
+//               thickness: 2,
+//               indent: 40,
+//               endIndent: 40,
+//             ),
+
+//             // Evening Section
+//             Text(
+//               'Evening',
+//               style: TextStyle(
+//                 fontSize: 24,
+//                 fontWeight: FontWeight.w600,
+//                 color: Colors.indigo,
+//               ),
+//             ),
+//             ListTile(
+//               leading: Icon(
+//                 Icons.movie,
+//                 color: Colors.indigo,
+//                 size: 28,
+//               ),
+//               title: Text(
+//                 'Movie Night',
+//                 style: TextStyle(fontSize: 18),
+//               ),
+//               subtitle: Text('Watched a sci-fi movie.'),
+//             ),
+//             Divider(
+//               color: Colors.indigo,
+//               thickness: 2,
+//               indent: 40,
+//               endIndent: 40,
 //             ),
 //           ],
 //         ),
