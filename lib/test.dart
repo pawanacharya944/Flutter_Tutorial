@@ -1353,3 +1353,71 @@
 //     );
 //   }
 // }
+// import 'package:flutter/material.dart';
+
+// class MyClipRRect extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: const Text('ClipRRect Image Demo'),
+//         backgroundColor: Colors.deepPurple,
+//         centerTitle: true,
+//       ),
+//       body: Padding(
+//         padding: const EdgeInsets.all(16.0),
+//         child: Column(
+//           crossAxisAlignment: CrossAxisAlignment.center,
+//           children: [
+//             // Image without ClipRRect (Showing the difference)
+//             const Text(
+//               'Image without ClipRRect',
+//               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+//             ),
+//             const SizedBox(height: 10),
+//             Image.asset(
+//               'images/sky.jpg', // Replace with your image
+//               width: 300,
+//               height: 200,
+//               fit: BoxFit.cover,
+//             ),
+//             SizedBox(height: 30),
+
+//             // Image with ClipRRect for rounded corners
+//             const Text(
+//               'Image with ClipRRect',
+//               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+//             ),
+//             SizedBox(height: 10),
+//             ClipRRect(
+//               borderRadius: BorderRadius.circular(30), // Rounded corners
+//               child: Image.asset(
+//                 'images/m.jpg', // Replace with your image
+//                 width: 300,
+//                 height: 200,
+//                 fit: BoxFit.cover,
+//               ),
+//             ),
+//             const SizedBox(height: 30),
+
+//             // Image with more extreme rounded corners using ClipRRect
+//             const Text(
+//               'Image with Extreme Rounded Corners',
+//               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+//             ),
+//             const SizedBox(height: 10),
+//             ClipRRect(
+//               borderRadius: BorderRadius.circular(60), // More extreme rounding
+//               child: Image.asset(
+//                 'images/d.jpg', // Replace with your image
+//                 width: 300,
+//                 height: 200,
+//                 fit: BoxFit.cover,
+//               ),
+//             ),
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+// }

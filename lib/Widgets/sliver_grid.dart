@@ -18,6 +18,8 @@ class MySliverGrid extends StatelessWidget {
                                 : Colors.red.shade200
           });
 
+  MySliverGrid({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
