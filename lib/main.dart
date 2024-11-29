@@ -1,5 +1,6 @@
-import 'package:first_project/cliprrect.dart';
 import 'package:flutter/material.dart';
+
+import 'cliprrect.dart';
 
 void main() {
   runApp(const MyApp());
