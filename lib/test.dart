@@ -1421,3 +1421,73 @@
 //     );
 //   }
 // }
+
+// import 'dart:ui';
+// import 'package:flutter/material.dart';
+
+// class MyBackDrop extends StatelessWidget {
+//   const MyBackDrop({Key? key}) : super(key: key);
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       body: Stack(
+//         children: [
+//           // Background image for the frosted glass effect
+//           Container(
+//             decoration: const BoxDecoration(
+//               image: DecorationImage(
+//                 image: AssetImage('images/sh.jpg'), // Add your image here
+//                 fit: BoxFit.cover,
+//               ),
+//             ),
+//           ),
+//           // Frosted glass card using BackdropFilter
+//           Center(
+//             child: ClipRRect(
+//               borderRadius: BorderRadius.circular(20), // Smooth corners
+//               child: BackdropFilter(
+//                 // blendMode: BlendMode.src,
+//                 filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10), // Blur effect
+//                 child: Container(
+//                   width: 300,
+//                   height: 200,
+//                   decoration: BoxDecoration(
+//                     color: Colors.white
+//                         .withOpacity(0.2), // Transparent white background
+//                     borderRadius: BorderRadius.circular(20),
+//                     border: Border.all(
+//                       color: Colors.white.withOpacity(0.3), // Subtle border
+//                       width: 1.5,
+//                     ),
+//                   ),
+//                   child: const Column(
+//                     mainAxisAlignment: MainAxisAlignment.center,
+//                     children: [
+//                       Text(
+//                         "Designed by Code Flicks",
+//                         style: TextStyle(
+//                           fontSize: 20,
+//                           fontWeight: FontWeight.bold,
+//                           color: Colors.white,
+//                         ),
+//                       ),
+//                       SizedBox(height: 10),
+//                       Text(
+//                         "Visually stunning UI",
+//                         style: TextStyle(
+//                           fontSize: 16,
+//                           color: Colors.white70,
+//                         ),
+//                       ),
+//                     ],
+//                   ),
+//                 ),
+//               ),
+//             ),
+//           ),
+//         ],
+//       ),
+//     );
+//   }
+// }
