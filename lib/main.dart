@@ -1,6 +1,7 @@
+import 'package:first_project/backdrop.dart';
 import 'package:flutter/material.dart';
 
-import 'cliprrect.dart';
+import 'test.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: "Flutter Project",
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: MyClipRRect(),
+      home: MyBackDropFilter(),
     );
   }
 }
