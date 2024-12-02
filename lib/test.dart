@@ -491,129 +491,50 @@
 //   ));
 // }
 
-import 'package:flutter/material.dart';
+// import 'package:flutter/material.dart';
 
-class OverflowFixPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        // AppBar with a light indigo background
-        backgroundColor: Colors.indigo.shade100,
-        title: const Text(
-          'F i t t e d B o x ',
-          style: TextStyle(fontSize: 26),
-        ), // Title with spaced-out text
-      ),
-      body: Container(
-        // Background container with a gradient design
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [Colors.indigo.shade100, Colors.teal.shade100],
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-          ),
-        ),
-        child: SingleChildScrollView(
-          // Allows scrolling if content overflows the screen
-          child: Padding(
-            padding: const EdgeInsets.all(16.0), // Padding around the content
-            child: Column(
-              children: [
-                // First example: Image inside a FittedBox with BoxFit.cover
-                Container(
-                  width: double.infinity, // Full width of the parent container
-                  height: 250, // Fixed height
-                  color: Colors.blue[50], // Light blue background
-                  child: FittedBox(
-                    fit:
-                        BoxFit.cover, // Scales the image to cover the container
-                    alignment: Alignment.center, // Centers the image
-                    child: Image.asset(
-                      'images/top.jpg', // Ensure the image path is correct
-                      width: 200, // Original image width
-                      height: 200, // Original image height
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 20), // Spacing between widgets
+// class MyTransform extends StatelessWidget {
+//   const MyTransform({Key? key}) : super(key: key);
 
-                // Second example: Text inside a FittedBox with BoxFit.contain
-                Container(
-                  width: double.infinity, // Full width of the parent container
-                  color: Colors.green[50], // Light green background
-                  child: const FittedBox(
-                    fit:
-                        BoxFit.contain, // Scales text to fit without distortion
-                    alignment: Alignment.center, // Centers the text
-                    child: Text(
-                      'FittedBox Scales This Text', // Example text
-                      style: TextStyle(
-                        fontSize: 40, // Original font size before scaling
-                        fontWeight: FontWeight.bold,
-                        color: Colors.green,
-                      ),
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 20), // Spacing between widgets
-
-                // Third example: Image inside a FittedBox with BoxFit.fill
-                Container(
-                  width: double.infinity, // Full width of the parent container
-                  height: 300, // Fixed height
-                  color: Colors.green[50], // Light red background
-                  child: FittedBox(
-                    fit: BoxFit
-                        .fill, // Stretches the image to fill the container
-                    alignment: Alignment.center, // Centers the image
-                    child: Image.asset(
-                      'images/top.jpg', // Ensure the image path is correct
-                      width: 300, // Original image width
-                      height: 300, // Original image height
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 20), // Spacing between widgets
-
-                // Fourth example: Row inside a FittedBox with BoxFit.none
-                Container(
-                  width: double.infinity, // Full width of the parent container
-                  height: 150, // Fixed height
-                  color: Colors.green[50], // Light orange background
-                  child: FittedBox(
-                    fit:
-                        BoxFit.none, // Does not scale child; uses original size
-                    alignment: Alignment.center, // Centers the content
-                    child: Row(
-                      mainAxisAlignment:
-                          MainAxisAlignment.center, // Center aligns row items
-                      children: [
-                        // Small image in the row
-                        Image.asset(
-                          'images/top.jpg', // Ensure the image path is correct
-                          width: 100, // Fixed image width
-                          height: 100, // Fixed image height
-                        ),
-                        const SizedBox(
-                            width: 10), // Space between image and text
-                        const Text(
-                          'Stunning View', // Example text
-                          style: TextStyle(
-                            fontSize: 30, // Original font size before scaling
-                            fontWeight: FontWeight.bold,
-                            color: Colors.red,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       extendBodyBehindAppBar: true,
+//       appBar: AppBar(
+//         title: const Text("T r a n s f o r m "),
+//         backgroundColor: Colors.transparent,
+//         elevation: 0, // Remove shadow for a cleaner look
+//       ),
+//       body: Container(
+//         // Use a vibrant and soft gradient for a modern feel
+//         decoration: BoxDecoration(
+//           gradient: LinearGradient(
+//             colors: [Colors.green.shade200, Colors.teal.shade200],
+//             begin: Alignment.topLeft,
+//             end: Alignment.bottomRight,
+//           ),
+//         ),
+//         child: Center(
+//           child: Transform(
+//             // Apply smoother transformations for a dynamic effect
+//             transform: Matrix4.identity()
+//               ..rotateZ(0.3) // Slight rotation for a modern, dynamic feel
+//               ..scale(1.05, 1.05) // A bit of scaling for depth
+//               ..translate(10.0, 40.0), // Subtle translation to keep the focus
+//             alignment: Alignment.center,
+//             child: ClipRRect(
+//               borderRadius:
+//                   BorderRadius.circular(16.0), // Rounded corners for the image
+//               child: Image.asset(
+//                 'images/boy.jpeg',
+//                 width: 320, // Slightly larger image for better focus
+//                 fit: BoxFit
+//                     .cover, // Ensure the image fits well within its bounds
+//               ),
+//             ),
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
