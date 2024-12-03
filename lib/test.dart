@@ -491,50 +491,50 @@
 //   ));
 // }
 
-import 'package:flutter/material.dart';
+// import 'package:flutter/material.dart';
 
-class GridTileExample extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('G r i d T i l e'),
-        backgroundColor: Colors.indigo.shade200,
-      ),
-      body: GridView.count(
-        crossAxisCount: 2, // Two items per row
-        padding: const EdgeInsets.all(10.0), // Add padding around the grid
-        crossAxisSpacing: 10.0, // Spacing between columns
-        mainAxisSpacing: 10.0, // Spacing between rows
-        children: List.generate(8, (index) {
-          return GridTile(
-            header: Container(
-              color: Colors.brown.shade300, // Header background color
-              child: Center(
-                child: Text(
-                  'Header ${index + 1}',
-                  style: const TextStyle(
-                      fontSize: 18, fontWeight: FontWeight.bold),
-                ),
-              ),
-            ),
-            child: Center(
-              child: Image.asset('images/boy.jpeg'),
-            ),
-            footer: Container(
-              color: Colors.green.shade300, // Footer background color
-              child: Center(
-                child: Text(
-                  'Footer ${index + 1}',
-                  style: const TextStyle(
-                    fontSize: 16,
-                  ),
-                ),
-              ),
-            ),
-          );
-        }),
-      ),
-    );
-  }
-}
+// class GridTileExample extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: const Text('G r i d T i l e'),
+//         backgroundColor: Colors.indigo.shade200,
+//       ),
+//       body: GridView.count(
+//         crossAxisCount: 2, // Two items per row
+//         padding: const EdgeInsets.all(10.0), // Add padding around the grid
+//         crossAxisSpacing: 10.0, // Spacing between columns
+//         mainAxisSpacing: 10.0, // Spacing between rows
+//         children: List.generate(8, (index) {
+//           return GridTile(
+//             header: Container(
+//               color: Colors.brown.shade300, // Header background color
+//               child: Center(
+//                 child: Text(
+//                   'Header ${index + 1}',
+//                   style: const TextStyle(
+//                       fontSize: 18, fontWeight: FontWeight.bold),
+//                 ),
+//               ),
+//             ),
+//             child: Center(
+//               child: Image.asset('images/boy.jpeg'),
+//             ),
+//             footer: Container(
+//               color: Colors.green.shade300, // Footer background color
+//               child: Center(
+//                 child: Text(
+//                   'Footer ${index + 1}',
+//                   style: const TextStyle(
+//                     fontSize: 16,
+//                   ),
+//                 ),
+//               ),
+//             ),
+//           );
+//         }),
+//       ),
+//     );
+//   }
+// }
