@@ -8,7 +8,7 @@ class MyFittedBox extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.indigo.shade100,
-        title: Text(
+        title: const Text(
           'F i t t e d B o x',
           style: TextStyle(fontSize: 26),
         ),

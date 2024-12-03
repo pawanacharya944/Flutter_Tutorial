@@ -491,50 +491,50 @@
 //   ));
 // }
 
-// import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 
-// class MyTransform extends StatelessWidget {
-//   const MyTransform({Key? key}) : super(key: key);
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       extendBodyBehindAppBar: true,
-//       appBar: AppBar(
-//         title: const Text("T r a n s f o r m "),
-//         backgroundColor: Colors.transparent,
-//         elevation: 0, // Remove shadow for a cleaner look
-//       ),
-//       body: Container(
-//         // Use a vibrant and soft gradient for a modern feel
-//         decoration: BoxDecoration(
-//           gradient: LinearGradient(
-//             colors: [Colors.green.shade200, Colors.teal.shade200],
-//             begin: Alignment.topLeft,
-//             end: Alignment.bottomRight,
-//           ),
-//         ),
-//         child: Center(
-//           child: Transform(
-//             // Apply smoother transformations for a dynamic effect
-//             transform: Matrix4.identity()
-//               ..rotateZ(0.3) // Slight rotation for a modern, dynamic feel
-//               ..scale(1.05, 1.05) // A bit of scaling for depth
-//               ..translate(10.0, 40.0), // Subtle translation to keep the focus
-//             alignment: Alignment.center,
-//             child: ClipRRect(
-//               borderRadius:
-//                   BorderRadius.circular(16.0), // Rounded corners for the image
-//               child: Image.asset(
-//                 'images/boy.jpeg',
-//                 width: 320, // Slightly larger image for better focus
-//                 fit: BoxFit
-//                     .cover, // Ensure the image fits well within its bounds
-//               ),
-//             ),
-//           ),
-//         ),
-//       ),
-//     );
-//   }
-// }
+class GridTileExample extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('G r i d T i l e'),
+        backgroundColor: Colors.indigo.shade200,
+      ),
+      body: GridView.count(
+        crossAxisCount: 2, // Two items per row
+        padding: const EdgeInsets.all(10.0), // Add padding around the grid
+        crossAxisSpacing: 10.0, // Spacing between columns
+        mainAxisSpacing: 10.0, // Spacing between rows
+        children: List.generate(8, (index) {
+          return GridTile(
+            header: Container(
+              color: Colors.brown.shade300, // Header background color
+              child: Center(
+                child: Text(
+                  'Header ${index + 1}',
+                  style: const TextStyle(
+                      fontSize: 18, fontWeight: FontWeight.bold),
+                ),
+              ),
+            ),
+            child: Center(
+              child: Image.asset('images/boy.jpeg'),
+            ),
+            footer: Container(
+              color: Colors.green.shade300, // Footer background color
+              child: Center(
+                child: Text(
+                  'Footer ${index + 1}',
+                  style: const TextStyle(
+                    fontSize: 16,
+                  ),
+                ),
+              ),
+            ),
+          );
+        }),
+      ),
+    );
+  }
+}
