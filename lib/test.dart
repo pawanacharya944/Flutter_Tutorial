@@ -493,47 +493,152 @@
 
 // import 'package:flutter/material.dart';
 
-// class GridTileExample extends StatelessWidget {
+// class AnimatedHomePage extends StatefulWidget {
+//   @override
+//   _AnimatedHomePageState createState() => _AnimatedHomePageState();
+// }
+
+// class _AnimatedHomePageState extends State<AnimatedHomePage>
+//     with SingleTickerProviderStateMixin {
+//   late AnimationController _controller;
+//   late Animation<double> _curvedAnimation;
+
+//   @override
+//   void initState() {
+//     super.initState();
+
+//     // Initialize the AnimationController
+//     _controller = AnimationController(
+//       duration: const Duration(seconds: 3), // Total animation duration
+//       vsync: this, // Provides a ticker for the controller
+//     );
+
+//     // Create a CurvedAnimation with a bounce effect
+//     _curvedAnimation = CurvedAnimation(
+//       parent: _controller,
+//       curve: Curves.bounceInOut, // Animation curve for forward motion
+//       reverseCurve: Curves.elasticInOut, // Animation curve for reverse motion
+//     );
+
+//     // Animate color using a Tween and the curved animation
+
+//     // Start the animation in a loop
+//     _controller.repeat(reverse: true);
+//   }
+
+//   @override
+//   void dispose() {
+//     // Dispose the controller to free resources
+//     _controller.dispose();
+//     super.dispose();
+//   }
+
 //   @override
 //   Widget build(BuildContext context) {
 //     return Scaffold(
+//       extendBodyBehindAppBar: true,
+//       backgroundColor: Colors.blueGrey.shade200,
 //       appBar: AppBar(
-//         title: const Text('G r i d T i l e'),
-//         backgroundColor: Colors.indigo.shade200,
+//         title: const Text(
+//           'C u r v e d A n i m a t i o n',
+//           style: TextStyle(fontSize: 26, color: Colors.white),
+//         ),
+//         backgroundColor: Colors.transparent,
 //       ),
-//       body: GridView.count(
-//         crossAxisCount: 2, // Two items per row
-//         padding: const EdgeInsets.all(10.0), // Add padding around the grid
-//         crossAxisSpacing: 10.0, // Spacing between columns
-//         mainAxisSpacing: 10.0, // Spacing between rows
-//         children: List.generate(8, (index) {
-//           return GridTile(
-//             header: Container(
-//               color: Colors.brown.shade300, // Header background color
-//               child: Center(
-//                 child: Text(
-//                   'Header ${index + 1}',
-//                   style: const TextStyle(
-//                       fontSize: 18, fontWeight: FontWeight.bold),
+//       body: Center(
+//         child: AnimatedBuilder(
+//           animation: _curvedAnimation, // Listen to the curved animation
+//           builder: (context, child) {
+//             return Transform.scale(
+//               // Scale transformation based on animation value
+//               scale: _curvedAnimation.value * 1.5 + 0.5,
+//               child: Image.asset('images/spider.jpg'),
+//             );
+//           },
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// import 'package:flutter/material.dart';
+
+// class AnimatedHomePage extends StatefulWidget {
+//   @override
+//   _AnimatedHomePageState createState() => _AnimatedHomePageState();
+// }
+
+// class _AnimatedHomePageState extends State<AnimatedHomePage>
+//     with SingleTickerProviderStateMixin {
+//   late AnimationController _controller;
+//   late Animation<double> _curvedAnimation;
+
+//   @override
+//   void initState() {
+//     super.initState();
+
+//     // Initialize the AnimationController
+//     _controller = AnimationController(
+//       duration: const Duration(seconds: 3), // Total animation duration
+//       vsync: this, // Provides a ticker for the controller
+//     );
+
+//     // Create a CurvedAnimation with a bounce effect
+//     _curvedAnimation = CurvedAnimation(
+//       parent: _controller,
+//       curve: Curves.bounceInOut, // Animation curve for forward motion
+//       reverseCurve: Curves.elasticInOut, // Animation curve for reverse motion
+//     );
+
+//     // Start the animation in a loop
+//     _controller.repeat(reverse: true);
+//   }
+
+//   @override
+//   void dispose() {
+//     // Dispose the controller to free resources
+//     _controller.dispose();
+//     super.dispose();
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       extendBodyBehindAppBar: true,
+//       backgroundColor: Colors.blueGrey.shade200,
+//       appBar: AppBar(
+//         title: const Text(
+//           'C u r v e d A n i m a t i o n',
+//           style: TextStyle(fontSize: 26, color: Colors.white),
+//         ),
+//         backgroundColor: Colors.transparent,
+//         elevation: 0,
+//       ),
+//       body: Center(
+//         child: AnimatedBuilder(
+//           animation: _curvedAnimation, // Listen to the curved animation
+//           builder: (context, child) {
+//             return Transform.scale(
+//               scale: _curvedAnimation.value * 1.2 + 0.8, // Smooth scaling range
+//               child: Container(
+//                 decoration: BoxDecoration(
+//                   boxShadow: [
+//                     BoxShadow(
+//                       color: Colors.black.withOpacity(0.5), // Glow effect
+//                       blurRadius: 30,
+//                       spreadRadius: 10,
+//                     ),
+//                   ],
+//                 ),
+//                 child: Image.asset(
+//                   'images/spider.jpg',
+//                   fit: BoxFit.cover,
+//                   width: 250, // Set a responsive width
 //                 ),
 //               ),
-//             ),
-//             child: Center(
-//               child: Image.asset('images/boy.jpeg'),
-//             ),
-//             footer: Container(
-//               color: Colors.green.shade300, // Footer background color
-//               child: Center(
-//                 child: Text(
-//                   'Footer ${index + 1}',
-//                   style: const TextStyle(
-//                     fontSize: 16,
-//                   ),
-//                 ),
-//               ),
-//             ),
-//           );
-//         }),
+//             );
+//           },
+//         ),
 //       ),
 //     );
 //   }
