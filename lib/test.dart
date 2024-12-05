@@ -493,69 +493,107 @@
 
 // import 'package:flutter/material.dart';
 
-// class AnimatedHomePage extends StatefulWidget {
-//   @override
-//   _AnimatedHomePageState createState() => _AnimatedHomePageState();
-// }
-
-// class _AnimatedHomePageState extends State<AnimatedHomePage>
-//     with SingleTickerProviderStateMixin {
-//   late AnimationController _controller;
-//   late Animation<double> _curvedAnimation;
-
-//   @override
-//   void initState() {
-//     super.initState();
-
-//     // Initialize the AnimationController
-//     _controller = AnimationController(
-//       duration: const Duration(seconds: 3), // Total animation duration
-//       vsync: this, // Provides a ticker for the controller
-//     );
-
-//     // Create a CurvedAnimation with a bounce effect
-//     _curvedAnimation = CurvedAnimation(
-//       parent: _controller,
-//       curve: Curves.bounceInOut, // Animation curve for forward motion
-//       reverseCurve: Curves.elasticInOut, // Animation curve for reverse motion
-//     );
-
-//     // Animate color using a Tween and the curved animation
-
-//     // Start the animation in a loop
-//     _controller.repeat(reverse: true);
-//   }
-
-//   @override
-//   void dispose() {
-//     // Dispose the controller to free resources
-//     _controller.dispose();
-//     super.dispose();
-//   }
+// class RotatedBoxPage extends StatelessWidget {
+//   const RotatedBoxPage({Key? key}) : super(key: key);
 
 //   @override
 //   Widget build(BuildContext context) {
 //     return Scaffold(
-//       extendBodyBehindAppBar: true,
-//       backgroundColor: Colors.blueGrey.shade200,
 //       appBar: AppBar(
 //         title: const Text(
-//           'C u r v e d A n i m a t i o n',
+//           "R o t a t e d B o x",
 //           style: TextStyle(fontSize: 26, color: Colors.white),
 //         ),
-//         backgroundColor: Colors.transparent,
+//         backgroundColor: Colors.brown.shade300,
+//         centerTitle: true,
 //       ),
-//       body: Center(
-//         child: AnimatedBuilder(
-//           animation: _curvedAnimation, // Listen to the curved animation
-//           builder: (context, child) {
-//             return Transform.scale(
-//               // Scale transformation based on animation value
-//               scale: _curvedAnimation.value * 1.5 + 0.5,
-//               child: Image.asset('images/spider.jpg'),
-//             );
-//           },
+//       body: const Center(
+//         child: Column(
+//           mainAxisAlignment: MainAxisAlignment.center,
+//           children: [
+//             // Rotated Card 1: Vibrant Gradient
+//             RotatedBox(
+//               quarterTurns: 1,
+//               child: CardWithGradient(
+//                 text:
+//                     '90° Rotation', // to get this degree ° use Shift + Option + 8
+//                 colors: [Colors.blue, Colors.purple],
+//               ),
+//             ),
+//             SizedBox(height: 20),
+//             // Rotated Card 2: Soft Gradient with Neumorphism
+//             RotatedBox(
+//               quarterTurns: 2,
+//               child: CardWithGradient(
+//                 text:
+//                     '180° Rotation', // to get this degree ° use Shift + Option + 8
+//                 colors: [Colors.teal, Colors.greenAccent],
+//                 shadowColor: Colors.teal,
+//               ),
+//             ),
+//             SizedBox(height: 20),
+//             // Rotated Card 3: Circular Gradient
+//             RotatedBox(
+//               quarterTurns: 3,
+//               child: CardWithGradient(
+//                 text:
+//                     '270° Rotation', // to get this degree ° use Shift + Option + 8
+//                 colors: [Colors.orange, Colors.redAccent],
+//                 isCircularGradient: true,
+//               ),
+//             ),
+//           ],
 //         ),
+//       ),
+//     );
+//   }
+// }
+
+// class CardWithGradient extends StatelessWidget {
+//   final String text;
+//   final List<Color> colors;
+//   final bool isCircularGradient;
+//   final Color shadowColor;
+
+//   const CardWithGradient({
+//     Key? key,
+//     required this.text,
+//     required this.colors,
+//     this.isCircularGradient = false,
+//     this.shadowColor = Colors.black,
+//   }) : super(key: key);
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Container(
+//       padding: const EdgeInsets.all(50),
+//       decoration: BoxDecoration(
+//         gradient: isCircularGradient
+//             ? RadialGradient(
+//                 colors: colors,
+//               )
+//             : LinearGradient(
+//                 colors: colors,
+//                 begin: Alignment.topLeft,
+//                 end: Alignment.bottomRight,
+//               ),
+//         borderRadius: BorderRadius.circular(20),
+//         boxShadow: [
+//           BoxShadow(
+//             color: shadowColor.withOpacity(0.5),
+//             blurRadius: 15,
+//             offset: const Offset(5, 5),
+//           ),
+//         ],
+//       ),
+//       child: Text(
+//         text,
+//         style: const TextStyle(
+//           color: Colors.white,
+//           fontSize: 20,
+//           fontWeight: FontWeight.bold,
+//         ),
+//         textAlign: TextAlign.center,
 //       ),
 //     );
 //   }
@@ -563,82 +601,100 @@
 
 // import 'package:flutter/material.dart';
 
-// class AnimatedHomePage extends StatefulWidget {
-//   @override
-//   _AnimatedHomePageState createState() => _AnimatedHomePageState();
-// }
-
-// class _AnimatedHomePageState extends State<AnimatedHomePage>
-//     with SingleTickerProviderStateMixin {
-//   late AnimationController _controller;
-//   late Animation<double> _curvedAnimation;
-
-//   @override
-//   void initState() {
-//     super.initState();
-
-//     // Initialize the AnimationController
-//     _controller = AnimationController(
-//       duration: const Duration(seconds: 3), // Total animation duration
-//       vsync: this, // Provides a ticker for the controller
-//     );
-
-//     // Create a CurvedAnimation with a bounce effect
-//     _curvedAnimation = CurvedAnimation(
-//       parent: _controller,
-//       curve: Curves.bounceInOut, // Animation curve for forward motion
-//       reverseCurve: Curves.elasticInOut, // Animation curve for reverse motion
-//     );
-
-//     // Start the animation in a loop
-//     _controller.repeat(reverse: true);
-//   }
-
-//   @override
-//   void dispose() {
-//     // Dispose the controller to free resources
-//     _controller.dispose();
-//     super.dispose();
-//   }
+// class RotatedBoxPage extends StatelessWidget {
+//   const RotatedBoxPage({Key? key}) : super(key: key);
 
 //   @override
 //   Widget build(BuildContext context) {
 //     return Scaffold(
-//       extendBodyBehindAppBar: true,
-//       backgroundColor: Colors.blueGrey.shade200,
 //       appBar: AppBar(
 //         title: const Text(
-//           'C u r v e d A n i m a t i o n',
+//           "R o t a t e d B o x",
 //           style: TextStyle(fontSize: 26, color: Colors.white),
 //         ),
-//         backgroundColor: Colors.transparent,
-//         elevation: 0,
+//         backgroundColor: Colors.brown.shade300,
+//         centerTitle: true,
 //       ),
 //       body: Center(
-//         child: AnimatedBuilder(
-//           animation: _curvedAnimation, // Listen to the curved animation
-//           builder: (context, child) {
-//             return Transform.scale(
-//               scale: _curvedAnimation.value * 1.2 + 0.8, // Smooth scaling range
-//               child: Container(
-//                 decoration: BoxDecoration(
-//                   boxShadow: [
-//                     BoxShadow(
-//                       color: Colors.black.withOpacity(0.5), // Glow effect
-//                       blurRadius: 30,
-//                       spreadRadius: 10,
-//                     ),
-//                   ],
-//                 ),
-//                 child: Image.asset(
-//                   'images/spider.jpg',
-//                   fit: BoxFit.cover,
-//                   width: 250, // Set a responsive width
-//                 ),
+//         child: Column(
+//           mainAxisAlignment: MainAxisAlignment.center,
+//           children: [
+//             // Rotated Card 1: Vibrant Gradient
+//             RotatedBox(
+//               quarterTurns: 1,
+//               child: CardWithGradient(
+//                 text:
+//                     '90° Rotation', // To get this degree ° use Shift + Option + 8
+//                 colors: [Colors.blue, Colors.purpleAccent],
 //               ),
-//             );
-//           },
+//             ),
+//             SizedBox(height: 20),
+//             // Rotated Card 2: Soft Gradient
+//             RotatedBox(
+//               quarterTurns: 2,
+//               child: CardWithGradient(
+//                 text:
+//                     '180° Rotation', // To get this degree ° use Shift + Option + 8
+//                 colors: [Colors.teal, Colors.greenAccent],
+//                 shadowColor: Colors.teal,
+//               ),
+//             ),
+//             SizedBox(height: 20),
+//             // Rotated Card 3: Bright Gradient
+//             RotatedBox(
+//               quarterTurns: 3,
+//               child: CardWithGradient(
+//                 text:
+//                     '270° Rotation', // To get this degree ° use Shift + Option + 8
+//                 colors: [Colors.orange, Colors.redAccent],
+//               ),
+//             ),
+//           ],
 //         ),
+//       ),
+//     );
+//   }
+// }
+
+// class CardWithGradient extends StatelessWidget {
+//   final String text;
+//   final List<Color> colors;
+//   final Color shadowColor;
+
+//   CardWithGradient({
+//     Key? key,
+//     required this.text,
+//     required this.colors,
+//     this.shadowColor = Colors.black,
+//   }) : super(key: key);
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Container(
+//       padding: const EdgeInsets.all(50),
+//       decoration: BoxDecoration(
+//         gradient: LinearGradient(
+//           colors: colors,
+//           begin: Alignment.topLeft,
+//           end: Alignment.bottomRight,
+//         ),
+//         borderRadius: BorderRadius.circular(20),
+//         boxShadow: [
+//           BoxShadow(
+//             color: shadowColor.withOpacity(0.5),
+//             blurRadius: 15,
+//             offset: const Offset(5, 5),
+//           ),
+//         ],
+//       ),
+//       child: Text(
+//         text,
+//         style: const TextStyle(
+//           color: Colors.black,
+//           fontSize: 20,
+//           fontWeight: FontWeight.bold,
+//         ),
+//         textAlign: TextAlign.center,
 //       ),
 //     );
 //   }

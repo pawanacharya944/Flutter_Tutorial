@@ -1,4 +1,4 @@
-import 'package:first_project/grid_tile.dart';
+import 'package:first_project/Widgets/curved.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: "Flutter Project",
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: MyGridTile(),
+      home: MyCurvedAnimation(),
     );
   }
 }
