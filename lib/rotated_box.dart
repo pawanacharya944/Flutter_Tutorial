@@ -56,12 +56,12 @@ class MyCard extends StatelessWidget {
   final List<Color> colors;
   final Color shadowColor;
 
-  MyCard({
-    Key? key,
+  const MyCard({
+    super.key,
     required this.text,
     required this.colors,
     this.shadowColor = Colors.black,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

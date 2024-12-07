@@ -493,314 +493,78 @@
 
 // import 'package:flutter/material.dart';
 
-// class RotatedBoxPage extends StatelessWidget {
-//   const RotatedBoxPage({Key? key}) : super(key: key);
+// class CheckboxExample extends StatefulWidget {
+//   @override
+//   _CheckboxExampleState createState() => _CheckboxExampleState();
+// }
+
+// class _CheckboxExampleState extends State<CheckboxExample> {
+//   bool isChecked = false; // Tracks the state of the checkbox.
 
 //   @override
 //   Widget build(BuildContext context) {
 //     return Scaffold(
 //       appBar: AppBar(
 //         title: const Text(
-//           "R o t a t e d B o x",
-//           style: TextStyle(fontSize: 26, color: Colors.white),
+//           'C h e c k b o x',
+//           style: TextStyle(fontSize: 26),
 //         ),
-//         backgroundColor: Colors.brown.shade300,
-//         centerTitle: true,
-//       ),
-//       body: const Center(
-//         child: Column(
-//           mainAxisAlignment: MainAxisAlignment.center,
-//           children: [
-//             // Rotated Card 1: Vibrant Gradient
-//             RotatedBox(
-//               quarterTurns: 1,
-//               child: CardWithGradient(
-//                 text:
-//                     '90° Rotation', // to get this degree ° use Shift + Option + 8
-//                 colors: [Colors.blue, Colors.purple],
-//               ),
-//             ),
-//             SizedBox(height: 20),
-//             // Rotated Card 2: Soft Gradient with Neumorphism
-//             RotatedBox(
-//               quarterTurns: 2,
-//               child: CardWithGradient(
-//                 text:
-//                     '180° Rotation', // to get this degree ° use Shift + Option + 8
-//                 colors: [Colors.teal, Colors.greenAccent],
-//                 shadowColor: Colors.teal,
-//               ),
-//             ),
-//             SizedBox(height: 20),
-//             // Rotated Card 3: Circular Gradient
-//             RotatedBox(
-//               quarterTurns: 3,
-//               child: CardWithGradient(
-//                 text:
-//                     '270° Rotation', // to get this degree ° use Shift + Option + 8
-//                 colors: [Colors.orange, Colors.redAccent],
-//                 isCircularGradient: true,
-//               ),
-//             ),
-//           ],
-//         ),
-//       ),
-//     );
-//   }
-// }
-
-// class CardWithGradient extends StatelessWidget {
-//   final String text;
-//   final List<Color> colors;
-//   final bool isCircularGradient;
-//   final Color shadowColor;
-
-//   const CardWithGradient({
-//     Key? key,
-//     required this.text,
-//     required this.colors,
-//     this.isCircularGradient = false,
-//     this.shadowColor = Colors.black,
-//   }) : super(key: key);
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Container(
-//       padding: const EdgeInsets.all(50),
-//       decoration: BoxDecoration(
-//         gradient: isCircularGradient
-//             ? RadialGradient(
-//                 colors: colors,
-//               )
-//             : LinearGradient(
-//                 colors: colors,
-//                 begin: Alignment.topLeft,
-//                 end: Alignment.bottomRight,
-//               ),
-//         borderRadius: BorderRadius.circular(20),
-//         boxShadow: [
-//           BoxShadow(
-//             color: shadowColor.withOpacity(0.5),
-//             blurRadius: 15,
-//             offset: const Offset(5, 5),
-//           ),
-//         ],
-//       ),
-//       child: Text(
-//         text,
-//         style: const TextStyle(
-//           color: Colors.white,
-//           fontSize: 20,
-//           fontWeight: FontWeight.bold,
-//         ),
-//         textAlign: TextAlign.center,
-//       ),
-//     );
-//   }
-// }
-
-// import 'package:flutter/material.dart';
-
-// class RotatedBoxPage extends StatelessWidget {
-//   const RotatedBoxPage({Key? key}) : super(key: key);
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(
-//         title: const Text(
-//           "R o t a t e d B o x",
-//           style: TextStyle(fontSize: 26, color: Colors.white),
-//         ),
-//         backgroundColor: Colors.brown.shade300,
-//         centerTitle: true,
 //       ),
 //       body: Center(
 //         child: Column(
 //           mainAxisAlignment: MainAxisAlignment.center,
 //           children: [
-//             // Rotated Card 1: Vibrant Gradient
-//             RotatedBox(
-//               quarterTurns: 1,
-//               child: CardWithGradient(
-//                 text:
-//                     '90° Rotation', // To get this degree ° use Shift + Option + 8
-//                 colors: [Colors.blue, Colors.purpleAccent],
-//               ),
-//             ),
-//             SizedBox(height: 20),
-//             // Rotated Card 2: Soft Gradient
-//             RotatedBox(
-//               quarterTurns: 2,
-//               child: CardWithGradient(
-//                 text:
-//                     '180° Rotation', // To get this degree ° use Shift + Option + 8
-//                 colors: [Colors.teal, Colors.greenAccent],
-//                 shadowColor: Colors.teal,
-//               ),
-//             ),
-//             SizedBox(height: 20),
-//             // Rotated Card 3: Bright Gradient
-//             RotatedBox(
-//               quarterTurns: 3,
-//               child: CardWithGradient(
-//                 text:
-//                     '270° Rotation', // To get this degree ° use Shift + Option + 8
-//                 colors: [Colors.orange, Colors.redAccent],
-//               ),
-//             ),
-//           ],
-//         ),
-//       ),
-//     );
-//   }
-// }
-
-// class CardWithGradient extends StatelessWidget {
-//   final String text;
-//   final List<Color> colors;
-//   final Color shadowColor;
-
-//   CardWithGradient({
-//     Key? key,
-//     required this.text,
-//     required this.colors,
-//     this.shadowColor = Colors.black,
-//   }) : super(key: key);
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Container(
-//       padding: const EdgeInsets.all(50),
-//       decoration: BoxDecoration(
-//         gradient: LinearGradient(
-//           colors: colors,
-//           begin: Alignment.topLeft,
-//           end: Alignment.bottomRight,
-//         ),
-//         borderRadius: BorderRadius.circular(20),
-//         boxShadow: [
-//           BoxShadow(
-//             color: shadowColor.withOpacity(0.5),
-//             blurRadius: 15,
-//             offset: const Offset(5, 5),
-//           ),
-//         ],
-//       ),
-//       child: Text(
-//         text,
-//         style: const TextStyle(
-//           color: Colors.black,
-//           fontSize: 20,
-//           fontWeight: FontWeight.bold,
-//         ),
-//         textAlign: TextAlign.center,
-//       ),
-//     );
-//   }
-// }
-
-// import 'package:flutter/material.dart';
-
-// class FlexDemo extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(
-//         title: Text('Flex'),
-//       ),
-//       body: Padding(
-//         padding: const EdgeInsets.all(16.0),
-//         child: Flex(
-//           direction: Axis.vertical,
-//           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-//           crossAxisAlignment: CrossAxisAlignment.stretch,
-//           textDirection: TextDirection.ltr,
-//           mainAxisSize: MainAxisSize.max,
-//           children: [
-//             Container(
-//               height: 100,
-//               decoration: BoxDecoration(
-//                 gradient: LinearGradient(
-//                     colors: [Colors.blue.shade300, Colors.green.shade300]),
-//                 borderRadius: BorderRadius.circular(16),
-//                 boxShadow: const [
-//                   BoxShadow(
-//                     color: Colors.black26,
-//                     blurRadius: 10,
-//                     offset: Offset(2, 4),
-//                   ),
-//                 ],
-//               ),
-//               child: const Center(
-//                 child: Text(
-//                   'Code',
-//                   style: TextStyle(
-//                     fontSize: 20,
-//                     color: Colors.black,
-//                     fontWeight: FontWeight.bold,
-//                   ),
-//                 ),
-//               ),
-//             ),
-//             Container(
-//               height: 100,
-//               decoration: BoxDecoration(
-//                 gradient: LinearGradient(
-//                   colors: [Colors.red.shade300, Colors.orange.shade300],
-//                 ),
-//                 borderRadius: BorderRadius.circular(16),
-//               ),
-//               child: const Center(
-//                 child: Text(
-//                   'Flicks',
-//                   style: TextStyle(
-//                     fontSize: 20,
-//                     color: Colors.black,
-//                     fontWeight: FontWeight.bold,
-//                   ),
-//                 ),
-//               ),
-//             ),
-//             const Flex(
-//               direction: Axis.horizontal,
-//               mainAxisAlignment: MainAxisAlignment.spaceAround,
+//             Row(
+//               mainAxisAlignment: MainAxisAlignment.center,
 //               children: [
-//                 CircleAvatar(
-//                   radius: 30,
-//                   backgroundColor: Colors.green,
-//                   child: Icon(Icons.thumb_up, color: Colors.white),
+//                 const Text(
+//                   'Accept Terms & Conditions:',
+//                   style: TextStyle(fontSize: 26),
 //                 ),
-//                 CircleAvatar(
-//                   radius: 30,
-//                   backgroundColor: Colors.red,
-//                   child: Icon(Icons.favorite, color: Colors.white),
-//                 ),
-//                 CircleAvatar(
-//                   radius: 30,
-//                   backgroundColor: Colors.orange,
-//                   child: Icon(Icons.comment, color: Colors.white),
+//                 Checkbox(
+//                   // Value determines if the checkbox is checked or unchecked.
+//                   value: isChecked,
+
+//                   // Triggers when the checkbox is tapped.
+//                   onChanged: (bool? value) {
+//                     setState(() {
+//                       isChecked = value ?? false;
+//                     });
+//                   },
+
+//                   // Controls the appearance when the checkbox is active.
+//                   activeColor: Colors.green,
+//                   checkColor: Colors.white,
+
+//                   // Controls the appearance when the checkbox is disabled.
+//                   fillColor: WidgetStateProperty.resolveWith((states) {
+//                     if (states.contains(WidgetState.disabled)) {
+//                       return Colors.grey; // Disabled state color.
+//                     }
+//                     return Colors.blue; // Normal state color.
+//                   }),
+
+//                   // Determines the shape of the checkbox.
+//                   shape: RoundedRectangleBorder(
+//                     borderRadius: BorderRadius.circular(5),
+//                   ),
+
+//                   // Adds a visual splash effect when tapped.
+//                   splashRadius: 20,
 //                 ),
 //               ],
 //             ),
-//             // Fourth child: A button for interactivity
-//             ElevatedButton(
-//               onPressed: () {
-//                 // Example button functionality
-//                 ScaffoldMessenger.of(context).showSnackBar(
-//                   const SnackBar(content: Text('You Subscribed Code Flicks')),
-//                 );
-//               },
-//               style: ElevatedButton.styleFrom(
-//                 backgroundColor: Colors.blueAccent,
-//                 padding: const EdgeInsets.symmetric(vertical: 16),
-//                 shape: RoundedRectangleBorder(
-//                   borderRadius: BorderRadius.circular(12),
-//                 ),
-//               ),
-//               child: const Text(
-//                 'Subscribe',
-//                 style: TextStyle(fontSize: 18, color: Colors.black),
+
+//             // Displaying the state of the checkbox.
+//             const SizedBox(height: 20),
+//             Text(
+//               isChecked
+//                   ? 'You agreed to the terms.'
+//                   : 'You must agree to proceed.',
+//               style: TextStyle(
+//                 fontSize: 18,
+//                 color: isChecked ? Colors.green : Colors.red,
+//                 fontWeight: FontWeight.bold,
 //               ),
 //             ),
 //           ],
