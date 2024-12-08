@@ -1,3 +1,4 @@
+import 'package:first_project/check_box.dart';
 import 'package:flutter/material.dart';
 
 import 'test.dart';
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: "Flutter Project",
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: ColorFilteredExample(),
+      home: MyCheckBox(),
     );
   }
 }

@@ -491,77 +491,77 @@
 //   ));
 // }
 
-import 'package:flutter/material.dart';
+// import 'package:flutter/material.dart';
 
-class ColorFilteredExample extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('ColorFiltered'),
-        backgroundColor: Colors.red.shade100,
-      ),
-      body: Container(
-        // Gradient background for the entire body
-        decoration: BoxDecoration(
-            gradient: LinearGradient(
-                colors: [Colors.red.shade100, Colors.blue.shade100],
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter)),
-        child: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Column(
-            children: [
-              // Original Image Section
-              Expanded(
-                child: Column(
-                  children: [
-                    const Text(
-                      'Original Image',
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
-                      ),
-                    ),
-                    const SizedBox(height: 8),
-                    Image.asset('images/top.jpg'),
-                  ],
-                ),
-              ),
-              const Divider(
-                height: 32,
-                thickness: 2,
-                color: Colors.white,
-              ),
-              // Filtered Image Section
-              Expanded(
-                child: Column(
-                  children: [
-                    const Text(
-                      'Filtered Image',
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
-                      ),
-                    ),
-                    const SizedBox(height: 8),
-                    ColorFiltered(
-                      // Applies a color filter using Color and BlendMode
-                      colorFilter: ColorFilter.mode(
-                        Colors.indigo.withOpacity(0.5),
-                        BlendMode.softLight, // Try different blend modes
-                      ),
-                      child: Image.asset('images/top.jpg'),
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
+// class ColorFilteredExample extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: const Text('ColorFiltered'),
+//         backgroundColor: Colors.red.shade100,
+//       ),
+//       body: Container(
+//         // Gradient background for the entire body
+//         decoration: BoxDecoration(
+//             gradient: LinearGradient(
+//                 colors: [Colors.red.shade100, Colors.blue.shade100],
+//                 begin: Alignment.topCenter,
+//                 end: Alignment.bottomCenter)),
+//         child: Padding(
+//           padding: const EdgeInsets.all(16.0),
+//           child: Column(
+//             children: [
+//               // Original Image Section
+//               Expanded(
+//                 child: Column(
+//                   children: [
+//                     const Text(
+//                       'Original Image',
+//                       style: TextStyle(
+//                         fontSize: 16,
+//                         fontWeight: FontWeight.bold,
+//                         color: Colors.black,
+//                       ),
+//                     ),
+//                     const SizedBox(height: 8),
+//                     Image.asset('images/top.jpg'),
+//                   ],
+//                 ),
+//               ),
+//               const Divider(
+//                 height: 32,
+//                 thickness: 2,
+//                 color: Colors.white,
+//               ),
+//               // Filtered Image Section
+//               Expanded(
+//                 child: Column(
+//                   children: [
+//                     const Text(
+//                       'Filtered Image',
+//                       style: TextStyle(
+//                         fontSize: 16,
+//                         fontWeight: FontWeight.bold,
+//                         color: Colors.black,
+//                       ),
+//                     ),
+//                     const SizedBox(height: 8),
+//                     ColorFiltered(
+//                       // Applies a color filter using Color and BlendMode
+//                       colorFilter: ColorFilter.mode(
+//                         Colors.indigo.withOpacity(0.5),
+//                         BlendMode.softLight, // Try different blend modes
+//                       ),
+//                       child: Image.asset('images/top.jpg'),
+//                     ),
+//                   ],
+//                 ),
+//               ),
+//             ],
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
