@@ -13,7 +13,7 @@ class MyRotatedBox extends StatelessWidget {
         ),
         backgroundColor: Colors.brown.shade300,
       ),
-      body: Center(
+      body: const Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -21,20 +21,20 @@ class MyRotatedBox extends StatelessWidget {
               quarterTurns: 1,
               child: MyCard(
                   text: '90° Rotation',
-                  colors: const [Colors.blue, Colors.purpleAccent]),
+                  colors: [Colors.blue, Colors.purpleAccent]),
             ),
 
-            const SizedBox(height: 20),
+            SizedBox(height: 20),
 
             // another rotatedCard
             RotatedBox(
               quarterTurns: 2,
               child: MyCard(
                   text: '180° Rotation',
-                  colors: const [Colors.teal, Colors.greenAccent]),
+                  colors: [Colors.teal, Colors.greenAccent]),
             ),
 
-            const SizedBox(height: 20),
+            SizedBox(height: 20),
 
             // another rotatedCard
 
@@ -42,7 +42,7 @@ class MyRotatedBox extends StatelessWidget {
               quarterTurns: 3,
               child: MyCard(
                   text: '270° Rotation',
-                  colors: const [Colors.orange, Colors.redAccent]),
+                  colors: [Colors.orange, Colors.redAccent]),
             )
           ],
         ),

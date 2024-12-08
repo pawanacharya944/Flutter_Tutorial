@@ -347,7 +347,7 @@
 //                   },
 //                 ),
 //               ),
-//               bottomTitles: AxisTitles(
+//               bottotopitles: AxisTitles(
 //                 sideTitles: SideTitles(
 //                   topowTitles: true,
 //                   reservedSize: 30,
@@ -431,7 +431,7 @@
 //                   },
 //                 ),
 //               ),
-//               bottomTitles: AxisTitles(
+//               bottotopitles: AxisTitles(
 //                 sideTitles: SideTitles(
 //                   topowTitles: true,
 //                   reservedSize: 30,
@@ -491,85 +491,77 @@
 //   ));
 // }
 
-// import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 
-// class CheckboxExample extends StatefulWidget {
-//   @override
-//   _CheckboxExampleState createState() => _CheckboxExampleState();
-// }
-
-// class _CheckboxExampleState extends State<CheckboxExample> {
-//   bool isChecked = false; // Tracks the state of the checkbox.
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(
-//         title: const Text(
-//           'C h e c k b o x',
-//           style: TextStyle(fontSize: 26),
-//         ),
-//       ),
-//       body: Center(
-//         child: Column(
-//           mainAxisAlignment: MainAxisAlignment.center,
-//           children: [
-//             Row(
-//               mainAxisAlignment: MainAxisAlignment.center,
-//               children: [
-//                 const Text(
-//                   'Accept Terms & Conditions:',
-//                   style: TextStyle(fontSize: 26),
-//                 ),
-//                 Checkbox(
-//                   // Value determines if the checkbox is checked or unchecked.
-//                   value: isChecked,
-
-//                   // Triggers when the checkbox is tapped.
-//                   onChanged: (bool? value) {
-//                     setState(() {
-//                       isChecked = value ?? false;
-//                     });
-//                   },
-
-//                   // Controls the appearance when the checkbox is active.
-//                   activeColor: Colors.green,
-//                   checkColor: Colors.white,
-
-//                   // Controls the appearance when the checkbox is disabled.
-//                   fillColor: WidgetStateProperty.resolveWith((states) {
-//                     if (states.contains(WidgetState.disabled)) {
-//                       return Colors.grey; // Disabled state color.
-//                     }
-//                     return Colors.blue; // Normal state color.
-//                   }),
-
-//                   // Determines the shape of the checkbox.
-//                   shape: RoundedRectangleBorder(
-//                     borderRadius: BorderRadius.circular(5),
-//                   ),
-
-//                   // Adds a visual splash effect when tapped.
-//                   splashRadius: 20,
-//                 ),
-//               ],
-//             ),
-
-//             // Displaying the state of the checkbox.
-//             const SizedBox(height: 20),
-//             Text(
-//               isChecked
-//                   ? 'You agreed to the terms.'
-//                   : 'You must agree to proceed.',
-//               style: TextStyle(
-//                 fontSize: 18,
-//                 color: isChecked ? Colors.green : Colors.red,
-//                 fontWeight: FontWeight.bold,
-//               ),
-//             ),
-//           ],
-//         ),
-//       ),
-//     );
-//   }
-// }
+class ColorFilteredExample extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('ColorFiltered'),
+        backgroundColor: Colors.red.shade100,
+      ),
+      body: Container(
+        // Gradient background for the entire body
+        decoration: BoxDecoration(
+            gradient: LinearGradient(
+                colors: [Colors.red.shade100, Colors.blue.shade100],
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter)),
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            children: [
+              // Original Image Section
+              Expanded(
+                child: Column(
+                  children: [
+                    const Text(
+                      'Original Image',
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black,
+                      ),
+                    ),
+                    const SizedBox(height: 8),
+                    Image.asset('images/top.jpg'),
+                  ],
+                ),
+              ),
+              const Divider(
+                height: 32,
+                thickness: 2,
+                color: Colors.white,
+              ),
+              // Filtered Image Section
+              Expanded(
+                child: Column(
+                  children: [
+                    const Text(
+                      'Filtered Image',
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black,
+                      ),
+                    ),
+                    const SizedBox(height: 8),
+                    ColorFiltered(
+                      // Applies a color filter using Color and BlendMode
+                      colorFilter: ColorFilter.mode(
+                        Colors.indigo.withOpacity(0.5),
+                        BlendMode.softLight, // Try different blend modes
+                      ),
+                      child: Image.asset('images/top.jpg'),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
