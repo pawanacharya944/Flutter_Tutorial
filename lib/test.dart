@@ -493,72 +493,83 @@
 
 // import 'package:flutter/material.dart';
 
-// class ColorFilteredExample extends StatelessWidget {
+// class ConstrainedBoxExample extends StatelessWidget {
+//   const ConstrainedBoxExample({Key? key}) : super(key: key);
+
 //   @override
 //   Widget build(BuildContext context) {
 //     return Scaffold(
 //       appBar: AppBar(
-//         title: const Text('ColorFiltered'),
-//         backgroundColor: Colors.red.shade100,
+//         title: const Text('ConstrainedBox Example'),
+//         backgroundColor: Colors.teal.shade100,
 //       ),
 //       body: Container(
-//         // Gradient background for the entire body
+//         // Add a background gradient for the entire screen
 //         decoration: BoxDecoration(
-//             gradient: LinearGradient(
-//                 colors: [Colors.red.shade100, Colors.blue.shade100],
-//                 begin: Alignment.topCenter,
-//                 end: Alignment.bottomCenter)),
-//         child: Padding(
-//           padding: const EdgeInsets.all(16.0),
-//           child: Column(
-//             children: [
-//               // Original Image Section
-//               Expanded(
-//                 child: Column(
-//                   children: [
-//                     const Text(
-//                       'Original Image',
-//                       style: TextStyle(
-//                         fontSize: 16,
-//                         fontWeight: FontWeight.bold,
-//                         color: Colors.black,
-//                       ),
-//                     ),
-//                     const SizedBox(height: 8),
-//                     Image.asset('images/top.jpg'),
-//                   ],
-//                 ),
-//               ),
-//               const Divider(
-//                 height: 32,
-//                 thickness: 2,
-//                 color: Colors.white,
-//               ),
-//               // Filtered Image Section
-//               Expanded(
-//                 child: Column(
-//                   children: [
-//                     const Text(
-//                       'Filtered Image',
-//                       style: TextStyle(
-//                         fontSize: 16,
-//                         fontWeight: FontWeight.bold,
-//                         color: Colors.black,
-//                       ),
-//                     ),
-//                     const SizedBox(height: 8),
-//                     ColorFiltered(
-//                       // Applies a color filter using Color and BlendMode
-//                       colorFilter: ColorFilter.mode(
-//                         Colors.indigo.withOpacity(0.5),
-//                         BlendMode.softLight, // Try different blend modes
-//                       ),
-//                       child: Image.asset('images/top.jpg'),
-//                     ),
-//                   ],
-//                 ),
-//               ),
+//           gradient: LinearGradient(
+//             colors: [
+//               Colors.teal.shade100,
+//               Colors.green.shade100,
 //             ],
+//             begin: Alignment.topCenter,
+//             end: Alignment.bottomCenter,
+//           ),
+//         ),
+//         child: Center(
+//           child: ConstrainedBox(
+//             // Maximum properties used here to define constraints
+//             constraints: const BoxConstraints(
+//               minWidth: 200, // Minimum width of the box
+//               maxWidth: 350, // Maximum width of the box
+//               minHeight: 150, // Minimum height of the box
+//               maxHeight: 250, // Maximum height of the box
+//             ),
+//             child: Container(
+//               padding: const EdgeInsets.all(16), // Add padding inside the box
+//               decoration: BoxDecoration(
+//                 // Create a card-like appearance
+//                 color: Colors.white,
+//                 borderRadius: BorderRadius.circular(20),
+//                 boxShadow: [
+//                   BoxShadow(
+//                     color: Colors.black.withOpacity(0.3),
+//                     blurRadius: 15,
+//                     offset: const Offset(5, 5),
+//                   ),
+//                 ],
+//               ),
+//               child: const Column(
+//                 mainAxisAlignment: MainAxisAlignment.center,
+//                 crossAxisAlignment: CrossAxisAlignment.center,
+//                 children: [
+//                   // Add an icon for better visuals
+//                   Icon(
+//                     Icons.widgets,
+//                     size: 50,
+//                     color: Colors.deepPurple,
+//                   ),
+//                   SizedBox(height: 16), // Add spacing between icon and text
+//                   Text(
+//                     'Welcome to Code Flicks!',
+//                     style: TextStyle(
+//                       fontSize: 20,
+//                       fontWeight: FontWeight.bold,
+//                       color: Colors.black87,
+//                     ),
+//                     textAlign: TextAlign.center,
+//                   ),
+//                   SizedBox(height: 8),
+//                   Text(
+//                     'Learn coding, Flutter tips, and clean UI design to create amazing apps.',
+//                     style: TextStyle(
+//                       fontSize: 15,
+//                       color: Colors.black54,
+//                     ),
+//                     textAlign: TextAlign.center,
+//                   ),
+//                 ],
+//               ),
+//             ),
 //           ),
 //         ),
 //       ),
