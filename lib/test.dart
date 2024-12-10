@@ -491,88 +491,73 @@
 //   ));
 // }
 
-// import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 
-// class ConstrainedBoxExample extends StatelessWidget {
-//   const ConstrainedBoxExample({Key? key}) : super(key: key);
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(
-//         title: const Text('ConstrainedBox Example'),
-//         backgroundColor: Colors.teal.shade100,
-//       ),
-//       body: Container(
-//         // Add a background gradient for the entire screen
-//         decoration: BoxDecoration(
-//           gradient: LinearGradient(
-//             colors: [
-//               Colors.teal.shade100,
-//               Colors.green.shade100,
-//             ],
-//             begin: Alignment.topCenter,
-//             end: Alignment.bottomCenter,
-//           ),
-//         ),
-//         child: Center(
-//           child: ConstrainedBox(
-//             // Maximum properties used here to define constraints
-//             constraints: const BoxConstraints(
-//               minWidth: 200, // Minimum width of the box
-//               maxWidth: 350, // Maximum width of the box
-//               minHeight: 150, // Minimum height of the box
-//               maxHeight: 250, // Maximum height of the box
-//             ),
-//             child: Container(
-//               padding: const EdgeInsets.all(16), // Add padding inside the box
-//               decoration: BoxDecoration(
-//                 // Create a card-like appearance
-//                 color: Colors.white,
-//                 borderRadius: BorderRadius.circular(20),
-//                 boxShadow: [
-//                   BoxShadow(
-//                     color: Colors.black.withOpacity(0.3),
-//                     blurRadius: 15,
-//                     offset: const Offset(5, 5),
-//                   ),
-//                 ],
-//               ),
-//               child: const Column(
-//                 mainAxisAlignment: MainAxisAlignment.center,
-//                 crossAxisAlignment: CrossAxisAlignment.center,
-//                 children: [
-//                   // Add an icon for better visuals
-//                   Icon(
-//                     Icons.widgets,
-//                     size: 50,
-//                     color: Colors.deepPurple,
-//                   ),
-//                   SizedBox(height: 16), // Add spacing between icon and text
-//                   Text(
-//                     'Welcome to Code Flicks!',
-//                     style: TextStyle(
-//                       fontSize: 20,
-//                       fontWeight: FontWeight.bold,
-//                       color: Colors.black87,
-//                     ),
-//                     textAlign: TextAlign.center,
-//                   ),
-//                   SizedBox(height: 8),
-//                   Text(
-//                     'Learn coding, Flutter tips, and clean UI design to create amazing apps.',
-//                     style: TextStyle(
-//                       fontSize: 15,
-//                       color: Colors.black54,
-//                     ),
-//                     textAlign: TextAlign.center,
-//                   ),
-//                 ],
-//               ),
-//             ),
-//           ),
-//         ),
-//       ),
-//     );
-//   }
-// }
+class BaselineExample extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('B a s e l i n e'),
+        backgroundColor: Colors.indigo.shade200,
+      ),
+      body: Center(
+        child: Container(
+          padding: const EdgeInsets.all(16),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              // First Baseline widget for Text with a specific baseline alignment
+              const Baseline(
+                baseline: 50.0, // Baseline position for the text
+                baselineType:
+                    TextBaseline.alphabetic, // Aligning text alphabetically
+                child: Text(
+                  'Code',
+                  style: TextStyle(
+                    fontSize: 40,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.brown,
+                  ),
+                ),
+              ),
+              const SizedBox(width: 10),
+              // Second Baseline widget for another text with different styling
+              const Baseline(
+                baseline: 50.0,
+                baselineType: TextBaseline.alphabetic,
+                child: Text(
+                  'Flicks',
+                  style: TextStyle(
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.teal,
+                  ),
+                ),
+              ),
+              const SizedBox(width: 20),
+              // Third Baseline widget for a button, demonstrating alignment with baseline
+              Baseline(
+                baseline: 50.0,
+                baselineType: TextBaseline.alphabetic,
+                child: ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.red, // Button color
+                  ),
+                  child: const Text(
+                    'Subscribe',
+                    style: TextStyle(
+                        fontSize: 18,
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
