@@ -490,74 +490,67 @@
 //     home: EnhancedLineChartSample(),
 //   ));
 // }
+// import 'package:flutter/material.dart';
 
-import 'package:flutter/material.dart';
+// class AbsorbPointerDemo extends StatefulWidget {
+//   @override
+//   _AbsorbPointerDemoState createState() => _AbsorbPointerDemoState();
+// }
 
-class BaselineExample extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('B a s e l i n e'),
-        backgroundColor: Colors.indigo.shade200,
-      ),
-      body: Center(
-        child: Container(
-          padding: const EdgeInsets.all(16),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              // First Baseline widget for Text with a specific baseline alignment
-              const Baseline(
-                baseline: 50.0, // Baseline position for the text
-                baselineType:
-                    TextBaseline.alphabetic, // Aligning text alphabetically
-                child: Text(
-                  'Code',
-                  style: TextStyle(
-                    fontSize: 40,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.brown,
-                  ),
-                ),
-              ),
-              const SizedBox(width: 10),
-              // Second Baseline widget for another text with different styling
-              const Baseline(
-                baseline: 50.0,
-                baselineType: TextBaseline.alphabetic,
-                child: Text(
-                  'Flicks',
-                  style: TextStyle(
-                    fontSize: 30,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.teal,
-                  ),
-                ),
-              ),
-              const SizedBox(width: 20),
-              // Third Baseline widget for a button, demonstrating alignment with baseline
-              Baseline(
-                baseline: 50.0,
-                baselineType: TextBaseline.alphabetic,
-                child: ElevatedButton(
-                  onPressed: () {},
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.red, // Button color
-                  ),
-                  child: const Text(
-                    'Subscribe',
-                    style: TextStyle(
-                        fontSize: 18,
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold),
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
+// class _AbsorbPointerDemoState extends State<AbsorbPointerDemo> {
+//   bool _isAbsorbing = true; // Controls the AbsorbPointer behavior
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: const Text('A b s o r b P o i n t e r'),
+//         backgroundColor: Colors.blue.shade200,
+//       ),
+//       body: Container(
+//         decoration: BoxDecoration(
+//             gradient: LinearGradient(
+//                 colors: [Colors.blue.shade200, Colors.teal.shade200],
+//                 begin: Alignment.topCenter,
+//                 end: Alignment.bottomCenter)),
+//         child: Column(
+//           mainAxisAlignment: MainAxisAlignment.center,
+//           children: [
+//             AbsorbPointer(
+//               absorbing: _isAbsorbing, // Enables or disables pointer events
+//               child: Opacity(
+//                 opacity: _isAbsorbing ? 0.5 : 1.0, // Visual feedback
+//                 child: ElevatedButton(
+//                   onPressed: () {
+//                     // Action for the button
+//                     ScaffoldMessenger.of(context).showSnackBar(
+//                       const SnackBar(content: Text('Button Pressed!')),
+//                     );
+//                   },
+//                   child: const Text(
+//                     'Tap Me',
+//                     style: TextStyle(fontSize: 18),
+//                   ),
+//                 ),
+//               ),
+//             ),
+//             const SizedBox(height: 20),
+//             SwitchListTile(
+//               activeColor: Colors.green.shade700,
+//               title: const Text(
+//                 'Enable Button Interaction',
+//                 style: TextStyle(fontSize: 18),
+//               ),
+//               value: !_isAbsorbing,
+//               onChanged: (bool value) {
+//                 setState(() {
+//                   _isAbsorbing = !value;
+//                 });
+//               },
+//             ),
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+// }
