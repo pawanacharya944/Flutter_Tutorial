@@ -490,63 +490,130 @@
 //     home: EnhancedLineChartSample(),
 //   ));
 // }
+
+
 // import 'package:flutter/material.dart';
 
-// class AbsorbPointerDemo extends StatefulWidget {
+// class IgnorePointerDemo extends StatefulWidget {
 //   @override
-//   _AbsorbPointerDemoState createState() => _AbsorbPointerDemoState();
+//   _IgnorePointerDemoState createState() => _IgnorePointerDemoState();
 // }
 
-// class _AbsorbPointerDemoState extends State<AbsorbPointerDemo> {
-//   bool _isAbsorbing = true; // Controls the AbsorbPointer behavior
+// class _IgnorePointerDemoState extends State<IgnorePointerDemo> {
+//   // Variable to toggle IgnorePointer
+//   bool _ignoreInteractions = false;
+
+//   // Variable to track slider value
+//   double _sliderValue = 0.5;
 
 //   @override
 //   Widget build(BuildContext context) {
 //     return Scaffold(
 //       appBar: AppBar(
-//         title: const Text('A b s o r b P o i n t e r'),
+//         title: const Text(
+//           'I g n o r e P o i n t e r',
+//           style: TextStyle(fontSize: 26),
+//         ),
 //         backgroundColor: Colors.blue.shade200,
 //       ),
 //       body: Container(
 //         decoration: BoxDecoration(
-//             gradient: LinearGradient(
-//                 colors: [Colors.blue.shade200, Colors.teal.shade200],
-//                 begin: Alignment.topCenter,
-//                 end: Alignment.bottomCenter)),
+//           gradient: LinearGradient(
+//             colors: [Colors.blue.shade200, Colors.teal.shade200],
+//             begin: Alignment.topCenter,
+//             end: Alignment.bottomCenter,
+//           ),
+//         ),
 //         child: Column(
 //           mainAxisAlignment: MainAxisAlignment.center,
+//           crossAxisAlignment: CrossAxisAlignment.center,
 //           children: [
-//             AbsorbPointer(
-//               absorbing: _isAbsorbing, // Enables or disables pointer events
-//               child: Opacity(
-//                 opacity: _isAbsorbing ? 0.5 : 1.0, // Visual feedback
-//                 child: ElevatedButton(
-//                   onPressed: () {
-//                     // Action for the button
-//                     ScaffoldMessenger.of(context).showSnackBar(
-//                       const SnackBar(content: Text('Button Pressed!')),
-//                     );
-//                   },
-//                   child: const Text(
-//                     'Tap Me',
-//                     style: TextStyle(fontSize: 18),
-//                   ),
+//             // Toggle to enable or disable IgnorePointer
+//             SwitchListTile(
+//               title: const Text(
+//                 'Ignore User Interactions',
+//                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+//               ),
+//               value: _ignoreInteractions,
+//               onChanged: (bool value) {
+//                 setState(() {
+//                   _ignoreInteractions = value;
+//                 });
+//               },
+//             ),
+//             const SizedBox(height: 40),
+
+//             // Area affected by IgnorePointer
+//             IgnorePointer(
+//               ignoring: _ignoreInteractions, // Controls interaction
+//               child: ExcludeSemantics(
+//                 excluding:
+//                     _ignoreInteractions, // Screen readers are also disabled when true
+//                 child: Column(
+//                   children: [
+//                     // Button 1
+//                     ElevatedButton(
+//                       onPressed: () {
+//                         // Button functionality
+//                         ScaffoldMessenger.of(context).showSnackBar(
+//                           const SnackBar(
+//                             content: Text('Button 1 Pressed'),
+//                           ),
+//                         );
+//                       },
+//                       child: const Text(
+//                         'Button 1',
+//                         style: TextStyle(fontSize: 18),
+//                       ),
+//                     ),
+
+//                     const SizedBox(height: 20),
+
+//                     // Button 2
+//                     ElevatedButton(
+//                       onPressed: () {
+//                         // Button functionality
+//                         ScaffoldMessenger.of(context).showSnackBar(
+//                           const SnackBar(
+//                             content: Text('Button 2 Pressed'),
+//                           ),
+//                         );
+//                       },
+//                       child: const Text(
+//                         'Button 2',
+//                         style: TextStyle(fontSize: 18),
+//                       ),
+//                     ),
+
+//                     const SizedBox(height: 30),
+
+//                     // Slider
+//                     Slider(
+//                       value: _sliderValue,
+//                       activeColor: Colors.green.shade600,
+//                       inactiveColor: Colors.brown.shade300,
+//                       onChanged: (double value) {
+//                         setState(() {
+//                           _sliderValue = value;
+//                         });
+//                       },
+//                     ),
+//                   ],
 //                 ),
 //               ),
 //             ),
-//             const SizedBox(height: 20),
-//             SwitchListTile(
-//               activeColor: Colors.green.shade700,
-//               title: const Text(
-//                 'Enable Button Interaction',
-//                 style: TextStyle(fontSize: 18),
+
+//             const SizedBox(height: 50),
+
+//             // Indicator for user
+//             Text(
+//               _ignoreInteractions
+//                   ? 'Interactions are Disabled'
+//                   : 'Interactions are Enabled',
+//               style: const TextStyle(
+//                 fontSize: 20,
+//                 fontWeight: FontWeight.bold,
 //               ),
-//               value: !_isAbsorbing,
-//               onChanged: (bool value) {
-//                 setState(() {
-//                   _isAbsorbing = !value;
-//                 });
-//               },
 //             ),
 //           ],
 //         ),

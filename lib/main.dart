@@ -1,4 +1,4 @@
-import 'package:first_project/Widgets/baseline.dart';
+import 'package:first_project/absorb_pointer.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: "Flutter Project",
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: MyBaseline(),
+      home: const MyAbsorbPointer(),
     );
   }
 }

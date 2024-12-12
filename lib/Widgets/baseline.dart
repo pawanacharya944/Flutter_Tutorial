@@ -19,7 +19,7 @@ class MyBaseline extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              BottomAppBar(),
+              const BottomAppBar(),
               const Baseline(
                 baseline: 10,
                 baselineType: TextBaseline.alphabetic,
