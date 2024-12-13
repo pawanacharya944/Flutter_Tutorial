@@ -491,7 +491,6 @@
 //   ));
 // }
 
-
 // import 'package:flutter/material.dart';
 
 // class IgnorePointerDemo extends StatefulWidget {
@@ -615,6 +614,80 @@
 //                 fontWeight: FontWeight.bold,
 //               ),
 //             ),
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// import 'package:flutter/material.dart';
+
+// class SpacerDemo extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: const Text('Flutter Spacer Widget'),
+//         backgroundColor: Colors.teal.shade200,
+//       ),
+//       body: Center(
+//         child: Column(
+//           crossAxisAlignment: CrossAxisAlignment.center,
+//           children: [
+//             // Top widget: A rounded icon
+//             Padding(
+//               padding: const EdgeInsets.only(top: 20.0),
+//               child: CircleAvatar(
+//                 radius: 30,
+//                 backgroundColor: Colors.teal.shade200,
+//                 child: const Icon(
+//                   Icons.star,
+//                   size: 30,
+//                   color: Colors.white,
+//                 ),
+//               ),
+//             ),
+
+//             // Spacer to add flexible space
+//             const Spacer(flex: 1),
+
+//             // Middle widget: A styled text label
+//             Text(
+//               'Subscribe to Code Flicks',
+//               style: TextStyle(
+//                 fontSize: 22,
+//                 fontWeight: FontWeight.bold,
+//                 color: Colors.teal.shade600,
+//               ),
+//             ),
+
+//             // Spacer to add more flexible space
+//             const Spacer(flex: 2),
+
+//             // Bottom widget: A decorative button
+//             ElevatedButton(
+//               onPressed: () {},
+//               style: ElevatedButton.styleFrom(
+//                 backgroundColor: Colors.teal.shade300,
+//                 padding:
+//                     const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+//                 shape: RoundedRectangleBorder(
+//                   borderRadius: BorderRadius.circular(20),
+//                 ),
+//               ),
+//               child: const Text(
+//                 'Click Me',
+//                 style: TextStyle(
+//                   fontSize: 18,
+//                   fontWeight: FontWeight.w500,
+//                   color: Colors.white,
+//                 ),
+//               ),
+//             ),
+
+//             // Final Spacer to push content upwards
+//             const Spacer(flex: 3),
 //           ],
 //         ),
 //       ),
