@@ -1,4 +1,4 @@
-import 'package:first_project/Widgets/ignore_pointer.dart';
+import 'package:first_project/spacer.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: "Flutter Project",
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: MyIgnorePointer(),
+      home: MySpacer(),
     );
   }
 }
