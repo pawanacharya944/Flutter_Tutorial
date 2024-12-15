@@ -578,3 +578,94 @@
 //     );
 //   }
 // }
+
+import 'package:flutter/material.dart';
+
+class MyUi extends StatelessWidget {
+  const MyUi({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      extendBodyBehindAppBar: true,
+      appBar: AppBar(
+        title: const Text(
+          "P o s i t i o n e d",
+          style: TextStyle(
+            fontSize: 28,
+          ),
+        ),
+        backgroundColor: Colors.transparent,
+      ),
+      body: Stack(
+        children: [
+          // Background Image
+          Positioned.fill(
+            child: Image.asset(
+              'images/sky.jpg', // Make sure to add your image in assets
+              fit: BoxFit.cover,
+            ),
+          ),
+
+          // Text at the top
+          Positioned(
+            top: 200,
+            left: 70,
+            child: Text(
+              'Welcome to Flutter!',
+              style: TextStyle(
+                fontSize: 28,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+                shadows: [
+                  Shadow(
+                    blurRadius: 10,
+                    color: Colors.black.withOpacity(0.5),
+                    offset: Offset(3, 3),
+                  ),
+                ],
+              ),
+            ),
+          ),
+
+          // Centered Button
+          Positioned(
+            bottom: 150,
+            left: 50,
+            right: 50,
+            child: ElevatedButton(
+              onPressed: () {},
+              style: ButtonStyle(
+                backgroundColor: WidgetStateProperty.all(Colors.orangeAccent),
+                shape: WidgetStateProperty.all(RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(30),
+                )),
+                padding: WidgetStateProperty.all(
+                  const EdgeInsets.symmetric(vertical: 16),
+                ),
+              ),
+              child: const Text(
+                'Get Started',
+                style: TextStyle(fontSize: 24, color: Colors.black),
+              ),
+            ),
+          ),
+
+          // Floating Action Button
+          Positioned(
+            bottom: 30,
+            right: 20,
+            child: FloatingActionButton(
+              onPressed: () {},
+              backgroundColor: Colors.indigoAccent,
+              child: const Icon(
+                Icons.add,
+                color: Colors.white,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
