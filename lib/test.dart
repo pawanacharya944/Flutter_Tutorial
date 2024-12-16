@@ -581,90 +581,77 @@
 
 import 'package:flutter/material.dart';
 
-class MyUi extends StatelessWidget {
-  const MyUi({Key? key}) : super(key: key);
-
+class SingleChildScrollViewExample extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      extendBodyBehindAppBar: true,
       appBar: AppBar(
         title: const Text(
-          "P o s i t i o n e d",
-          style: TextStyle(
-            fontSize: 28,
-          ),
+          'S i n g l e C h i l d S c r o l l V i e w',
+          style: TextStyle(fontSize: 24),
         ),
-        backgroundColor: Colors.transparent,
+        backgroundColor: Colors.teal.shade200,
       ),
-      body: Stack(
-        children: [
-          // Background Image
-          Positioned.fill(
-            child: Image.asset(
-              'images/sky.jpg', // Make sure to add your image in assets
-              fit: BoxFit.cover,
-            ),
-          ),
-
-          // Text at the top
-          Positioned(
-            top: 200,
-            left: 70,
-            child: Text(
-              'Welcome to Flutter!',
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.all(16.0),
+        physics: const BouncingScrollPhysics(),
+        reverse: false,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text(
+              'Discover Flutter Scrollable UI',
               style: TextStyle(
-                fontSize: 28,
+                fontSize: 24,
                 fontWeight: FontWeight.bold,
-                color: Colors.white,
-                shadows: [
-                  Shadow(
-                    blurRadius: 10,
-                    color: Colors.black.withOpacity(0.5),
-                    offset: Offset(3, 3),
+                color: Colors.indigo,
+              ),
+            ),
+            const SizedBox(height: 16),
+            for (int i = 1; i <= 20; i++)
+              Card(
+                margin: const EdgeInsets.only(bottom: 16.0),
+                elevation: 4,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: ListTile(
+                  leading: CircleAvatar(
+                    backgroundColor: Colors.teal.shade400,
+                    child: const Icon(Icons.book, color: Colors.white),
+                  ),
+                  title: Text('Flutter Topic $i'),
+                  subtitle: Text('Detailed explanation of topic $i.'),
+                  trailing: const Icon(Icons.arrow_forward_ios,
+                      color: Colors.blueGrey),
+                ),
+              ),
+            Container(
+              padding: const EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: Colors.teal.shade100,
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: Column(
+                children: [
+                  Text(
+                    'End of Topics',
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.teal.shade800,
+                    ),
+                  ),
+                  const SizedBox(height: 8),
+                  Text(
+                    'Thank you for scrolling through this tutorial!',
+                    style: TextStyle(color: Colors.teal.shade600, fontSize: 18),
                   ),
                 ],
               ),
             ),
-          ),
-
-          // Centered Button
-          Positioned(
-            bottom: 150,
-            left: 50,
-            right: 50,
-            child: ElevatedButton(
-              onPressed: () {},
-              style: ButtonStyle(
-                backgroundColor: WidgetStateProperty.all(Colors.orangeAccent),
-                shape: WidgetStateProperty.all(RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30),
-                )),
-                padding: WidgetStateProperty.all(
-                  const EdgeInsets.symmetric(vertical: 16),
-                ),
-              ),
-              child: const Text(
-                'Get Started',
-                style: TextStyle(fontSize: 24, color: Colors.black),
-              ),
-            ),
-          ),
-
-          // Floating Action Button
-          Positioned(
-            bottom: 30,
-            right: 20,
-            child: FloatingActionButton(
-              onPressed: () {},
-              backgroundColor: Colors.indigoAccent,
-              child: const Icon(
-                Icons.add,
-                color: Colors.white,
-              ),
-            ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
