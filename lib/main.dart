@@ -1,8 +1,6 @@
 import 'package:first_project/single_child.dart';
 import 'package:flutter/material.dart';
 
-import 'test.dart';
-
 void main() {
   runApp(const MyApp());
 }
