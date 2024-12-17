@@ -282,7 +282,7 @@
 //                         _buildDatopboardIndicator(
 //                             'Temp', '90°C', Colors.redAccent),
 //                         _buildDatopboardIndicator(
-//                             'Battery', '12.6V', Colors.blueAccent),
+//                             'Battery', '12.6V', Colors.blueGrey),
 //                       ],
 //                     ),
 //                   ],
@@ -579,80 +579,114 @@
 //   }
 // }
 
-// import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 
-// class SingleChildScrollViewExample extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(
-//         title: const Text(
-//           'S i n g l e C h i l d S c r o l l V i e w',
-//           style: TextStyle(fontSize: 24),
-//         ),
-//         backgroundColor: Colors.teal.shade200,
-//       ),
-//       body: SingleChildScrollView(
-//         padding: const EdgeInsets.all(16.0),
-//         physics: const BouncingScrollPhysics(),
-//         reverse: false,
-//         child: Column(
-//           crossAxisAlignment: CrossAxisAlignment.start,
-//           children: [
-//             const Text(
-//               'Discover Flutter Scrollable UI',
-//               style: TextStyle(
-//                 fontSize: 24,
-//                 fontWeight: FontWeight.bold,
-//                 color: Colors.indigo,
-//               ),
-//             ),
-//             const SizedBox(height: 16),
-//             for (int i = 1; i <= 20; i++)
-//               Card(
-//                 margin: const EdgeInsets.only(bottom: 16.0),
-//                 elevation: 4,
-//                 shape: RoundedRectangleBorder(
-//                   borderRadius: BorderRadius.circular(12),
-//                 ),
-//                 child: ListTile(
-//                   leading: CircleAvatar(
-//                     backgroundColor: Colors.teal.shade400,
-//                     child: const Icon(Icons.book, color: Colors.white),
-//                   ),
-//                   title: Text('Flutter Topic $i'),
-//                   subtitle: Text('Detailed explanation of topic $i.'),
-//                   trailing: const Icon(Icons.arrow_forward_ios,
-//                       color: Colors.blueGrey),
-//                 ),
-//               ),
-//             Container(
-//               padding: const EdgeInsets.all(16),
-//               decoration: BoxDecoration(
-//                 color: Colors.teal.shade100,
-//                 borderRadius: BorderRadius.circular(12),
-//               ),
-//               child: Column(
-//                 children: [
-//                   Text(
-//                     'End of Topics',
-//                     style: TextStyle(
-//                       fontSize: 18,
-//                       fontWeight: FontWeight.w600,
-//                       color: Colors.teal.shade800,
-//                     ),
-//                   ),
-//                   const SizedBox(height: 8),
-//                   Text(
-//                     'Thank you for scrolling through this tutorial!',
-//                     style: TextStyle(color: Colors.teal.shade600, fontSize: 18),
-//                   ),
-//                 ],
-//               ),
-//             ),
-//           ],
-//         ),
-//       ),
-//     );
-//   }
-// }
+class MyD extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('D r a w e r H e a d e r'),
+        backgroundColor: Colors.teal.shade100,
+      ),
+      drawer: Drawer(
+        backgroundColor: Colors.indigo.shade100,
+        child: ListView(
+          padding: EdgeInsets.zero, // Removes default padding
+          children: [
+            // Beautiful DrawerHeader with custom styling
+            DrawerHeader(
+              padding: const EdgeInsets.all(16),
+              margin: EdgeInsets.zero,
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [Colors.teal.shade200, Colors.teal.shade300],
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                ),
+                boxShadow: const [
+                  BoxShadow(
+                    color: Color.fromARGB(66, 36, 23, 23),
+                    blurRadius: 10,
+                    offset: Offset(0, 3),
+                  ),
+                ],
+              ),
+              child: const Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  // Profile Avatar
+                  CircleAvatar(
+                    radius: 40,
+                    backgroundImage: AssetImage(
+                        'images/dev.jpeg'), // Replace with your image
+                    backgroundColor: Colors.white,
+                  ),
+                  SizedBox(width: 16), // Adds spacing between avatar and text
+                  // User Name and Email
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Code Flicks', // User name
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      SizedBox(height: 4),
+                      Text(
+                        'codeflicks@gmail.com', // Email
+                        style: TextStyle(
+                          color: Colors.white70,
+                          fontSize: 14,
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+            // Drawer Items
+            ListTile(
+              leading: const Icon(Icons.home, color: Colors.blueGrey),
+              title: const Text('Home'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.account_circle, color: Colors.blueGrey),
+              title: const Text('Profile'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.settings, color: Colors.blueGrey),
+              title: const Text('Settings'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.logout, color: Colors.redAccent),
+              title: const Text('Logout'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+          ],
+        ),
+      ),
+      body: const Center(
+        child: Text(
+          'Swipe from left edge to open the drawer!',
+          style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+        ),
+      ),
+    );
+  }
+}
