@@ -579,112 +579,209 @@
 //   }
 // }
 
+// import 'package:flutter/material.dart';
+
+// void main() {
+//   runApp(VisibilityDemo());
+// }
+
+// class VisibilityDemo extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       debugShowCheckedModeBanner: false, // Hides debug banner
+//       home: MyVisibility(),
+//     );
+//   }
+// }
+
+// class MyVisibility extends StatefulWidget {
+//   @override
+//   _MyVisibilityState createState() =>
+//       _MyVisibilityState();
+// }
+
+// class _MyVisibilityState extends State<MyVisibility> {
+//   bool isVisible = true; // Toggle state for visibility
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text(
+//           'V i s i b i l i t y',
+//           style: TextStyle(fontSize: 26),
+//         ),
+//         backgroundColor: Colors.teal,
+//       ),
+//       body: Padding(
+//         padding: const EdgeInsets.all(16.0),
+//         child: Column(
+//           mainAxisAlignment: MainAxisAlignment.center,
+//           crossAxisAlignment: CrossAxisAlignment.center,
+//           children: [
+//             // Visibility widget
+//             Visibility(
+//               visible: isVisible, // Toggles widget visibility
+//               replacement: Text(
+//                 'Widget is hidden', // Shown when the widget is hidden
+//                 style: TextStyle(
+//                   fontSize: 18,
+//                   color: Colors.red,
+//                   fontStyle: FontStyle.italic,
+//                 ),
+//               ),
+//               maintainState: true, // Keeps widget state when hidden
+//               maintainAnimation: true, // Keeps animation running when hidden
+//               maintainSize: true, // Maintains space for the widget
+//               child: Container(
+//                 height: 150,
+//                 width: double.infinity,
+//                 decoration: BoxDecoration(
+//                   color: Colors.teal[100],
+//                   borderRadius: BorderRadius.circular(12),
+//                   boxShadow: [
+//                     BoxShadow(
+//                       color: Colors.grey.withOpacity(0.5),
+//                       spreadRadius: 2,
+//                       blurRadius: 8,
+//                       offset: Offset(0, 3), // Shadow position
+//                     ),
+//                   ],
+//                 ),
+//                 child: Center(
+//                   child: Text(
+//                     'This widget is visible',
+//                     style: TextStyle(
+//                       fontSize: 20,
+//                       fontWeight: FontWeight.bold,
+//                       color: Colors.teal[900],
+//                     ),
+//                   ),
+//                 ),
+//               ),
+//             ),
+//             SizedBox(height: 20), // Spacer
+//             // Button to toggle visibility
+//             ElevatedButton(
+//               onPressed: () {
+//                 setState(() {
+//                   isVisible = !isVisible; // Toggle the visibility state
+//                 });
+//               },
+//               style: ElevatedButton.styleFrom(
+//                 backgroundColor: Colors.teal,
+//                 padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+//                 shape: RoundedRectangleBorder(
+//                   borderRadius: BorderRadius.circular(8),
+//                 ),
+//               ),
+//               child: Text(
+//                 isVisible ? 'Hide Widget' : 'Show Widget',
+//                 style: TextStyle(fontSize: 16, color: Colors.white),
+//               ),
+//             ),
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+// }
+
 import 'package:flutter/material.dart';
 
-class MyD extends StatelessWidget {
+class MyVisibility extends StatefulWidget {
+  @override
+  _MyVisibilityState createState() => _MyVisibilityState();
+}
+
+class _MyVisibilityState extends State<MyVisibility> {
+  bool isVisible = true; // Toggle state for visibility
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('D r a w e r H e a d e r'),
-        backgroundColor: Colors.teal.shade100,
+        title: const Text(
+          'V i s i b i l i t y',
+          style: TextStyle(fontSize: 26),
+        ),
+        backgroundColor: Colors.green.shade200, // Adjusted to a lighter shade
       ),
-      drawer: Drawer(
-        backgroundColor: Colors.indigo.shade100,
-        child: ListView(
-          padding: EdgeInsets.zero, // Removes default padding
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            // Beautiful DrawerHeader with custom styling
-            DrawerHeader(
-              padding: const EdgeInsets.all(16),
-              margin: EdgeInsets.zero,
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  colors: [Colors.teal.shade200, Colors.teal.shade300],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
+            // Visibility widget
+            Visibility(
+              visible: isVisible, // Toggles widget visibility
+              replacement: const Center(
+                child: Text(
+                  'Widget is hidden', // Shown when the widget is hidden
+                  style: TextStyle(
+                    fontSize: 26,
+                    color: Colors.red,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
-                boxShadow: const [
-                  BoxShadow(
-                    color: Color.fromARGB(66, 36, 23, 23),
-                    blurRadius: 10,
-                    offset: Offset(0, 3),
-                  ),
-                ],
               ),
-              child: const Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  // Profile Avatar
-                  CircleAvatar(
-                    radius: 40,
-                    backgroundImage: AssetImage(
-                        'images/dev.jpeg'), // Replace with your image
-                    backgroundColor: Colors.white,
+              child: Container(
+                padding: const EdgeInsets.all(16.0), // Added padding
+                height: 150,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  color: Colors.green.shade200,
+                  borderRadius: BorderRadius.circular(12),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.5),
+                      spreadRadius: 2,
+                      blurRadius: 8,
+                      offset: const Offset(0, 3), // Shadow position
+                    ),
+                  ],
+                ),
+                child: Center(
+                  child: Text(
+                    'This widget is visible.\nTo hide it, click the button below!',
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.brown.shade800,
+                    ),
+                    textAlign: TextAlign.center,
                   ),
-                  SizedBox(width: 16), // Adds spacing between avatar and text
-                  // User Name and Email
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Code Flicks', // User name
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      SizedBox(height: 4),
-                      Text(
-                        'codeflicks@gmail.com', // Email
-                        style: TextStyle(
-                          color: Colors.white70,
-                          fontSize: 14,
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
+                ),
               ),
             ),
-            // Drawer Items
-            ListTile(
-              leading: const Icon(Icons.home, color: Colors.blueGrey),
-              title: const Text('Home'),
-              onTap: () {
-                Navigator.pop(context);
+            const SizedBox(height: 20), // Spacer
+            // Button to toggle visibility
+            ElevatedButton(
+              onPressed: () {
+                setState(() {
+                  isVisible = !isVisible; // Toggle the visibility state
+                });
               },
-            ),
-            ListTile(
-              leading: const Icon(Icons.account_circle, color: Colors.blueGrey),
-              title: const Text('Profile'),
-              onTap: () {
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              leading: const Icon(Icons.settings, color: Colors.blueGrey),
-              title: const Text('Settings'),
-              onTap: () {
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              leading: const Icon(Icons.logout, color: Colors.redAccent),
-              title: const Text('Logout'),
-              onTap: () {
-                Navigator.pop(context);
-              },
+              style: ElevatedButton.styleFrom(
+                backgroundColor:
+                    Colors.green.shade400, // Consistent button color
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8),
+                ),
+              ),
+              child: Text(
+                isVisible ? 'Hide Widget' : 'Show Widget',
+                style: const TextStyle(
+                    fontSize: 18,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold),
+              ),
             ),
           ],
-        ),
-      ),
-      body: const Center(
-        child: Text(
-          'Swipe from left edge to open the drawer!',
-          style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
         ),
       ),
     );
