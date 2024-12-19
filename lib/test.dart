@@ -688,88 +688,88 @@
 //   }
 // }
 
-import 'package:flutter/material.dart';
+// import 'package:flutter/material.dart';
 
-class AboutListTileDemo extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          'A b o u t L i s t T i l e',
-          style: TextStyle(fontSize: 24),
-        ),
-        backgroundColor: Colors.teal.shade200, // Customized AppBar color
-      ),
-      body: ListView(
-        children: [
-          // Some other list items for context
-          ListTile(
-            leading: const Icon(Icons.info, color: Colors.blueGrey),
-            title: const Text(
-              'General Info',
-              style: TextStyle(fontSize: 18),
-            ),
-            subtitle: const Text('Details about the app'),
-            onTap: () {
-              ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(content: Text('General Info clicked')),
-              );
-            },
-          ),
-          const Divider(), // Adds a separator between list items
+// class AboutListTileDemo extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: const Text(
+//           'A b o u t L i s t T i l e',
+//           style: TextStyle(fontSize: 24),
+//         ),
+//         backgroundColor: Colors.teal.shade200, // Customized AppBar color
+//       ),
+//       body: ListView(
+//         children: [
+//           // Some other list items for context
+//           ListTile(
+//             leading: const Icon(Icons.info, color: Colors.blueGrey),
+//             title: const Text(
+//               'General Info',
+//               style: TextStyle(fontSize: 18),
+//             ),
+//             subtitle: const Text('Details about the app'),
+//             onTap: () {
+//               ScaffoldMessenger.of(context).showSnackBar(
+//                 const SnackBar(content: Text('General Info clicked')),
+//               );
+//             },
+//           ),
+//           const Divider(), // Adds a separator between list items
 
-          // AboutListTile
-          AboutListTile(
-            icon:
-                const Icon(Icons.help, color: Colors.teal), // Icon for the tile
-            child: Text(
-              'About this App',
-              style: TextStyle(
-                  fontSize: 18,
-                  color: Colors.teal.shade800), // Custom style for text
-            ),
-            applicationName: 'Flutter App Demo', // App name
-            applicationVersion: '1.0.0', // Version of the app
-            applicationIcon:
-                const Icon(Icons.flutter_dash, size: 60, color: Colors.blue),
-            applicationLegalese:
-                '© 2024 Code Flicks. All rights reserved.', // Legal information
-            aboutBoxChildren: const [
-              // Additional widgets to display in the about box
-              Padding(
-                padding: EdgeInsets.only(top: 10.0),
-                child: Text(
-                  'This app is a demo showcasing the AboutListTile widget. Learn Flutter with Code Flicks!',
-                  textAlign: TextAlign.justify,
-                  style: TextStyle(fontSize: 14),
-                ),
-              ),
-              SizedBox(height: 10),
-              Text(
-                'Thank you for using this app!',
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
-              ),
-            ],
-          ),
+//           // AboutListTile
+//           AboutListTile(
+//             icon:
+//                 const Icon(Icons.help, color: Colors.teal), // Icon for the tile
+//             child: Text(
+//               'About this App',
+//               style: TextStyle(
+//                   fontSize: 18,
+//                   color: Colors.teal.shade800), // Custom style for text
+//             ),
+//             applicationName: 'Flutter App Demo', // App name
+//             applicationVersion: '1.0.0', // Version of the app
+//             applicationIcon:
+//                 const Icon(Icons.flutter_dash, size: 60, color: Colors.blue),
+//             applicationLegalese:
+//                 '© 2024 Code Flicks. All rights reserved.', // Legal information
+//             aboutBoxChildren: const [
+//               // Additional widgets to display in the about box
+//               Padding(
+//                 padding: EdgeInsets.only(top: 10.0),
+//                 child: Text(
+//                   'This app is a demo showcasing the AboutListTile widget. Learn Flutter with Code Flicks!',
+//                   textAlign: TextAlign.justify,
+//                   style: TextStyle(fontSize: 14),
+//                 ),
+//               ),
+//               SizedBox(height: 10),
+//               Text(
+//                 'Thank you for using this app!',
+//                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+//               ),
+//             ],
+//           ),
 
-          const Divider(), // Adds a separator
+//           const Divider(), // Adds a separator
 
-          // Another example ListTile
-          ListTile(
-            leading: const Icon(Icons.settings, color: Colors.blueGrey),
-            title: const Text(
-              'Settings',
-              style: TextStyle(fontSize: 18, color: Colors.black),
-            ),
-            onTap: () {
-              ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(content: Text('Settings clicked')),
-              );
-            },
-          ),
-        ],
-      ),
-    );
-  }
-}
+//           // Another example ListTile
+//           ListTile(
+//             leading: const Icon(Icons.settings, color: Colors.blueGrey),
+//             title: const Text(
+//               'Settings',
+//               style: TextStyle(fontSize: 18, color: Colors.black),
+//             ),
+//             onTap: () {
+//               ScaffoldMessenger.of(context).showSnackBar(
+//                 const SnackBar(content: Text('Settings clicked')),
+//               );
+//             },
+//           ),
+//         ],
+//       ),
+//     );
+//   }
+// }
