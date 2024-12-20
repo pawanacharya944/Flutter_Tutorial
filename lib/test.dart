@@ -688,87 +688,100 @@
 //   }
 // }
 
-// import 'package:flutter/material.dart';
+// color changer
 
-// class AboutListTileDemo extends StatelessWidget {
+// import 'package:flutter/material.dart';
+// import 'dart:math';
+
+// class ColorChanger extends StatefulWidget {
+//   @override
+//   _ColorChangerState createState() => _ColorChangerState();
+// }
+
+// class _ColorChangerState extends State<ColorChanger> {
+//   Color backgroundColor = Colors.white;
+
+//   void changeColor() {
+//     setState(() {
+//       backgroundColor = Color(Random().nextInt(0xffffffff));
+//     });
+//   }
+
 //   @override
 //   Widget build(BuildContext context) {
 //     return Scaffold(
+//       extendBodyBehindAppBar: true,
 //       appBar: AppBar(
-//         title: const Text(
-//           'A b o u t L i s t T i l e',
-//           style: TextStyle(fontSize: 24),
-//         ),
-//         backgroundColor: Colors.teal.shade200, // Customized AppBar color
+//         title: const Text('Color Changer'),
+//         backgroundColor: Colors.transparent,
 //       ),
-//       body: ListView(
-//         children: [
-//           // Some other list items for context
-//           ListTile(
-//             leading: const Icon(Icons.info, color: Colors.blueGrey),
-//             title: const Text(
-//               'General Info',
-//               style: TextStyle(fontSize: 18),
-//             ),
-//             subtitle: const Text('Details about the app'),
-//             onTap: () {
-//               ScaffoldMessenger.of(context).showSnackBar(
-//                 const SnackBar(content: Text('General Info clicked')),
-//               );
-//             },
-//           ),
-//           const Divider(), // Adds a separator between list items
-
-//           // AboutListTile
-//           AboutListTile(
-//             icon:
-//                 const Icon(Icons.help, color: Colors.teal), // Icon for the tile
-//             child: Text(
-//               'About this App',
-//               style: TextStyle(
-//                   fontSize: 18,
-//                   color: Colors.teal.shade800), // Custom style for text
-//             ),
-//             applicationName: 'Flutter App Demo', // App name
-//             applicationVersion: '1.0.0', // Version of the app
-//             applicationIcon:
-//                 const Icon(Icons.flutter_dash, size: 60, color: Colors.blue),
-//             applicationLegalese:
-//                 '© 2024 Code Flicks. All rights reserved.', // Legal information
-//             aboutBoxChildren: const [
-//               // Additional widgets to display in the about box
-//               Padding(
-//                 padding: EdgeInsets.only(top: 10.0),
-//                 child: Text(
-//                   'This app is a demo showcasing the AboutListTile widget. Learn Flutter with Code Flicks!',
-//                   textAlign: TextAlign.justify,
-//                   style: TextStyle(fontSize: 14),
-//                 ),
+//       body: Container(
+//         child: GestureDetector(
+//           onTap: changeColor,
+//           child: Container(
+//             color: backgroundColor,
+//             child: const Center(
+//               child: Text(
+//                 'Tap Anywhere!',
+//                 style: TextStyle(fontSize: 24, color: Colors.black),
 //               ),
-//               SizedBox(height: 10),
+//             ),
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// emoji switcher
+// import 'package:flutter/material.dart';
+// import 'dart:math';
+
+// class EmojiSwitcher extends StatefulWidget {
+//   @override
+//   _EmojiSwitcherState createState() => _EmojiSwitcherState();
+// }
+
+// class _EmojiSwitcherState extends State<EmojiSwitcher> {
+//   final List<String> emojis = ['😊', '😂', '🥳', '😍', '😎', '🤔', '😴', '🤩'];
+//   String currentEmoji = '😊';
+
+//   void switchEmoji() {
+//     setState(() {
+//       currentEmoji = emojis[Random().nextInt(emojis.length)];
+//     });
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       extendBodyBehindAppBar: true,
+//       appBar: AppBar(
+//         title: const Text('Emoji Switcher'),
+//         backgroundColor: Colors.transparent,
+//       ),
+//       body: Container(
+//         decoration: BoxDecoration(
+//             gradient: LinearGradient(
+//                 colors: [Colors.teal.shade200, Colors.blue.shade200],
+//                 begin: Alignment.topRight,
+//                 end: Alignment.bottomLeft)),
+//         child: Center(
+//           child: Column(
+//             mainAxisAlignment: MainAxisAlignment.center,
+//             children: [
 //               Text(
-//                 'Thank you for using this app!',
-//                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+//                 currentEmoji,
+//                 style: const TextStyle(fontSize: 100),
+//               ),
+//               const SizedBox(height: 20),
+//               ElevatedButton(
+//                 onPressed: switchEmoji,
+//                 child: const Text('Switch Emoji'),
 //               ),
 //             ],
 //           ),
-
-//           const Divider(), // Adds a separator
-
-//           // Another example ListTile
-//           ListTile(
-//             leading: const Icon(Icons.settings, color: Colors.blueGrey),
-//             title: const Text(
-//               'Settings',
-//               style: TextStyle(fontSize: 18, color: Colors.black),
-//             ),
-//             onTap: () {
-//               ScaffoldMessenger.of(context).showSnackBar(
-//                 const SnackBar(content: Text('Settings clicked')),
-//               );
-//             },
-//           ),
-//         ],
+//         ),
 //       ),
 //     );
 //   }
