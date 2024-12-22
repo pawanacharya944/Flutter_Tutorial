@@ -688,22 +688,19 @@
 //   }
 // }
 
-// color changer
-
 // import 'package:flutter/material.dart';
-// import 'dart:math';
 
-// class ColorChanger extends StatefulWidget {
+// class ToggleText extends StatefulWidget {
 //   @override
-//   _ColorChangerState createState() => _ColorChangerState();
+//   _ToggleTextState createState() => _ToggleTextState();
 // }
 
-// class _ColorChangerState extends State<ColorChanger> {
-//   Color backgroundColor = Colors.white;
+// class _ToggleTextState extends State<ToggleText> {
+//   bool showFirstText = true;
 
-//   void changeColor() {
+//   void toggleText() {
 //     setState(() {
-//       backgroundColor = Color(Random().nextInt(0xffffffff));
+//       showFirstText = !showFirstText;
 //     });
 //   }
 
@@ -712,74 +709,44 @@
 //     return Scaffold(
 //       extendBodyBehindAppBar: true,
 //       appBar: AppBar(
-//         title: const Text('Color Changer'),
-//         backgroundColor: Colors.transparent,
-//       ),
-//       body: Container(
-//         child: GestureDetector(
-//           onTap: changeColor,
-//           child: Container(
-//             color: backgroundColor,
-//             child: const Center(
-//               child: Text(
-//                 'Tap Anywhere!',
-//                 style: TextStyle(fontSize: 24, color: Colors.black),
-//               ),
-//             ),
-//           ),
+//         title: const Text(
+//           'T o g g l e  T e x t',
+//           style: TextStyle(fontSize: 24),
 //         ),
-//       ),
-//     );
-//   }
-// }
-
-// emoji switcher
-// import 'package:flutter/material.dart';
-// import 'dart:math';
-
-// class EmojiSwitcher extends StatefulWidget {
-//   @override
-//   _EmojiSwitcherState createState() => _EmojiSwitcherState();
-// }
-
-// class _EmojiSwitcherState extends State<EmojiSwitcher> {
-//   final List<String> emojis = ['😊', '😂', '🥳', '😍', '😎', '🤔', '😴', '🤩'];
-//   String currentEmoji = '😊';
-
-//   void switchEmoji() {
-//     setState(() {
-//       currentEmoji = emojis[Random().nextInt(emojis.length)];
-//     });
-//   }
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       extendBodyBehindAppBar: true,
-//       appBar: AppBar(
-//         title: const Text('Emoji Switcher'),
 //         backgroundColor: Colors.transparent,
+//         elevation: 0,
+//         centerTitle: true,
 //       ),
 //       body: Container(
 //         decoration: BoxDecoration(
-//             gradient: LinearGradient(
-//                 colors: [Colors.teal.shade200, Colors.blue.shade200],
-//                 begin: Alignment.topRight,
-//                 end: Alignment.bottomLeft)),
+//           gradient: LinearGradient(
+//             begin: Alignment.topCenter,
+//             end: Alignment.bottomCenter,
+//             colors: [Colors.blue.shade200, Colors.teal.shade200],
+//           ),
+//         ),
 //         child: Center(
-//           child: Column(
-//             mainAxisAlignment: MainAxisAlignment.center,
-//             children: [
-//               Text(
-//                 currentEmoji,
-//                 style: const TextStyle(fontSize: 100),
+//           child: GestureDetector(
+//             onTap: toggleText,
+//             child: AnimatedSwitcher(
+//               duration: const Duration(milliseconds: 500),
+//               transitionBuilder: (child, animation) => ScaleTransition(
+//                 scale: animation,
+//                 child: child,
 //               ),
-//               const SizedBox(height: 20),
-//               ElevatedButton(
-//                 onPressed: switchEmoji,
-//                 child: const Text('Switch Emoji'),
+//               child: Text(
+//                 showFirstText
+//                     ? 'Welcome to Code Flicks!🧑🏻‍💻'
+//                     : 'Explore Flutter Tutorials 🚀',
+//                 key: ValueKey<bool>(showFirstText),
+//                 textAlign: TextAlign.center,
+//                 style: const TextStyle(
+//                   fontSize: 28,
+//                   fontWeight: FontWeight.bold,
+//                   color: Colors.black,
+//                 ),
 //               ),
-//             ],
+//             ),
 //           ),
 //         ),
 //       ),
