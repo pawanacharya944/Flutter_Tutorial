@@ -753,3 +753,981 @@
 //     );
 //   }
 // }
+
+// import 'package:flutter/material.dart';
+// import 'package:confetti/confetti.dart';
+
+// class CelebrationScreen extends StatefulWidget {
+//   @override
+//   _CelebrationScreenState createState() => _CelebrationScreenState();
+// }
+
+// class _CelebrationScreenState extends State<CelebrationScreen> {
+//   final ConfettiController _confettiController =
+//       ConfettiController(duration: const Duration(seconds: 5));
+//   bool showAnimation = false;
+
+//   void _startCelebration() {
+//     setState(() {
+//       showAnimation = true;
+//     });
+//     _confettiController.play();
+//     Future.delayed(Duration(seconds: 6), () {
+//       setState(() {
+//         showAnimation = false;
+//       });
+//     });
+//   }
+
+//   @override
+//   void dispose() {
+//     _confettiController.dispose();
+//     super.dispose();
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text(
+//           "100 Days of Flutter - Code Flicks",
+//           style: TextStyle(color: Colors.white),
+//         ),
+//         backgroundColor: Colors.purple,
+//       ),
+//       body: Stack(
+//         children: [
+//           // Gradient background
+//           AnimatedContainer(
+//             duration: Duration(seconds: 3),
+//             decoration: BoxDecoration(
+//               gradient: LinearGradient(
+//                 colors: [
+//                   Colors.purple.shade300,
+//                   Colors.blue.shade200,
+//                   Colors.pink.shade200,
+//                 ],
+//                 begin: Alignment.topLeft,
+//                 end: Alignment.bottomRight,
+//               ),
+//             ),
+//           ),
+//           Center(
+//             child: Column(
+//               mainAxisAlignment: MainAxisAlignment.center,
+//               children: [
+//                 // Title message
+//                 AnimatedOpacity(
+//                   duration: Duration(seconds: 2),
+//                   opacity: showAnimation ? 1.0 : 0.0,
+//                   child: Text(
+//                     "🎉 100 Days of Flutter Completed 🎉",
+//                     textAlign: TextAlign.center,
+//                     style: TextStyle(
+//                       fontSize: 32,
+//                       fontWeight: FontWeight.bold,
+//                       color: Colors.white,
+//                       shadows: [
+//                         Shadow(
+//                           blurRadius: 10.0,
+//                           color: Colors.black26,
+//                           offset: Offset(2, 2),
+//                         ),
+//                       ],
+//                     ),
+//                   ),
+//                 ),
+//                 SizedBox(height: 10),
+//                 // Subtitle
+//                 AnimatedOpacity(
+//                   duration: Duration(seconds: 2),
+//                   opacity: showAnimation ? 1.0 : 0.0,
+//                   child: Text(
+//                     "By Code Flicks\nVideos on Widgets, Apps, Packages, and More!",
+//                     textAlign: TextAlign.center,
+//                     style: TextStyle(
+//                       fontSize: 20,
+//                       fontWeight: FontWeight.w400,
+//                       color: Colors.white70,
+//                     ),
+//                   ),
+//                 ),
+//                 SizedBox(height: 30),
+//                 // Celebrate button
+//                 ElevatedButton(
+//                   onPressed: _startCelebration,
+//                   style: ElevatedButton.styleFrom(
+//                     backgroundColor: Colors.purple.shade700,
+//                     padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+//                     shape: RoundedRectangleBorder(
+//                       borderRadius: BorderRadius.circular(20),
+//                     ),
+//                   ),
+//                   child: Text(
+//                     "Celebrate!",
+//                     style: TextStyle(
+//                       fontSize: 20,
+//                       color: Colors.white,
+//                     ),
+//                   ),
+//                 ),
+//               ],
+//             ),
+//           ),
+//           // Confetti animation
+//           if (showAnimation)
+//             Align(
+//               alignment: Alignment.center,
+//               child: ConfettiWidget(
+//                 confettiController: _confettiController,
+//                 blastDirectionality: BlastDirectionality.explosive,
+//                 emissionFrequency: 0.05,
+//                 numberOfParticles: 30,
+//                 shouldLoop: false,
+//                 colors: [Colors.purple, Colors.blue, Colors.pink, Colors.white],
+//               ),
+//             ),
+//         ],
+//       ),
+//     );
+//   }
+// }
+
+// import 'package:flutter/material.dart';
+// import 'package:confetti/confetti.dart';
+
+// void main() => runApp(CelebrationApp());
+
+// class CelebrationApp extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       debugShowCheckedModeBanner: false,
+//       home: CelebrationScreen(),
+//     );
+//   }
+// }
+
+// class CelebrationScreen extends StatefulWidget {
+//   @override
+//   _CelebrationScreenState createState() => _CelebrationScreenState();
+// }
+
+// class _CelebrationScreenState extends State<CelebrationScreen> {
+//   final ConfettiController _confettiController =
+//       ConfettiController(duration: const Duration(seconds: 5));
+
+//   void _startCelebration() {
+//     _confettiController.play();
+//   }
+
+//   @override
+//   void dispose() {
+//     _confettiController.dispose();
+//     super.dispose();
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       extendBodyBehindAppBar: true,
+//       appBar: AppBar(
+//         title: Text(
+//           "100 Days of Flutter - Code Flicks",
+//           style: TextStyle(color: Colors.white),
+//         ),
+//         backgroundColor: Colors.transparent,
+//       ),
+//       body: Stack(
+//         children: [
+//           // Background Gradient
+//           Container(
+//             decoration: BoxDecoration(
+//               gradient: LinearGradient(
+//                 colors: [
+//                   Colors.pink.shade100,
+//                   Colors.purple.shade100,
+//                   Colors.red.shade100,
+//                 ],
+//                 begin: Alignment.topLeft,
+//                 end: Alignment.bottomRight,
+//               ),
+//             ),
+//           ),
+//           Center(
+//             child: Column(
+//               mainAxisAlignment: MainAxisAlignment.center,
+//               children: [
+//                 // Celebratory Text
+//                 Text(
+//                   "🎉 100 Days of Flutter Completed 🎉",
+//                   textAlign: TextAlign.center,
+//                   style: TextStyle(
+//                     fontSize: 32,
+//                     fontWeight: FontWeight.bold,
+//                     color: Colors.teal.shade800,
+//                     shadows: [
+//                       Shadow(
+//                         blurRadius: 8.0,
+//                         color: Colors.black26,
+//                         offset: Offset(2, 2),
+//                       ),
+//                     ],
+//                   ),
+//                 ),
+//                 SizedBox(height: 10),
+//                 Text(
+//                   "By Code Flicks\nVideos on Widgets, Apps, Packages, and More!",
+//                   textAlign: TextAlign.center,
+//                   style: TextStyle(
+//                     fontSize: 20,
+//                     fontWeight: FontWeight.w400,
+//                     color: Colors.teal.shade600,
+//                   ),
+//                 ),
+//                 SizedBox(height: 30),
+//                 // Celebrate Button
+//                 ElevatedButton(
+//                   onPressed: _startCelebration,
+//                   style: ElevatedButton.styleFrom(
+//                     backgroundColor: Colors.teal.shade700,
+//                     padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+//                     shape: RoundedRectangleBorder(
+//                       borderRadius: BorderRadius.circular(20),
+//                     ),
+//                   ),
+//                   child: Text(
+//                     "Celebrate!",
+//                     style: TextStyle(
+//                       fontSize: 20,
+//                       color: Colors.white,
+//                     ),
+//                   ),
+//                 ),
+//               ],
+//             ),
+//           ),
+//           // Confetti Animation
+//           Align(
+//             alignment: Alignment.center,
+//             child: ConfettiWidget(
+//               confettiController: _confettiController,
+//               blastDirectionality: BlastDirectionality.explosive,
+//               emissionFrequency: 0.05,
+//               numberOfParticles: 30,
+//               shouldLoop: false,
+//               colors: [Colors.teal, Colors.cyan, Colors.blueGrey, Colors.white],
+//             ),
+//           ),
+//         ],
+//       ),
+//     );
+//   }
+// }
+
+// import 'package:flutter/material.dart';
+// import 'package:confetti/confetti.dart';
+
+// void main() => runApp(CelebrationApp());
+
+// class CelebrationApp extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       debugShowCheckedModeBanner: false,
+//       home: CelebrationScreen(),
+//     );
+//   }
+// }
+
+// class CelebrationScreen extends StatefulWidget {
+//   @override
+//   _CelebrationScreenState createState() => _CelebrationScreenState();
+// }
+
+// class _CelebrationScreenState extends State<CelebrationScreen> {
+//   final ConfettiController _confettiController =
+//       ConfettiController(duration: const Duration(seconds: 5));
+//   double opacity = 0.0;
+//   double scale = 0.5;
+
+//   void _startCelebration() {
+//     _confettiController.play();
+//     setState(() {
+//       opacity = 1.0;
+//       scale = 1.0;
+//     });
+//   }
+
+//   @override
+//   void dispose() {
+//     _confettiController.dispose();
+//     super.dispose();
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text(
+//           "100 Days of Flutter - Code Flicks",
+//           style: TextStyle(color: Colors.white),
+//         ),
+//         backgroundColor: Colors.teal,
+//       ),
+//       body: Stack(
+//         children: [
+//           // Background Gradient
+//           Container(
+//             decoration: BoxDecoration(
+//               gradient: LinearGradient(
+//                 colors: [
+//                   Colors.teal.shade100,
+//                   Colors.cyan.shade100,
+//                   Colors.blueGrey.shade100,
+//                 ],
+//                 begin: Alignment.topLeft,
+//                 end: Alignment.bottomRight,
+//               ),
+//             ),
+//           ),
+//           // Main Content
+//           Center(
+//             child: Column(
+//               mainAxisAlignment: MainAxisAlignment.center,
+//               children: [
+//                 // Celebration Text
+//                 AnimatedOpacity(
+//                   duration: Duration(seconds: 2),
+//                   opacity: opacity,
+//                   child: AnimatedScale(
+//                     duration: Duration(seconds: 2),
+//                     scale: scale,
+//                     curve: Curves.easeInOut,
+//                     child: Text(
+//                       "🎉 100 Days of Flutter Completed 🎉",
+//                       textAlign: TextAlign.center,
+//                       style: TextStyle(
+//                         fontSize: 32,
+//                         fontWeight: FontWeight.bold,
+//                         color: Colors.teal.shade800,
+//                         shadows: [
+//                           Shadow(
+//                             blurRadius: 8.0,
+//                             color: Colors.black26,
+//                             offset: Offset(2, 2),
+//                           ),
+//                         ],
+//                       ),
+//                     ),
+//                   ),
+//                 ),
+//                 SizedBox(height: 10),
+//                 Text(
+//                   "By Code Flicks\nVideos on Widgets, Apps, Packages, and More!",
+//                   textAlign: TextAlign.center,
+//                   style: TextStyle(
+//                     fontSize: 20,
+//                     fontWeight: FontWeight.w400,
+//                     color: Colors.teal.shade600,
+//                   ),
+//                 ),
+//                 SizedBox(height: 30),
+//                 // Celebrate Button
+//                 ElevatedButton(
+//                   onPressed: _startCelebration,
+//                   style: ElevatedButton.styleFrom(
+//                     backgroundColor: Colors.teal.shade700,
+//                     padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+//                     shape: RoundedRectangleBorder(
+//                       borderRadius: BorderRadius.circular(20),
+//                     ),
+//                   ),
+//                   child: Text(
+//                     "Celebrate!",
+//                     style: TextStyle(
+//                       fontSize: 20,
+//                       color: Colors.white,
+//                     ),
+//                   ),
+//                 ),
+//               ],
+//             ),
+//           ),
+//           // Confetti Effect
+//           Align(
+//             alignment: Alignment.center,
+//             child: ConfettiWidget(
+//               confettiController: _confettiController,
+//               blastDirectionality: BlastDirectionality.explosive,
+//               emissionFrequency: 0.05,
+//               numberOfParticles: 30,
+//               shouldLoop: false,
+//               colors: [Colors.teal, Colors.cyan, Colors.blueGrey, Colors.white],
+//             ),
+//           ),
+//           // Floating Heart Icons
+//           _buildFloatingIcons(),
+//         ],
+//       ),
+//     );
+//   }
+
+//   Widget _buildFloatingIcons() {
+//     return Stack(
+//       children: [
+//         for (int i = 0; i < 5; i++) _buildHeartAnimation(i),
+//       ],
+//     );
+//   }
+
+//   Widget _buildHeartAnimation(int index) {
+//     final randomLeft = (index * 0.2 + 0.2) * MediaQuery.of(context).size.width;
+//     final duration = Duration(seconds: 3 + index);
+//     return Positioned(
+//       bottom: 0,
+//       left: randomLeft,
+//       child: AnimatedOpacity(
+//         opacity: 1.0,
+//         duration: duration,
+//         child: Icon(
+//           Icons.favorite,
+//           color: Colors.red.shade300,
+//           size: 30 + (index * 10),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// import 'package:flutter/material.dart';
+// import 'package:confetti/confetti.dart';
+
+// void main() => runApp(CelebrationApp());
+
+// class CelebrationApp extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       debugShowCheckedModeBanner: false,
+//       home: CelebrationScreen(),
+//     );
+//   }
+// }
+
+// class CelebrationScreen extends StatefulWidget {
+//   @override
+//   _CelebrationScreenState createState() => _CelebrationScreenState();
+// }
+
+// class _CelebrationScreenState extends State<CelebrationScreen> {
+//   final ConfettiController _confettiController =
+//       ConfettiController(duration: const Duration(seconds: 5));
+//   double opacity = 0.0;
+//   double scale = 0.5;
+
+//   void _startCelebration() {
+//     _confettiController.play();
+//     setState(() {
+//       opacity = 1.0;
+//       scale = 1.0;
+//     });
+//   }
+
+//   @override
+//   void dispose() {
+//     _confettiController.dispose();
+//     super.dispose();
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       body: Stack(
+//         children: [
+//           // Vibrant Gradient Background
+//           Container(
+//             decoration: BoxDecoration(
+//               gradient: LinearGradient(
+//                 colors: [
+//                   Colors.deepPurple.shade400,
+//                   Colors.pink.shade300,
+//                   Colors.orange.shade300,
+//                 ],
+//                 begin: Alignment.topLeft,
+//                 end: Alignment.bottomRight,
+//               ),
+//             ),
+//           ),
+//           // Celebration Content
+//           Center(
+//             child: Column(
+//               mainAxisAlignment: MainAxisAlignment.center,
+//               children: [
+//                 // Animated Celebration Text
+//                 AnimatedOpacity(
+//                   duration: Duration(seconds: 2),
+//                   opacity: opacity,
+//                   child: AnimatedScale(
+//                     duration: Duration(seconds: 2),
+//                     scale: scale,
+//                     curve: Curves.easeInOut,
+//                     child: Column(
+//                       children: [
+//                         Text(
+//                           "🎉 100 Days of Flutter 🎉",
+//                           textAlign: TextAlign.center,
+//                           style: TextStyle(
+//                             fontSize: 36,
+//                             fontWeight: FontWeight.bold,
+//                             color: Colors.white,
+//                             shadows: [
+//                               Shadow(
+//                                 blurRadius: 10.0,
+//                                 color: Colors.black54,
+//                                 offset: Offset(2, 2),
+//                               ),
+//                             ],
+//                           ),
+//                         ),
+//                         Text(
+//                           "Completed by Code Flicks",
+//                           textAlign: TextAlign.center,
+//                           style: TextStyle(
+//                             fontSize: 24,
+//                             fontWeight: FontWeight.w500,
+//                             color: Colors.white70,
+//                           ),
+//                         ),
+//                       ],
+//                     ),
+//                   ),
+//                 ),
+//                 SizedBox(height: 20),
+//                 // Button to Trigger Celebration
+//                 ElevatedButton(
+//                   onPressed: _startCelebration,
+//                   style: ElevatedButton.styleFrom(
+//                     backgroundColor: Colors.deepOrangeAccent.shade200,
+//                     padding: EdgeInsets.symmetric(horizontal: 40, vertical: 15),
+//                     shape: RoundedRectangleBorder(
+//                       borderRadius: BorderRadius.circular(25),
+//                     ),
+//                     elevation: 10,
+//                   ),
+//                   child: Text(
+//                     "Celebrate!",
+//                     style: TextStyle(
+//                       fontSize: 20,
+//                       fontWeight: FontWeight.bold,
+//                       color: Colors.white,
+//                     ),
+//                   ),
+//                 ),
+//               ],
+//             ),
+//           ),
+//           // Confetti Effect
+//           Align(
+//             alignment: Alignment.center,
+//             child: ConfettiWidget(
+//               confettiController: _confettiController,
+//               blastDirectionality: BlastDirectionality.explosive,
+//               emissionFrequency: 0.05,
+//               numberOfParticles: 40,
+//               shouldLoop: false,
+//               colors: [
+//                 Colors.yellow,
+//                 Colors.orange,
+//                 Colors.pink,
+//                 Colors.purple,
+//                 Colors.white,
+//               ],
+//             ),
+//           ),
+//           // Floating Star Icons
+//           _buildFloatingIcons(),
+//         ],
+//       ),
+//     );
+//   }
+
+//   Widget _buildFloatingIcons() {
+//     return Stack(
+//       children: [
+//         for (int i = 0; i < 7; i++) _buildStarAnimation(i),
+//       ],
+//     );
+//   }
+
+//   Widget _buildStarAnimation(int index) {
+//     final randomLeft = (index * 0.15 + 0.1) * MediaQuery.of(context).size.width;
+//     final duration = Duration(seconds: 3 + index);
+//     return AnimatedPositioned(
+//       duration: duration,
+//       bottom: 0,
+//       left: randomLeft,
+//       child: Icon(
+//         Icons.star,
+//         color: Colors.amber.shade400,
+//         size: 40 + (index * 4),
+//       ),
+//       onEnd: () {
+//         setState(() {
+//           // Reset position for continuous animation (optional)
+//         });
+//       },
+//     );
+//   }
+// }
+
+// import 'package:flutter/material.dart';
+// import 'package:confetti/confetti.dart';
+
+// void main() => runApp(CelebrationApp());
+
+// class CelebrationApp extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       debugShowCheckedModeBanner: false,
+//       home: CelebrationScreen(),
+//     );
+//   }
+// }
+
+// class CelebrationScreen extends StatefulWidget {
+//   @override
+//   _CelebrationScreenState createState() => _CelebrationScreenState();
+// }
+
+// class _CelebrationScreenState extends State<CelebrationScreen>
+//     with TickerProviderStateMixin {
+//   final ConfettiController _confettiController =
+//       ConfettiController(duration: const Duration(seconds: 5));
+//   double opacity = 0.0;
+//   double scale = 0.7;
+
+//   void _startCelebration() {
+//     _confettiController.play();
+//     setState(() {
+//       opacity = 1.0;
+//       scale = 1.0;
+//     });
+//   }
+
+//   @override
+//   void dispose() {
+//     _confettiController.dispose();
+//     super.dispose();
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       body: Stack(
+//         children: [
+//           // Vibrant Radial Gradient Background
+//           Container(
+//             decoration: BoxDecoration(
+//               gradient: RadialGradient(
+//                 colors: [
+//                   Colors.blue.shade700,
+//                   Colors.deepPurple.shade400,
+//                   Colors.pink.shade400,
+//                 ],
+//                 center: Alignment.center,
+//                 radius: 1.2,
+//               ),
+//             ),
+//           ),
+//           // Celebration Content
+//           Center(
+//             child: Column(
+//               mainAxisAlignment: MainAxisAlignment.center,
+//               children: [
+//                 // Animated Main Celebration Text
+//                 AnimatedOpacity(
+//                   duration: Duration(seconds: 2),
+//                   opacity: opacity,
+//                   child: AnimatedScale(
+//                     duration: Duration(seconds: 2),
+//                     scale: scale,
+//                     curve: Curves.elasticOut,
+//                     child: Column(
+//                       children: [
+//                         Text(
+//                           "🎉 100 Days of Flutter 🎉",
+//                           textAlign: TextAlign.center,
+//                           style: TextStyle(
+//                             fontSize: 40,
+//                             fontWeight: FontWeight.bold,
+//                             color: Colors.white,
+//                             shadows: [
+//                               Shadow(
+//                                 blurRadius: 8.0,
+//                                 color: Colors.black26,
+//                                 offset: Offset(2, 2),
+//                               ),
+//                             ],
+//                           ),
+//                         ),
+//                         SizedBox(height: 10),
+//                         Text(
+//                           "Code Flicks Milestone",
+//                           style: TextStyle(
+//                             fontSize: 24,
+//                             fontWeight: FontWeight.w600,
+//                             color: Colors.white70,
+//                           ),
+//                         ),
+//                       ],
+//                     ),
+//                   ),
+//                 ),
+//                 SizedBox(height: 30),
+//                 // Button to Trigger Confetti
+//                 ElevatedButton(
+//                   onPressed: _startCelebration,
+//                   style: ElevatedButton.styleFrom(
+//                     backgroundColor: Colors.orangeAccent.shade200,
+//                     padding: EdgeInsets.symmetric(horizontal: 50, vertical: 20),
+//                     shape: RoundedRectangleBorder(
+//                       borderRadius: BorderRadius.circular(30),
+//                     ),
+//                     elevation: 8,
+//                     shadowColor: Colors.orange.shade800,
+//                   ),
+//                   child: Text(
+//                     "Celebrate with Us!",
+//                     style: TextStyle(
+//                       fontSize: 18,
+//                       fontWeight: FontWeight.bold,
+//                       color: Colors.white,
+//                     ),
+//                   ),
+//                 ),
+//               ],
+//             ),
+//           ),
+//           // Confetti Effect
+//           Align(
+//             alignment: Alignment.center,
+//             child: ConfettiWidget(
+//               confettiController: _confettiController,
+//               blastDirectionality: BlastDirectionality.explosive,
+//               emissionFrequency: 0.1,
+//               numberOfParticles: 50,
+//               gravity: 0.3,
+//               shouldLoop: false,
+//               colors: [
+//                 Colors.yellow,
+//                 Colors.orange,
+//                 Colors.greenAccent,
+//                 Colors.blue,
+//                 Colors.purple,
+//                 Colors.white,
+//               ],
+//             ),
+//           ),
+//           // Rotating Stars Animation
+//           _buildRotatingStars(),
+//         ],
+//       ),
+//     );
+//   }
+
+//   Widget _buildRotatingStars() {
+//     return Stack(
+//       children: [
+//         _rotatingStar(Colors.yellow.shade400, 80, Offset(50, 200)),
+//         _rotatingStar(Colors.pink.shade300, 100, Offset(300, 400)),
+//         _rotatingStar(Colors.lightBlueAccent, 120, Offset(200, 600)),
+//       ],
+//     );
+//   }
+
+//   Widget _rotatingStar(Color color, double size, Offset offset) {
+//     return Positioned(
+//       left: offset.dx,
+//       top: offset.dy,
+//       child: AnimatedRotation(
+//         duration: Duration(seconds: 5),
+//         curve: Curves.easeInOut,
+//         turns: 1,
+//         child: Icon(
+//           Icons.star,
+//           size: size,
+//           color: color,
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// import 'package:flutter/material.dart';
+// import 'package:confetti/confetti.dart';
+
+// class CelebrationScreen extends StatefulWidget {
+//   @override
+//   _CelebrationScreenState createState() => _CelebrationScreenState();
+// }
+
+// class _CelebrationScreenState extends State<CelebrationScreen> {
+//   final ConfettiController _confettiController =
+//       ConfettiController(duration: const Duration(seconds: 5));
+//   bool showDetails = false;
+
+//   void _onCelebrate() {
+//     _confettiController.play();
+//     setState(() {
+//       showDetails = true;
+//     });
+//   }
+
+//   @override
+//   void dispose() {
+//     _confettiController.dispose();
+//     super.dispose();
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       body: Stack(
+//         children: [
+//           // Background Image (road.jpg)
+//           Container(
+//             decoration: BoxDecoration(
+//               image: DecorationImage(
+//                 image: const AssetImage(
+//                     'images/road.jpg'), // Make sure to add 'road.jpg' in your assets folder
+//                 fit: BoxFit.cover,
+//                 colorFilter: ColorFilter.mode(
+//                   Colors.black
+//                       .withOpacity(0.5), // Darken the image to improve contrast
+//                   BlendMode.darken,
+//                 ),
+//               ),
+//             ),
+//           ),
+//           // Main Content
+//           Center(
+//             child: Card(
+//               color: Colors.white.withAlpha(100),
+//               elevation: 100,
+//               child: Padding(
+//                 padding:
+//                     const EdgeInsets.symmetric(horizontal: 16.0, vertical: 32),
+//                 child: Column(
+//                   mainAxisSize: MainAxisSize.min,
+//                   children: [
+//                     // Title
+//                     const Text(
+//                       "100 Days of Flutter",
+//                       textAlign: TextAlign.left,
+//                       style: TextStyle(
+//                         fontSize: 36,
+//                         fontWeight: FontWeight.bold,
+//                         color: Colors
+//                             .white, // Light color for contrast on dark background
+//                         letterSpacing: 1.2,
+//                       ),
+//                     ),
+//                     const SizedBox(height: 10),
+//                     Text(
+//                       "Challenge Completed!",
+//                       textAlign: TextAlign.left,
+//                       style: TextStyle(
+//                         fontSize: 24,
+//                         fontWeight: FontWeight.bold,
+//                         color: Colors
+//                             .tealAccent.shade400, // Use a contrasting color
+//                       ),
+//                     ),
+//                     const SizedBox(height: 40),
+//                     // Details (Revealed after button click)
+//                     if (showDetails)
+//                       AnimatedOpacity(
+//                         duration: const Duration(seconds: 1),
+//                         opacity: showDetails ? 1.0 : 1.0,
+//                         child: const Column(
+//                           children: [
+//                             Text(
+//                               "In this journey, I created:",
+//                               textAlign: TextAlign.left,
+//                               style: TextStyle(
+//                                 fontSize: 18,
+//                                 fontWeight: FontWeight.bold,
+//                                 color: Colors
+//                                     .amberAccent, // Lighter color for detail text
+//                               ),
+//                             ),
+//                             SizedBox(height: 8),
+//                             Text(
+//                               "- Widget Tutorials\n"
+//                               "- Small App Builds\n"
+//                               "- UI Design Videos\n\n"
+//                               "All shared on Code Flicks!",
+//                               textAlign: TextAlign.left,
+//                               style: TextStyle(
+//                                 fontSize: 18,
+//                                 fontWeight: FontWeight.w500,
+//                                 color: Colors
+//                                     .white, // Lighter color for better readability
+//                               ),
+//                             ),
+//                           ],
+//                         ),
+//                       ),
+//                     const SizedBox(height: 40),
+//                     // Celebrate Button
+//                     ElevatedButton(
+//                       onPressed: _onCelebrate,
+//                       style: ElevatedButton.styleFrom(
+//                         backgroundColor: Colors.teal.shade400,
+//                         padding: const EdgeInsets.symmetric(
+//                             horizontal: 40, vertical: 20),
+//                         shape: RoundedRectangleBorder(
+//                           borderRadius: BorderRadius.circular(30),
+//                         ),
+//                         elevation: 8,
+//                       ),
+//                       child: const Text(
+//                         "Celebrate Now!",
+//                         style: TextStyle(
+//                           fontSize: 18,
+//                           fontWeight: FontWeight.bold,
+//                           color: Colors.white,
+//                         ),
+//                       ),
+//                     ),
+//                   ],
+//                 ),
+//               ),
+//             ),
+//           ),
+//           // Confetti Effect
+//           Align(
+//             alignment: Alignment.center,
+//             child: ConfettiWidget(
+//               confettiController: _confettiController,
+//               blastDirectionality: BlastDirectionality.explosive,
+//               emissionFrequency: 0.04,
+//               numberOfParticles: 60,
+//               gravity: 0.3,
+//               colors: const [
+//                 Colors.purple,
+//                 Colors.pink,
+//                 Colors.blueAccent,
+//                 Colors.grey,
+//                 Colors.green,
+//                 Colors.teal,
+//               ],
+//             ),
+//           ),
+//         ],
+//       ),
+//     );
+//   }
+// }
