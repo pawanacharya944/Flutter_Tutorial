@@ -52,11 +52,12 @@ dependencies:
   animated_text_kit: ^4.2.2
   liquid_swipe: ^3.1.0
   curved_navigation_bar: ^1.0.6
-  syncfusion_flutter_gauges: ^27.2.2
+  syncfusion_flutter_gauges: ^28.1.36
   fl_chart: ^0.69.0
   percent_indicator: ^4.2.3
   fluttertoast: ^8.2.8
   convex_bottom_bar: ^3.2.0
+  confetti: ^0.8.0
   
 
 
