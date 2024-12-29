@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'test.dart';
+import 'speedometer.dart';
 
 void main() {
   runApp(const MyApp());
