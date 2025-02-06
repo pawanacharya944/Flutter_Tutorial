@@ -2,15 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:syncfusion_flutter_gauges/gauges.dart';
 
-class RealisticSpeedometerPage extends StatefulWidget {
-  const RealisticSpeedometerPage({super.key});
+class MySpeedometer extends StatefulWidget {
+  const MySpeedometer({super.key});
 
   @override
-  _RealisticSpeedometerPageState createState() =>
-      _RealisticSpeedometerPageState();
+  _MySpeedometerState createState() => _MySpeedometerState();
 }
 
-class _RealisticSpeedometerPageState extends State<RealisticSpeedometerPage> {
+class _MySpeedometerState extends State<MySpeedometer> {
   final ValueNotifier<double> _speedNotifier = ValueNotifier(0.0);
   late final Ticker _ticker;
   bool _isAccelerating = false;
@@ -255,6 +254,8 @@ class _RealisticSpeedometerPageState extends State<RealisticSpeedometerPage> {
                       ),
                       child: const Text(
                         "Accelerate",
+                        style: TextStyle(
+                            color: Colors.black, fontWeight: FontWeight.bold),
                       ),
                     ),
                   ),
@@ -262,6 +263,8 @@ class _RealisticSpeedometerPageState extends State<RealisticSpeedometerPage> {
                     onPressed: _applyBrake,
                     child: const Text(
                       "Brake",
+                      style: TextStyle(
+                          color: Colors.black, fontWeight: FontWeight.bold),
                     ),
                   ),
                 ],

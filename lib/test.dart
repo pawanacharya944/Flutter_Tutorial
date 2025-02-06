@@ -911,3 +911,96 @@
 //     ],
 //   );
 // }
+import 'package:flutter/material.dart';
+
+class ClipPathExample extends StatelessWidget {
+  const ClipPathExample({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Stack(
+        children: [
+          // First wave layer: A wavy background with a pink-to-purple gradient
+          ClipPath(
+            clipper: WaveClipper1(),
+            child: Container(
+              height: 300, // Height of the wave layer
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [
+                    Colors.teal.shade200, // Start color of the gradient
+                    Colors.blue.shade100, // End color of the gradient
+                  ],
+                  begin: Alignment.topCenter, // Gradient starts at the top
+                  end: Alignment.bottomCenter, // Gradient ends at the bottom
+                ),
+              ),
+            ),
+          ),
+          // Center content: An icon and descriptive text
+          Align(
+            alignment:
+                Alignment.center, // Aligns content to the center of the screen
+            child: Column(
+              mainAxisSize:
+                  MainAxisSize.min, // Centers the column content vertically
+              children: [
+                // Icon representing the design theme
+                const Icon(Icons.bubble_chart,
+                    size: 60, // Size of the icon
+                    color: Colors.teal // Color of the icon
+                    ),
+                const SizedBox(
+                    height: 16), // Space between the icon and the title text
+                // Title text
+                Text(
+                  "Welcome to Flutter UI",
+                  style: TextStyle(
+                    fontSize: 26, // Font size of the title text
+                    color: Colors.teal.shade500, // Color of the title text
+                    fontWeight: FontWeight.bold, // Makes the text bold
+                  ),
+                ),
+                const SizedBox(
+                    height: 8), // Space between the title and subtitle text
+                // Subtitle text
+                Text(
+                  "Create stunning designs with ClipPath",
+                  style: TextStyle(
+                    fontSize: 18, // Font size of the subtitle text
+                    color: Colors.teal.shade600, // Color of the subtitle text
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+// Custom clipper for creating a wave-like shape
+class WaveClipper1 extends CustomClipper<Path> {
+  @override
+  Path getClip(Size size) {
+    final path = Path(); // Create a new path
+    path.lineTo(0, size.height - 80); // Start from the bottom-left corner
+    path.quadraticBezierTo(
+      size.width / 4, size.height - 120, // First control point and curve
+      size.width / 2, size.height - 80, // First endpoint
+    );
+    path.quadraticBezierTo(
+      3 * size.width / 4, size.height - 40, // Second control point and curve
+      size.width, size.height - 80, // Second endpoint
+    );
+    path.lineTo(size.width, 0); // Draw a straight line to the top-right corner
+    path.close(); // Close the path to form the wave
+    return path;
+  }
+
+  @override
+  bool shouldReclip(CustomClipper<Path> oldClipper) =>
+      false; // No need to reclip unless the clipper changes
+}
